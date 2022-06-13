@@ -15,5 +15,9 @@
     "bugs": {
         "url": "https://github.com/liztheshiz/movie-client/issues"
     },
-    "homepage": "https://github.com/liztheshiz/movie-client#readme"
+    "homepage": "https://github.com/liztheshiz/movie-client#readme",
+    "dependencies": {
+        "react": "^18.1.0",
+        "react-dom": "^18.1.0"
+    }
 }
