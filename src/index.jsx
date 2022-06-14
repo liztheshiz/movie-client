@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 
 // Import MainView component
-import { MainView } from './components/main-view/main-view.jsx';
+import { MainView } from './components/main-view/main-view';
 
 // Main component (will eventually use all the others)
 class MyFlixApplication extends React.Component {
