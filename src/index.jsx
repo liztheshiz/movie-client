@@ -4,6 +4,9 @@ import ReactDOM from 'react-dom';
 // Import statement to indicate that you need to bundle `./index.scss`
 import './index.scss';
 
+// Import MainView component
+import { MainView } from './components/main-view/main-view.jsx';
+
 // Main component (will eventually use all the others)
 class MyFlixApplication extends React.Component {
     render() {
