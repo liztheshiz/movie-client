@@ -7,9 +7,9 @@ export class MainView extends React.Component {
         super();
         this.state = {
             movies: [
-                { _id: 1, Title: 'Inception', Description: 'desc1...', ImagePath: '...' },
-                { _id: 2, Title: 'The Shawshank Redemption', Description: 'desc2...', ImagePath: '...' },
-                { _id: 3, Title: 'Gladiator', Description: 'desc3...', ImagePath: '...' }
+                { _id: 1, Title: 'Inception', Description: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.', Genre: 'Thriller', Director: 'Christopher Nolan', ImagePath: '../../img/inception.jpeg' },
+                { _id: 2, Title: 'The Shawshank Redemption', Description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.', Genre: 'Drama', Director: 'Frank Darabont', ImagePath: '...' },
+                { _id: 3, Title: 'Gladiator', Description: 'A former Roman General sets out to exact vengeance against the corrupt emporer who murdered his family and sent him into slavery.', Genre: 'Drama', ImagePath: '...' }
             ],
             selectedMovie: null
         };
