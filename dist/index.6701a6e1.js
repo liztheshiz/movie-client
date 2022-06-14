@@ -25341,7 +25341,7 @@ class MainView extends _reactDefault.default.Component {
                     Description: 'A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.',
                     Genre: 'Thriller',
                     Director: 'Christopher Nolan',
-                    ImagePath: '../../img/inception.jpeg'
+                    ImagePath: 'https://m.media-amazon.com/images/I/51p3oAsXNmL._AC_.jpg'
                 },
                 {
                     _id: 2,
@@ -25349,14 +25349,14 @@ class MainView extends _reactDefault.default.Component {
                     Description: 'Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.',
                     Genre: 'Drama',
                     Director: 'Frank Darabont',
-                    ImagePath: '...'
+                    ImagePath: 'https://m.media-amazon.com/images/I/512G9J05RJL._AC_SY445_.jpg'
                 },
                 {
                     _id: 3,
                     Title: 'Gladiator',
                     Description: 'A former Roman General sets out to exact vengeance against the corrupt emporer who murdered his family and sent him into slavery.',
                     Genre: 'Drama',
-                    ImagePath: '...'
+                    ImagePath: 'https://m.media-amazon.com/images/I/71sj8Yt20qL._AC_SY679_.jpg'
                 }
             ],
             selectedMovie: null
