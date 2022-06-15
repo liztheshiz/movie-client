@@ -24,6 +24,7 @@ export class MainView extends React.Component {
             });
     }
 
+    // When a movie button is clicked, sets selectedMovie to that movie
     setSelectedMovie(newSelectedMovie) {
         this.setState({
             selectedMovie: newSelectedMovie
