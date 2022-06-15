@@ -28875,7 +28875,7 @@ function LoginView(props) {
     const handleSubmit = (e)=>{
         e.preventDefault(); // prevents page from refreshing when clicking submit button
         console.log(username, password);
-    /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ // props.onLoggedIn(username);
+        /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("form", {
         __source: {
