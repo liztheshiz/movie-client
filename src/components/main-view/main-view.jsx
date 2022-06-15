@@ -24,6 +24,13 @@ export class MainView extends React.Component {
             });
     }
 
+    // When user successfully logs in, sets 'user' prop to that particular user
+    onLoggedIn(user) {
+        this.setState({
+            user
+        });
+    }
+
     // When a movie button is clicked, sets selectedMovie to that movie
     setSelectedMovie(newSelectedMovie) {
         this.setState({
@@ -33,6 +40,9 @@ export class MainView extends React.Component {
 
     render() {
         const { movies, selectedMovie } = this.state;
+
+        // If no user is present, displays LoginView. When user logs in, user is passed as a prop to LoginView
+        if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
         if (movies.length === 0) return <div className="main-view" />;
 
