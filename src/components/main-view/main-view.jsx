@@ -13,6 +13,15 @@ export class MainView extends React.Component {
         };
     }
 
+    componentDidMount() {
+        axios.get('https://cinemadatabase.herokuapp.com')
+            .then(res => {
+                this.setState({ movies: res.data });
+            }).catch(err => {
+                console.log(err);
+            });
+    }
+
     setSelectedMovie(newSelectedMovie) {
         this.setState({
             selectedMovie: newSelectedMovie
