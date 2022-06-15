@@ -1,6 +1,20 @@
 import React from 'react';
 
 export class MovieView extends React.Component {
+    /*escapeToHome(e) {
+        if (e.key === 'Escape') {
+            console.log('Returning home');
+        }
+    }
+
+    componentDidMount() {
+        document.addEventListener('keydown', this.escapeToHome);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keydown', this.escapeToHome);
+    }*/
+
     render() {
         const { movie, onBackClick } = this.props;
 
