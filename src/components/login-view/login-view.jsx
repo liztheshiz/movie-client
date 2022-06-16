@@ -15,6 +15,8 @@ export function LoginView(props) {
 
     return (
         <div className="login-view">
+            <h1>Welcome to CinemaDatabase!</h1>
+            <h2>Login:</h2>
             <form>
                 <label>
                     Username:
