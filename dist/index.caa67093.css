@@ -1,10 +1,10 @@
-.app-container {
-  font-family: "Rubik", sans-serif;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
 .movie-card-title {
   font-size: 24px;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 button {
@@ -12,7 +12,7 @@ button {
   border: 1px #8db3d3 solid;
   border-radius: 5px;
   color: cornsilk;
-  font-family: "Rubik", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 500;
 }
 
