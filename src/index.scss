@@ -4,11 +4,6 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
-.movie-card-title {
-    font-size: 24px;
-    font-weight: 700;
-}
-
 button {
     background-color: $button-color;
     border: 1px lighten($button-color, 20%) solid;

@@ -29679,17 +29679,33 @@ function LoginView(props) {
         },
         __self: this,
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+            /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
                     lineNumber: 18
+                },
+                __self: this,
+                children: "Welcome to CinemaDatabase!"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                __source: {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 19
+                },
+                __self: this,
+                children: "Login:"
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsxs("form", {
+                __source: {
+                    fileName: "src/components/login-view/login-view.jsx",
+                    lineNumber: 20
                 },
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 19
+                            lineNumber: 21
                         },
                         __self: this,
                         children: [
@@ -29701,7 +29717,7 @@ function LoginView(props) {
                                 ,
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 21
+                                    lineNumber: 23
                                 },
                                 __self: this
                             })
@@ -29710,7 +29726,7 @@ function LoginView(props) {
                     /*#__PURE__*/ _jsxRuntime.jsxs("label", {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 23
+                            lineNumber: 25
                         },
                         __self: this,
                         children: [
@@ -29722,7 +29738,7 @@ function LoginView(props) {
                                 ,
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 25
+                                    lineNumber: 27
                                 },
                                 __self: this
                             })
@@ -29733,7 +29749,7 @@ function LoginView(props) {
                         onClick: handleSubmit,
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 27
+                            lineNumber: 29
                         },
                         __self: this,
                         children: "Submit"
@@ -29743,7 +29759,7 @@ function LoginView(props) {
             /*#__PURE__*/ _jsxRuntime.jsx("span", {
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 29
+                    lineNumber: 31
                 },
                 __self: this,
                 children: "New user?"
@@ -29751,7 +29767,7 @@ function LoginView(props) {
             /*#__PURE__*/ _jsxRuntime.jsx("button", {
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 29
+                    lineNumber: 31
                 },
                 __self: this,
                 children: "Register here"
