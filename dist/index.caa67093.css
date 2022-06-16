@@ -2,6 +2,11 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.movie-card-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+
 button {
   background-color: steelblue;
   border: 1px #8db3d3 solid;
