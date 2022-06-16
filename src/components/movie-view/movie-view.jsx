@@ -21,6 +21,7 @@ export class MovieView extends React.Component {
 
         return (
             <div className="movie-view">
+                <h1>CinemaDatabase</h1>
                 <div className="movie-poster">
                     <img src={movie.ImagePath} />
                 </div>
