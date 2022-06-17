@@ -18,13 +18,6 @@ export class MovieCard extends React.Component {
                     <Button onClick={() => { onMovieClick(movie); }} variant="primary">View details</Button>
                 </Card.Body>
             </Card>
-
-            /*           
-                       <div className="movie-card">
-                           <span className="movie-card-title">{movie.Title} </span>
-                           <button className="movie-card-button" onClick={() => { onMovieClick(movie); }}>View details</button>
-                       </div>
-           */
         );
     }
 }
