@@ -30152,6 +30152,9 @@ function LoginView(props) {
                 children: "Login:"
             }),
             /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+                style: {
+                    width: "12rem"
+                },
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
                     lineNumber: 22
