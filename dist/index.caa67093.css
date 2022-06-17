@@ -15,8 +15,8 @@ button:hover,
 button:focus {
   cursor: pointer;
 }
-.movie-card-title {
-  font-size: 24px;
-  font-weight: 700;
+.movie-card {
+  width: 18rem;
+  font-family: "Poppins", sans-serif;
 }
 /*# sourceMappingURL=index.caa67093.css.map */

@@ -25465,9 +25465,7 @@ class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie , onMovieClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
-            style: {
-                width: '18rem'
-            },
+            className: "movie-card" /*style={{ width: '18rem' }}*/ ,
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 13
