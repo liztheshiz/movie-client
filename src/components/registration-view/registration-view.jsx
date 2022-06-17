@@ -18,25 +18,25 @@ export function RegistrationView(props) {
     return (
         <div className="registration-view">
             <h2>Register:</h2>
-            <form>
-                <label>
-                    Username:
-                    <input type="text" value={username} onChange={e => setUsername(e.target.value)} />
-                </label>
-                <label>
-                    Password:
-                    <input type="password" value={password} onChange={e => setPassword(e.target.value)} />
-                </label>
-                <label>
-                    Email:
-                    <input type="email" value={email} onChange={e => setEmail(e.target.value)} />
-                </label>
-                <label>
-                    Birthday:
-                    <input type="date" value={birthday} onChange={e => setBirthday(e.target.value)} />
-                </label>
-                <button type="submit" onClick={handleSubmit}>Register</button>
-            </form>
+            <Form style={{ width: "12rem" }}>
+                <Form.Group controlId="formUsername">
+                    <Form.Label>Username:</Form.Label>
+                    <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+                </Form.Group>
+                <Form.Group controlId="formPassword">
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+                </Form.Group>
+                <Form.Group controlId="formPassword">
+                    <Form.Label>Email:</Form.Label>
+                    <Form.Control type="email" onChange={e => setEmail(e.target.value)} />
+                </Form.Group>
+                <Form.Group controlId="formPassword">
+                    <Form.Label>Birthday:</Form.Label>
+                    <Form.Control type="string" onChange={e => setBirthday(e.target.value)} />
+                </Form.Group>
+                <Button variant="primary" type="submit" onClick={handleSubmit}>Register</Button>
+            </Form>
         </div>
     );
 }
