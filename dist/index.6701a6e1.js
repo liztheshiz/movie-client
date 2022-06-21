@@ -952,12 +952,19 @@ var _mainView = require("./components/main-view/main-view");
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(Container, {
             __source: {
                 fileName: "src/index.jsx",
                 lineNumber: 14
             },
-            __self: this
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
+                __source: {
+                    fileName: "src/index.jsx",
+                    lineNumber: 15
+                },
+                __self: this
+            })
         }));
     }
 }
@@ -30150,9 +30157,7 @@ function LoginView(props) {
                 children: "Login:"
             }),
             /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
-                style: {
-                    width: "12rem"
-                },
+                className: "login-form",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
                     lineNumber: 22
