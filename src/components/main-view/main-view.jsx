@@ -59,14 +59,14 @@ export class MainView extends React.Component {
         }
 
         return (
-            <div className="main-view">
+            <Row className="justify-content-md-center main-view">
                 <h1>CinemaDatabase</h1>
                 <div className="movies-list">
                     {movies.map(movie =>
                         <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }} />
                     )}
                 </div>
-            </div>
+            </Row>
         );
     }
 }
