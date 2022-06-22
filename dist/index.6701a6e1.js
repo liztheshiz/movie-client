@@ -30151,7 +30151,7 @@ function LoginView(props) {
         /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-        className: "login-view",
+        className: "login-view mt-5",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
             lineNumber: 22
@@ -30159,6 +30159,7 @@ function LoginView(props) {
         __self: this,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                className: "mb-5",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
                     lineNumber: 23
