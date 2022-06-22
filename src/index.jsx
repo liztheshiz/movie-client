@@ -16,7 +16,7 @@ class MyFlixApplication extends React.Component {
             <div>
                 <Navbar bg="dark">
                     <Container>
-                        <Navbar.Brand href="#home">CinemaDatabase</Navbar.Brand>
+                        <Navbar.Brand>CinemaDatabase</Navbar.Brand>
                     </Container>
                 </Navbar>
                 <Container>
