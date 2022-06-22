@@ -30150,7 +30150,7 @@ function LoginView(props) {
         console.log(username, password);
         /* Send a request to the server for authentication */ /* then call props.onLoggedIn(username) */ props.onLoggedIn(username);
     };
-    return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+    return(/*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
         className: "login-view mt-5",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
@@ -30259,6 +30259,7 @@ function LoginView(props) {
                                 ]
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                className: "mt-3",
                                 variant: "primary",
                                 type: "submit",
                                 onClick: handleSubmit,
@@ -30274,13 +30275,14 @@ function LoginView(props) {
                 })
             }),
             /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                className: "justify-content-md-center",
+                className: "justify-content-md-center mt-3",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
                     lineNumber: 43
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                    className: "text-center",
                     md: 4,
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",

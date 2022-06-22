@@ -19,7 +19,7 @@ export function LoginView(props) {
     };
 
     return (
-        <div className="login-view mt-5">
+        <Container className="login-view mt-5">
             <Row className="mb-5">
                 <Col>
                     <h1>Welcome to CinemaDatabase!</h1>
@@ -36,16 +36,16 @@ export function LoginView(props) {
                             <Form.Label>Password:</Form.Label>
                             <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
                         </Form.Group>
-                        <Button variant="primary" type="submit" onClick={handleSubmit}>Login</Button>
+                        <Button className="mt-3" variant="primary" type="submit" onClick={handleSubmit}>Login</Button>
                     </Form>
                 </Col>
             </Row>
-            <Row className="justify-content-md-center">
-                <Col md={4}>
+            <Row className="justify-content-md-center mt-3">
+                <Col className="text-center" md={4}>
                     <span>New user?</span><Button variant="link">Register here</Button>
                 </Col>
             </Row>
-        </div>
+        </Container>
     );
 }
 
