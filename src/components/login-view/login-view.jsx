@@ -21,7 +21,7 @@ export function LoginView(props) {
     return (
         <Container className="login-view mt-5">
             <Row className="mb-5">
-                <Col>
+                <Col className="text-center">
                     <h1>Welcome to CinemaDatabase!</h1>
                 </Col>
             </Row>
