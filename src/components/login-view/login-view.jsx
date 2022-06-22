@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export function LoginView(props) {
     const [username, setUsername] = useState('');
@@ -17,20 +20,31 @@ export function LoginView(props) {
 
     return (
         <div className="login-view">
-            <h1>Welcome to CinemaDatabase!</h1>
-            <h2>Login:</h2>
-            <Form>
-                <Form.Group controlId="formUsername">
-                    <Form.Label>Username:</Form.Label>
-                    <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
-                </Form.Group>
-                <Form.Group controlId="formPassword">
-                    <Form.Label>Password:</Form.Label>
-                    <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
-                </Form.Group>
-                <Button variant="primary" type="submit" onClick={handleSubmit}>Login</Button>
-            </Form>
-            <span>New user?</span><Button variant="secondary">Register here</Button>
+            <Row>
+                <Col>
+                    <h1>Welcome to CinemaDatabase!</h1>
+                </Col>
+            </Row>
+            <Row className="justify-content-md-center">
+                <Col md={4}>
+                    <Form>
+                        <Form.Group controlId="formUsername">
+                            <Form.Label>Username:</Form.Label>
+                            <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+                        </Form.Group>
+                        <Form.Group controlId="formPassword">
+                            <Form.Label>Password:</Form.Label>
+                            <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+                        </Form.Group>
+                        <Button variant="primary" type="submit" onClick={handleSubmit}>Login</Button>
+                    </Form>
+                </Col>
+            </Row>
+            <Row className="justify-content-md-center">
+                <Col md={4}>
+                    <span>New user?</span><Button variant="link">Register here</Button>
+                </Col>
+            </Row>
         </div>
     );
 }
