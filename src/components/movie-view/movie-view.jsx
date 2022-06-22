@@ -29,7 +29,7 @@ export class MovieView extends React.Component {
                     <Col md={10}>
                         <Row className="mb-4">
                             <Col md={1}>
-                                <Button variant="secondary" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>
+                                <Button variant="outline-dark" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>
                             </Col>
                             <Col className="movie-title" md={11}>
                                 <h2 className="value">{movie.Title}</h2>

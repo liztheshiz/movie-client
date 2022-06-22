@@ -25615,7 +25615,7 @@ class MovieCard extends _reactDefault.default.Component {
                             children: movie.Description
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                            variant: "dark",
+                            variant: "outline-dark",
                             onClick: ()=>{
                                 onMovieClick(movie);
                             },
@@ -26902,7 +26902,7 @@ class MovieView extends _reactDefault.default.Component {
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                            variant: "secondary",
+                                            variant: "outline-dark",
                                             size: "sm",
                                             onClick: ()=>{
                                                 onBackClick(null);
