@@ -949,6 +949,8 @@ var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
 var _navbar = require("react-bootstrap/Navbar");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _nav = require("react-bootstrap/Nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
 // Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
 // Import MainView component
@@ -956,46 +958,99 @@ var _mainView = require("./components/main-view/main-view");
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
-            __source: {
-                fileName: "src/index.jsx",
-                lineNumber: 16
-            },
-            __self: this,
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default, {
                     bg: "dark",
+                    variant: "dark",
+                    expand: "md",
                     __source: {
                         fileName: "src/index.jsx",
-                        lineNumber: 17
+                        lineNumber: 18
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
                         __source: {
                             fileName: "src/index.jsx",
-                            lineNumber: 18
+                            lineNumber: 19
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
-                            __source: {
-                                fileName: "src/index.jsx",
-                                lineNumber: 19
-                            },
-                            __self: this,
-                            children: "CinemaDatabase"
-                        })
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
+                                __source: {
+                                    fileName: "src/index.jsx",
+                                    lineNumber: 20
+                                },
+                                __self: this,
+                                children: "CinemaDatabase"
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Toggle, {
+                                "aria-controls": "basic-navbar-nav",
+                                __source: {
+                                    fileName: "src/index.jsx",
+                                    lineNumber: 21
+                                },
+                                __self: this
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Collapse, {
+                                id: "basic-navbar-nav",
+                                className: "justify-content-end",
+                                __source: {
+                                    fileName: "src/index.jsx",
+                                    lineNumber: 22
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_navDefault.default, {
+                                    className: "me-auto",
+                                    __source: {
+                                        fileName: "src/index.jsx",
+                                        lineNumber: 23
+                                    },
+                                    __self: this,
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                            href: "#",
+                                            __source: {
+                                                fileName: "src/index.jsx",
+                                                lineNumber: 24
+                                            },
+                                            __self: this,
+                                            children: "About"
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                            href: "#",
+                                            __source: {
+                                                fileName: "src/index.jsx",
+                                                lineNumber: 25
+                                            },
+                                            __self: this,
+                                            children: "Profile"
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                            href: "#",
+                                            __source: {
+                                                fileName: "src/index.jsx",
+                                                lineNumber: 26
+                                            },
+                                            __self: this,
+                                            children: "Logout"
+                                        })
+                                    ]
+                                })
+                            })
+                        ]
                     })
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
                     __source: {
                         fileName: "src/index.jsx",
-                        lineNumber: 22
+                        lineNumber: 31
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
                         __source: {
                             fileName: "src/index.jsx",
-                            lineNumber: 23
+                            lineNumber: 32
                         },
                         __self: this
                     })
@@ -1014,7 +1069,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","./components/main-view/main-view":"2zHas","react-bootstrap/Container":"2PRIq","react-bootstrap/Navbar":"eYZQl"}],"8xIwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","./components/main-view/main-view":"2zHas","react-bootstrap/Container":"2PRIq","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Nav":"io07g"}],"8xIwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -34066,6 +34121,814 @@ function removeClass(element, className) {
 }
 exports.default = removeClass;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}]},["9NtYk","k2XMz","dLPEP"], "dLPEP", "parcelRequire315a")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"io07g":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _all = require("prop-types-extra/lib/all");
+var _allDefault = parcelHelpers.interopDefault(_all);
+var _react = require("react");
+var _uncontrollable = require("uncontrollable");
+var _nav = require("@restart/ui/Nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
+var _themeProvider = require("./ThemeProvider");
+var _navbarContext = require("./NavbarContext");
+var _navbarContextDefault = parcelHelpers.interopDefault(_navbarContext);
+var _cardHeaderContext = require("./CardHeaderContext");
+var _cardHeaderContextDefault = parcelHelpers.interopDefault(_cardHeaderContext);
+var _navItem = require("./NavItem");
+var _navItemDefault = parcelHelpers.interopDefault(_navItem);
+var _navLink = require("./NavLink");
+var _navLinkDefault = parcelHelpers.interopDefault(_navLink);
+var _jsxRuntime = require("react/jsx-runtime");
+const defaultProps = {
+    justify: false,
+    fill: false
+};
+const Nav = /*#__PURE__*/ _react.forwardRef((uncontrolledProps, ref)=>{
+    const { as ='div' , bsPrefix: initialBsPrefix , variant , fill , justify , navbar , navbarScroll , className , activeKey , ...props } = _uncontrollable.useUncontrolled(uncontrolledProps, {
+        activeKey: 'onSelect'
+    });
+    const bsPrefix = _themeProvider.useBootstrapPrefix(initialBsPrefix, 'nav');
+    let navbarBsPrefix;
+    let cardHeaderBsPrefix;
+    let isNavbar = false;
+    const navbarContext = _react.useContext(_navbarContextDefault.default);
+    const cardHeaderContext = _react.useContext(_cardHeaderContextDefault.default);
+    if (navbarContext) {
+        navbarBsPrefix = navbarContext.bsPrefix;
+        isNavbar = navbar == null ? true : navbar;
+    } else if (cardHeaderContext) ({ cardHeaderBsPrefix  } = cardHeaderContext);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default, {
+        as: as,
+        ref: ref,
+        activeKey: activeKey,
+        className: _classnamesDefault.default(className, {
+            [bsPrefix]: !isNavbar,
+            [`${navbarBsPrefix}-nav`]: isNavbar,
+            [`${navbarBsPrefix}-nav-scroll`]: isNavbar && navbarScroll,
+            [`${cardHeaderBsPrefix}-${variant}`]: !!cardHeaderBsPrefix,
+            [`${bsPrefix}-${variant}`]: !!variant,
+            [`${bsPrefix}-fill`]: fill,
+            [`${bsPrefix}-justified`]: justify
+        }),
+        ...props
+    }));
+});
+Nav.displayName = 'Nav';
+Nav.defaultProps = defaultProps;
+exports.default = Object.assign(Nav, {
+    Item: _navItemDefault.default,
+    Link: _navLinkDefault.default
+});
+
+},{"classnames":"bOXOh","prop-types-extra/lib/all":"ixImN","react":"6TuXu","uncontrollable":"1g2Nf","@restart/ui/Nav":"6cbwu","./ThemeProvider":"eeqfi","./NavbarContext":"iFmid","./CardHeaderContext":"axTEk","./NavItem":"40AB8","./NavLink":"2vX5C","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"ixImN":[function(require,module,exports) {
+'use strict';
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = all;
+var _createChainableTypeChecker = require('./utils/createChainableTypeChecker');
+var _createChainableTypeChecker2 = _interopRequireDefault(_createChainableTypeChecker);
+function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+        default: obj
+    };
+}
+function all() {
+    for(var _len = arguments.length, validators = Array(_len), _key = 0; _key < _len; _key++)validators[_key] = arguments[_key];
+    function allPropTypes() {
+        for(var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++)args[_key2] = arguments[_key2];
+        var error = null;
+        validators.forEach(function(validator) {
+            if (error != null) return;
+            var result = validator.apply(undefined, args);
+            if (result != null) error = result;
+        });
+        return error;
+    }
+    return _createChainableTypeChecker2.default(allPropTypes);
+}
+module.exports = exports['default'];
+
+},{"./utils/createChainableTypeChecker":"KJRSZ"}],"KJRSZ":[function(require,module,exports) {
+'use strict';
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = createChainableTypeChecker;
+/**
+ * Copyright 2013-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */ // Mostly taken from ReactPropTypes.
+function createChainableTypeChecker(validate) {
+    function checkType(isRequired, props, propName, componentName, location, propFullName) {
+        var componentNameSafe = componentName || '<<anonymous>>';
+        var propFullNameSafe = propFullName || propName;
+        if (props[propName] == null) {
+            if (isRequired) return new Error('Required ' + location + ' `' + propFullNameSafe + '` was not specified ' + ('in `' + componentNameSafe + '`.'));
+            return null;
+        }
+        for(var _len = arguments.length, args = Array(_len > 6 ? _len - 6 : 0), _key = 6; _key < _len; _key++)args[_key - 6] = arguments[_key];
+        return validate.apply(undefined, [
+            props,
+            propName,
+            componentNameSafe,
+            location,
+            propFullNameSafe
+        ].concat(args));
+    }
+    var chainedCheckType = checkType.bind(null, false);
+    chainedCheckType.isRequired = checkType.bind(null, true);
+    return chainedCheckType;
+}
+module.exports = exports['default'];
+
+},{}],"6cbwu":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _querySelectorAll = require("dom-helpers/querySelectorAll");
+var _querySelectorAllDefault = parcelHelpers.interopDefault(_querySelectorAll);
+var _react = require("react");
+var _useForceUpdate = require("@restart/hooks/useForceUpdate");
+var _useForceUpdateDefault = parcelHelpers.interopDefault(_useForceUpdate);
+var _useMergedRefs = require("@restart/hooks/useMergedRefs");
+var _useMergedRefsDefault = parcelHelpers.interopDefault(_useMergedRefs);
+var _navContext = require("./NavContext");
+var _navContextDefault = parcelHelpers.interopDefault(_navContext);
+var _selectableContext = require("./SelectableContext");
+var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
+var _tabContext = require("./TabContext");
+var _tabContextDefault = parcelHelpers.interopDefault(_tabContext);
+var _dataKey = require("./DataKey");
+var _navItem = require("./NavItem");
+var _navItemDefault = parcelHelpers.interopDefault(_navItem);
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "as",
+    "onSelect",
+    "activeKey",
+    "role",
+    "onKeyDown"
+];
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {
+    };
+    var target = {
+    };
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+// eslint-disable-next-line @typescript-eslint/no-empty-function
+const noop = ()=>{
+};
+const EVENT_KEY_ATTR = _dataKey.dataAttr('event-key');
+const Nav = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
+    let { // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+    as: Component = 'div' , onSelect , activeKey , role , onKeyDown  } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded);
+    // A ref and forceUpdate for refocus, b/c we only want to trigger when needed
+    // and don't want to reset the set in the effect
+    const forceUpdate = _useForceUpdateDefault.default();
+    const needsRefocusRef = _react.useRef(false);
+    const parentOnSelect = _react.useContext(_selectableContextDefault.default);
+    const tabContext = _react.useContext(_tabContextDefault.default);
+    let getControlledId, getControllerId;
+    if (tabContext) {
+        role = role || 'tablist';
+        activeKey = tabContext.activeKey; // TODO: do we need to duplicate these?
+        getControlledId = tabContext.getControlledId;
+        getControllerId = tabContext.getControllerId;
+    }
+    const listNode = _react.useRef(null);
+    const getNextActiveTab = (offset)=>{
+        const currentListNode = listNode.current;
+        if (!currentListNode) return null;
+        const items = _querySelectorAllDefault.default(currentListNode, `[${EVENT_KEY_ATTR}]:not([aria-disabled=true])`);
+        const activeChild = currentListNode.querySelector('[aria-selected=true]');
+        if (!activeChild || activeChild !== document.activeElement) return null;
+        const index = items.indexOf(activeChild);
+        if (index === -1) return null;
+        let nextIndex = index + offset;
+        if (nextIndex >= items.length) nextIndex = 0;
+        if (nextIndex < 0) nextIndex = items.length - 1;
+        return items[nextIndex];
+    };
+    const handleSelect = (key, event)=>{
+        if (key == null) return;
+        onSelect == null || onSelect(key, event);
+        parentOnSelect == null || parentOnSelect(key, event);
+    };
+    const handleKeyDown = (event)=>{
+        onKeyDown == null || onKeyDown(event);
+        if (!tabContext) return;
+        let nextActiveChild;
+        switch(event.key){
+            case 'ArrowLeft':
+            case 'ArrowUp':
+                nextActiveChild = getNextActiveTab(-1);
+                break;
+            case 'ArrowRight':
+            case 'ArrowDown':
+                nextActiveChild = getNextActiveTab(1);
+                break;
+            default:
+                return;
+        }
+        if (!nextActiveChild) return;
+        event.preventDefault();
+        handleSelect(nextActiveChild.dataset[_dataKey.dataProp('EventKey')] || null, event);
+        needsRefocusRef.current = true;
+        forceUpdate();
+    };
+    _react.useEffect(()=>{
+        if (listNode.current && needsRefocusRef.current) {
+            const activeChild = listNode.current.querySelector(`[${EVENT_KEY_ATTR}][aria-selected=true]`);
+            activeChild == null || activeChild.focus();
+        }
+        needsRefocusRef.current = false;
+    });
+    const mergedRef = _useMergedRefsDefault.default(ref, listNode);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_selectableContextDefault.default.Provider, {
+        value: handleSelect,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(_navContextDefault.default.Provider, {
+            value: {
+                role,
+                // used by NavLink to determine it's role
+                activeKey: _selectableContext.makeEventKey(activeKey),
+                getControlledId: getControlledId || noop,
+                getControllerId: getControllerId || noop
+            },
+            children: /*#__PURE__*/ _jsxRuntime.jsx(Component, Object.assign({
+            }, props, {
+                onKeyDown: handleKeyDown,
+                ref: mergedRef,
+                role: role
+            }))
+        })
+    }));
+});
+Nav.displayName = 'Nav';
+exports.default = Object.assign(Nav, {
+    Item: _navItemDefault.default
+});
+
+},{"dom-helpers/querySelectorAll":"5xXGC","react":"6TuXu","@restart/hooks/useForceUpdate":"6gZgS","@restart/hooks/useMergedRefs":"2sLYB","./NavContext":"khqpz","./SelectableContext":"9e25D","./TabContext":"fKwcy","./DataKey":"7L8oE","./NavItem":"hIuK4","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"6gZgS":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useForceUpdate() {
+    // The toggling state value is designed to defeat React optimizations for skipping
+    // updates when they are stricting equal to the last state value
+    var _useReducer = _react.useReducer(function(state) {
+        return !state;
+    }, false), dispatch = _useReducer[1];
+    return dispatch;
+}
+exports.default = useForceUpdate;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"khqpz":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const NavContext = /*#__PURE__*/ _react.createContext(null);
+NavContext.displayName = 'NavContext';
+exports.default = NavContext;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"fKwcy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const TabContext = /*#__PURE__*/ _react.createContext(null);
+exports.default = TabContext;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"hIuK4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useNavItem", ()=>useNavItem
+);
+var _react = require("react");
+var _useEventCallback = require("@restart/hooks/useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+var _navContext = require("./NavContext");
+var _navContextDefault = parcelHelpers.interopDefault(_navContext);
+var _selectableContext = require("./SelectableContext");
+var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
+var _button = require("./Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _dataKey = require("./DataKey");
+var _tabContext = require("./TabContext");
+var _tabContextDefault = parcelHelpers.interopDefault(_tabContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "as",
+    "active",
+    "eventKey"
+];
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {
+    };
+    var target = {
+    };
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+function useNavItem({ key , onClick , active , id , role , disabled  }) {
+    const parentOnSelect = _react.useContext(_selectableContextDefault.default);
+    const navContext = _react.useContext(_navContextDefault.default);
+    const tabContext = _react.useContext(_tabContextDefault.default);
+    let isActive = active;
+    const props = {
+        role
+    };
+    if (navContext) {
+        if (!role && navContext.role === 'tablist') props.role = 'tab';
+        const contextControllerId = navContext.getControllerId(key != null ? key : null);
+        const contextControlledId = navContext.getControlledId(key != null ? key : null); // @ts-ignore
+        props[_dataKey.dataAttr('event-key')] = key;
+        props.id = contextControllerId || id;
+        isActive = active == null && key != null ? navContext.activeKey === key : active;
+        /**
+     * Simplified scenario for `mountOnEnter`.
+     *
+     * While it would make sense to keep 'aria-controls' for tabs that have been mounted at least
+     * once, it would also complicate the code quite a bit, for very little gain.
+     * The following implementation is probably good enough.
+     *
+     * @see https://github.com/react-restart/ui/pull/40#issuecomment-1009971561
+     */ if (isActive || !(tabContext != null && tabContext.unmountOnExit) && !(tabContext != null && tabContext.mountOnEnter)) props['aria-controls'] = contextControlledId;
+    }
+    if (props.role === 'tab') {
+        if (disabled) {
+            props.tabIndex = -1;
+            props['aria-disabled'] = true;
+        }
+        if (isActive) props['aria-selected'] = isActive;
+        else props.tabIndex = -1;
+    }
+    props.onClick = _useEventCallbackDefault.default((e)=>{
+        if (disabled) return;
+        onClick == null || onClick(e);
+        if (key == null) return;
+        if (parentOnSelect && !e.isPropagationStopped()) parentOnSelect(key, e);
+    });
+    return [
+        props,
+        {
+            isActive
+        }
+    ];
+}
+const NavItem = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
+    let { as: Component = _buttonDefault.default , active , eventKey  } = _ref, options = _objectWithoutPropertiesLoose(_ref, _excluded);
+    const [props, meta] = useNavItem(Object.assign({
+        key: _selectableContext.makeEventKey(eventKey, options.href),
+        active
+    }, options)); // @ts-ignore
+    props[_dataKey.dataAttr('active')] = meta.isActive;
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, Object.assign({
+    }, options, props, {
+        ref: ref
+    })));
+});
+NavItem.displayName = 'NavItem';
+exports.default = NavItem;
+
+},{"react":"6TuXu","@restart/hooks/useEventCallback":"lDj1q","./NavContext":"khqpz","./SelectableContext":"9e25D","./Button":"fBjIr","./DataKey":"7L8oE","./TabContext":"fKwcy","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"40AB8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _createWithBsPrefix = require("./createWithBsPrefix");
+var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
+exports.default = _createWithBsPrefixDefault.default('nav-item');
+
+},{"./createWithBsPrefix":"8AqEH","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"2vX5C":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _anchor = require("@restart/ui/Anchor");
+var _anchorDefault = parcelHelpers.interopDefault(_anchor);
+var _navItem = require("@restart/ui/NavItem");
+var _selectableContext = require("@restart/ui/SelectableContext");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const defaultProps = {
+    disabled: false
+};
+const NavLink = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , as: Component = _anchorDefault.default , active , eventKey , ...props }, ref)=>{
+    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'nav-link');
+    const [navItemProps, meta] = _navItem.useNavItem({
+        key: _selectableContext.makeEventKey(eventKey, props.href),
+        active,
+        ...props
+    });
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ...props,
+        ...navItemProps,
+        ref: ref,
+        className: _classnamesDefault.default(className, bsPrefix, props.disabled && 'disabled', meta.isActive && 'active')
+    }));
+});
+NavLink.displayName = 'NavLink';
+NavLink.defaultProps = defaultProps;
+exports.default = NavLink;
+
+},{"classnames":"bOXOh","react":"6TuXu","@restart/ui/Anchor":"KNzrK","@restart/ui/NavItem":"hIuK4","@restart/ui/SelectableContext":"9e25D","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"KNzrK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isTrivialHref", ()=>isTrivialHref
+);
+/* eslint-disable jsx-a11y/no-static-element-interactions */ /* eslint-disable jsx-a11y/anchor-has-content */ var _react = require("react");
+var _hooks = require("@restart/hooks");
+var _button = require("./Button");
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "onKeyDown"
+];
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {
+    };
+    var target = {
+    };
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+function isTrivialHref(href) {
+    return !href || href.trim() === '#';
+}
+/**
+ * An generic `<a>` component that covers a few A11y cases, ensuring that
+ * cases where the `href` is missing or trivial like "#" are treated like buttons.
+ */ const Anchor = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
+    let { onKeyDown  } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded);
+    const [buttonProps] = _button.useButtonProps(Object.assign({
+        tagName: 'a'
+    }, props));
+    const handleKeyDown = _hooks.useEventCallback((e)=>{
+        buttonProps.onKeyDown(e);
+        onKeyDown == null || onKeyDown(e);
+    });
+    if (isTrivialHref(props.href) && !props.role || props.role === 'button') return(/*#__PURE__*/ _jsxRuntime.jsx("a", Object.assign({
+        ref: ref
+    }, props, buttonProps, {
+        onKeyDown: handleKeyDown
+    })));
+    return(/*#__PURE__*/ _jsxRuntime.jsx("a", Object.assign({
+        ref: ref
+    }, props, {
+        onKeyDown: onKeyDown
+    })));
+});
+Anchor.displayName = 'Anchor';
+exports.default = Anchor;
+
+},{"react":"6TuXu","@restart/hooks":"jFEL5","./Button":"fBjIr","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"jFEL5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useCallbackRef", ()=>_useCallbackRefDefault.default
+);
+parcelHelpers.export(exports, "useCommittedRef", ()=>_useCommittedRefDefault.default
+);
+parcelHelpers.export(exports, "useEventCallback", ()=>_useEventCallbackDefault.default
+);
+parcelHelpers.export(exports, "useEventListener", ()=>_useEventListenerDefault.default
+);
+parcelHelpers.export(exports, "useGlobalListener", ()=>_useGlobalListenerDefault.default
+);
+parcelHelpers.export(exports, "useInterval", ()=>_useIntervalDefault.default
+);
+parcelHelpers.export(exports, "useRafInterval", ()=>_useRafIntervalDefault.default
+);
+parcelHelpers.export(exports, "useMergeState", ()=>_useMergeStateDefault.default
+);
+parcelHelpers.export(exports, "useMergeStateFromProps", ()=>_useMergeStateFromPropsDefault.default
+);
+parcelHelpers.export(exports, "useMounted", ()=>_useMountedDefault.default
+);
+parcelHelpers.export(exports, "usePrevious", ()=>_usePreviousDefault.default
+);
+parcelHelpers.export(exports, "useImage", ()=>_useImageDefault.default
+);
+parcelHelpers.export(exports, "useResizeObserver", ()=>_useResizeObserverDefault.default
+);
+var _useCallbackRef = require("./useCallbackRef");
+var _useCallbackRefDefault = parcelHelpers.interopDefault(_useCallbackRef);
+var _useCommittedRef = require("./useCommittedRef");
+var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
+var _useEventCallback = require("./useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+var _useEventListener = require("./useEventListener");
+var _useEventListenerDefault = parcelHelpers.interopDefault(_useEventListener);
+var _useGlobalListener = require("./useGlobalListener");
+var _useGlobalListenerDefault = parcelHelpers.interopDefault(_useGlobalListener);
+var _useInterval = require("./useInterval");
+var _useIntervalDefault = parcelHelpers.interopDefault(_useInterval);
+var _useRafInterval = require("./useRafInterval");
+var _useRafIntervalDefault = parcelHelpers.interopDefault(_useRafInterval);
+var _useMergeState = require("./useMergeState");
+var _useMergeStateDefault = parcelHelpers.interopDefault(_useMergeState);
+var _useMergeStateFromProps = require("./useMergeStateFromProps");
+var _useMergeStateFromPropsDefault = parcelHelpers.interopDefault(_useMergeStateFromProps);
+var _useMounted = require("./useMounted");
+var _useMountedDefault = parcelHelpers.interopDefault(_useMounted);
+var _usePrevious = require("./usePrevious");
+var _usePreviousDefault = parcelHelpers.interopDefault(_usePrevious);
+var _useImage = require("./useImage");
+var _useImageDefault = parcelHelpers.interopDefault(_useImage);
+var _useResizeObserver = require("./useResizeObserver");
+var _useResizeObserverDefault = parcelHelpers.interopDefault(_useResizeObserver);
+
+},{"./useCallbackRef":"hKgxU","./useCommittedRef":"lW5pn","./useEventCallback":"lDj1q","./useEventListener":"9Ztch","./useGlobalListener":"7JFhp","./useInterval":"5i8eo","./useRafInterval":"djpEe","./useMergeState":"fUbBJ","./useMergeStateFromProps":"artIq","./useMounted":"7pc10","./usePrevious":"eayR5","./useImage":"7YeLI","./useResizeObserver":"cf1dg","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"hKgxU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useCallbackRef() {
+    return _react.useState(null);
+}
+exports.default = useCallbackRef;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"9Ztch":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useEventCallback = require("./useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+function useEventListener(eventTarget, event, listener, capture) {
+    if (capture === void 0) capture = false;
+    var handler = _useEventCallbackDefault.default(listener);
+    _react.useEffect(function() {
+        var target = typeof eventTarget === 'function' ? eventTarget() : eventTarget;
+        target.addEventListener(event, handler, capture);
+        return function() {
+            return target.removeEventListener(event, handler, capture);
+        };
+    }, [
+        eventTarget
+    ]);
+}
+exports.default = useEventListener;
+
+},{"react":"6TuXu","./useEventCallback":"lDj1q","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"7JFhp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _useEventListener = require("./useEventListener");
+var _useEventListenerDefault = parcelHelpers.interopDefault(_useEventListener);
+var _react = require("react");
+function useGlobalListener(event, handler, capture) {
+    if (capture === void 0) capture = false;
+    var documentTarget = _react.useCallback(function() {
+        return document;
+    }, []);
+    return _useEventListenerDefault.default(documentTarget, event, handler, capture);
+}
+exports.default = useGlobalListener;
+
+},{"./useEventListener":"9Ztch","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"5i8eo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useCommittedRef = require("./useCommittedRef");
+var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
+/**
+ * Creates a `setInterval` that is properly cleaned up when a component unmounted
+ *
+ * ```tsx
+ *  function Timer() {
+ *    const [timer, setTimer] = useState(0)
+ *    useInterval(() => setTimer(i => i + 1), 1000)
+ *
+ *    return <span>{timer} seconds past</span>
+ *  }
+ * ```
+ *
+ * @param fn an function run on each interval
+ * @param ms The milliseconds duration of the interval
+ */ function useInterval(fn, ms, paused, runImmediately) {
+    if (paused === void 0) paused = false;
+    if (runImmediately === void 0) runImmediately = false;
+    var handle;
+    var fnRef = _useCommittedRefDefault.default(fn); // this ref is necessary b/c useEffect will sometimes miss a paused toggle
+    // orphaning a setTimeout chain in the aether, so relying on it's refresh logic is not reliable.
+    var pausedRef = _useCommittedRefDefault.default(paused);
+    var tick = function tick1() {
+        if (pausedRef.current) return;
+        fnRef.current();
+        schedule(); // eslint-disable-line no-use-before-define
+    };
+    var schedule = function schedule1() {
+        clearTimeout(handle);
+        handle = setTimeout(tick, ms);
+    };
+    _react.useEffect(function() {
+        if (runImmediately) tick();
+        else schedule();
+        return function() {
+            return clearTimeout(handle);
+        };
+    }, [
+        paused,
+        runImmediately
+    ]);
+}
+exports.default = useInterval;
+
+},{"react":"6TuXu","./useCommittedRef":"lW5pn","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"djpEe":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useCommittedRef = require("./useCommittedRef");
+var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
+function useRafInterval(fn, ms, paused) {
+    if (paused === void 0) paused = false;
+    var handle;
+    var start = new Date().getTime();
+    var fnRef = _useCommittedRefDefault.default(fn); // this ref is necessary b/c useEffect will sometimes miss a paused toggle
+    // orphaning a setTimeout chain in the aether, so relying on it's refresh logic is not reliable.
+    var pausedRef = _useCommittedRefDefault.default(paused);
+    function loop() {
+        var current = new Date().getTime();
+        var delta = current - start;
+        if (pausedRef.current) return;
+        if (delta >= ms && fnRef.current) {
+            fnRef.current();
+            start = new Date().getTime();
+        }
+        cancelAnimationFrame(handle);
+        handle = requestAnimationFrame(loop);
+    }
+    _react.useEffect(function() {
+        handle = requestAnimationFrame(loop);
+        return function() {
+            return cancelAnimationFrame(handle);
+        };
+    }, []);
+}
+exports.default = useRafInterval;
+
+},{"react":"6TuXu","./useCommittedRef":"lW5pn","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"fUbBJ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function _extends() {
+    _extends = Object.assign || function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+function useMergeState(initialState) {
+    var _useState = _react.useState(initialState), state = _useState[0], setState = _useState[1];
+    var updater = _react.useCallback(function(update) {
+        if (update === null) return;
+        if (typeof update === 'function') setState(function(state1) {
+            var nextState = update(state1);
+            return nextState == null ? state1 : _extends({
+            }, state1, nextState);
+        });
+        else setState(function(state1) {
+            return _extends({
+            }, state1, update);
+        });
+    }, [
+        setState
+    ]);
+    return [
+        state,
+        updater
+    ];
+}
+exports.default = useMergeState;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"artIq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _useMergeState = require("./useMergeState");
+var _useMergeStateDefault = parcelHelpers.interopDefault(_useMergeState);
+function useMergeStateFromProps(props, gDSFP, initialState) {
+    var _useMergeState1 = _useMergeStateDefault.default(initialState), state = _useMergeState1[0], setState = _useMergeState1[1];
+    var nextState = gDSFP(props, state);
+    if (nextState !== null) setState(nextState);
+    return [
+        state,
+        setState
+    ];
+}
+exports.default = useMergeStateFromProps;
+
+},{"./useMergeState":"fUbBJ","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"7YeLI":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useImage(imageOrUrl, crossOrigin) {
+    var _useState = _react.useState({
+        image: null,
+        error: null
+    }), state = _useState[0], setState = _useState[1];
+    _react.useEffect(function() {
+        if (!imageOrUrl) return undefined;
+        var image;
+        if (typeof imageOrUrl === 'string') {
+            image = new Image();
+            if (crossOrigin) image.crossOrigin = crossOrigin;
+            image.src = imageOrUrl;
+        } else {
+            image = imageOrUrl;
+            if (image.complete && image.naturalHeight > 0) {
+                setState({
+                    image: image,
+                    error: null
+                });
+                return;
+            }
+        }
+        function onLoad() {
+            setState({
+                image: image,
+                error: null
+            });
+        }
+        function onError(error) {
+            setState({
+                image: image,
+                error: error
+            });
+        }
+        image.addEventListener('load', onLoad);
+        image.addEventListener('error', onError);
+        return function() {
+            image.removeEventListener('load', onLoad);
+            image.removeEventListener('error', onError);
+        };
+    }, [
+        imageOrUrl,
+        crossOrigin
+    ]);
+    return state;
+}
+exports.default = useImage;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"cf1dg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useIsomorphicEffect = require("./useIsomorphicEffect");
+var _useIsomorphicEffectDefault = parcelHelpers.interopDefault(_useIsomorphicEffect);
+var targetMap = new WeakMap();
+var resizeObserver;
+function getResizeObserver() {
+    // eslint-disable-next-line no-return-assign
+    return resizeObserver = resizeObserver || new window.ResizeObserver(function(entries) {
+        entries.forEach(function(entry) {
+            var handler = targetMap.get(entry.target);
+            if (handler) handler(entry.contentRect);
+        });
+    });
+}
+function useResizeObserver(element) {
+    var _useState = _react.useState(null), rect = _useState[0], setRect = _useState[1];
+    _useIsomorphicEffectDefault.default(function() {
+        if (!element) return;
+        getResizeObserver().observe(element);
+        setRect(element.getBoundingClientRect());
+        targetMap.set(element, function(rect1) {
+            setRect(rect1);
+        });
+        return function() {
+            targetMap.delete(element);
+        };
+    }, [
+        element
+    ]);
+    return rect;
+}
+exports.default = useResizeObserver;
+
+},{"react":"6TuXu","./useIsomorphicEffect":"3psbV","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}]},["9NtYk","k2XMz","dLPEP"], "dLPEP", "parcelRequire315a")
 
 //# sourceMappingURL=index.6701a6e1.js.map
