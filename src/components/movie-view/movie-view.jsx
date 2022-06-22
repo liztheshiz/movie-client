@@ -1,5 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 export class MovieView extends React.Component {
     /*escapeToHome(e) {
@@ -20,27 +24,41 @@ export class MovieView extends React.Component {
         const { movie, onBackClick } = this.props;
 
         return (
-            <div className="movie-view">
-                <div className="movie-poster">
-                    <img src={movie.ImagePath} />
-                </div>
-                <div className="movie-title">
-                    <h2 className="value">{movie.Title}</h2>
-                </div>
-                <div className="movie-description">
-                    <span className="label">Description: </span>
-                    <span className="value">{movie.Description}</span>
-                </div>
-                <div className="movie-genre">
-                    <span className="label">Genre: </span>
-                    <span className="value">{movie.Genre.Name}</span>
-                </div>
-                <div className="movie-director">
-                    <span className="label">Director: </span>
-                    <span className="value">{movie.Director.Name}</span>
-                </div>
-                <button onClick={() => { onBackClick(null); }}>Back</button>
-            </div>
+            <Container className="movie-view">
+                <Row className="justify-content-md-center mt-5">
+                    <Col className="movie-poster" md={10}>
+                        <img src={movie.ImagePath} />
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center my-4">
+                    <Col className="movie-title" md={10}>
+                        <h2 className="value">{movie.Title}</h2>
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center mb-3">
+                    <Col className="movie-director" md={10}>
+                        <span className="label">Director: </span>
+                        <span className="value">{movie.Director.Name}</span>
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center mb-4">
+                    <Col className="movie-genre" md={10}>
+                        <span className="label">Genre: </span>
+                        <span className="value">{movie.Genre.Name}</span>
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center mb-4">
+                    <Col className="movie-description" md={10}>
+                        <span className="label">Description: </span>
+                        <span className="value">{movie.Description}</span>
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center">
+                    <Col md={10}>
+                        <Button variant="secondary" onClick={() => { onBackClick(null); }}>Back</Button>
+                    </Col>
+                </Row>
+            </Container>
         );
     }
 }
