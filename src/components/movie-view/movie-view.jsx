@@ -25,37 +25,37 @@ export class MovieView extends React.Component {
 
         return (
             <Container className="movie-view">
-                <Row className="justify-content-md-center mt-5">
-                    <Col className="movie-poster" md={10}>
-                        <img src={movie.ImagePath} />
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center my-4">
-                    <Col className="movie-title" md={10}>
-                        <h2 className="value">{movie.Title}</h2>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center mb-3">
-                    <Col className="movie-director" md={10}>
-                        <span className="label">Director: </span>
-                        <span className="value">{movie.Director.Name}</span>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center mb-4">
-                    <Col className="movie-genre" md={10}>
-                        <span className="label">Genre: </span>
-                        <span className="value">{movie.Genre.Name}</span>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center mb-4">
-                    <Col className="movie-description" md={10}>
-                        <span className="label">Description: </span>
-                        <span className="value">{movie.Description}</span>
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center">
+                <Row className="mt-5">
                     <Col md={10}>
-                        <Button variant="secondary" onClick={() => { onBackClick(null); }}>Back</Button>
+                        <Row className="mb-4">
+                            <Col md={1}>
+                                <Button variant="secondary" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>
+                            </Col>
+                            <Col className="movie-title" md={11}>
+                                <h2 className="value">{movie.Title}</h2>
+                            </Col>
+                        </Row>
+                        <Row className="justify-content-md-center mb-3">
+                            <Col className="movie-director" md={10}>
+                                <span className="label">Director: </span>
+                                <span className="value">{movie.Director.Name}</span>
+                            </Col>
+                        </Row>
+                        <Row className="justify-content-md-center mb-4">
+                            <Col className="movie-genre" md={10}>
+                                <span className="label">Genre: </span>
+                                <span className="value">{movie.Genre.Name}</span>
+                            </Col>
+                        </Row>
+                        <Row className="justify-content-md-center mb-4">
+                            <Col className="movie-description" md={10}>
+                                <span className="label">Description: </span>
+                                <span className="value">{movie.Description}</span>
+                            </Col>
+                        </Row>
+                    </Col>
+                    <Col className="movie-poster" md={2}>
+                        <img src={movie.ImagePath} />
                     </Col>
                 </Row>
             </Container>
