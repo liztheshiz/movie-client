@@ -958,7 +958,12 @@ var _mainView = require("./components/main-view/main-view");
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+        return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
+            __source: {
+                fileName: "src/index.jsx",
+                lineNumber: 17
+            },
+            __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default, {
                     bg: "dark",
@@ -25493,7 +25498,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                md: 8,
+                sm: 10,
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
                     lineNumber: 54
@@ -26864,7 +26869,7 @@ class MovieView extends _reactDefault.default.Component {
     }*/ render() {
         const { movie , onBackClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
-            className: "movie-view",
+            className: "movie-view border-dark border-3 mt-5",
             __source: {
                 fileName: "src/components/movie-view/movie-view.jsx",
                 lineNumber: 27
@@ -26879,7 +26884,7 @@ class MovieView extends _reactDefault.default.Component {
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                        md: 10,
+                        sm: 10,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 29
@@ -26895,7 +26900,7 @@ class MovieView extends _reactDefault.default.Component {
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                        md: 1,
+                                        xs: 1,
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
                                             lineNumber: 31
@@ -26917,7 +26922,7 @@ class MovieView extends _reactDefault.default.Component {
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         className: "movie-title",
-                                        md: 11,
+                                        xs: 11,
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
                                             lineNumber: 34
@@ -26944,7 +26949,7 @@ class MovieView extends _reactDefault.default.Component {
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                                     className: "movie-director",
-                                    md: 10,
+                                    lg: 10,
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
                                         lineNumber: 39
@@ -26981,7 +26986,7 @@ class MovieView extends _reactDefault.default.Component {
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                                     className: "movie-genre",
-                                    md: 10,
+                                    lg: 10,
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
                                         lineNumber: 45
@@ -27018,7 +27023,7 @@ class MovieView extends _reactDefault.default.Component {
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                                     className: "movie-description",
-                                    md: 10,
+                                    lg: 10,
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
                                         lineNumber: 51
@@ -27050,7 +27055,7 @@ class MovieView extends _reactDefault.default.Component {
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                         className: "movie-poster",
-                        md: 2,
+                        sm: 2,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 57
@@ -30457,14 +30462,16 @@ function LoginView(props) {
                 })
             }),
             /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                className: "justify-content-md-center",
+                className: "justify-content-sm-center",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
                     lineNumber: 28
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                    md: 4,
+                    sm: 8,
+                    md: 6,
+                    lg: 4,
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
                         lineNumber: 29
@@ -30536,7 +30543,7 @@ function LoginView(props) {
                             }),
                             /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                 className: "mt-4",
-                                variant: "primary",
+                                variant: "dark",
                                 type: "submit",
                                 onClick: handleSubmit,
                                 __source: {
@@ -30551,7 +30558,7 @@ function LoginView(props) {
                 })
             }),
             /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                className: "justify-content-md-center mt-3",
+                className: "justify-content-sm-center mt-3",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
                     lineNumber: 43

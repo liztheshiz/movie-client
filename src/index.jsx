@@ -14,8 +14,8 @@ import { MainView } from './components/main-view/main-view';
 class MyFlixApplication extends React.Component {
     render() {
         return (
-            <>
-                <Navbar bg="dark" variant="dark" expand="md">
+            <div>
+                < Navbar bg="dark" variant="dark" expand="md" >
                     <Container>
                         <Navbar.Brand>CinemaDatabase</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -27,11 +27,11 @@ class MyFlixApplication extends React.Component {
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
-                </Navbar>
+                </Navbar >
                 <Container>
                     <MainView />
                 </Container>
-            </>
+            </div>
         );
     }
 }

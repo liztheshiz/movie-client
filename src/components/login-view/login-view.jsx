@@ -25,8 +25,8 @@ export function LoginView(props) {
                     <h1>Welcome to CinemaDatabase!</h1>
                 </Col>
             </Row>
-            <Row className="justify-content-md-center">
-                <Col md={4}>
+            <Row className="justify-content-sm-center">
+                <Col sm={8} md={6} lg={4}>
                     <Form>
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
@@ -40,7 +40,7 @@ export function LoginView(props) {
                     </Form>
                 </Col>
             </Row>
-            <Row className="justify-content-md-center mt-3">
+            <Row className="justify-content-sm-center mt-3">
                 <Col className="text-center" md={4}>
                     <span>New user?</span><Button variant="link">Register here</Button>
                 </Col>

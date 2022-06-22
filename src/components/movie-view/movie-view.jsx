@@ -24,37 +24,37 @@ export class MovieView extends React.Component {
         const { movie, onBackClick } = this.props;
 
         return (
-            <Container className="movie-view">
+            <Container className="movie-view border-dark border-3 mt-5">
                 <Row className="mt-5">
-                    <Col md={10}>
+                    <Col sm={10}>
                         <Row className="mb-4">
-                            <Col md={1}>
+                            <Col xs={1}>
                                 <Button variant="outline-dark" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>
                             </Col>
-                            <Col className="movie-title" md={11}>
+                            <Col className="movie-title" xs={11}>
                                 <h2 className="value">{movie.Title}</h2>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center mb-3">
-                            <Col className="movie-director" md={10}>
+                            <Col className="movie-director" lg={10}>
                                 <span className="label">Director: </span>
                                 <span className="value">{movie.Director.Name}</span>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center mb-4">
-                            <Col className="movie-genre" md={10}>
+                            <Col className="movie-genre" lg={10}>
                                 <span className="label">Genre: </span>
                                 <span className="value">{movie.Genre.Name}</span>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center mb-4">
-                            <Col className="movie-description" md={10}>
+                            <Col className="movie-description" lg={10}>
                                 <span className="label">Description: </span>
                                 <span className="value">{movie.Description}</span>
                             </Col>
                         </Row>
                     </Col>
-                    <Col className="movie-poster" md={2}>
+                    <Col className="movie-poster" sm={2}>
                         <img src={movie.ImagePath} />
                     </Col>
                 </Row>
