@@ -25520,7 +25520,9 @@ class MainView extends _reactDefault.default.Component {
             },
             __self: this,
             children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                    md: 3,
+                    sm: 6,
+                    md: 4,
+                    lg: 3,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 64
@@ -25573,7 +25575,7 @@ class MovieCard extends _reactDefault.default.Component {
     render() {
         const { movie , onMovieClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
-            className: "movie-card my-3" /*style={{ width: '18rem' }}*/ ,
+            className: "movie-card my-3 border-dark border-3" /*style={{ width: '18rem' }}*/ ,
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
                 lineNumber: 13
@@ -25613,10 +25615,10 @@ class MovieCard extends _reactDefault.default.Component {
                             children: movie.Description
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                            variant: "dark",
                             onClick: ()=>{
                                 onMovieClick(movie);
                             },
-                            variant: "secondary",
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
                                 lineNumber: 18
