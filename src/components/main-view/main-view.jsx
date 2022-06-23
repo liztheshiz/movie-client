@@ -26,11 +26,26 @@ export class MainView extends React.Component {
             });
     }
 
-    // When user successfully logs in, sets 'user' prop to that particular user
-    onLoggedIn(user) {
+    getMovies(token) {
+        axios.get('https://cinemadatabase.herokuapp.com/movies', {
+            headers: { Authorization: `Bearer ${token}` }
+        }).then(res => {
+            this.setState({
+                movies: res.data
+            });
+        }).catch(err => console.log(err));
+    }
+
+    // When user successfully logs in, saves user in the state, and user + JWT in local storage
+    onLoggedIn(authData) {
+        console.log(authData);
         this.setState({
-            user
+            user: authData.user.Username
         });
+
+        localStorage.setItem('token', authData.token);
+        localStorage.setItem('user', authData.user.Username);
+        this.getMovies(authData.token);
     }
 
     // When a movie button is clicked, sets selectedMovie to that movie

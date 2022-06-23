@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -12,10 +13,16 @@ export function LoginView(props) {
 
     const handleSubmit = (e) => {
         e.preventDefault(); // prevents page from refreshing when clicking submit button
-        console.log(username, password);
         /* Send a request to the server for authentication */
-        /* then call props.onLoggedIn(username) */
-        props.onLoggedIn(username);
+        axios.post('https://cinemadatabase.herokuapp.com/login', {
+            Username: username,
+            Password: password
+        }).then(res => {
+            const data = res.data;
+            props.onLoggedIn(data);
+        }).catch(err => {
+            console.log('no such user')
+        });
     };
 
     return (
