@@ -8,6 +8,9 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
 export class MainView extends React.Component {
+    // CUSTOM METHODS
+
+    // Gets movie list from database and adds list to local 'movies' var
     getMovies(token) {
         axios.get('https://cinemadatabase.herokuapp.com/movies', {
             headers: { Authorization: `Bearer ${token}` }
@@ -36,6 +39,9 @@ export class MainView extends React.Component {
             selectedMovie: newSelectedMovie
         });
     }
+
+
+    // LIFECYCLE METHODS
 
     constructor() {
         super();
