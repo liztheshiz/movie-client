@@ -65,6 +65,12 @@ export class MainView extends React.Component {
             <Router>
                 <Row className="justify-content-md-center movies-list">
                     <Route exact path="/" render={() => {
+                        return (
+                            <div>testing</div>
+                        )
+                    }} />
+
+                    <Route exact path="/filler" render={() => {
                         return movies.map(m => (
                             <Col sm={6} md={4} lg={3} key={m._id}>
                                 <MovieCard movie={m} />
