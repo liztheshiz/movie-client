@@ -25465,6 +25465,13 @@ class MainView extends _reactDefault.default.Component {
         localStorage.setItem('user', authData.user.Username);
         this.getMovies(authData.token);
     }
+    onLoggedOut() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        this.setState({
+            user: null
+        });
+    }
     // When a movie button is clicked, sets selectedMovie to that movie
     setSelectedMovie(newSelectedMovie) {
         this.setState({
@@ -25488,7 +25495,7 @@ class MainView extends _reactDefault.default.Component {
             ,
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 59
+                lineNumber: 65
             },
             __self: this
         }));
@@ -25496,7 +25503,7 @@ class MainView extends _reactDefault.default.Component {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 61
+                lineNumber: 67
             },
             __self: this
         }));
@@ -25504,14 +25511,14 @@ class MainView extends _reactDefault.default.Component {
             className: "justify-content-md-center main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 65
+                lineNumber: 71
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                 sm: 10,
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 66
+                    lineNumber: 72
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -25521,7 +25528,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 67
+                        lineNumber: 73
                     },
                     __self: this
                 })
@@ -25531,7 +25538,7 @@ class MainView extends _reactDefault.default.Component {
             className: "justify-content-md-center movies-list",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 74
+                lineNumber: 80
             },
             __self: this,
             children: movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
@@ -25540,7 +25547,7 @@ class MainView extends _reactDefault.default.Component {
                     lg: 3,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 76
+                        lineNumber: 82
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -25550,7 +25557,7 @@ class MainView extends _reactDefault.default.Component {
                         },
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 77
+                            lineNumber: 83
                         },
                         __self: this
                     }, movie._id)
