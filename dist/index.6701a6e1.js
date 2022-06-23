@@ -25540,7 +25540,7 @@ class MainView extends _reactDefault.default.Component {
                         path: "/movies/:movieId",
                         render: ({ match  })=>{
                             return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                md: 8,
+                                md: 10,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
                                     movie: movies.find((m)=>m._id === match.params.movieId
                                     )

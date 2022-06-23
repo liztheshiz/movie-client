@@ -73,7 +73,7 @@ export class MainView extends React.Component {
                     }} />
                     <Route path="/movies/:movieId" render={({ match }) => {
                         return (
-                            <Col md={8}>
+                            <Col md={10}>
                                 <   MovieView movie={movies.find(m => m._id === match.params.movieId)} />
                             </Col>
                         )
