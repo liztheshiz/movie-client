@@ -3,7 +3,8 @@ import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
@@ -64,26 +65,28 @@ export class MainView extends React.Component {
         return (
             <Router>
                 <Row className="justify-content-md-center movies-list">
-                    <Route exact path="/" render={() => {
-                        return (
-                            <div>testing</div>
-                        )
-                    }} />
+                    <Switch>
+                        <Route exact path="/" render={() => {
+                            return (
+                                <div>testing</div>
+                            )
+                        }} />
 
-                    <Route exact path="/filler" render={() => {
-                        return movies.map(m => (
-                            <Col sm={6} md={4} lg={3} key={m._id}>
-                                <MovieCard movie={m} />
-                            </Col>
-                        ))
-                    }} />
-                    <Route path="/movies/:movieId" render={({ match }) => {
-                        return (
-                            <Col md={10}>
-                                <   MovieView movie={movies.find(m => m._id === match.params.movieId)} />
-                            </Col>
-                        )
-                    }} />
+                        <Route exact path="/filler" render={() => {
+                            return movies.map(m => (
+                                <Col sm={6} md={4} lg={3} key={m._id}>
+                                    <MovieCard movie={m} />
+                                </Col>
+                            ))
+                        }} />
+                        <Route path="/movies/:movieId" render={({ match }) => {
+                            return (
+                                <Col md={10}>
+                                    <   MovieView movie={movies.find(m => m._id === match.params.movieId)} />
+                                </Col>
+                            )
+                        }} />
+                    </Switch>
                 </Row>
             </Router>
         );
