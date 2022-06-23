@@ -8,24 +8,6 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
 export class MainView extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            movies: [],
-            selectedMovie: null,
-            user: null
-        };
-    }
-
-    componentDidMount() {
-        axios.get('https://cinemadatabase.herokuapp.com/movies')
-            .then(res => {
-                this.setState({ movies: res.data });
-            }).catch(err => {
-                console.log(err);
-            });
-    }
-
     getMovies(token) {
         axios.get('https://cinemadatabase.herokuapp.com/movies', {
             headers: { Authorization: `Bearer ${token}` }
@@ -55,6 +37,15 @@ export class MainView extends React.Component {
         });
     }
 
+    constructor() {
+        super();
+        this.state = {
+            movies: [],
+            selectedMovie: null,
+            user: null
+        };
+    }
+
     render() {
         const { movies, selectedMovie, user } = this.state;
 
@@ -82,5 +73,14 @@ export class MainView extends React.Component {
                 )}
             </Row>
         );
+    }
+
+    componentDidMount() {
+        axios.get('https://cinemadatabase.herokuapp.com/movies')
+            .then(res => {
+                this.setState({ movies: res.data });
+            }).catch(err => {
+                console.log(err);
+            });
     }
 }
