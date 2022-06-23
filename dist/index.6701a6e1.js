@@ -25500,7 +25500,8 @@ class MainView extends _reactDefault.default.Component {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 62
             },
-            __self: this
+            __self: this,
+            children: "Loading..."
         }));
         return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
             __source: {
