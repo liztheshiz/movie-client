@@ -82,11 +82,12 @@ export class MainView extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('https://cinemadatabase.herokuapp.com/movies')
-            .then(res => {
-                this.setState({ movies: res.data });
-            }).catch(err => {
-                console.log(err);
+        let accessToken = localStorage.getItem('token');
+        if (accessToken) {
+            this.setState({
+                user: localStorage.getItem('user')
             });
+            this.getMovies(accessToken);
+        }
     }
 }

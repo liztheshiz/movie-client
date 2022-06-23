@@ -25559,13 +25559,13 @@ class MainView extends _reactDefault.default.Component {
         }));
     }
     componentDidMount() {
-        _axiosDefault.default.get('https://cinemadatabase.herokuapp.com/movies').then((res)=>{
+        let accessToken = localStorage.getItem('token');
+        if (accessToken) {
             this.setState({
-                movies: res.data
+                user: localStorage.getItem('user')
             });
-        }).catch((err)=>{
-            console.log(err);
-        });
+            this.getMovies(accessToken);
+        }
     }
 }
 
