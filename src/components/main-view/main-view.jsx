@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 
+import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
@@ -58,6 +59,7 @@ export class MainView extends React.Component {
 
         return (
             <Router>
+                <Navbar />
                 <Row className="justify-content-md-center movies-list">
                     <Switch>
                         <Route exact path="/" render={() => {

@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
-import { MainView } from '../main-view/main-view';
+// import { MainView } from '../main-view/main-view';
 
 export class Navbar extends React.Component {
     // CUSTOM METHODS
