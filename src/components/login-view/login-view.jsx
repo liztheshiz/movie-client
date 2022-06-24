@@ -13,19 +13,52 @@ import { Link } from 'react-router-dom';
 export function LoginView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [usernameErr, setUsernameErr] = useState('');
+    const [passwordErr, setPasswordErr] = useState('');
+
+    // validate user inputs
+    const validate = () => {
+        let isReq = true;
+        setUsernameErr('');
+        setPasswordErr('');
+
+        if (!username) {
+            setUsernameErr('Username Required');
+            isReq = false;
+        } else if (username.length < 5) {
+            setUsernameErr('Username must be 5 characters long');
+            isReq = false;
+        }
+
+        if (!password) {
+            setPasswordErr('Password Required');
+            isReq = false;
+        } else if (password.length < 8) {
+            setPasswordErr('Password must be 8 characters long');
+            isReq = false;
+        }
+
+        return isReq;
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault(); // prevents page from refreshing when clicking submit button
-        /* Send a request to the server for authentication */
-        axios.post('https://cinemadatabase.herokuapp.com/login', {
-            Username: username,
-            Password: password
-        }).then(res => {
-            const data = res.data;
-            props.onLoggedIn(data);
-        }).catch(err => {
-            console.log('no such user')
-        });
+
+        // Only sends axios request if all fields pass client-side validation check
+        const isReq = validate();
+        if (isReq) {
+            /* Send a request to the server for authentication */
+            axios.post('https://cinemadatabase.herokuapp.com/login', {
+                Username: username,
+                Password: password
+            }).then(res => {
+                const data = res.data;
+                props.onLoggedIn(data);
+            }).catch(err => {
+                console.log('no such user');
+                alert('Username or password does not exist! Please try again');
+            });
+        }
     };
 
     return (
@@ -41,10 +74,12 @@ export function LoginView(props) {
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
                             <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+                            {usernameErr && <p>{usernameErr}</p>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formPassword">
                             <Form.Label>Password:</Form.Label>
                             <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+                            {passwordErr && <p>{passwordErr}</p>}
                         </Form.Group>
                         <Button className="mt-4" variant="dark" type="submit" onClick={handleSubmit}>Login</Button>
                     </Form>
