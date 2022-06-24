@@ -947,115 +947,38 @@ var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
-var _navbar = require("react-bootstrap/Navbar");
-var _navbarDefault = parcelHelpers.interopDefault(_navbar);
-var _nav = require("react-bootstrap/Nav");
-var _navDefault = parcelHelpers.interopDefault(_nav);
-// Import statement to indicate that you need to bundle `./index.scss`
+// Import custom styling
 var _indexScss = require("./index.scss");
-// Import MainView component
+// Import components
 var _mainView = require("./components/main-view/main-view");
+var _navbar = require("./components/navbar/navbar");
 // Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 17
+                lineNumber: 16
             },
             __self: this,
             children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default, {
-                    bg: "dark",
-                    variant: "dark",
-                    expand: "md",
+                /*#__PURE__*/ _jsxRuntime.jsx(_navbar.Navbar, {
+                    __source: {
+                        fileName: "src/index.jsx",
+                        lineNumber: 17
+                    },
+                    __self: this
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
                     __source: {
                         fileName: "src/index.jsx",
                         lineNumber: 18
                     },
                     __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
-                        __source: {
-                            fileName: "src/index.jsx",
-                            lineNumber: 19
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
-                                __source: {
-                                    fileName: "src/index.jsx",
-                                    lineNumber: 20
-                                },
-                                __self: this,
-                                children: "CinemaDatabase"
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Toggle, {
-                                "aria-controls": "basic-navbar-nav",
-                                __source: {
-                                    fileName: "src/index.jsx",
-                                    lineNumber: 21
-                                },
-                                __self: this
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Collapse, {
-                                id: "basic-navbar-nav",
-                                className: "justify-content-end",
-                                __source: {
-                                    fileName: "src/index.jsx",
-                                    lineNumber: 22
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_navDefault.default, {
-                                    className: "me-auto",
-                                    __source: {
-                                        fileName: "src/index.jsx",
-                                        lineNumber: 23
-                                    },
-                                    __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
-                                            href: "#",
-                                            __source: {
-                                                fileName: "src/index.jsx",
-                                                lineNumber: 24
-                                            },
-                                            __self: this,
-                                            children: "About"
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
-                                            href: "#",
-                                            __source: {
-                                                fileName: "src/index.jsx",
-                                                lineNumber: 25
-                                            },
-                                            __self: this,
-                                            children: "Profile"
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
-                                            href: "#",
-                                            __source: {
-                                                fileName: "src/index.jsx",
-                                                lineNumber: 26
-                                            },
-                                            __self: this,
-                                            children: "Logout"
-                                        })
-                                    ]
-                                })
-                            })
-                        ]
-                    })
-                }),
-                /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
-                    __source: {
-                        fileName: "src/index.jsx",
-                        lineNumber: 31
-                    },
-                    __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
                         __source: {
                             fileName: "src/index.jsx",
-                            lineNumber: 32
+                            lineNumber: 19
                         },
                         __self: this
                     })
@@ -1074,7 +997,7 @@ _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElemen
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","./components/main-view/main-view":"2zHas","react-bootstrap/Container":"2PRIq","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Nav":"io07g"}],"8xIwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-dom":"gkWJK","./index.scss":"jUTZ8","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","./components/main-view/main-view":"2zHas","react-bootstrap/Container":"2PRIq","./components/navbar/navbar":"63yS7"}],"8xIwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -33736,7 +33659,190 @@ $RefreshReg$(_c, "RegistrationView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"eYZQl":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"63yS7":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1bb2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1bb2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Navbar", ()=>Navbar
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactRouterDom = require("react-router-dom");
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _navbar = require("react-bootstrap/Navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _nav = require("react-bootstrap/Nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
+class Navbar extends _reactDefault.default.Component {
+    // CUSTOM METHODS
+    getToken() {
+        let accessToken = localStorage.getItem('token');
+        if (accessToken) return accessToken;
+        else return false;
+    }
+    onLoggedOut() {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
+        MainView.setState({
+            user: null
+        });
+    }
+    // LIFECYCLE METHODS
+    render() {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
+            __source: {
+                fileName: "src/components/navbar/navbar.jsx",
+                lineNumber: 33
+            },
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default, {
+                bg: "dark",
+                variant: "dark",
+                expand: "md",
+                __source: {
+                    fileName: "src/components/navbar/navbar.jsx",
+                    lineNumber: 34
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
+                    __source: {
+                        fileName: "src/components/navbar/navbar.jsx",
+                        lineNumber: 35
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
+                            href: "#",
+                            __source: {
+                                fileName: "src/components/navbar/navbar.jsx",
+                                lineNumber: 36
+                            },
+                            __self: this,
+                            children: "CinemaDatabase"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Toggle, {
+                            "aria-controls": "basic-navbar-nav",
+                            __source: {
+                                fileName: "src/components/navbar/navbar.jsx",
+                                lineNumber: 37
+                            },
+                            __self: this
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Switch, {
+                            __source: {
+                                fileName: "src/components/navbar/navbar.jsx",
+                                lineNumber: 38
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                                    exact: true,
+                                    path: "/",
+                                    render: ()=>{
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Collapse, {
+                                            id: "basic-navbar-nav",
+                                            className: "justify-content-end",
+                                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_navDefault.default, {
+                                                className: "me-auto",
+                                                children: [
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                                        href: "#",
+                                                        children: "About"
+                                                    }),
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                                        href: "#",
+                                                        children: "Profile"
+                                                    }),
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                                        onClick: ()=>onLoggedOut()
+                                                        ,
+                                                        children: "Logout"
+                                                    })
+                                                ]
+                                            })
+                                        });
+                                    },
+                                    __source: {
+                                        fileName: "src/components/navbar/navbar.jsx",
+                                        lineNumber: 39
+                                    },
+                                    __self: this
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                                    path: "/moves/:movieId",
+                                    render: ()=>{
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Collapse, {
+                                            id: "basic-navbar-nav",
+                                            className: "justify-content-end",
+                                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_navDefault.default, {
+                                                className: "me-auto",
+                                                children: [
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                                        href: "#",
+                                                        children: "About"
+                                                    }),
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                                        href: "#",
+                                                        children: "Profile"
+                                                    }),
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                                        onClick: ()=>onLoggedOut()
+                                                        ,
+                                                        children: "Logout"
+                                                    })
+                                                ]
+                                            })
+                                        });
+                                    },
+                                    __source: {
+                                        fileName: "src/components/navbar/navbar.jsx",
+                                        lineNumber: 48
+                                    },
+                                    __self: this
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                                    exact: true,
+                                    path: "/login",
+                                    render: ()=>{
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Collapse, {
+                                            id: "basic-navbar-nav",
+                                            className: "justify-content-end",
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default, {
+                                                className: "me-auto",
+                                                children: /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                                    children: "test"
+                                                })
+                                            })
+                                        });
+                                    },
+                                    __source: {
+                                        fileName: "src/components/navbar/navbar.jsx",
+                                        lineNumber: 57
+                                    },
+                                    __self: this
+                                })
+                            ]
+                        })
+                    ]
+                })
+            })
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$1bb2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-router-dom":"cpyQW","react-bootstrap/Container":"2PRIq","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Nav":"io07g","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"eYZQl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");

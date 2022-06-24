@@ -1,39 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
 
-// Import statement to indicate that you need to bundle `./index.scss`
+// Import custom styling
 import './index.scss';
 
-// Import MainView component
+// Import components
 import { MainView } from './components/main-view/main-view';
+import { Navbar } from './components/navbar/navbar';
 
 // Main component (will eventually use all the others)
 class MyFlixApplication extends React.Component {
     render() {
         return (
             <div>
-                < Navbar bg="dark" variant="dark" expand="md" >
-                    <Container>
-                        <Navbar.Brand>CinemaDatabase</Navbar.Brand>
-                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-                            <Nav className="me-auto">
-                                <Nav.Link href="#">About</Nav.Link>
-                                <Nav.Link href="#">Profile</Nav.Link>
-                                <Nav.Link href="#">Logout</Nav.Link>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar >
+                <Navbar />
                 <Container>
                     <MainView />
                 </Container>
             </div>
         );
     }
+
+    /*
+    render() {
+        return (
+            <Navbar bg="dark" variant="dark" expand="md" >
+                <Container>
+                    <Navbar.Brand>CinemaDatabase</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+                        <Nav className="me-auto">
+                            <Nav.Link href="#">About</Nav.Link>
+                            <Nav.Link href="#">Profile</Nav.Link>
+                            <Nav.Link href="#">Logout</Nav.Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar >
+        );
+    }
+    */
 }
 
 // Finds the root of your app
