@@ -1,5 +1,8 @@
 import React from 'react';
 
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
+
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -31,13 +34,24 @@ export class Navbar extends React.Component {
                 <Container>
                     <Navbar.Brand href="#">CinemaDatabase</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-                        <Nav className="me-auto">
-                            <Nav.Link href="#">About</Nav.Link>
-                            <Nav.Link href="#">Profile</Nav.Link>
-                            <Nav.Link onClick={() => onLoggedOut()}>Logout</Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
+                    <Switch>
+                        <Route exact path="/" render={() => {
+                            <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+                                <Nav className="me-auto">
+                                    <Nav.Link href="#">About</Nav.Link>
+                                    <Nav.Link href="#">Profile</Nav.Link>
+                                    <Nav.Link onClick={() => onLoggedOut()}>Logout</Nav.Link>
+                                </Nav>
+                            </Navbar.Collapse>
+                        }} />
+                        <Route exact path="/login" render={() => {
+                            <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+                                <Nav className="me-auto">
+                                    <Nav.Link>test</Nav.Link>
+                                </Nav>
+                            </Navbar.Collapse>
+                        }} />
+                    </Switch>
                 </Container>
             </Navbar >
         )
