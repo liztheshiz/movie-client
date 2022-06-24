@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
@@ -70,7 +71,7 @@ export class MainView extends React.Component {
                             ))
                         }} />
                         <Route exact path="/register" render={() => {
-                            return <RegistrationView />;
+                            return <RegistrationView onLoggedIn={user => this.onLoggedIn(user)} />;
                         }} />
                         <Route path="/movies/:movieId" render={({ match, history }) => {
                             return (
