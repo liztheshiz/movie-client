@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
+import { Link } from 'react-router-dom';
 
 export function LoginView(props) {
     const [username, setUsername] = useState('');
@@ -49,7 +52,7 @@ export function LoginView(props) {
             </Row>
             <Row className="justify-content-sm-center mt-3">
                 <Col className="text-center" md={4}>
-                    <span>New user?</span><Button variant="link">Register here</Button>
+                    <span>New user?</span><Link to="/register"><Button variant="link">Register here</Button></Link>
                 </Col>
             </Row>
         </Container>
