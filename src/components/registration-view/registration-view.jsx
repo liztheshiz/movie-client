@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
@@ -10,14 +15,11 @@ export function RegistrationView(props) {
     const handleSubmit = (e) => {
         e.preventDefault(); // prevents page from refreshing when clicking submit button
         console.log(username, password);
-        /* Send a request to the server for authentication */
-        /* then call props.onLoggedIn(username) */
-        props.onLoggedIn(username);
     };
 
     return (
         <div className="registration-view">
-            <h2>Register:</h2>
+            <h2>New user registeration:</h2>
             <Form style={{ width: "12rem" }}>
                 <Form.Group controlId="formUsername">
                     <Form.Label>Username:</Form.Label>
@@ -39,8 +41,4 @@ export function RegistrationView(props) {
             </Form>
         </div>
     );
-}
-
-RegistrationView.propTypes = {
-    onLoggedIn: PropTypes.func.isRequired
 }

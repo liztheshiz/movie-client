@@ -69,6 +69,9 @@ export class MainView extends React.Component {
                                 </Col>
                             ))
                         }} />
+                        <Route exact path="/register" render={() => {
+                            return <RegistrationView />;
+                        }} />
                         <Route path="/movies/:movieId" render={({ match, history }) => {
                             return (
                                 <Col md={10}>
