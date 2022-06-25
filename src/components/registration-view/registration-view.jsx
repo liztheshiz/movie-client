@@ -8,6 +8,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import { Link } from 'react-router-dom';
+
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -125,6 +127,11 @@ export function RegistrationView(props) {
                         </Form.Group>
                         <Button className="mt-4" variant="dark" type="submit" onClick={handleRegister}>Register</Button>
                     </Form>
+                </Col>
+            </Row>
+            <Row className="justify-content-sm-center mt-3">
+                <Col className="text-center" md={4}>
+                    <span>Already have an account?</span><Link to="/"><Button variant="link">Return to login</Button></Link>
                 </Col>
             </Row>
         </Container>
