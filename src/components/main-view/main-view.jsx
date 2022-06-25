@@ -92,6 +92,11 @@ export class MainView extends React.Component {
                                 </Col>
                             )
                         }} />
+                        <Route path={`users/${user}`} render={() => {
+                            return (
+                                <ProfileView user={user} />
+                            )
+                        }} />
                     </Switch>
                 </Row>
             </Router>
