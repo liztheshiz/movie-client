@@ -92,8 +92,6 @@ export function RegistrationView(props) {
     };
 
 
-
-
     return (
         <Container className="registration-view mt-5">
             <Row className="mb-5">
