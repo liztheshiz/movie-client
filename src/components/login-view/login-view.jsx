@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
 
 import { Link } from 'react-router-dom';
 
@@ -26,7 +27,7 @@ export function LoginView(props) {
             setUsernameErr('Username Required');
             isReq = false;
         } else if (username.length < 5) {
-            setUsernameErr('Username must be 5 characters long');
+            setUsernameErr('Username must be at least 5 characters long');
             isReq = false;
         }
 
@@ -34,7 +35,7 @@ export function LoginView(props) {
             setPasswordErr('Password Required');
             isReq = false;
         } else if (password.length < 8) {
-            setPasswordErr('Password must be 8 characters long');
+            setPasswordErr('Password must be at least 8 characters long');
             isReq = false;
         }
 
@@ -57,6 +58,11 @@ export function LoginView(props) {
             }).catch(err => {
                 console.log('no such user');
                 alert('Username or password does not exist! Please try again');
+                /*return (
+                    <Alert key='danger' variant='danger'>
+                        Username or password does not exist! Please try again.
+                    </Alert>
+                );*/
             });
         }
     };

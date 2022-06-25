@@ -13,24 +13,82 @@ export function RegistrationView(props) {
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
     const [birthday, setBirthday] = useState('');
+    const [usernameErr, setUsernameErr] = useState('');
+    const [passwordErr, setPasswordErr] = useState('');
+    const [emailErr, setEmailErr] = useState('');
+    const [birthdayErr, setBirthdayErr] = useState('');
+
+    // CUSTOM METHODS
+
+    const isAlphaNumeric = str => /^[a-z0-9]+$/gi.test(str);
+
+    // Validate user inputs
+    const validate = () => {
+        let isReq = true;
+        setUsernameErr('');
+        setPasswordErr('');
+        setEmailErr('');
+
+        if (!username) {
+            setUsernameErr('Username Required');
+            isReq = false;
+        } else if (username.length < 5) {
+            setUsernameErr('Username must be at least 5 characters long');
+            isReq = false;
+        } else if (!isAlphaNumeric(username)) {
+            setUsernameErr('Username must include only alphanumeric characters');
+            isReq = false;
+        }
+
+        if (!password) {
+            setPasswordErr('Password Required');
+            isReq = false;
+        } else if (password.length < 8) {
+            setPasswordErr('Password must be at least 8 characters long');
+            isReq = false;
+        }
+
+        if (!email) {
+            setEmailErr('Email Required');
+            isReq = false;
+        } else if (email.indexOf('@') === -1) {
+            setEmailErr('Email is not valid');
+            isReq = false;
+        }
+
+        //
+        // CHECK IF BIRTHDAY MATCHES FORMAT MM/DD/YY HERE!!
+        //
+
+        return isReq;
+    }
 
     const handleRegister = (e) => {
         e.preventDefault(); // prevents page from refreshing when clicking submit button
-        // Adds new user to database, then logs them in
-        let request = {
-            Username: username,
-            Password: password,
-            Email: email,
-            Birthday: birthday
-        };
-        console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}; Req: ${request}`);
-        axios.post('https://cinemadatabase.herokuapp.com/users', request).then(res => {
-            const data = res.data;
-            props.onLoggedIn(data);
-        }).catch(err => {
-            console.log(err)
-        });
+
+        // Only sends axios request if all fields pass client-side validation check
+        const isReq = validate();
+        if (isReq) {
+            // Adds new user to database, then logs them in
+            let request = {
+                Username: username,
+                Password: password,
+                Email: email,
+                Birthday: birthday
+            };
+            // NEXT LINE FOR DEBUGGING!!
+            console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}; Req: ${request}`);
+            axios.post('https://cinemadatabase.herokuapp.com/users', request).then(res => {
+                const data = res.data;
+                props.onLoggedIn(data);
+            }).catch(err => {
+                console.log(err)
+            });
+        }
     };
+
+
+
 
     return (
         <Container className="registration-view mt-5">
@@ -45,26 +103,24 @@ export function RegistrationView(props) {
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
                             <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
-                            <Form.Text className="text-muted">
-                                Username must be at least 5 characters long and include only alphanumeric characters.
-                            </Form.Text>
+                            {usernameErr && <Form.Text className="text-muted">{usernameErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formPassword">
                             <Form.Label>Password:</Form.Label>
                             <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
-                            <Form.Text className="text-muted">
-                                Password must be at least 8 characters long and include only alphanumeric characters.
-                            </Form.Text>
+                            {passwordErr && <Form.Text className="text-muted">{passwordErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formEmail">
                             <Form.Label>Email:</Form.Label>
                             <Form.Control type="email" onChange={e => setEmail(e.target.value)} />
+                            {emailErr && <Form.Text className="text-muted">{emailErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formBirthday">
                             <Form.Label>Birthday:</Form.Label>
+                            <Form.Text> &#x28;This field is optional&#x29;</Form.Text>
                             <Form.Control type="string" onChange={e => setBirthday(e.target.value)} />
                             <Form.Text className="text-muted">
-                                &#x28;This field is optional.&#x29; Please use format MM/DD/YY.
+                                Please use format MM/DD/YY
                             </Form.Text>
                         </Form.Group>
                         <Button className="mt-4" variant="dark" type="submit" onClick={handleRegister}>Register</Button>

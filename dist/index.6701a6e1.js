@@ -32717,6 +32717,8 @@ var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
+var _alert = require("react-bootstrap/Alert");
+var _alertDefault = parcelHelpers.interopDefault(_alert);
 var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 function LoginView(props) {
@@ -32734,14 +32736,14 @@ function LoginView(props) {
             setUsernameErr('Username Required');
             isReq = false;
         } else if (username.length < 5) {
-            setUsernameErr('Username must be 5 characters long');
+            setUsernameErr('Username must be at least 5 characters long');
             isReq = false;
         }
         if (!password) {
             setPasswordErr('Password Required');
             isReq = false;
         } else if (password.length < 8) {
-            setPasswordErr('Password must be 8 characters long');
+            setPasswordErr('Password must be at least 8 characters long');
             isReq = false;
         }
         return isReq;
@@ -32759,13 +32761,17 @@ function LoginView(props) {
         }).catch((err)=>{
             console.log('no such user');
             alert('Username or password does not exist! Please try again');
-        });
+        /*return (
+                    <Alert key='danger' variant='danger'>
+                        Username or password does not exist! Please try again.
+                    </Alert>
+                );*/ });
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
         className: "login-view mt-5",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 65
+            lineNumber: 71
         },
         __self: this,
         children: [
@@ -32773,20 +32779,20 @@ function LoginView(props) {
                 className: "mb-5",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 66
+                    lineNumber: 72
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                     className: "text-center",
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 67
+                        lineNumber: 73
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 68
+                            lineNumber: 74
                         },
                         __self: this,
                         children: "Welcome to CinemaDatabase!"
@@ -32797,7 +32803,7 @@ function LoginView(props) {
                 className: "justify-content-sm-center",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 71
+                    lineNumber: 77
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
@@ -32806,13 +32812,13 @@ function LoginView(props) {
                     lg: 4,
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 72
+                        lineNumber: 78
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 73
+                            lineNumber: 79
                         },
                         __self: this,
                         children: [
@@ -32820,14 +32826,14 @@ function LoginView(props) {
                                 controlId: "formUsername",
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 74
+                                    lineNumber: 80
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 75
+                                            lineNumber: 81
                                         },
                                         __self: this,
                                         children: "Username:"
@@ -32838,14 +32844,14 @@ function LoginView(props) {
                                         ,
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 76
+                                            lineNumber: 82
                                         },
                                         __self: this
                                     }),
                                     usernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 77
+                                            lineNumber: 83
                                         },
                                         __self: this,
                                         children: usernameErr
@@ -32857,14 +32863,14 @@ function LoginView(props) {
                                 controlId: "formPassword",
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 79
+                                    lineNumber: 85
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 80
+                                            lineNumber: 86
                                         },
                                         __self: this,
                                         children: "Password:"
@@ -32875,14 +32881,14 @@ function LoginView(props) {
                                         ,
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 81
+                                            lineNumber: 87
                                         },
                                         __self: this
                                     }),
                                     passwordErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 82
+                                            lineNumber: 88
                                         },
                                         __self: this,
                                         children: passwordErr
@@ -32896,7 +32902,7 @@ function LoginView(props) {
                                 onClick: handleSubmit,
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 84
+                                    lineNumber: 90
                                 },
                                 __self: this,
                                 children: "Login"
@@ -32909,7 +32915,7 @@ function LoginView(props) {
                 className: "justify-content-sm-center mt-3",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 88
+                    lineNumber: 94
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
@@ -32917,14 +32923,14 @@ function LoginView(props) {
                     md: 4,
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 89
+                        lineNumber: 95
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx("span", {
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 90
+                                lineNumber: 96
                             },
                             __self: this,
                             children: "New user?"
@@ -32933,14 +32939,14 @@ function LoginView(props) {
                             to: "/register",
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 90
+                                lineNumber: 96
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                 variant: "link",
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 90
+                                    lineNumber: 96
                                 },
                                 __self: this,
                                 children: "Register here"
@@ -32965,7 +32971,7 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","prop-types":"1tgq3","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","axios":"iYoWk","react-router-dom":"cpyQW"}],"5ykgY":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","prop-types":"1tgq3","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","axios":"iYoWk","react-router-dom":"cpyQW","react-bootstrap/Alert":"d0bvJ"}],"5ykgY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -33504,512 +33510,81 @@ const FloatingLabel = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , 
 FloatingLabel.displayName = 'FloatingLabel';
 exports.default = FloatingLabel;
 
-},{"classnames":"bOXOh","react":"6TuXu","./FormGroup":"gWNri","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"aP2YV":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8dd4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8dd4.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _axios = require("axios");
-var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _form = require("react-bootstrap/Form");
-var _formDefault = parcelHelpers.interopDefault(_form);
-var _button = require("react-bootstrap/Button");
-var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _container = require("react-bootstrap/Container");
-var _containerDefault = parcelHelpers.interopDefault(_container);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _s = $RefreshSig$();
-function RegistrationView(props) {
-    _s();
-    const [username, setUsername] = _react.useState('');
-    const [password, setPassword] = _react.useState('');
-    const [email, setEmail] = _react.useState('');
-    const [birthday, setBirthday] = _react.useState('');
-    const handleRegister = (e)=>{
-        e.preventDefault(); // prevents page from refreshing when clicking submit button
-        // Adds new user to database, then logs them in
-        let request = {
-            Username: username,
-            Password: password,
-            Email: email,
-            Birthday: birthday
-        };
-        console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}; Req: ${request}`);
-        _axiosDefault.default.post('https://cinemadatabase.herokuapp.com/users', request).then((res)=>{
-            const data = res.data;
-            props.onLoggedIn(data);
-        }).catch((err)=>{
-            console.log(err);
-        });
-    };
-    return(/*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
-        className: "registration-view mt-5",
-        __source: {
-            fileName: "src/components/registration-view/registration-view.jsx",
-            lineNumber: 36
-        },
-        __self: this,
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                className: "mb-5",
-                __source: {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 37
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                    className: "text-center",
-                    __source: {
-                        fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 38
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 39
-                        },
-                        __self: this,
-                        children: "New user registeration:"
-                    })
-                })
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                className: "justify-content-sm-center",
-                __source: {
-                    fileName: "src/components/registration-view/registration-view.jsx",
-                    lineNumber: 42
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                    sm: 8,
-                    md: 6,
-                    lg: 4,
-                    __source: {
-                        fileName: "src/components/registration-view/registration-view.jsx",
-                        lineNumber: 43
-                    },
-                    __self: this,
-                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
-                        __source: {
-                            fileName: "src/components/registration-view/registration-view.jsx",
-                            lineNumber: 44
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                                controlId: "formUsername",
-                                __source: {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 45
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                                        __source: {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 46
-                                        },
-                                        __self: this,
-                                        children: "Username:"
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                        type: "text",
-                                        onChange: (e)=>setUsername(e.target.value)
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 47
-                                        },
-                                        __self: this
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Text, {
-                                        className: "text-muted",
-                                        __source: {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 48
-                                        },
-                                        __self: this,
-                                        children: "Username must be at least 5 characters long and include only alphanumeric characters."
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                                className: "mt-3",
-                                controlId: "formPassword",
-                                __source: {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 52
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                                        __source: {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 53
-                                        },
-                                        __self: this,
-                                        children: "Password:"
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                        type: "password",
-                                        onChange: (e)=>setPassword(e.target.value)
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 54
-                                        },
-                                        __self: this
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Text, {
-                                        className: "text-muted",
-                                        __source: {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 55
-                                        },
-                                        __self: this,
-                                        children: "Password must be at least 8 characters long and include only alphanumeric characters."
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                                className: "mt-3",
-                                controlId: "formEmail",
-                                __source: {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 59
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                                        __source: {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 60
-                                        },
-                                        __self: this,
-                                        children: "Email:"
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                        type: "email",
-                                        onChange: (e)=>setEmail(e.target.value)
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 61
-                                        },
-                                        __self: this
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
-                                className: "mt-3",
-                                controlId: "formBirthday",
-                                __source: {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 63
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
-                                        __source: {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 64
-                                        },
-                                        __self: this,
-                                        children: "Birthday:"
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                        type: "string",
-                                        onChange: (e)=>setBirthday(e.target.value)
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 65
-                                        },
-                                        __self: this
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Text, {
-                                        className: "text-muted",
-                                        __source: {
-                                            fileName: "src/components/registration-view/registration-view.jsx",
-                                            lineNumber: 66
-                                        },
-                                        __self: this,
-                                        children: "(This field is optional.) Please use format MM/DD/YY."
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                className: "mt-4",
-                                variant: "dark",
-                                type: "submit",
-                                onClick: handleRegister,
-                                __source: {
-                                    fileName: "src/components/registration-view/registration-view.jsx",
-                                    lineNumber: 70
-                                },
-                                __self: this,
-                                children: "Register"
-                            })
-                        ]
-                    })
-                })
-            })
-        ]
-    }));
-}
-_s(RegistrationView, "tdA1KK8yaZidqYo0wscqshHt/KE=");
-_c = RegistrationView;
-RegistrationView.propTypes = {
-    onLoggedIn: _propTypesDefault.default.func.isRequired
-};
-var _c;
-$RefreshReg$(_c, "RegistrationView");
-
-  $parcel$ReactRefreshHelpers$8dd4.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","prop-types":"1tgq3","axios":"iYoWk"}],"63yS7":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1bb2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1bb2.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Navbar", ()=>Navbar
-);
-var _jsxRuntime = require("react/jsx-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _container = require("react-bootstrap/Container");
-var _containerDefault = parcelHelpers.interopDefault(_container);
-var _navbar = require("react-bootstrap/Navbar");
-var _navbarDefault = parcelHelpers.interopDefault(_navbar);
-var _nav = require("react-bootstrap/Nav");
-var _navDefault = parcelHelpers.interopDefault(_nav);
-class Navbar extends _reactDefault.default.Component {
-    // CUSTOM METHODS
-    getToken() {
-        let accessToken = localStorage.getItem('token');
-        if (accessToken) return accessToken;
-        else return false;
-    }
-    onLoggedOut() {
-        localStorage.clear();
-        window.open("/", "_self");
-    // MainView.setState({ user: null });
-    }
-    // LIFECYCLE METHODS
-    render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default, {
-            bg: "dark",
-            variant: "dark",
-            expand: "md",
-            __source: {
-                fileName: "src/components/navbar/navbar.jsx",
-                lineNumber: 30
-            },
-            __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
-                __source: {
-                    fileName: "src/components/navbar/navbar.jsx",
-                    lineNumber: 31
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
-                        href: "/",
-                        __source: {
-                            fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 32
-                        },
-                        __self: this,
-                        children: "CinemaDatabase"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Toggle, {
-                        "aria-controls": "basic-navbar-nav",
-                        __source: {
-                            fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 33
-                        },
-                        __self: this
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Collapse, {
-                        id: "basic-navbar-nav",
-                        className: "justify-content-end",
-                        __source: {
-                            fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 34
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_navDefault.default, {
-                            className: "me-auto",
-                            __source: {
-                                fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 35
-                            },
-                            __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
-                                    href: "/about.html",
-                                    __source: {
-                                        fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 36
-                                    },
-                                    __self: this,
-                                    children: "About"
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
-                                    href: "#",
-                                    __source: {
-                                        fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 37
-                                    },
-                                    __self: this,
-                                    children: "Profile"
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
-                                    onClick: ()=>this.onLoggedOut()
-                                    ,
-                                    __source: {
-                                        fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 38
-                                    },
-                                    __self: this,
-                                    children: "Logout"
-                                })
-                            ]
-                        })
-                    })
-                ]
-            })
-        }));
-    }
-}
-
-  $parcel$ReactRefreshHelpers$1bb2.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Nav":"io07g","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"eYZQl":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","./FormGroup":"gWNri","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"d0bvJ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
 var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
 var _react = require("react");
-var _selectableContext = require("@restart/ui/SelectableContext");
-var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
 var _uncontrollable = require("uncontrollable");
+var _useEventCallback = require("@restart/hooks/useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+var _anchor = require("@restart/ui/Anchor");
+var _anchorDefault = parcelHelpers.interopDefault(_anchor);
+var _themeProvider = require("./ThemeProvider");
+var _fade = require("./Fade");
+var _fadeDefault = parcelHelpers.interopDefault(_fade);
+var _closeButton = require("./CloseButton");
+var _closeButtonDefault = parcelHelpers.interopDefault(_closeButton);
+var _divWithClassName = require("./divWithClassName");
+var _divWithClassNameDefault = parcelHelpers.interopDefault(_divWithClassName);
 var _createWithBsPrefix = require("./createWithBsPrefix");
 var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
-var _navbarBrand = require("./NavbarBrand");
-var _navbarBrandDefault = parcelHelpers.interopDefault(_navbarBrand);
-var _navbarCollapse = require("./NavbarCollapse");
-var _navbarCollapseDefault = parcelHelpers.interopDefault(_navbarCollapse);
-var _navbarToggle = require("./NavbarToggle");
-var _navbarToggleDefault = parcelHelpers.interopDefault(_navbarToggle);
-var _navbarOffcanvas = require("./NavbarOffcanvas");
-var _navbarOffcanvasDefault = parcelHelpers.interopDefault(_navbarOffcanvas);
-var _themeProvider = require("./ThemeProvider");
-var _navbarContext = require("./NavbarContext");
-var _navbarContextDefault = parcelHelpers.interopDefault(_navbarContext);
 var _jsxRuntime = require("react/jsx-runtime");
-const NavbarText = _createWithBsPrefixDefault.default('navbar-text', {
-    Component: 'span'
+const DivStyledAsH4 = _divWithClassNameDefault.default('h4');
+DivStyledAsH4.displayName = 'DivStyledAsH4';
+const AlertHeading = _createWithBsPrefixDefault.default('alert-heading', {
+    Component: DivStyledAsH4
+});
+const AlertLink = _createWithBsPrefixDefault.default('alert-link', {
+    Component: _anchorDefault.default
 });
 const defaultProps = {
-    expand: true,
-    variant: 'light',
-    collapseOnSelect: false
+    variant: 'primary',
+    show: true,
+    transition: _fadeDefault.default,
+    closeLabel: 'Close alert'
 };
-const Navbar = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
-    const { bsPrefix: initialBsPrefix , expand , variant , bg , fixed , sticky , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
-    as: Component = 'nav' , expanded , onToggle , onSelect , collapseOnSelect , ...controlledProps } = _uncontrollable.useUncontrolled(props, {
-        expanded: 'onToggle'
+const Alert = /*#__PURE__*/ _react.forwardRef((uncontrolledProps, ref)=>{
+    const { bsPrefix , show , closeLabel , closeVariant , className , children , variant , onClose , dismissible , transition , ...props } = _uncontrollable.useUncontrolled(uncontrolledProps, {
+        show: 'onClose'
     });
-    const bsPrefix = _themeProvider.useBootstrapPrefix(initialBsPrefix, 'navbar');
-    const handleCollapse = _react.useCallback((...args)=>{
-        onSelect == null || onSelect(...args);
-        if (collapseOnSelect && expanded) onToggle == null || onToggle(false);
-    }, [
-        onSelect,
-        collapseOnSelect,
-        expanded,
-        onToggle
-    ]); // will result in some false positives but that seems better
-    // than false negatives. strict `undefined` check allows explicit
-    // "nulling" of the role if the user really doesn't want one
-    if (controlledProps.role === undefined && Component !== 'nav') controlledProps.role = 'navigation';
-    let expandClass = `${bsPrefix}-expand`;
-    if (typeof expand === 'string') expandClass = `${expandClass}-${expand}`;
-    const navbarContext = _react.useMemo(()=>({
-            onToggle: ()=>onToggle == null ? void 0 : onToggle(!expanded)
-            ,
-            bsPrefix,
-            expanded: !!expanded,
-            expand
-        })
-    , [
-        bsPrefix,
-        expanded,
-        expand,
-        onToggle
-    ]);
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_navbarContextDefault.default.Provider, {
-        value: navbarContext,
-        children: /*#__PURE__*/ _jsxRuntime.jsx(_selectableContextDefault.default.Provider, {
-            value: handleCollapse,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(Component, {
-                ref: ref,
-                ...controlledProps,
-                className: _classnamesDefault.default(className, bsPrefix, expand && expandClass, variant && `${bsPrefix}-${variant}`, bg && `bg-${bg}`, sticky && `sticky-${sticky}`, fixed && `fixed-${fixed}`)
-            })
-        })
+    const prefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'alert');
+    const handleClose = _useEventCallbackDefault.default((e)=>{
+        if (onClose) onClose(false, e);
+    });
+    const Transition = transition === true ? _fadeDefault.default : transition;
+    const alert = /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+        role: "alert",
+        ...!Transition ? props : undefined,
+        ref: ref,
+        className: _classnamesDefault.default(className, prefix, variant && `${prefix}-${variant}`, dismissible && `${prefix}-dismissible`),
+        children: [
+            dismissible && /*#__PURE__*/ _jsxRuntime.jsx(_closeButtonDefault.default, {
+                onClick: handleClose,
+                "aria-label": closeLabel,
+                variant: closeVariant
+            }),
+            children
+        ]
+    });
+    if (!Transition) return show ? alert : null;
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Transition, {
+        unmountOnExit: true,
+        ...props,
+        ref: undefined,
+        in: show,
+        children: alert
     }));
 });
-Navbar.defaultProps = defaultProps;
-Navbar.displayName = 'Navbar';
-exports.default = Object.assign(Navbar, {
-    Brand: _navbarBrandDefault.default,
-    Collapse: _navbarCollapseDefault.default,
-    Offcanvas: _navbarOffcanvasDefault.default,
-    Text: NavbarText,
-    Toggle: _navbarToggleDefault.default
+Alert.displayName = 'Alert';
+Alert.defaultProps = defaultProps;
+exports.default = Object.assign(Alert, {
+    Link: AlertLink,
+    Heading: AlertHeading
 });
 
-},{"classnames":"bOXOh","react":"6TuXu","@restart/ui/SelectableContext":"9e25D","uncontrollable":"1g2Nf","./createWithBsPrefix":"8AqEH","./NavbarBrand":"eepuz","./NavbarCollapse":"luUA1","./NavbarToggle":"bjuEn","./NavbarOffcanvas":"1oFvj","./ThemeProvider":"eeqfi","./NavbarContext":"iFmid","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"9e25D":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "makeEventKey", ()=>makeEventKey
-);
-var _react = require("react");
-const SelectableContext = /*#__PURE__*/ _react.createContext(null);
-const makeEventKey = (eventKey, href = null)=>{
-    if (eventKey != null) return String(eventKey);
-    return href || null;
-};
-exports.default = SelectableContext;
-
-},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"1g2Nf":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","uncontrollable":"1g2Nf","@restart/hooks/useEventCallback":"lDj1q","@restart/ui/Anchor":"KNzrK","./ThemeProvider":"eeqfi","./Fade":"kCN9h","./CloseButton":"9rnf2","./divWithClassName":"GBmBH","./createWithBsPrefix":"8AqEH","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"1g2Nf":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useUncontrolled", ()=>_hookDefault.default
@@ -34429,249 +34004,515 @@ function polyfill(Component) {
     return Component;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"eepuz":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"lDj1q":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useCommittedRef = require("./useCommittedRef");
+var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
+function useEventCallback(fn) {
+    var ref = _useCommittedRefDefault.default(fn);
+    return _react.useCallback(function() {
+        return ref.current && ref.current.apply(ref, arguments);
+    }, [
+        ref
+    ]);
+}
+exports.default = useEventCallback;
+
+},{"react":"6TuXu","./useCommittedRef":"lW5pn","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"lW5pn":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+/**
+ * Creates a `Ref` whose value is updated in an effect, ensuring the most recent
+ * value is the one rendered with. Generally only required for Concurrent mode usage
+ * where previous work in `render()` may be discarded before being used.
+ *
+ * This is safe to access in an event handler.
+ *
+ * @param value The `Ref` value
+ */ function useCommittedRef(value) {
+    var ref = _react.useRef(value);
+    _react.useEffect(function() {
+        ref.current = value;
+    }, [
+        value
+    ]);
+    return ref;
+}
+exports.default = useCommittedRef;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"KNzrK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "isTrivialHref", ()=>isTrivialHref
+);
+/* eslint-disable jsx-a11y/no-static-element-interactions */ /* eslint-disable jsx-a11y/anchor-has-content */ var _react = require("react");
+var _hooks = require("@restart/hooks");
+var _button = require("./Button");
+var _jsxRuntime = require("react/jsx-runtime");
+const _excluded = [
+    "onKeyDown"
+];
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {
+    };
+    var target = {
+    };
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+function isTrivialHref(href) {
+    return !href || href.trim() === '#';
+}
+/**
+ * An generic `<a>` component that covers a few A11y cases, ensuring that
+ * cases where the `href` is missing or trivial like "#" are treated like buttons.
+ */ const Anchor = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
+    let { onKeyDown  } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded);
+    const [buttonProps] = _button.useButtonProps(Object.assign({
+        tagName: 'a'
+    }, props));
+    const handleKeyDown = _hooks.useEventCallback((e)=>{
+        buttonProps.onKeyDown(e);
+        onKeyDown == null || onKeyDown(e);
+    });
+    if (isTrivialHref(props.href) && !props.role || props.role === 'button') return(/*#__PURE__*/ _jsxRuntime.jsx("a", Object.assign({
+        ref: ref
+    }, props, buttonProps, {
+        onKeyDown: handleKeyDown
+    })));
+    return(/*#__PURE__*/ _jsxRuntime.jsx("a", Object.assign({
+        ref: ref
+    }, props, {
+        onKeyDown: onKeyDown
+    })));
+});
+Anchor.displayName = 'Anchor';
+exports.default = Anchor;
+
+},{"react":"6TuXu","@restart/hooks":"jFEL5","./Button":"fBjIr","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"jFEL5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useCallbackRef", ()=>_useCallbackRefDefault.default
+);
+parcelHelpers.export(exports, "useCommittedRef", ()=>_useCommittedRefDefault.default
+);
+parcelHelpers.export(exports, "useEventCallback", ()=>_useEventCallbackDefault.default
+);
+parcelHelpers.export(exports, "useEventListener", ()=>_useEventListenerDefault.default
+);
+parcelHelpers.export(exports, "useGlobalListener", ()=>_useGlobalListenerDefault.default
+);
+parcelHelpers.export(exports, "useInterval", ()=>_useIntervalDefault.default
+);
+parcelHelpers.export(exports, "useRafInterval", ()=>_useRafIntervalDefault.default
+);
+parcelHelpers.export(exports, "useMergeState", ()=>_useMergeStateDefault.default
+);
+parcelHelpers.export(exports, "useMergeStateFromProps", ()=>_useMergeStateFromPropsDefault.default
+);
+parcelHelpers.export(exports, "useMounted", ()=>_useMountedDefault.default
+);
+parcelHelpers.export(exports, "usePrevious", ()=>_usePreviousDefault.default
+);
+parcelHelpers.export(exports, "useImage", ()=>_useImageDefault.default
+);
+parcelHelpers.export(exports, "useResizeObserver", ()=>_useResizeObserverDefault.default
+);
+var _useCallbackRef = require("./useCallbackRef");
+var _useCallbackRefDefault = parcelHelpers.interopDefault(_useCallbackRef);
+var _useCommittedRef = require("./useCommittedRef");
+var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
+var _useEventCallback = require("./useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+var _useEventListener = require("./useEventListener");
+var _useEventListenerDefault = parcelHelpers.interopDefault(_useEventListener);
+var _useGlobalListener = require("./useGlobalListener");
+var _useGlobalListenerDefault = parcelHelpers.interopDefault(_useGlobalListener);
+var _useInterval = require("./useInterval");
+var _useIntervalDefault = parcelHelpers.interopDefault(_useInterval);
+var _useRafInterval = require("./useRafInterval");
+var _useRafIntervalDefault = parcelHelpers.interopDefault(_useRafInterval);
+var _useMergeState = require("./useMergeState");
+var _useMergeStateDefault = parcelHelpers.interopDefault(_useMergeState);
+var _useMergeStateFromProps = require("./useMergeStateFromProps");
+var _useMergeStateFromPropsDefault = parcelHelpers.interopDefault(_useMergeStateFromProps);
+var _useMounted = require("./useMounted");
+var _useMountedDefault = parcelHelpers.interopDefault(_useMounted);
+var _usePrevious = require("./usePrevious");
+var _usePreviousDefault = parcelHelpers.interopDefault(_usePrevious);
+var _useImage = require("./useImage");
+var _useImageDefault = parcelHelpers.interopDefault(_useImage);
+var _useResizeObserver = require("./useResizeObserver");
+var _useResizeObserverDefault = parcelHelpers.interopDefault(_useResizeObserver);
+
+},{"./useCallbackRef":"hKgxU","./useCommittedRef":"lW5pn","./useEventCallback":"lDj1q","./useEventListener":"9Ztch","./useGlobalListener":"7JFhp","./useInterval":"5i8eo","./useRafInterval":"djpEe","./useMergeState":"fUbBJ","./useMergeStateFromProps":"artIq","./useMounted":"7pc10","./usePrevious":"eayR5","./useImage":"7YeLI","./useResizeObserver":"cf1dg","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"hKgxU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useCallbackRef() {
+    return _react.useState(null);
+}
+exports.default = useCallbackRef;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"9Ztch":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useEventCallback = require("./useEventCallback");
+var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
+function useEventListener(eventTarget, event, listener, capture) {
+    if (capture === void 0) capture = false;
+    var handler = _useEventCallbackDefault.default(listener);
+    _react.useEffect(function() {
+        var target = typeof eventTarget === 'function' ? eventTarget() : eventTarget;
+        target.addEventListener(event, handler, capture);
+        return function() {
+            return target.removeEventListener(event, handler, capture);
+        };
+    }, [
+        eventTarget
+    ]);
+}
+exports.default = useEventListener;
+
+},{"react":"6TuXu","./useEventCallback":"lDj1q","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"7JFhp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _useEventListener = require("./useEventListener");
+var _useEventListenerDefault = parcelHelpers.interopDefault(_useEventListener);
+var _react = require("react");
+function useGlobalListener(event, handler, capture) {
+    if (capture === void 0) capture = false;
+    var documentTarget = _react.useCallback(function() {
+        return document;
+    }, []);
+    return _useEventListenerDefault.default(documentTarget, event, handler, capture);
+}
+exports.default = useGlobalListener;
+
+},{"./useEventListener":"9Ztch","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"5i8eo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useCommittedRef = require("./useCommittedRef");
+var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
+/**
+ * Creates a `setInterval` that is properly cleaned up when a component unmounted
+ *
+ * ```tsx
+ *  function Timer() {
+ *    const [timer, setTimer] = useState(0)
+ *    useInterval(() => setTimer(i => i + 1), 1000)
+ *
+ *    return <span>{timer} seconds past</span>
+ *  }
+ * ```
+ *
+ * @param fn an function run on each interval
+ * @param ms The milliseconds duration of the interval
+ */ function useInterval(fn, ms, paused, runImmediately) {
+    if (paused === void 0) paused = false;
+    if (runImmediately === void 0) runImmediately = false;
+    var handle;
+    var fnRef = _useCommittedRefDefault.default(fn); // this ref is necessary b/c useEffect will sometimes miss a paused toggle
+    // orphaning a setTimeout chain in the aether, so relying on it's refresh logic is not reliable.
+    var pausedRef = _useCommittedRefDefault.default(paused);
+    var tick = function tick1() {
+        if (pausedRef.current) return;
+        fnRef.current();
+        schedule(); // eslint-disable-line no-use-before-define
+    };
+    var schedule = function schedule1() {
+        clearTimeout(handle);
+        handle = setTimeout(tick, ms);
+    };
+    _react.useEffect(function() {
+        if (runImmediately) tick();
+        else schedule();
+        return function() {
+            return clearTimeout(handle);
+        };
+    }, [
+        paused,
+        runImmediately
+    ]);
+}
+exports.default = useInterval;
+
+},{"react":"6TuXu","./useCommittedRef":"lW5pn","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"djpEe":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useCommittedRef = require("./useCommittedRef");
+var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
+function useRafInterval(fn, ms, paused) {
+    if (paused === void 0) paused = false;
+    var handle;
+    var start = new Date().getTime();
+    var fnRef = _useCommittedRefDefault.default(fn); // this ref is necessary b/c useEffect will sometimes miss a paused toggle
+    // orphaning a setTimeout chain in the aether, so relying on it's refresh logic is not reliable.
+    var pausedRef = _useCommittedRefDefault.default(paused);
+    function loop() {
+        var current = new Date().getTime();
+        var delta = current - start;
+        if (pausedRef.current) return;
+        if (delta >= ms && fnRef.current) {
+            fnRef.current();
+            start = new Date().getTime();
+        }
+        cancelAnimationFrame(handle);
+        handle = requestAnimationFrame(loop);
+    }
+    _react.useEffect(function() {
+        handle = requestAnimationFrame(loop);
+        return function() {
+            return cancelAnimationFrame(handle);
+        };
+    }, []);
+}
+exports.default = useRafInterval;
+
+},{"react":"6TuXu","./useCommittedRef":"lW5pn","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"fUbBJ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function _extends() {
+    _extends = Object.assign || function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+function useMergeState(initialState) {
+    var _useState = _react.useState(initialState), state = _useState[0], setState = _useState[1];
+    var updater = _react.useCallback(function(update) {
+        if (update === null) return;
+        if (typeof update === 'function') setState(function(state1) {
+            var nextState = update(state1);
+            return nextState == null ? state1 : _extends({
+            }, state1, nextState);
+        });
+        else setState(function(state1) {
+            return _extends({
+            }, state1, update);
+        });
+    }, [
+        setState
+    ]);
+    return [
+        state,
+        updater
+    ];
+}
+exports.default = useMergeState;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"artIq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _useMergeState = require("./useMergeState");
+var _useMergeStateDefault = parcelHelpers.interopDefault(_useMergeState);
+function useMergeStateFromProps(props, gDSFP, initialState) {
+    var _useMergeState1 = _useMergeStateDefault.default(initialState), state = _useMergeState1[0], setState = _useMergeState1[1];
+    var nextState = gDSFP(props, state);
+    if (nextState !== null) setState(nextState);
+    return [
+        state,
+        setState
+    ];
+}
+exports.default = useMergeStateFromProps;
+
+},{"./useMergeState":"fUbBJ","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"7pc10":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useMounted() {
+    var mounted = _react.useRef(true);
+    var isMounted = _react.useRef(function() {
+        return mounted.current;
+    });
+    _react.useEffect(function() {
+        mounted.current = true;
+        return function() {
+            mounted.current = false;
+        };
+    }, []);
+    return isMounted.current;
+}
+exports.default = useMounted;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"eayR5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function usePrevious(value) {
+    var ref = _react.useRef(null);
+    _react.useEffect(function() {
+        ref.current = value;
+    });
+    return ref.current;
+}
+exports.default = usePrevious;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"7YeLI":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useImage(imageOrUrl, crossOrigin) {
+    var _useState = _react.useState({
+        image: null,
+        error: null
+    }), state = _useState[0], setState = _useState[1];
+    _react.useEffect(function() {
+        if (!imageOrUrl) return undefined;
+        var image;
+        if (typeof imageOrUrl === 'string') {
+            image = new Image();
+            if (crossOrigin) image.crossOrigin = crossOrigin;
+            image.src = imageOrUrl;
+        } else {
+            image = imageOrUrl;
+            if (image.complete && image.naturalHeight > 0) {
+                setState({
+                    image: image,
+                    error: null
+                });
+                return;
+            }
+        }
+        function onLoad() {
+            setState({
+                image: image,
+                error: null
+            });
+        }
+        function onError(error) {
+            setState({
+                image: image,
+                error: error
+            });
+        }
+        image.addEventListener('load', onLoad);
+        image.addEventListener('error', onError);
+        return function() {
+            image.removeEventListener('load', onLoad);
+            image.removeEventListener('error', onError);
+        };
+    }, [
+        imageOrUrl,
+        crossOrigin
+    ]);
+    return state;
+}
+exports.default = useImage;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"cf1dg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useIsomorphicEffect = require("./useIsomorphicEffect");
+var _useIsomorphicEffectDefault = parcelHelpers.interopDefault(_useIsomorphicEffect);
+var targetMap = new WeakMap();
+var resizeObserver;
+function getResizeObserver() {
+    // eslint-disable-next-line no-return-assign
+    return resizeObserver = resizeObserver || new window.ResizeObserver(function(entries) {
+        entries.forEach(function(entry) {
+            var handler = targetMap.get(entry.target);
+            if (handler) handler(entry.contentRect);
+        });
+    });
+}
+function useResizeObserver(element) {
+    var _useState = _react.useState(null), rect = _useState[0], setRect = _useState[1];
+    _useIsomorphicEffectDefault.default(function() {
+        if (!element) return;
+        getResizeObserver().observe(element);
+        setRect(element.getBoundingClientRect());
+        targetMap.set(element, function(rect1) {
+            setRect(rect1);
+        });
+        return function() {
+            targetMap.delete(element);
+        };
+    }, [
+        element
+    ]);
+    return rect;
+}
+exports.default = useResizeObserver;
+
+},{"react":"6TuXu","./useIsomorphicEffect":"3psbV","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"3psbV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var global = arguments[3];
+var isReactNative = typeof global !== 'undefined' && global.navigator && global.navigator.product === 'ReactNative';
+var isDOM = typeof document !== 'undefined';
+exports.default = isDOM || isReactNative ? _react.useLayoutEffect : _react.useEffect;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"kCN9h":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
 var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
 var _react = require("react");
-var _themeProvider = require("./ThemeProvider");
-var _jsxRuntime = require("react/jsx-runtime");
-const NavbarBrand = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , as , ...props }, ref)=>{
-    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'navbar-brand');
-    const Component = as || (props.href ? 'a' : 'span');
-    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
-        ...props,
-        ref: ref,
-        className: _classnamesDefault.default(className, bsPrefix)
-    }));
-});
-NavbarBrand.displayName = 'NavbarBrand';
-exports.default = NavbarBrand;
-
-},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"luUA1":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _collapse = require("./Collapse");
-var _collapseDefault = parcelHelpers.interopDefault(_collapse);
-var _themeProvider = require("./ThemeProvider");
-var _navbarContext = require("./NavbarContext");
-var _navbarContextDefault = parcelHelpers.interopDefault(_navbarContext);
-var _jsxRuntime = require("react/jsx-runtime");
-const NavbarCollapse = /*#__PURE__*/ _react.forwardRef(({ children , bsPrefix , ...props }, ref)=>{
-    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'navbar-collapse');
-    const context = _react.useContext(_navbarContextDefault.default);
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_collapseDefault.default, {
-        in: !!(context && context.expanded),
-        ...props,
-        children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
-            ref: ref,
-            className: bsPrefix,
-            children: children
-        })
-    }));
-});
-NavbarCollapse.displayName = 'NavbarCollapse';
-exports.default = NavbarCollapse;
-
-},{"react":"6TuXu","./Collapse":"9TRx8","./ThemeProvider":"eeqfi","./NavbarContext":"iFmid","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"9TRx8":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _css = require("dom-helpers/css");
-var _cssDefault = parcelHelpers.interopDefault(_css);
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
 var _transition = require("react-transition-group/Transition");
 var _transitionEndListener = require("./transitionEndListener");
 var _transitionEndListenerDefault = parcelHelpers.interopDefault(_transitionEndListener);
-var _createChainedFunction = require("./createChainedFunction");
-var _createChainedFunctionDefault = parcelHelpers.interopDefault(_createChainedFunction);
 var _triggerBrowserReflow = require("./triggerBrowserReflow");
 var _triggerBrowserReflowDefault = parcelHelpers.interopDefault(_triggerBrowserReflow);
 var _transitionWrapper = require("./TransitionWrapper");
 var _transitionWrapperDefault = parcelHelpers.interopDefault(_transitionWrapper);
 var _jsxRuntime = require("react/jsx-runtime");
-const MARGINS = {
-    height: [
-        'marginTop',
-        'marginBottom'
-    ],
-    width: [
-        'marginLeft',
-        'marginRight'
-    ]
-};
-function getDefaultDimensionValue(dimension, elem) {
-    const offset = `offset${dimension[0].toUpperCase()}${dimension.slice(1)}`;
-    const value = elem[offset];
-    const margins = MARGINS[dimension];
-    return value + parseInt(_cssDefault.default(elem, margins[0]), 10) + parseInt(_cssDefault.default(elem, margins[1]), 10);
-}
-const collapseStyles = {
-    [_transition.EXITED]: 'collapse',
-    [_transition.EXITING]: 'collapsing',
-    [_transition.ENTERING]: 'collapsing',
-    [_transition.ENTERED]: 'collapse show'
-};
 const defaultProps = {
     in: false,
     timeout: 300,
     mountOnEnter: false,
     unmountOnExit: false,
-    appear: false,
-    getDimensionValue: getDefaultDimensionValue
+    appear: false
 };
-const Collapse = /*#__PURE__*/ _reactDefault.default.forwardRef(({ onEnter , onEntering , onEntered , onExit , onExiting , className , children , dimension ='height' , getDimensionValue =getDefaultDimensionValue , ...props }, ref)=>{
-    /* Compute dimension */ const computedDimension = typeof dimension === 'function' ? dimension() : dimension;
-    /* -- Expanding -- */ const handleEnter = _react.useMemo(()=>_createChainedFunctionDefault.default((elem)=>{
-            elem.style[computedDimension] = '0';
-        }, onEnter)
-    , [
-        computedDimension,
-        onEnter
-    ]);
-    const handleEntering = _react.useMemo(()=>_createChainedFunctionDefault.default((elem)=>{
-            const scroll = `scroll${computedDimension[0].toUpperCase()}${computedDimension.slice(1)}`;
-            elem.style[computedDimension] = `${elem[scroll]}px`;
-        }, onEntering)
-    , [
-        computedDimension,
-        onEntering
-    ]);
-    const handleEntered = _react.useMemo(()=>_createChainedFunctionDefault.default((elem)=>{
-            elem.style[computedDimension] = null;
-        }, onEntered)
-    , [
-        computedDimension,
-        onEntered
-    ]);
-    /* -- Collapsing -- */ const handleExit = _react.useMemo(()=>_createChainedFunctionDefault.default((elem)=>{
-            elem.style[computedDimension] = `${getDimensionValue(computedDimension, elem)}px`;
-            _triggerBrowserReflowDefault.default(elem);
-        }, onExit)
-    , [
-        onExit,
-        getDimensionValue,
-        computedDimension
-    ]);
-    const handleExiting = _react.useMemo(()=>_createChainedFunctionDefault.default((elem)=>{
-            elem.style[computedDimension] = null;
-        }, onExiting)
-    , [
-        computedDimension,
-        onExiting
+const fadeStyles = {
+    [_transition.ENTERING]: 'show',
+    [_transition.ENTERED]: 'show'
+};
+const Fade = /*#__PURE__*/ _react.forwardRef(({ className , children , transitionClasses ={
+} , ...props }, ref)=>{
+    const handleEnter = _react.useCallback((node, isAppearing)=>{
+        _triggerBrowserReflowDefault.default(node);
+        props.onEnter == null || props.onEnter(node, isAppearing);
+    }, [
+        props
     ]);
     return(/*#__PURE__*/ _jsxRuntime.jsx(_transitionWrapperDefault.default, {
         ref: ref,
         addEndListener: _transitionEndListenerDefault.default,
         ...props,
-        "aria-expanded": props.role ? props.in : null,
         onEnter: handleEnter,
-        onEntering: handleEntering,
-        onEntered: handleEntered,
-        onExit: handleExit,
-        onExiting: handleExiting,
         childRef: children.ref,
-        children: (state, innerProps)=>/*#__PURE__*/ _reactDefault.default.cloneElement(children, {
+        children: (status, innerProps)=>/*#__PURE__*/ _react.cloneElement(children, {
                 ...innerProps,
-                className: _classnamesDefault.default(className, children.props.className, collapseStyles[state], computedDimension === 'width' && 'collapse-horizontal')
+                className: _classnamesDefault.default('fade', className, children.props.className, fadeStyles[status], transitionClasses[status])
             })
     }));
-}); // @ts-ignore
-// @ts-ignore
-Collapse.defaultProps = defaultProps;
-exports.default = Collapse;
+});
+Fade.defaultProps = defaultProps;
+Fade.displayName = 'Fade';
+exports.default = Fade;
 
-},{"classnames":"bOXOh","dom-helpers/css":"23gV0","react":"6TuXu","react-transition-group/Transition":"6qqDo","./transitionEndListener":"3RD60","./createChainedFunction":"NDbpV","./triggerBrowserReflow":"iOtmf","./TransitionWrapper":"fX3f3","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"23gV0":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _getComputedStyle = require("./getComputedStyle");
-var _getComputedStyleDefault = parcelHelpers.interopDefault(_getComputedStyle);
-var _hyphenateStyle = require("./hyphenateStyle");
-var _hyphenateStyleDefault = parcelHelpers.interopDefault(_hyphenateStyle);
-var _isTransform = require("./isTransform");
-var _isTransformDefault = parcelHelpers.interopDefault(_isTransform);
-function style(node, property) {
-    var css = '';
-    var transforms = '';
-    if (typeof property === 'string') return node.style.getPropertyValue(_hyphenateStyleDefault.default(property)) || _getComputedStyleDefault.default(node).getPropertyValue(_hyphenateStyleDefault.default(property));
-    Object.keys(property).forEach(function(key) {
-        var value = property[key];
-        if (!value && value !== 0) node.style.removeProperty(_hyphenateStyleDefault.default(key));
-        else if (_isTransformDefault.default(key)) transforms += key + "(" + value + ") ";
-        else css += _hyphenateStyleDefault.default(key) + ": " + value + ";";
-    });
-    if (transforms) css += "transform: " + transforms + ";";
-    node.style.cssText += ";" + css;
-}
-exports.default = style;
-
-},{"./getComputedStyle":"1SQLd","./hyphenateStyle":"lTVWG","./isTransform":"jOida","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"1SQLd":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _ownerWindow = require("./ownerWindow");
-var _ownerWindowDefault = parcelHelpers.interopDefault(_ownerWindow);
-function getComputedStyle(node, psuedoElement) {
-    return _ownerWindowDefault.default(node).getComputedStyle(node, psuedoElement);
-}
-exports.default = getComputedStyle;
-
-},{"./ownerWindow":"gzFwD","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"gzFwD":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _ownerDocument = require("./ownerDocument");
-var _ownerDocumentDefault = parcelHelpers.interopDefault(_ownerDocument);
-function ownerWindow(node) {
-    var doc = _ownerDocumentDefault.default(node);
-    return doc && doc.defaultView || window;
-}
-exports.default = ownerWindow;
-
-},{"./ownerDocument":"lrM6c","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"lrM6c":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-function ownerDocument(node) {
-    return node && node.ownerDocument || document;
-}
-exports.default = ownerDocument;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"lTVWG":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-/**
- * Copyright 2013-2014, Facebook, Inc.
- * All rights reserved.
- * https://github.com/facebook/react/blob/2aeb8a2a6beb00617a4217f7f8284924fa2ad819/src/vendor/core/hyphenateStyleName.js
- */ var _hyphenate = require("./hyphenate");
-var _hyphenateDefault = parcelHelpers.interopDefault(_hyphenate);
-var msPattern = /^ms-/;
-function hyphenateStyleName(string) {
-    return _hyphenateDefault.default(string).replace(msPattern, '-ms-');
-}
-exports.default = hyphenateStyleName;
-
-},{"./hyphenate":"gLW70","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"gLW70":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var rUpper = /([A-Z])/g;
-function hyphenate(string) {
-    return string.replace(rUpper, '-$1').toLowerCase();
-}
-exports.default = hyphenate;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"jOida":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var supportedTransforms = /^((translate|rotate|scale)(X|Y|Z|3d)?|matrix(3d)?|perspective|skew(X|Y)?)$/i;
-function isTransform(value) {
-    return !!(value && supportedTransforms.test(value));
-}
-exports.default = isTransform;
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"6qqDo":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","react-transition-group/Transition":"6qqDo","./transitionEndListener":"3RD60","./triggerBrowserReflow":"iOtmf","./TransitionWrapper":"fX3f3","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"6qqDo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "UNMOUNTED", ()=>UNMOUNTED
@@ -35257,7 +35098,93 @@ function transitionEndListener(element, handler) {
 }
 exports.default = transitionEndListener;
 
-},{"dom-helpers/css":"23gV0","dom-helpers/transitionEnd":"N7ou1","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"N7ou1":[function(require,module,exports) {
+},{"dom-helpers/css":"23gV0","dom-helpers/transitionEnd":"N7ou1","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"23gV0":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _getComputedStyle = require("./getComputedStyle");
+var _getComputedStyleDefault = parcelHelpers.interopDefault(_getComputedStyle);
+var _hyphenateStyle = require("./hyphenateStyle");
+var _hyphenateStyleDefault = parcelHelpers.interopDefault(_hyphenateStyle);
+var _isTransform = require("./isTransform");
+var _isTransformDefault = parcelHelpers.interopDefault(_isTransform);
+function style(node, property) {
+    var css = '';
+    var transforms = '';
+    if (typeof property === 'string') return node.style.getPropertyValue(_hyphenateStyleDefault.default(property)) || _getComputedStyleDefault.default(node).getPropertyValue(_hyphenateStyleDefault.default(property));
+    Object.keys(property).forEach(function(key) {
+        var value = property[key];
+        if (!value && value !== 0) node.style.removeProperty(_hyphenateStyleDefault.default(key));
+        else if (_isTransformDefault.default(key)) transforms += key + "(" + value + ") ";
+        else css += _hyphenateStyleDefault.default(key) + ": " + value + ";";
+    });
+    if (transforms) css += "transform: " + transforms + ";";
+    node.style.cssText += ";" + css;
+}
+exports.default = style;
+
+},{"./getComputedStyle":"1SQLd","./hyphenateStyle":"lTVWG","./isTransform":"jOida","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"1SQLd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _ownerWindow = require("./ownerWindow");
+var _ownerWindowDefault = parcelHelpers.interopDefault(_ownerWindow);
+function getComputedStyle(node, psuedoElement) {
+    return _ownerWindowDefault.default(node).getComputedStyle(node, psuedoElement);
+}
+exports.default = getComputedStyle;
+
+},{"./ownerWindow":"gzFwD","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"gzFwD":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _ownerDocument = require("./ownerDocument");
+var _ownerDocumentDefault = parcelHelpers.interopDefault(_ownerDocument);
+function ownerWindow(node) {
+    var doc = _ownerDocumentDefault.default(node);
+    return doc && doc.defaultView || window;
+}
+exports.default = ownerWindow;
+
+},{"./ownerDocument":"lrM6c","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"lrM6c":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function ownerDocument(node) {
+    return node && node.ownerDocument || document;
+}
+exports.default = ownerDocument;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"lTVWG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+/**
+ * Copyright 2013-2014, Facebook, Inc.
+ * All rights reserved.
+ * https://github.com/facebook/react/blob/2aeb8a2a6beb00617a4217f7f8284924fa2ad819/src/vendor/core/hyphenateStyleName.js
+ */ var _hyphenate = require("./hyphenate");
+var _hyphenateDefault = parcelHelpers.interopDefault(_hyphenate);
+var msPattern = /^ms-/;
+function hyphenateStyleName(string) {
+    return _hyphenateDefault.default(string).replace(msPattern, '-ms-');
+}
+exports.default = hyphenateStyleName;
+
+},{"./hyphenate":"gLW70","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"gLW70":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var rUpper = /([A-Z])/g;
+function hyphenate(string) {
+    return string.replace(rUpper, '-$1').toLowerCase();
+}
+exports.default = hyphenate;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"jOida":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var supportedTransforms = /^((translate|rotate|scale)(X|Y|Z|3d)?|matrix(3d)?|perspective|skew(X|Y)?)$/i;
+function isTransform(value) {
+    return !!(value && supportedTransforms.test(value));
+}
+exports.default = isTransform;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"N7ou1":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _css = require("./css");
@@ -35400,31 +35327,6 @@ function triggerEvent(node, eventName, bubbles, cancelable) {
 }
 exports.default = triggerEvent;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"NDbpV":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-/**
- * Safe chained function
- *
- * Will only create a new function if needed,
- * otherwise will pass back existing functions or null.
- *
- * @param {function} functions to chain
- * @returns {function|null}
- */ function createChainedFunction(...funcs) {
-    return funcs.filter((f)=>f != null
-    ).reduce((acc, f)=>{
-        if (typeof f !== 'function') throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
-        if (acc === null) return f;
-        return function chainedFunction(...args) {
-            // @ts-ignore
-            acc.apply(this, args); // @ts-ignore
-            f.apply(this, args);
-        };
-    }, null);
-}
-exports.default = createChainedFunction;
-
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"iOtmf":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -35555,7 +35457,791 @@ function safeFindDOMNode(componentOrElement) {
 }
 exports.default = safeFindDOMNode;
 
-},{"react-dom":"gkWJK","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"iFmid":[function(require,module,exports) {
+},{"react-dom":"gkWJK","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"9rnf2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _react = require("react");
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _jsxRuntime = require("react/jsx-runtime");
+const propTypes = {
+    'aria-label': _propTypesDefault.default.string,
+    onClick: _propTypesDefault.default.func,
+    /**
+   * Render different color variant for the button.
+   *
+   * Omitting this will render the default dark color.
+   */ variant: _propTypesDefault.default.oneOf([
+        'white'
+    ])
+};
+const defaultProps = {
+    'aria-label': 'Close'
+};
+const CloseButton = /*#__PURE__*/ _react.forwardRef(({ className , variant , ...props }, ref)=>/*#__PURE__*/ _jsxRuntime.jsx("button", {
+        ref: ref,
+        type: "button",
+        className: _classnamesDefault.default('btn-close', variant && `btn-close-${variant}`, className),
+        ...props
+    })
+);
+CloseButton.displayName = 'CloseButton';
+CloseButton.propTypes = propTypes;
+CloseButton.defaultProps = defaultProps;
+exports.default = CloseButton;
+
+},{"prop-types":"1tgq3","react":"6TuXu","classnames":"bOXOh","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"aP2YV":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8dd4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8dd4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "RegistrationView", ()=>RegistrationView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _s = $RefreshSig$();
+function RegistrationView(props) {
+    _s();
+    const [username, setUsername] = _react.useState('');
+    const [password, setPassword] = _react.useState('');
+    const [email, setEmail] = _react.useState('');
+    const [birthday, setBirthday] = _react.useState('');
+    const [usernameErr, setUsernameErr] = _react.useState('');
+    const [passwordErr, setPasswordErr] = _react.useState('');
+    const [emailErr, setEmailErr] = _react.useState('');
+    const [birthdayErr, setBirthdayErr] = _react.useState('');
+    // CUSTOM METHODS
+    const isAlphaNumeric = (str)=>/^[a-z0-9]+$/gi.test(str)
+    ;
+    // Validate user inputs
+    const validate = ()=>{
+        let isReq = true;
+        setUsernameErr('');
+        setPasswordErr('');
+        setEmailErr('');
+        if (!username) {
+            setUsernameErr('Username Required');
+            isReq = false;
+        } else if (username.length < 5) {
+            setUsernameErr('Username must be at least 5 characters long');
+            isReq = false;
+        } else if (!isAlphaNumeric(username)) {
+            setUsernameErr('Username must include only alphanumeric characters');
+            isReq = false;
+        }
+        if (!password) {
+            setPasswordErr('Password Required');
+            isReq = false;
+        } else if (password.length < 8) {
+            setPasswordErr('Password must be at least 8 characters long');
+            isReq = false;
+        }
+        if (!email) {
+            setEmailErr('Email Required');
+            isReq = false;
+        } else if (email.indexOf('@') === -1) {
+            setEmailErr('Email is not valid');
+            isReq = false;
+        }
+        //
+        // CHECK IF BIRTHDAY MATCHES FORMAT MM/DD/YY HERE!!
+        //
+        return isReq;
+    };
+    const handleRegister = (e)=>{
+        e.preventDefault(); // prevents page from refreshing when clicking submit button
+        // Only sends axios request if all fields pass client-side validation check
+        const isReq = validate();
+        if (isReq) {
+            // Adds new user to database, then logs them in
+            let request = {
+                Username: username,
+                Password: password,
+                Email: email,
+                Birthday: birthday
+            };
+            // NEXT LINE FOR DEBUGGING!!
+            console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}; Req: ${request}`);
+            _axiosDefault.default.post('https://cinemadatabase.herokuapp.com/users', request).then((res)=>{
+                const data = res.data;
+                props.onLoggedIn(data);
+            }).catch((err)=>{
+                console.log(err);
+            });
+        }
+    };
+    return(/*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
+        className: "registration-view mt-5",
+        __source: {
+            fileName: "src/components/registration-view/registration-view.jsx",
+            lineNumber: 94
+        },
+        __self: this,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                className: "mb-5",
+                __source: {
+                    fileName: "src/components/registration-view/registration-view.jsx",
+                    lineNumber: 95
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    className: "text-center",
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 96
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        __source: {
+                            fileName: "src/components/registration-view/registration-view.jsx",
+                            lineNumber: 97
+                        },
+                        __self: this,
+                        children: "New user registeration:"
+                    })
+                })
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                className: "justify-content-sm-center",
+                __source: {
+                    fileName: "src/components/registration-view/registration-view.jsx",
+                    lineNumber: 100
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    sm: 8,
+                    md: 6,
+                    lg: 4,
+                    __source: {
+                        fileName: "src/components/registration-view/registration-view.jsx",
+                        lineNumber: 101
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+                        __source: {
+                            fileName: "src/components/registration-view/registration-view.jsx",
+                            lineNumber: 102
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                                controlId: "formUsername",
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 103
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 104
+                                        },
+                                        __self: this,
+                                        children: "Username:"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                        type: "text",
+                                        onChange: (e)=>setUsername(e.target.value)
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 105
+                                        },
+                                        __self: this
+                                    }),
+                                    usernameErr && /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Text, {
+                                        className: "text-muted",
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 106
+                                        },
+                                        __self: this,
+                                        children: usernameErr
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                                className: "mt-3",
+                                controlId: "formPassword",
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 108
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 109
+                                        },
+                                        __self: this,
+                                        children: "Password:"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                        type: "password",
+                                        onChange: (e)=>setPassword(e.target.value)
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 110
+                                        },
+                                        __self: this
+                                    }),
+                                    passwordErr && /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Text, {
+                                        className: "text-muted",
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 111
+                                        },
+                                        __self: this,
+                                        children: passwordErr
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                                className: "mt-3",
+                                controlId: "formEmail",
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 113
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 114
+                                        },
+                                        __self: this,
+                                        children: "Email:"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                        type: "email",
+                                        onChange: (e)=>setEmail(e.target.value)
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 115
+                                        },
+                                        __self: this
+                                    }),
+                                    emailErr && /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Text, {
+                                        className: "text-muted",
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 116
+                                        },
+                                        __self: this,
+                                        children: emailErr
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default.Group, {
+                                className: "mt-3",
+                                controlId: "formBirthday",
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 118
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 119
+                                        },
+                                        __self: this,
+                                        children: "Birthday:"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Text, {
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 120
+                                        },
+                                        __self: this,
+                                        children: " (This field is optional)"
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                        type: "string",
+                                        onChange: (e)=>setBirthday(e.target.value)
+                                        ,
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 121
+                                        },
+                                        __self: this
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Text, {
+                                        className: "text-muted",
+                                        __source: {
+                                            fileName: "src/components/registration-view/registration-view.jsx",
+                                            lineNumber: 122
+                                        },
+                                        __self: this,
+                                        children: "Please use format MM/DD/YY"
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                className: "mt-4",
+                                variant: "dark",
+                                type: "submit",
+                                onClick: handleRegister,
+                                __source: {
+                                    fileName: "src/components/registration-view/registration-view.jsx",
+                                    lineNumber: 126
+                                },
+                                __self: this,
+                                children: "Register"
+                            })
+                        ]
+                    })
+                })
+            })
+        ]
+    }));
+}
+_s(RegistrationView, "tPVpsavGbc3Ol2lOxdlDGGKcN5k=");
+_c = RegistrationView;
+RegistrationView.propTypes = {
+    onLoggedIn: _propTypesDefault.default.func.isRequired
+};
+var _c;
+$RefreshReg$(_c, "RegistrationView");
+
+  $parcel$ReactRefreshHelpers$8dd4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","prop-types":"1tgq3","axios":"iYoWk"}],"63yS7":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1bb2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1bb2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Navbar", ()=>Navbar
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _navbar = require("react-bootstrap/Navbar");
+var _navbarDefault = parcelHelpers.interopDefault(_navbar);
+var _nav = require("react-bootstrap/Nav");
+var _navDefault = parcelHelpers.interopDefault(_nav);
+class Navbar extends _reactDefault.default.Component {
+    // CUSTOM METHODS
+    getToken() {
+        let accessToken = localStorage.getItem('token');
+        if (accessToken) return accessToken;
+        else return false;
+    }
+    onLoggedOut() {
+        localStorage.clear();
+        window.open("/", "_self");
+    }
+    // LIFECYCLE METHODS
+    render() {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default, {
+            bg: "dark",
+            variant: "dark",
+            expand: "md",
+            __source: {
+                fileName: "src/components/navbar/navbar.jsx",
+                lineNumber: 29
+            },
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
+                __source: {
+                    fileName: "src/components/navbar/navbar.jsx",
+                    lineNumber: 30
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Brand, {
+                        href: "/",
+                        __source: {
+                            fileName: "src/components/navbar/navbar.jsx",
+                            lineNumber: 31
+                        },
+                        __self: this,
+                        children: "CinemaDatabase"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Toggle, {
+                        "aria-controls": "basic-navbar-nav",
+                        __source: {
+                            fileName: "src/components/navbar/navbar.jsx",
+                            lineNumber: 32
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Collapse, {
+                        id: "basic-navbar-nav",
+                        className: "justify-content-end",
+                        __source: {
+                            fileName: "src/components/navbar/navbar.jsx",
+                            lineNumber: 33
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_navDefault.default, {
+                            className: "me-auto",
+                            __source: {
+                                fileName: "src/components/navbar/navbar.jsx",
+                                lineNumber: 34
+                            },
+                            __self: this,
+                            children: [
+                                this.getToken() && /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                    href: "/about.html",
+                                    __source: {
+                                        fileName: "src/components/navbar/navbar.jsx",
+                                        lineNumber: 35
+                                    },
+                                    __self: this,
+                                    children: "About"
+                                }),
+                                this.getToken() && /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                    href: "#",
+                                    __source: {
+                                        fileName: "src/components/navbar/navbar.jsx",
+                                        lineNumber: 36
+                                    },
+                                    __self: this,
+                                    children: "Profile"
+                                }),
+                                this.getToken() && /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                    onClick: ()=>this.onLoggedOut()
+                                    ,
+                                    __source: {
+                                        fileName: "src/components/navbar/navbar.jsx",
+                                        lineNumber: 37
+                                    },
+                                    __self: this,
+                                    children: "Logout"
+                                })
+                            ]
+                        })
+                    })
+                ]
+            })
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$1bb2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Nav":"io07g","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"eYZQl":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _selectableContext = require("@restart/ui/SelectableContext");
+var _selectableContextDefault = parcelHelpers.interopDefault(_selectableContext);
+var _uncontrollable = require("uncontrollable");
+var _createWithBsPrefix = require("./createWithBsPrefix");
+var _createWithBsPrefixDefault = parcelHelpers.interopDefault(_createWithBsPrefix);
+var _navbarBrand = require("./NavbarBrand");
+var _navbarBrandDefault = parcelHelpers.interopDefault(_navbarBrand);
+var _navbarCollapse = require("./NavbarCollapse");
+var _navbarCollapseDefault = parcelHelpers.interopDefault(_navbarCollapse);
+var _navbarToggle = require("./NavbarToggle");
+var _navbarToggleDefault = parcelHelpers.interopDefault(_navbarToggle);
+var _navbarOffcanvas = require("./NavbarOffcanvas");
+var _navbarOffcanvasDefault = parcelHelpers.interopDefault(_navbarOffcanvas);
+var _themeProvider = require("./ThemeProvider");
+var _navbarContext = require("./NavbarContext");
+var _navbarContextDefault = parcelHelpers.interopDefault(_navbarContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const NavbarText = _createWithBsPrefixDefault.default('navbar-text', {
+    Component: 'span'
+});
+const defaultProps = {
+    expand: true,
+    variant: 'light',
+    collapseOnSelect: false
+};
+const Navbar = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
+    const { bsPrefix: initialBsPrefix , expand , variant , bg , fixed , sticky , className , // Need to define the default "as" during prop destructuring to be compatible with styled-components github.com/react-bootstrap/react-bootstrap/issues/3595
+    as: Component = 'nav' , expanded , onToggle , onSelect , collapseOnSelect , ...controlledProps } = _uncontrollable.useUncontrolled(props, {
+        expanded: 'onToggle'
+    });
+    const bsPrefix = _themeProvider.useBootstrapPrefix(initialBsPrefix, 'navbar');
+    const handleCollapse = _react.useCallback((...args)=>{
+        onSelect == null || onSelect(...args);
+        if (collapseOnSelect && expanded) onToggle == null || onToggle(false);
+    }, [
+        onSelect,
+        collapseOnSelect,
+        expanded,
+        onToggle
+    ]); // will result in some false positives but that seems better
+    // than false negatives. strict `undefined` check allows explicit
+    // "nulling" of the role if the user really doesn't want one
+    if (controlledProps.role === undefined && Component !== 'nav') controlledProps.role = 'navigation';
+    let expandClass = `${bsPrefix}-expand`;
+    if (typeof expand === 'string') expandClass = `${expandClass}-${expand}`;
+    const navbarContext = _react.useMemo(()=>({
+            onToggle: ()=>onToggle == null ? void 0 : onToggle(!expanded)
+            ,
+            bsPrefix,
+            expanded: !!expanded,
+            expand
+        })
+    , [
+        bsPrefix,
+        expanded,
+        expand,
+        onToggle
+    ]);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_navbarContextDefault.default.Provider, {
+        value: navbarContext,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(_selectableContextDefault.default.Provider, {
+            value: handleCollapse,
+            children: /*#__PURE__*/ _jsxRuntime.jsx(Component, {
+                ref: ref,
+                ...controlledProps,
+                className: _classnamesDefault.default(className, bsPrefix, expand && expandClass, variant && `${bsPrefix}-${variant}`, bg && `bg-${bg}`, sticky && `sticky-${sticky}`, fixed && `fixed-${fixed}`)
+            })
+        })
+    }));
+});
+Navbar.defaultProps = defaultProps;
+Navbar.displayName = 'Navbar';
+exports.default = Object.assign(Navbar, {
+    Brand: _navbarBrandDefault.default,
+    Collapse: _navbarCollapseDefault.default,
+    Offcanvas: _navbarOffcanvasDefault.default,
+    Text: NavbarText,
+    Toggle: _navbarToggleDefault.default
+});
+
+},{"classnames":"bOXOh","react":"6TuXu","@restart/ui/SelectableContext":"9e25D","uncontrollable":"1g2Nf","./createWithBsPrefix":"8AqEH","./NavbarBrand":"eepuz","./NavbarCollapse":"luUA1","./NavbarToggle":"bjuEn","./NavbarOffcanvas":"1oFvj","./ThemeProvider":"eeqfi","./NavbarContext":"iFmid","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"9e25D":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "makeEventKey", ()=>makeEventKey
+);
+var _react = require("react");
+const SelectableContext = /*#__PURE__*/ _react.createContext(null);
+const makeEventKey = (eventKey, href = null)=>{
+    if (eventKey != null) return String(eventKey);
+    return href || null;
+};
+exports.default = SelectableContext;
+
+},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"eepuz":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _react = require("react");
+var _themeProvider = require("./ThemeProvider");
+var _jsxRuntime = require("react/jsx-runtime");
+const NavbarBrand = /*#__PURE__*/ _react.forwardRef(({ bsPrefix , className , as , ...props }, ref)=>{
+    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'navbar-brand');
+    const Component = as || (props.href ? 'a' : 'span');
+    return(/*#__PURE__*/ _jsxRuntime.jsx(Component, {
+        ...props,
+        ref: ref,
+        className: _classnamesDefault.default(className, bsPrefix)
+    }));
+});
+NavbarBrand.displayName = 'NavbarBrand';
+exports.default = NavbarBrand;
+
+},{"classnames":"bOXOh","react":"6TuXu","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"luUA1":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _collapse = require("./Collapse");
+var _collapseDefault = parcelHelpers.interopDefault(_collapse);
+var _themeProvider = require("./ThemeProvider");
+var _navbarContext = require("./NavbarContext");
+var _navbarContextDefault = parcelHelpers.interopDefault(_navbarContext);
+var _jsxRuntime = require("react/jsx-runtime");
+const NavbarCollapse = /*#__PURE__*/ _react.forwardRef(({ children , bsPrefix , ...props }, ref)=>{
+    bsPrefix = _themeProvider.useBootstrapPrefix(bsPrefix, 'navbar-collapse');
+    const context = _react.useContext(_navbarContextDefault.default);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_collapseDefault.default, {
+        in: !!(context && context.expanded),
+        ...props,
+        children: /*#__PURE__*/ _jsxRuntime.jsx("div", {
+            ref: ref,
+            className: bsPrefix,
+            children: children
+        })
+    }));
+});
+NavbarCollapse.displayName = 'NavbarCollapse';
+exports.default = NavbarCollapse;
+
+},{"react":"6TuXu","./Collapse":"9TRx8","./ThemeProvider":"eeqfi","./NavbarContext":"iFmid","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"9TRx8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _classnames = require("classnames");
+var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
+var _css = require("dom-helpers/css");
+var _cssDefault = parcelHelpers.interopDefault(_css);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _transition = require("react-transition-group/Transition");
+var _transitionEndListener = require("./transitionEndListener");
+var _transitionEndListenerDefault = parcelHelpers.interopDefault(_transitionEndListener);
+var _createChainedFunction = require("./createChainedFunction");
+var _createChainedFunctionDefault = parcelHelpers.interopDefault(_createChainedFunction);
+var _triggerBrowserReflow = require("./triggerBrowserReflow");
+var _triggerBrowserReflowDefault = parcelHelpers.interopDefault(_triggerBrowserReflow);
+var _transitionWrapper = require("./TransitionWrapper");
+var _transitionWrapperDefault = parcelHelpers.interopDefault(_transitionWrapper);
+var _jsxRuntime = require("react/jsx-runtime");
+const MARGINS = {
+    height: [
+        'marginTop',
+        'marginBottom'
+    ],
+    width: [
+        'marginLeft',
+        'marginRight'
+    ]
+};
+function getDefaultDimensionValue(dimension, elem) {
+    const offset = `offset${dimension[0].toUpperCase()}${dimension.slice(1)}`;
+    const value = elem[offset];
+    const margins = MARGINS[dimension];
+    return value + parseInt(_cssDefault.default(elem, margins[0]), 10) + parseInt(_cssDefault.default(elem, margins[1]), 10);
+}
+const collapseStyles = {
+    [_transition.EXITED]: 'collapse',
+    [_transition.EXITING]: 'collapsing',
+    [_transition.ENTERING]: 'collapsing',
+    [_transition.ENTERED]: 'collapse show'
+};
+const defaultProps = {
+    in: false,
+    timeout: 300,
+    mountOnEnter: false,
+    unmountOnExit: false,
+    appear: false,
+    getDimensionValue: getDefaultDimensionValue
+};
+const Collapse = /*#__PURE__*/ _reactDefault.default.forwardRef(({ onEnter , onEntering , onEntered , onExit , onExiting , className , children , dimension ='height' , getDimensionValue =getDefaultDimensionValue , ...props }, ref)=>{
+    /* Compute dimension */ const computedDimension = typeof dimension === 'function' ? dimension() : dimension;
+    /* -- Expanding -- */ const handleEnter = _react.useMemo(()=>_createChainedFunctionDefault.default((elem)=>{
+            elem.style[computedDimension] = '0';
+        }, onEnter)
+    , [
+        computedDimension,
+        onEnter
+    ]);
+    const handleEntering = _react.useMemo(()=>_createChainedFunctionDefault.default((elem)=>{
+            const scroll = `scroll${computedDimension[0].toUpperCase()}${computedDimension.slice(1)}`;
+            elem.style[computedDimension] = `${elem[scroll]}px`;
+        }, onEntering)
+    , [
+        computedDimension,
+        onEntering
+    ]);
+    const handleEntered = _react.useMemo(()=>_createChainedFunctionDefault.default((elem)=>{
+            elem.style[computedDimension] = null;
+        }, onEntered)
+    , [
+        computedDimension,
+        onEntered
+    ]);
+    /* -- Collapsing -- */ const handleExit = _react.useMemo(()=>_createChainedFunctionDefault.default((elem)=>{
+            elem.style[computedDimension] = `${getDimensionValue(computedDimension, elem)}px`;
+            _triggerBrowserReflowDefault.default(elem);
+        }, onExit)
+    , [
+        onExit,
+        getDimensionValue,
+        computedDimension
+    ]);
+    const handleExiting = _react.useMemo(()=>_createChainedFunctionDefault.default((elem)=>{
+            elem.style[computedDimension] = null;
+        }, onExiting)
+    , [
+        computedDimension,
+        onExiting
+    ]);
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_transitionWrapperDefault.default, {
+        ref: ref,
+        addEndListener: _transitionEndListenerDefault.default,
+        ...props,
+        "aria-expanded": props.role ? props.in : null,
+        onEnter: handleEnter,
+        onEntering: handleEntering,
+        onEntered: handleEntered,
+        onExit: handleExit,
+        onExiting: handleExiting,
+        childRef: children.ref,
+        children: (state, innerProps)=>/*#__PURE__*/ _reactDefault.default.cloneElement(children, {
+                ...innerProps,
+                className: _classnamesDefault.default(className, children.props.className, collapseStyles[state], computedDimension === 'width' && 'collapse-horizontal')
+            })
+    }));
+}); // @ts-ignore
+// @ts-ignore
+Collapse.defaultProps = defaultProps;
+exports.default = Collapse;
+
+},{"classnames":"bOXOh","dom-helpers/css":"23gV0","react":"6TuXu","react-transition-group/Transition":"6qqDo","./transitionEndListener":"3RD60","./createChainedFunction":"NDbpV","./triggerBrowserReflow":"iOtmf","./TransitionWrapper":"fX3f3","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"NDbpV":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+/**
+ * Safe chained function
+ *
+ * Will only create a new function if needed,
+ * otherwise will pass back existing functions or null.
+ *
+ * @param {function} functions to chain
+ * @returns {function|null}
+ */ function createChainedFunction(...funcs) {
+    return funcs.filter((f)=>f != null
+    ).reduce((acc, f)=>{
+        if (typeof f !== 'function') throw new Error('Invalid Argument Type, must only provide functions, undefined, or null.');
+        if (acc === null) return f;
+        return function chainedFunction(...args) {
+            // @ts-ignore
+            acc.apply(this, args); // @ts-ignore
+            f.apply(this, args);
+        };
+    }, null);
+}
+exports.default = createChainedFunction;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"iFmid":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react"); // TODO: check
@@ -35603,46 +36289,7 @@ NavbarToggle.displayName = 'NavbarToggle';
 NavbarToggle.defaultProps = defaultProps;
 exports.default = NavbarToggle;
 
-},{"classnames":"bOXOh","react":"6TuXu","@restart/hooks/useEventCallback":"lDj1q","./ThemeProvider":"eeqfi","./NavbarContext":"iFmid","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"lDj1q":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _useCommittedRef = require("./useCommittedRef");
-var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
-function useEventCallback(fn) {
-    var ref = _useCommittedRefDefault.default(fn);
-    return _react.useCallback(function() {
-        return ref.current && ref.current.apply(ref, arguments);
-    }, [
-        ref
-    ]);
-}
-exports.default = useEventCallback;
-
-},{"react":"6TuXu","./useCommittedRef":"lW5pn","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"lW5pn":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-/**
- * Creates a `Ref` whose value is updated in an effect, ensuring the most recent
- * value is the one rendered with. Generally only required for Concurrent mode usage
- * where previous work in `render()` may be discarded before being used.
- *
- * This is safe to access in an event handler.
- *
- * @param value The `Ref` value
- */ function useCommittedRef(value) {
-    var ref = _react.useRef(value);
-    _react.useEffect(function() {
-        ref.current = value;
-    }, [
-        value
-    ]);
-    return ref;
-}
-exports.default = useCommittedRef;
-
-},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"1oFvj":[function(require,module,exports) {
+},{"classnames":"bOXOh","react":"6TuXu","@restart/hooks/useEventCallback":"lDj1q","./ThemeProvider":"eeqfi","./NavbarContext":"iFmid","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"1oFvj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
@@ -35841,16 +36488,7 @@ function useMediaQuery(query, targetWindow) {
 }
 exports.default = useMediaQuery;
 
-},{"./useIsomorphicEffect":"3psbV","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"3psbV":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var global = arguments[3];
-var isReactNative = typeof global !== 'undefined' && global.navigator && global.navigator.product === 'ReactNative';
-var isDOM = typeof document !== 'undefined';
-exports.default = isDOM || isReactNative ? _react.useLayoutEffect : _react.useEffect;
-
-},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"1lxtI":[function(require,module,exports) {
+},{"./useIsomorphicEffect":"3psbV","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"1lxtI":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -36266,26 +36904,7 @@ function contains(context, node) {
 }
 exports.default = contains;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"7pc10":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-function useMounted() {
-    var mounted = _react.useRef(true);
-    var isMounted = _react.useRef(function() {
-        return mounted.current;
-    });
-    _react.useEffect(function() {
-        mounted.current = true;
-        return function() {
-            mounted.current = false;
-        };
-    }, []);
-    return isMounted.current;
-}
-exports.default = useMounted;
-
-},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"iNUbJ":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"iNUbJ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _useUpdatedRef = require("./useUpdatedRef");
@@ -36311,19 +36930,6 @@ function useUpdatedRef(value) {
     return valueRef;
 }
 exports.default = useUpdatedRef;
-
-},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"eayR5":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-function usePrevious(value) {
-    var ref = _react.useRef(null);
-    _react.useEffect(function() {
-        ref.current = value;
-    });
-    return ref.current;
-}
-exports.default = usePrevious;
 
 },{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"kJgU5":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -36504,56 +37110,7 @@ function useWindow() {
 }
 exports.default = useWindow;
 
-},{"react":"6TuXu","dom-helpers/canUseDOM":"pPGj4","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"kCN9h":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _react = require("react");
-var _transition = require("react-transition-group/Transition");
-var _transitionEndListener = require("./transitionEndListener");
-var _transitionEndListenerDefault = parcelHelpers.interopDefault(_transitionEndListener);
-var _triggerBrowserReflow = require("./triggerBrowserReflow");
-var _triggerBrowserReflowDefault = parcelHelpers.interopDefault(_triggerBrowserReflow);
-var _transitionWrapper = require("./TransitionWrapper");
-var _transitionWrapperDefault = parcelHelpers.interopDefault(_transitionWrapper);
-var _jsxRuntime = require("react/jsx-runtime");
-const defaultProps = {
-    in: false,
-    timeout: 300,
-    mountOnEnter: false,
-    unmountOnExit: false,
-    appear: false
-};
-const fadeStyles = {
-    [_transition.ENTERING]: 'show',
-    [_transition.ENTERED]: 'show'
-};
-const Fade = /*#__PURE__*/ _react.forwardRef(({ className , children , transitionClasses ={
-} , ...props }, ref)=>{
-    const handleEnter = _react.useCallback((node, isAppearing)=>{
-        _triggerBrowserReflowDefault.default(node);
-        props.onEnter == null || props.onEnter(node, isAppearing);
-    }, [
-        props
-    ]);
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_transitionWrapperDefault.default, {
-        ref: ref,
-        addEndListener: _transitionEndListenerDefault.default,
-        ...props,
-        onEnter: handleEnter,
-        childRef: children.ref,
-        children: (status, innerProps)=>/*#__PURE__*/ _react.cloneElement(children, {
-                ...innerProps,
-                className: _classnamesDefault.default('fade', className, children.props.className, fadeStyles[status], transitionClasses[status])
-            })
-    }));
-});
-Fade.defaultProps = defaultProps;
-Fade.displayName = 'Fade';
-exports.default = Fade;
-
-},{"classnames":"bOXOh","react":"6TuXu","react-transition-group/Transition":"6qqDo","./transitionEndListener":"3RD60","./triggerBrowserReflow":"iOtmf","./TransitionWrapper":"fX3f3","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"bMhVV":[function(require,module,exports) {
+},{"react":"6TuXu","dom-helpers/canUseDOM":"pPGj4","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"bMhVV":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _createWithBsPrefix = require("./createWithBsPrefix");
@@ -36674,42 +37231,7 @@ const AbstractModalHeader = /*#__PURE__*/ _react.forwardRef(({ closeLabel , clos
 AbstractModalHeader.defaultProps = defaultProps;
 exports.default = AbstractModalHeader;
 
-},{"react":"6TuXu","@restart/hooks/useEventCallback":"lDj1q","./CloseButton":"9rnf2","./ModalContext":"6MOow","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"9rnf2":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _propTypes = require("prop-types");
-var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
-var _react = require("react");
-var _classnames = require("classnames");
-var _classnamesDefault = parcelHelpers.interopDefault(_classnames);
-var _jsxRuntime = require("react/jsx-runtime");
-const propTypes = {
-    'aria-label': _propTypesDefault.default.string,
-    onClick: _propTypesDefault.default.func,
-    /**
-   * Render different color variant for the button.
-   *
-   * Omitting this will render the default dark color.
-   */ variant: _propTypesDefault.default.oneOf([
-        'white'
-    ])
-};
-const defaultProps = {
-    'aria-label': 'Close'
-};
-const CloseButton = /*#__PURE__*/ _react.forwardRef(({ className , variant , ...props }, ref)=>/*#__PURE__*/ _jsxRuntime.jsx("button", {
-        ref: ref,
-        type: "button",
-        className: _classnamesDefault.default('btn-close', variant && `btn-close-${variant}`, className),
-        ...props
-    })
-);
-CloseButton.displayName = 'CloseButton';
-CloseButton.propTypes = propTypes;
-CloseButton.defaultProps = defaultProps;
-exports.default = CloseButton;
-
-},{"prop-types":"1tgq3","react":"6TuXu","classnames":"bOXOh","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"kKoeP":[function(require,module,exports) {
+},{"react":"6TuXu","@restart/hooks/useEventCallback":"lDj1q","./CloseButton":"9rnf2","./ModalContext":"6MOow","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"kKoeP":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _createWithBsPrefix = require("./createWithBsPrefix");
@@ -37268,385 +37790,6 @@ NavLink.displayName = 'NavLink';
 NavLink.defaultProps = defaultProps;
 exports.default = NavLink;
 
-},{"classnames":"bOXOh","react":"6TuXu","@restart/ui/Anchor":"KNzrK","@restart/ui/NavItem":"hIuK4","@restart/ui/SelectableContext":"9e25D","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"KNzrK":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "isTrivialHref", ()=>isTrivialHref
-);
-/* eslint-disable jsx-a11y/no-static-element-interactions */ /* eslint-disable jsx-a11y/anchor-has-content */ var _react = require("react");
-var _hooks = require("@restart/hooks");
-var _button = require("./Button");
-var _jsxRuntime = require("react/jsx-runtime");
-const _excluded = [
-    "onKeyDown"
-];
-function _objectWithoutPropertiesLoose(source, excluded) {
-    if (source == null) return {
-    };
-    var target = {
-    };
-    var sourceKeys = Object.keys(source);
-    var key, i;
-    for(i = 0; i < sourceKeys.length; i++){
-        key = sourceKeys[i];
-        if (excluded.indexOf(key) >= 0) continue;
-        target[key] = source[key];
-    }
-    return target;
-}
-function isTrivialHref(href) {
-    return !href || href.trim() === '#';
-}
-/**
- * An generic `<a>` component that covers a few A11y cases, ensuring that
- * cases where the `href` is missing or trivial like "#" are treated like buttons.
- */ const Anchor = /*#__PURE__*/ _react.forwardRef((_ref, ref)=>{
-    let { onKeyDown  } = _ref, props = _objectWithoutPropertiesLoose(_ref, _excluded);
-    const [buttonProps] = _button.useButtonProps(Object.assign({
-        tagName: 'a'
-    }, props));
-    const handleKeyDown = _hooks.useEventCallback((e)=>{
-        buttonProps.onKeyDown(e);
-        onKeyDown == null || onKeyDown(e);
-    });
-    if (isTrivialHref(props.href) && !props.role || props.role === 'button') return(/*#__PURE__*/ _jsxRuntime.jsx("a", Object.assign({
-        ref: ref
-    }, props, buttonProps, {
-        onKeyDown: handleKeyDown
-    })));
-    return(/*#__PURE__*/ _jsxRuntime.jsx("a", Object.assign({
-        ref: ref
-    }, props, {
-        onKeyDown: onKeyDown
-    })));
-});
-Anchor.displayName = 'Anchor';
-exports.default = Anchor;
-
-},{"react":"6TuXu","@restart/hooks":"jFEL5","./Button":"fBjIr","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"jFEL5":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "useCallbackRef", ()=>_useCallbackRefDefault.default
-);
-parcelHelpers.export(exports, "useCommittedRef", ()=>_useCommittedRefDefault.default
-);
-parcelHelpers.export(exports, "useEventCallback", ()=>_useEventCallbackDefault.default
-);
-parcelHelpers.export(exports, "useEventListener", ()=>_useEventListenerDefault.default
-);
-parcelHelpers.export(exports, "useGlobalListener", ()=>_useGlobalListenerDefault.default
-);
-parcelHelpers.export(exports, "useInterval", ()=>_useIntervalDefault.default
-);
-parcelHelpers.export(exports, "useRafInterval", ()=>_useRafIntervalDefault.default
-);
-parcelHelpers.export(exports, "useMergeState", ()=>_useMergeStateDefault.default
-);
-parcelHelpers.export(exports, "useMergeStateFromProps", ()=>_useMergeStateFromPropsDefault.default
-);
-parcelHelpers.export(exports, "useMounted", ()=>_useMountedDefault.default
-);
-parcelHelpers.export(exports, "usePrevious", ()=>_usePreviousDefault.default
-);
-parcelHelpers.export(exports, "useImage", ()=>_useImageDefault.default
-);
-parcelHelpers.export(exports, "useResizeObserver", ()=>_useResizeObserverDefault.default
-);
-var _useCallbackRef = require("./useCallbackRef");
-var _useCallbackRefDefault = parcelHelpers.interopDefault(_useCallbackRef);
-var _useCommittedRef = require("./useCommittedRef");
-var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
-var _useEventCallback = require("./useEventCallback");
-var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
-var _useEventListener = require("./useEventListener");
-var _useEventListenerDefault = parcelHelpers.interopDefault(_useEventListener);
-var _useGlobalListener = require("./useGlobalListener");
-var _useGlobalListenerDefault = parcelHelpers.interopDefault(_useGlobalListener);
-var _useInterval = require("./useInterval");
-var _useIntervalDefault = parcelHelpers.interopDefault(_useInterval);
-var _useRafInterval = require("./useRafInterval");
-var _useRafIntervalDefault = parcelHelpers.interopDefault(_useRafInterval);
-var _useMergeState = require("./useMergeState");
-var _useMergeStateDefault = parcelHelpers.interopDefault(_useMergeState);
-var _useMergeStateFromProps = require("./useMergeStateFromProps");
-var _useMergeStateFromPropsDefault = parcelHelpers.interopDefault(_useMergeStateFromProps);
-var _useMounted = require("./useMounted");
-var _useMountedDefault = parcelHelpers.interopDefault(_useMounted);
-var _usePrevious = require("./usePrevious");
-var _usePreviousDefault = parcelHelpers.interopDefault(_usePrevious);
-var _useImage = require("./useImage");
-var _useImageDefault = parcelHelpers.interopDefault(_useImage);
-var _useResizeObserver = require("./useResizeObserver");
-var _useResizeObserverDefault = parcelHelpers.interopDefault(_useResizeObserver);
-
-},{"./useCallbackRef":"hKgxU","./useCommittedRef":"lW5pn","./useEventCallback":"lDj1q","./useEventListener":"9Ztch","./useGlobalListener":"7JFhp","./useInterval":"5i8eo","./useRafInterval":"djpEe","./useMergeState":"fUbBJ","./useMergeStateFromProps":"artIq","./useMounted":"7pc10","./usePrevious":"eayR5","./useImage":"7YeLI","./useResizeObserver":"cf1dg","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"hKgxU":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-function useCallbackRef() {
-    return _react.useState(null);
-}
-exports.default = useCallbackRef;
-
-},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"9Ztch":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _useEventCallback = require("./useEventCallback");
-var _useEventCallbackDefault = parcelHelpers.interopDefault(_useEventCallback);
-function useEventListener(eventTarget, event, listener, capture) {
-    if (capture === void 0) capture = false;
-    var handler = _useEventCallbackDefault.default(listener);
-    _react.useEffect(function() {
-        var target = typeof eventTarget === 'function' ? eventTarget() : eventTarget;
-        target.addEventListener(event, handler, capture);
-        return function() {
-            return target.removeEventListener(event, handler, capture);
-        };
-    }, [
-        eventTarget
-    ]);
-}
-exports.default = useEventListener;
-
-},{"react":"6TuXu","./useEventCallback":"lDj1q","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"7JFhp":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _useEventListener = require("./useEventListener");
-var _useEventListenerDefault = parcelHelpers.interopDefault(_useEventListener);
-var _react = require("react");
-function useGlobalListener(event, handler, capture) {
-    if (capture === void 0) capture = false;
-    var documentTarget = _react.useCallback(function() {
-        return document;
-    }, []);
-    return _useEventListenerDefault.default(documentTarget, event, handler, capture);
-}
-exports.default = useGlobalListener;
-
-},{"./useEventListener":"9Ztch","react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"5i8eo":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _useCommittedRef = require("./useCommittedRef");
-var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
-/**
- * Creates a `setInterval` that is properly cleaned up when a component unmounted
- *
- * ```tsx
- *  function Timer() {
- *    const [timer, setTimer] = useState(0)
- *    useInterval(() => setTimer(i => i + 1), 1000)
- *
- *    return <span>{timer} seconds past</span>
- *  }
- * ```
- *
- * @param fn an function run on each interval
- * @param ms The milliseconds duration of the interval
- */ function useInterval(fn, ms, paused, runImmediately) {
-    if (paused === void 0) paused = false;
-    if (runImmediately === void 0) runImmediately = false;
-    var handle;
-    var fnRef = _useCommittedRefDefault.default(fn); // this ref is necessary b/c useEffect will sometimes miss a paused toggle
-    // orphaning a setTimeout chain in the aether, so relying on it's refresh logic is not reliable.
-    var pausedRef = _useCommittedRefDefault.default(paused);
-    var tick = function tick1() {
-        if (pausedRef.current) return;
-        fnRef.current();
-        schedule(); // eslint-disable-line no-use-before-define
-    };
-    var schedule = function schedule1() {
-        clearTimeout(handle);
-        handle = setTimeout(tick, ms);
-    };
-    _react.useEffect(function() {
-        if (runImmediately) tick();
-        else schedule();
-        return function() {
-            return clearTimeout(handle);
-        };
-    }, [
-        paused,
-        runImmediately
-    ]);
-}
-exports.default = useInterval;
-
-},{"react":"6TuXu","./useCommittedRef":"lW5pn","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"djpEe":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _useCommittedRef = require("./useCommittedRef");
-var _useCommittedRefDefault = parcelHelpers.interopDefault(_useCommittedRef);
-function useRafInterval(fn, ms, paused) {
-    if (paused === void 0) paused = false;
-    var handle;
-    var start = new Date().getTime();
-    var fnRef = _useCommittedRefDefault.default(fn); // this ref is necessary b/c useEffect will sometimes miss a paused toggle
-    // orphaning a setTimeout chain in the aether, so relying on it's refresh logic is not reliable.
-    var pausedRef = _useCommittedRefDefault.default(paused);
-    function loop() {
-        var current = new Date().getTime();
-        var delta = current - start;
-        if (pausedRef.current) return;
-        if (delta >= ms && fnRef.current) {
-            fnRef.current();
-            start = new Date().getTime();
-        }
-        cancelAnimationFrame(handle);
-        handle = requestAnimationFrame(loop);
-    }
-    _react.useEffect(function() {
-        handle = requestAnimationFrame(loop);
-        return function() {
-            return cancelAnimationFrame(handle);
-        };
-    }, []);
-}
-exports.default = useRafInterval;
-
-},{"react":"6TuXu","./useCommittedRef":"lW5pn","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"fUbBJ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-function _extends() {
-    _extends = Object.assign || function(target) {
-        for(var i = 1; i < arguments.length; i++){
-            var source = arguments[i];
-            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
-        }
-        return target;
-    };
-    return _extends.apply(this, arguments);
-}
-function useMergeState(initialState) {
-    var _useState = _react.useState(initialState), state = _useState[0], setState = _useState[1];
-    var updater = _react.useCallback(function(update) {
-        if (update === null) return;
-        if (typeof update === 'function') setState(function(state1) {
-            var nextState = update(state1);
-            return nextState == null ? state1 : _extends({
-            }, state1, nextState);
-        });
-        else setState(function(state1) {
-            return _extends({
-            }, state1, update);
-        });
-    }, [
-        setState
-    ]);
-    return [
-        state,
-        updater
-    ];
-}
-exports.default = useMergeState;
-
-},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"artIq":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _useMergeState = require("./useMergeState");
-var _useMergeStateDefault = parcelHelpers.interopDefault(_useMergeState);
-function useMergeStateFromProps(props, gDSFP, initialState) {
-    var _useMergeState1 = _useMergeStateDefault.default(initialState), state = _useMergeState1[0], setState = _useMergeState1[1];
-    var nextState = gDSFP(props, state);
-    if (nextState !== null) setState(nextState);
-    return [
-        state,
-        setState
-    ];
-}
-exports.default = useMergeStateFromProps;
-
-},{"./useMergeState":"fUbBJ","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"7YeLI":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-function useImage(imageOrUrl, crossOrigin) {
-    var _useState = _react.useState({
-        image: null,
-        error: null
-    }), state = _useState[0], setState = _useState[1];
-    _react.useEffect(function() {
-        if (!imageOrUrl) return undefined;
-        var image;
-        if (typeof imageOrUrl === 'string') {
-            image = new Image();
-            if (crossOrigin) image.crossOrigin = crossOrigin;
-            image.src = imageOrUrl;
-        } else {
-            image = imageOrUrl;
-            if (image.complete && image.naturalHeight > 0) {
-                setState({
-                    image: image,
-                    error: null
-                });
-                return;
-            }
-        }
-        function onLoad() {
-            setState({
-                image: image,
-                error: null
-            });
-        }
-        function onError(error) {
-            setState({
-                image: image,
-                error: error
-            });
-        }
-        image.addEventListener('load', onLoad);
-        image.addEventListener('error', onError);
-        return function() {
-            image.removeEventListener('load', onLoad);
-            image.removeEventListener('error', onError);
-        };
-    }, [
-        imageOrUrl,
-        crossOrigin
-    ]);
-    return state;
-}
-exports.default = useImage;
-
-},{"react":"6TuXu","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}],"cf1dg":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _react = require("react");
-var _useIsomorphicEffect = require("./useIsomorphicEffect");
-var _useIsomorphicEffectDefault = parcelHelpers.interopDefault(_useIsomorphicEffect);
-var targetMap = new WeakMap();
-var resizeObserver;
-function getResizeObserver() {
-    // eslint-disable-next-line no-return-assign
-    return resizeObserver = resizeObserver || new window.ResizeObserver(function(entries) {
-        entries.forEach(function(entry) {
-            var handler = targetMap.get(entry.target);
-            if (handler) handler(entry.contentRect);
-        });
-    });
-}
-function useResizeObserver(element) {
-    var _useState = _react.useState(null), rect = _useState[0], setRect = _useState[1];
-    _useIsomorphicEffectDefault.default(function() {
-        if (!element) return;
-        getResizeObserver().observe(element);
-        setRect(element.getBoundingClientRect());
-        targetMap.set(element, function(rect1) {
-            setRect(rect1);
-        });
-        return function() {
-            targetMap.delete(element);
-        };
-    }, [
-        element
-    ]);
-    return rect;
-}
-exports.default = useResizeObserver;
-
-},{"react":"6TuXu","./useIsomorphicEffect":"3psbV","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}]},["9NtYk","k2XMz","dLPEP"], "dLPEP", "parcelRequire315a")
+},{"classnames":"bOXOh","react":"6TuXu","@restart/ui/Anchor":"KNzrK","@restart/ui/NavItem":"hIuK4","@restart/ui/SelectableContext":"9e25D","./ThemeProvider":"eeqfi","react/jsx-runtime":"8xIwr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4"}]},["9NtYk","k2XMz","dLPEP"], "dLPEP", "parcelRequire315a")
 
 //# sourceMappingURL=index.6701a6e1.js.map
