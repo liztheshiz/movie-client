@@ -25392,6 +25392,7 @@ class MainView extends _reactDefault.default.Component {
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_navbar.Navbar, {
+                    user: user,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 58
@@ -35923,6 +35924,8 @@ parcelHelpers.export(exports, "Navbar", ()=>Navbar
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
 var _navbar = require("react-bootstrap/Navbar");
@@ -35948,13 +35951,13 @@ class Navbar extends _reactDefault.default.Component {
             expand: "md",
             __source: {
                 fileName: "src/components/navbar/navbar.jsx",
-                lineNumber: 29
+                lineNumber: 30
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
                 __source: {
                     fileName: "src/components/navbar/navbar.jsx",
-                    lineNumber: 30
+                    lineNumber: 31
                 },
                 __self: this,
                 children: [
@@ -35962,7 +35965,7 @@ class Navbar extends _reactDefault.default.Component {
                         href: "/",
                         __source: {
                             fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 31
+                            lineNumber: 32
                         },
                         __self: this,
                         children: "CinemaDatabase"
@@ -35971,7 +35974,7 @@ class Navbar extends _reactDefault.default.Component {
                         "aria-controls": "basic-navbar-nav",
                         __source: {
                             fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 32
+                            lineNumber: 33
                         },
                         __self: this
                     }),
@@ -35980,14 +35983,14 @@ class Navbar extends _reactDefault.default.Component {
                         className: "justify-content-end",
                         __source: {
                             fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 33
+                            lineNumber: 34
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_navDefault.default, {
                             className: "me-auto",
                             __source: {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 34
+                                lineNumber: 35
                             },
                             __self: this,
                             children: [
@@ -35995,7 +35998,7 @@ class Navbar extends _reactDefault.default.Component {
                                     href: "/about.html",
                                     __source: {
                                         fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 35
+                                        lineNumber: 36
                                     },
                                     __self: this,
                                     children: "About"
@@ -36004,7 +36007,7 @@ class Navbar extends _reactDefault.default.Component {
                                     href: "#",
                                     __source: {
                                         fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 36
+                                        lineNumber: 37
                                     },
                                     __self: this,
                                     children: "Profile"
@@ -36014,7 +36017,7 @@ class Navbar extends _reactDefault.default.Component {
                                     ,
                                     __source: {
                                         fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 37
+                                        lineNumber: 38
                                     },
                                     __self: this,
                                     children: "Logout"
@@ -36027,13 +36030,16 @@ class Navbar extends _reactDefault.default.Component {
         }));
     }
 }
+_navbarDefault.default.propTypes = {
+    user: _propTypesDefault.default.string
+};
 
   $parcel$ReactRefreshHelpers$1bb2.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Nav":"io07g","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"eYZQl":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Nav":"io07g","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","prop-types":"1tgq3"}],"eYZQl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");

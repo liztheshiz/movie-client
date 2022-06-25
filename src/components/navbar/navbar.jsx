@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -41,4 +42,8 @@ export class Navbar extends React.Component {
             </Navbar >
         )
     }
+}
+
+Navbar.propTypes = {
+    user: PropTypes.string
 }
