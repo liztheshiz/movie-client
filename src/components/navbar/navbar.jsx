@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Link } from 'react-router-dom';
-
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -38,8 +36,8 @@ export class Navbar extends React.Component {
                     <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                         <Nav className="me-auto">
                             {this.getToken() && <Nav.Link href="/about.html">About</Nav.Link>}
-                            {this.getToken() && <Nav.Link href="#">Profile</Nav.Link>}
-                            {this.getToken() && <Link to={`/users/${user}`}><Nav.Link onClick={() => this.onLoggedOut()}>Logout</Nav.Link></Link>}
+                            {this.getToken() && <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>}
+                            {this.getToken() && <Nav.Link onClick={() => this.onLoggedOut()}>Logout</Nav.Link>}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

@@ -12,6 +12,7 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { RegistrationView } from '../registration-view/registration-view';
+import { ProfileView } from '../profile-view/profile-view';
 
 export class MainView extends React.Component {
     // CUSTOM METHODS
@@ -92,7 +93,8 @@ export class MainView extends React.Component {
                                 </Col>
                             )
                         }} />
-                        <Route path={`users/${user}`} render={() => {
+                        <Route path={`/users/${user}`} render={() => {
+                            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             return (
                                 <ProfileView user={user} />
                             )
