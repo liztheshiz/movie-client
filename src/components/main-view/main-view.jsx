@@ -4,7 +4,7 @@ import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 
 import { Navbar } from '../navbar/navbar';
@@ -63,13 +63,23 @@ export class MainView extends React.Component {
                             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             if (movies.length === 0) return <div className="main-view" />;
 
-                            return movies.map(m => (
-                                <Col sm={6} md={4} lg={3} key={m._id}>
-                                    <MovieCard movie={m} />
-                                </Col>
-                            ))
+                            return (
+                                <div>
+                                    <Row className="mt-5 mb-4">
+                                        <h1>Welcome, {user}!</h1>
+                                    </Row>
+                                    <Row>
+                                        {movies.map(m =>
+                                            <Col sm={6} md={4} lg={3} key={m._id}>
+                                                <MovieCard movie={m} />
+                                            </Col>
+                                        )}
+                                    </Row>
+                                </div>
+                            )
                         }} />
                         <Route exact path="/register" render={() => {
+                            if (user) return <Redirect to="/" />
                             return <RegistrationView onLoggedIn={user => this.onLoggedIn(user)} />;
                         }} />
                         <Route path="/movies/:movieId" render={({ match, history }) => {
