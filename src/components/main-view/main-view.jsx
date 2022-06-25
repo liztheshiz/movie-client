@@ -61,7 +61,6 @@ export class MainView extends React.Component {
                         <Route exact path="/" render={() => {
                             // If no user is present, displays LoginView. When user logs in, user is passed as a prop to LoginView
                             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-
                             if (movies.length === 0) return <div className="main-view" />;
 
                             return movies.map(m => (
@@ -74,6 +73,9 @@ export class MainView extends React.Component {
                             return <RegistrationView onLoggedIn={user => this.onLoggedIn(user)} />;
                         }} />
                         <Route path="/movies/:movieId" render={({ match, history }) => {
+                            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                            if (movies.length === 0) return <div className="main-view" />;
+
                             return (
                                 <Col md={10}>
                                     <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />

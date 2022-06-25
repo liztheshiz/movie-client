@@ -79,10 +79,12 @@ export function RegistrationView(props) {
                 Birthday: birthday
             };
             // NEXT LINE FOR DEBUGGING!!
-            console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}; Req: ${request}`);
+            console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}`);
             axios.post('https://cinemadatabase.herokuapp.com/users', request).then(res => {
                 const data = res.data;
-                props.onLoggedIn(data);
+                console.log(data);
+                window.open('/', '_self');
+                // props.onLoggedIn(data);
             }).catch(err => {
                 console.log(err)
             });
