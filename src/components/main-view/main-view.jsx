@@ -88,7 +88,7 @@ export class MainView extends React.Component {
                             if (movies.length === 0) return <div className="main-view" />;
 
                             return (
-                                <Col md={10}>
+                                <Col sm={10}>
                                     <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
                                 </Col>
                             )
@@ -96,7 +96,7 @@ export class MainView extends React.Component {
                         <Route path={`/users/${user}`} render={() => {
                             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             return (
-                                <Col md={10}>
+                                <Col sm={10}>
                                     <ProfileView user={user} />
                                 </Col>
                             )

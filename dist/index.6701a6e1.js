@@ -25484,7 +25484,7 @@ class MainView extends _reactDefault.default.Component {
                                         className: "main-view"
                                     }));
                                     return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                        md: 10,
+                                        sm: 10,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
                                             movie: movies.find((m)=>m._id === match.params.movieId
                                             ),
@@ -25505,7 +25505,7 @@ class MainView extends _reactDefault.default.Component {
                                         onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                     }));
                                     return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                        md: 10,
+                                        sm: 10,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
                                             user: user
                                         })
@@ -35634,7 +35634,7 @@ function RegistrationView(props) {
                 const data = res.data;
                 console.log(data);
                 window.open('/', '_self');
-            // props.onLoggedIn(data);
+            // props.onLoggedIn(data); // Logs user in automatically when they register
             }).catch((err)=>{
                 console.log(err);
             });
