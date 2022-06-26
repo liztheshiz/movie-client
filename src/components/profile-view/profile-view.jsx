@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+// import Modal from 'react-bootstrap/Modal';
 
 export class ProfileView extends React.Component {
     // CUSTOM METHODS
@@ -75,32 +75,41 @@ export class ProfileView extends React.Component {
                         </Row>
                         <Row className="justify-content-md-center mb-4">
                             <Col className="text-center" md={4}>
-                                <Button variant="link" onClick={() => this.showModal()}>Click here to delete user</Button>
+                                <Button variant="link" onClick={() => this.showModal(true)}>Click here to delete user</Button>
                             </Col>
                         </Row>
                         {edit && <Row>
                             <Col>edit mode on</Col>
                             <Col><Button variant="link" onClick={() => this.editMode(false)}>click here to return</Button></Col>
                         </Row>}
+                        {show && <Row>
+                            <Col>modal shown</Col>
+                            <Col><Button variant="link" onClick={() => this.showModal(false)}>click here to return</Button></Col>
+                        </Row>}
                     </Col>
                 </Row>
-                <Modal show={show} onHide={this.showModal(false)}>
-                    <Modal.Header closeButton>
-                        <Modal.Title>Modal heading</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
-                    <Modal.Footer>
-                        <Button variant="secondary" onClick={() => this.showModal(false)}>
-                            Close
-                        </Button>
-                        <Button variant="primary" onClick={() => this.showModal(false)}>
-                            Save Changes
-                        </Button>
-                    </Modal.Footer>
-                </Modal>
             </Container>
         );
     }
+
+    /*
+    render() {
+        <Modal show={show} onHide={this.showModal(false)}>
+            <Modal.Header closeButton>
+                <Modal.Title>Modal heading</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={() => this.showModal(false)}>
+                    Close
+                </Button>
+                <Button variant="primary" onClick={() => this.showModal(false)}>
+                    Save Changes
+                </Button>
+            </Modal.Footer>
+        </Modal>
+    }
+    */
 }
 
 ProfileView.propTypes = {
