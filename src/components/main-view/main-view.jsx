@@ -96,7 +96,7 @@ export class MainView extends React.Component {
                         <Route path={`/users/${user}`} render={() => {
                             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             return (
-                                <Col sm={8}>
+                                <Col sm={10}>
                                     <ProfileView user={user} />
                                 </Col>
                             )

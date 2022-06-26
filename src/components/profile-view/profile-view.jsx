@@ -95,10 +95,11 @@ export class ProfileView extends React.Component {
         return (
             <Container className="profile-view border-dark border-3 mt-5">
                 <Row className="mb-4">
-                    <Col className="profile-title" xs={3}>
+                    <Col xs={0} sm={2} md={2} lg={3}></Col>
+                    <Col className="profile-title" xs={8} sm={6} lg={4} xl={5}>
                         <h2 className="value">{user}</h2>
                     </Col>
-                    <Col xs={9}>
+                    <Col>
                         <Button variant="outline-dark" size="sm" onClick={() => this.editMode(true)}>Edit</Button>
                     </Col>
                 </Row>
@@ -132,12 +133,15 @@ export class ProfileView extends React.Component {
                                     Please use format MM/DD/YY
                                 </Form.Text>}
                             </Form.Group>
-                            {edit && <Button className="mt-4" variant="dark" type="submit" onClick={() => this.handleSubmit()}>Login</Button>}
+                            {edit && <Row className="justify-content-sm-center mt-4">
+                                <Col><Button variant="outline-secondary" onClick={() => this.editMode(false)}>Cancel</Button></Col>
+                                <Col><Button variant="dark" type="submit" onClick={() => this.handleSubmit()}>Submit</Button></Col>
+                            </Row>}
                         </Form>
                     </Col>
                 </Row>
-                <Row className="justify-content-md-center mb-4">
-                    <Col className="text-center" md={4}>
+                <Row className="justify-content-sm-center mb-4">
+                    <Col className="text-center">
                         <Button variant="link" onClick={() => this.showModal(true)}>Click here to delete user</Button>
                     </Col>
                 </Row>
@@ -145,10 +149,6 @@ export class ProfileView extends React.Component {
                     <Col sm={8}>Are you certain you want to delete this user? This action is irreversible!</Col>
                     <Col sm={2}><Button variant="outline-secondary" size="sm" onClick={() => this.showModal()}>Cancel</Button></Col>
                     <Col sm={2}><Button variant="danger" size="sm" onClick={() => this.deleteUser(false)}>Delete</Button></Col>
-                </Row>}
-                {edit && <Row>
-                    <Col>edit mode on</Col>
-                    <Col><Button variant="link" onClick={() => this.editMode(false)}>click here to return</Button></Col>
                 </Row>}
             </Container >
         );
