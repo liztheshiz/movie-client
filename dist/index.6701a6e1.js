@@ -25504,8 +25504,11 @@ class MainView extends _reactDefault.default.Component {
                                     if (!user) return(/*#__PURE__*/ _jsxRuntime.jsx(_loginView.LoginView, {
                                         onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                     }));
-                                    return(/*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
-                                        user: user
+                                    return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        md: 10,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
+                                            user: user
+                                        })
                                     }));
                                 },
                                 __source: {
