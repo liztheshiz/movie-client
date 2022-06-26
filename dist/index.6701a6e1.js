@@ -37927,6 +37927,7 @@ class ProfileView extends _reactDefault.default.Component {
         });
     }
     deleteUser() {
+        alert('User deleted!');
     }
     // LIFECYCLE METHODS
     constructor(){
@@ -37939,325 +37940,368 @@ class ProfileView extends _reactDefault.default.Component {
     render() {
         const { user  } = this.props;
         const { edit , show  } = this.state;
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
             className: "profile-view border-dark border-3 mt-5",
             __source: {
                 fileName: "src/components/profile-view/profile-view.jsx",
                 lineNumber: 41
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                className: "mt-5",
-                __source: {
-                    fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 42
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                    sm: 10,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                    className: "mb-4",
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 43
+                        lineNumber: 42
                     },
                     __self: this,
                     children: [
-                        /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
-                            className: "mb-4",
+                        /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            className: "profile-title",
+                            xs: 3,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 44
+                                lineNumber: 43
                             },
                             __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                    className: "profile-title",
-                                    xs: 3,
-                                    __source: {
-                                        fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 45
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 46
-                                        },
-                                        __self: this,
-                                        children: user
-                                    })
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                    xs: 9,
-                                    __source: {
-                                        fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 48
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                        variant: "outline-dark",
-                                        size: "sm",
-                                        onClick: ()=>this.editMode(true)
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 49
-                                        },
-                                        __self: this,
-                                        children: "edit user"
-                                    })
-                                })
-                            ]
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                className: "value",
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 44
+                                },
+                                __self: this,
+                                children: user
+                            })
                         }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                            className: "justify-content-md-center mb-3",
+                        /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            xs: 9,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 52
+                                lineNumber: 46
                             },
                             __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                                className: "profile-username",
-                                lg: 10,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                variant: "outline-dark",
+                                size: "sm",
+                                onClick: ()=>this.editMode(true)
+                                ,
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 47
+                                },
+                                __self: this,
+                                children: "Edit"
+                            })
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                    className: "justify-content-md-center mb-3",
+                    __source: {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 50
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                        className: "profile-username",
+                        lg: 10,
+                        __source: {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 51
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "label",
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 52
+                                },
+                                __self: this,
+                                children: "Username: "
+                            }),
+                            !edit && /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "value",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 53
                                 },
                                 __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "label",
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 54
-                                        },
-                                        __self: this,
-                                        children: "Username: "
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 55
-                                        },
-                                        __self: this,
-                                        children: user
-                                    })
-                                ]
+                                children: user
+                            }),
+                            edit && /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "value",
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 54
+                                },
+                                __self: this,
+                                children: "editing"
                             })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                            className: "justify-content-md-center mb-4",
-                            __source: {
-                                fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 58
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                                className: "profile-password",
-                                lg: 10,
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                    className: "justify-content-md-center mb-4",
+                    __source: {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 57
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                        className: "profile-password",
+                        lg: 10,
+                        __source: {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 58
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "label",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
                                     lineNumber: 59
                                 },
                                 __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "label",
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 60
-                                        },
-                                        __self: this,
-                                        children: "Password: "
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 61
-                                        },
-                                        __self: this,
-                                        children: "Hidden"
-                                    })
-                                ]
-                            })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                            className: "justify-content-md-center mb-4",
-                            __source: {
-                                fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 64
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                                className: "profile-email",
-                                lg: 10,
+                                children: "Password: "
+                            }),
+                            !edit && /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "value",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 65
+                                    lineNumber: 60
                                 },
                                 __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "label",
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 66
-                                        },
-                                        __self: this,
-                                        children: "Email: "
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 67
-                                        },
-                                        __self: this,
-                                        children: "email here"
-                                    })
-                                ]
-                            })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                            className: "justify-content-md-center mb-4",
-                            __source: {
-                                fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 70
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                                className: "profile-birthday",
-                                lg: 10,
+                                children: "Hidden"
+                            }),
+                            edit && /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "value",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 71
+                                    lineNumber: 61
                                 },
                                 __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "label",
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 72
-                                        },
-                                        __self: this,
-                                        children: "Birthday: "
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 73
-                                        },
-                                        __self: this,
-                                        children: "birthday here"
-                                    })
-                                ]
+                                children: "editing"
                             })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                            className: "justify-content-md-center mb-4",
-                            __source: {
-                                fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 76
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                className: "text-center",
-                                md: 4,
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                    className: "justify-content-md-center mb-4",
+                    __source: {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 64
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                        className: "profile-email",
+                        lg: 10,
+                        __source: {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 65
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "label",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 77
+                                    lineNumber: 66
                                 },
                                 __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                    variant: "link",
-                                    onClick: ()=>this.showModal(true)
-                                    ,
-                                    __source: {
-                                        fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 78
-                                    },
-                                    __self: this,
-                                    children: "Click here to delete user"
-                                })
+                                children: "Email: "
+                            }),
+                            !edit && /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "value",
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 67
+                                },
+                                __self: this,
+                                children: "email here"
+                            }),
+                            edit && /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "value",
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 68
+                                },
+                                __self: this,
+                                children: "editing"
                             })
-                        }),
-                        edit && /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                    className: "justify-content-md-center mb-4",
+                    __source: {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 71
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                        className: "profile-birthday",
+                        lg: 10,
+                        __source: {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 72
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "label",
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 73
+                                },
+                                __self: this,
+                                children: "Birthday: "
+                            }),
+                            !edit && /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "value",
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 74
+                                },
+                                __self: this,
+                                children: "birthday here"
+                            }),
+                            edit && /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                className: "value",
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 75
+                                },
+                                __self: this,
+                                children: "editing"
+                            })
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                    className: "justify-content-md-center mb-4",
+                    __source: {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 78
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        className: "text-center",
+                        md: 4,
+                        __source: {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 79
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                            variant: "link",
+                            onClick: ()=>this.showModal(true)
+                            ,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 81
+                                lineNumber: 80
                             },
                             __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                    __source: {
-                                        fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 82
-                                    },
-                                    __self: this,
-                                    children: "edit mode on"
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                    __source: {
-                                        fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 83
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                        variant: "link",
-                                        onClick: ()=>this.editMode(false)
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 83
-                                        },
-                                        __self: this,
-                                        children: "click here to return"
-                                    })
-                                })
-                            ]
+                            children: "Click here to delete user"
+                        })
+                    })
+                }),
+                show && /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                    __source: {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 83
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            sm: 8,
+                            __source: {
+                                fileName: "src/components/profile-view/profile-view.jsx",
+                                lineNumber: 84
+                            },
+                            __self: this,
+                            children: "Are you certain you want to delete this user? This action is irreversible!"
                         }),
-                        show && /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                        /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            sm: 2,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
                                 lineNumber: 85
                             },
                             __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                    __source: {
-                                        fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 86
-                                    },
-                                    __self: this,
-                                    children: "modal shown"
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                    __source: {
-                                        fileName: "src/components/profile-view/profile-view.jsx",
-                                        lineNumber: 87
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                        variant: "link",
-                                        onClick: ()=>this.showModal(false)
-                                        ,
-                                        __source: {
-                                            fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 87
-                                        },
-                                        __self: this,
-                                        children: "click here to return"
-                                    })
-                                })
-                            ]
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                variant: "outline-secondary",
+                                size: "sm",
+                                onClick: ()=>this.showModal()
+                                ,
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 85
+                                },
+                                __self: this,
+                                children: "Cancel"
+                            })
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            sm: 2,
+                            __source: {
+                                fileName: "src/components/profile-view/profile-view.jsx",
+                                lineNumber: 86
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                variant: "danger",
+                                size: "sm",
+                                onClick: ()=>this.deleteUser(false)
+                                ,
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 86
+                                },
+                                __self: this,
+                                children: "Delete"
+                            })
+                        })
+                    ]
+                }),
+                edit && /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                    __source: {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 88
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            __source: {
+                                fileName: "src/components/profile-view/profile-view.jsx",
+                                lineNumber: 89
+                            },
+                            __self: this,
+                            children: "edit mode on"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            __source: {
+                                fileName: "src/components/profile-view/profile-view.jsx",
+                                lineNumber: 90
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                variant: "link",
+                                onClick: ()=>this.editMode(false)
+                                ,
+                                __source: {
+                                    fileName: "src/components/profile-view/profile-view.jsx",
+                                    lineNumber: 90
+                                },
+                                __self: this,
+                                children: "click here to return"
+                            })
                         })
                     ]
                 })
-            })
+            ]
         }));
     }
 }

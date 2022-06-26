@@ -19,7 +19,7 @@ export class ProfileView extends React.Component {
     }
 
     deleteUser() {
-
+        alert('User deleted!');
     }
 
 
@@ -39,56 +39,57 @@ export class ProfileView extends React.Component {
 
         return (
             <Container className="profile-view border-dark border-3 mt-5">
-                <Row className="mt-5">
-                    <Col sm={10}>
-                        <Row className="mb-4">
-                            <Col className="profile-title" xs={3}>
-                                <h2 className="value">{user}</h2>
-                            </Col>
-                            <Col xs={9}>
-                                <Button variant="outline-dark" size="sm" onClick={() => this.editMode(true)}>edit user</Button>
-                            </Col>
-                        </Row>
-                        <Row className="justify-content-md-center mb-3">
-                            <Col className="profile-username" lg={10}>
-                                <span className="label">Username: </span>
-                                <span className="value">{user}</span>
-                            </Col>
-                        </Row>
-                        <Row className="justify-content-md-center mb-4">
-                            <Col className="profile-password" lg={10}>
-                                <span className="label">Password: </span>
-                                <span className="value">Hidden</span>
-                            </Col>
-                        </Row>
-                        <Row className="justify-content-md-center mb-4">
-                            <Col className="profile-email" lg={10}>
-                                <span className="label">Email: </span>
-                                <span className="value">email here</span>
-                            </Col>
-                        </Row>
-                        <Row className="justify-content-md-center mb-4">
-                            <Col className="profile-birthday" lg={10}>
-                                <span className="label">Birthday: </span>
-                                <span className="value">birthday here</span>
-                            </Col>
-                        </Row>
-                        <Row className="justify-content-md-center mb-4">
-                            <Col className="text-center" md={4}>
-                                <Button variant="link" onClick={() => this.showModal(true)}>Click here to delete user</Button>
-                            </Col>
-                        </Row>
-                        {edit && <Row>
-                            <Col>edit mode on</Col>
-                            <Col><Button variant="link" onClick={() => this.editMode(false)}>click here to return</Button></Col>
-                        </Row>}
-                        {show && <Row>
-                            <Col>modal shown</Col>
-                            <Col><Button variant="link" onClick={() => this.showModal(false)}>click here to return</Button></Col>
-                        </Row>}
+                <Row className="mb-4">
+                    <Col className="profile-title" xs={3}>
+                        <h2 className="value">{user}</h2>
+                    </Col>
+                    <Col xs={9}>
+                        <Button variant="outline-dark" size="sm" onClick={() => this.editMode(true)}>Edit</Button>
                     </Col>
                 </Row>
-            </Container>
+                <Row className="justify-content-md-center mb-3">
+                    <Col className="profile-username" lg={10}>
+                        <span className="label">Username: </span>
+                        {!edit && <span className="value">{user}</span>}
+                        {edit && <span className="value">editing</span>}
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center mb-4">
+                    <Col className="profile-password" lg={10}>
+                        <span className="label">Password: </span>
+                        {!edit && <span className="value">Hidden</span>}
+                        {edit && <span className="value">editing</span>}
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center mb-4">
+                    <Col className="profile-email" lg={10}>
+                        <span className="label">Email: </span>
+                        {!edit && <span className="value">email here</span>}
+                        {edit && <span className="value">editing</span>}
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center mb-4">
+                    <Col className="profile-birthday" lg={10}>
+                        <span className="label">Birthday: </span>
+                        {!edit && <span className="value">birthday here</span>}
+                        {edit && <span className="value">editing</span>}
+                    </Col>
+                </Row>
+                <Row className="justify-content-md-center mb-4">
+                    <Col className="text-center" md={4}>
+                        <Button variant="link" onClick={() => this.showModal(true)}>Click here to delete user</Button>
+                    </Col>
+                </Row>
+                {show && <Row>
+                    <Col sm={8}>Are you certain you want to delete this user? This action is irreversible!</Col>
+                    <Col sm={2}><Button variant="outline-secondary" size="sm" onClick={() => this.showModal()}>Cancel</Button></Col>
+                    <Col sm={2}><Button variant="danger" size="sm" onClick={() => this.deleteUser(false)}>Delete</Button></Col>
+                </Row>}
+                {edit && <Row>
+                    <Col>edit mode on</Col>
+                    <Col><Button variant="link" onClick={() => this.editMode(false)}>click here to return</Button></Col>
+                </Row>}
+            </Container >
         );
     }
 
