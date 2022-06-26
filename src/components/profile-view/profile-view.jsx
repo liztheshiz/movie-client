@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 // import Modal from 'react-bootstrap/Modal';
 
 export class ProfileView extends React.Component {
@@ -22,6 +23,56 @@ export class ProfileView extends React.Component {
         alert('User deleted!');
     }
 
+    handleSubmit(e) {
+        e.preventDefault();
+        alert('you did it!');
+    }
+
+    isAlphaNumeric(str) {
+        /^[a-z0-9]+$/gi.test(str);
+    }
+
+    // Validate user inputs
+    validate() {
+        let isReq = true;
+        this.setState({ usernameErr: '' });
+        this.setState({ passwordErr: '' });
+        this.setState({ emailErr: '' });
+
+        if (!username) {
+            this.setState({ usernameErr: 'Username Required' });
+            isReq = false;
+        } else if (username.length < 5) {
+            this.setState({ usernameErr: 'Username must be at least 5 characters long' });
+            isReq = false;
+        } else if (!isAlphaNumeric(username)) {
+            this.setState({ usernameErr: 'Username must include only alphanumeric characters' });
+            isReq = false;
+        }
+
+        if (!password) {
+            this.setState({ passwordErr: 'Password Required' });
+            isReq = false;
+        } else if (password.length < 8) {
+            this.setState({ passwordErr: 'Password must be at least 8 characters long' });
+            isReq = false;
+        }
+
+        if (!email) {
+            this.setState({ emailErr: 'Email Required' });
+            isReq = false;
+        } else if (email.indexOf('@') === -1) {
+            this.setState({ emailErr: 'Email is not valid' });
+            isReq = false;
+        }
+
+        //
+        // CHECK IF BIRTHDAY MATCHES FORMAT MM/DD/YY HERE!!
+        //
+
+        return isReq;
+    }
+
 
     // LIFECYCLE METHODS
 
@@ -29,13 +80,17 @@ export class ProfileView extends React.Component {
         super();
         this.state = {
             edit: false,
-            show: false
+            show: false,
+            usernameErr: '',
+            passwordErr: '',
+            emailErr: '',
+            birthdayErr: ''
         };
     }
 
     render() {
         const { user } = this.props;
-        const { edit, show } = this.state;
+        const { edit, show, usernameErr, passwordErr, emailErr, birthdayErr } = this.state;
 
         return (
             <Container className="profile-view border-dark border-3 mt-5">
@@ -47,32 +102,38 @@ export class ProfileView extends React.Component {
                         <Button variant="outline-dark" size="sm" onClick={() => this.editMode(true)}>Edit</Button>
                     </Col>
                 </Row>
-                <Row className="justify-content-md-center mb-3">
-                    <Col className="profile-username" lg={10}>
-                        <span className="label">Username: </span>
-                        {!edit && <span className="value">{user}</span>}
-                        {edit && <span className="value">editing</span>}
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center mb-4">
-                    <Col className="profile-password" lg={10}>
-                        <span className="label">Password: </span>
-                        {!edit && <span className="value">Hidden</span>}
-                        {edit && <span className="value">editing</span>}
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center mb-4">
-                    <Col className="profile-email" lg={10}>
-                        <span className="label">Email: </span>
-                        {!edit && <span className="value">email here</span>}
-                        {edit && <span className="value">editing</span>}
-                    </Col>
-                </Row>
-                <Row className="justify-content-md-center mb-4">
-                    <Col className="profile-birthday" lg={10}>
-                        <span className="label">Birthday: </span>
-                        {!edit && <span className="value">birthday here</span>}
-                        {edit && <span className="value">editing</span>}
+                <Row className="justify-content-sm-center mb-5">
+                    <Col sm={8} md={6} lg={4}>
+                        <Form>
+                            <Form.Group controlId="formUsername">
+                                <Form.Label>Username:</Form.Label>
+                                {!edit && <Form.Control placeholder={user} disabled />}
+                                {edit && <Form.Control type="text" placeholder={user} onChange={e => setUsername(e.target.value)} />}
+                                {usernameErr && <Form.Text className="text-muted">{usernameErr}</Form.Text>}
+                            </Form.Group>
+                            <Form.Group className="mt-3" controlId="formPassword">
+                                <Form.Label>Password:</Form.Label>
+                                {!edit && <Form.Control placeholder="Password hidden" disabled />}
+                                {edit && <Form.Control type="password" placeholder="Password hidden" onChange={e => setPassword(e.target.value)} />}
+                                {passwordErr && <Form.Text className="text-muted">{passwordErr}</Form.Text>}
+                            </Form.Group>
+                            <Form.Group className="mt-3" controlId="formEmail">
+                                <Form.Label>Email:</Form.Label>
+                                {!edit && <Form.Control placeholder="email here" disabled />}
+                                {edit && <Form.Control type="email" placeholder="email here" onChange={e => setEmail(e.target.value)} />}
+                                {emailErr && <Form.Text className="text-muted">{emailErr}</Form.Text>}
+                            </Form.Group>
+                            <Form.Group className="mt-3" controlId="formBirthday">
+                                <Form.Label>Birthday:</Form.Label>
+                                {edit && <Form.Text> &#x28;This field is optional&#x29;</Form.Text>}
+                                {!edit && <Form.Control placeholder="birthday here" disabled />}
+                                {edit && <Form.Control type="string" placeholder="birthday here" onChange={e => setBirthday(e.target.value)} />}
+                                {edit && <Form.Text className="text-muted">
+                                    Please use format MM/DD/YY
+                                </Form.Text>}
+                            </Form.Group>
+                            {edit && <Button className="mt-4" variant="dark" type="submit" onClick={() => this.handleSubmit()}>Login</Button>}
+                        </Form>
                     </Col>
                 </Row>
                 <Row className="justify-content-md-center mb-4">
