@@ -5,12 +5,17 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 
 export class ProfileView extends React.Component {
     // CUSTOM METHODS
 
-    showModal() {
-        alert('Show modal!');
+    editMode(bool) {
+        this.setState({ edit: bool });
+    }
+
+    showModal(bool) {
+        this.setState({ show: bool });
     }
 
     deleteUser() {
@@ -23,12 +28,14 @@ export class ProfileView extends React.Component {
     constructor() {
         super();
         this.state = {
-            edit: false
+            edit: false,
+            show: false
         };
     }
 
     render() {
         const { user } = this.props;
+        const { edit, show } = this.state;
 
         return (
             <Container className="profile-view border-dark border-3 mt-5">
@@ -39,7 +46,7 @@ export class ProfileView extends React.Component {
                                 <h2 className="value">{user}</h2>
                             </Col>
                             <Col xs={9}>
-                                <Button variant="outline-dark" size="sm">Edit user</Button>
+                                <Button variant="outline-dark" size="sm" onClick={() => this.editMode(true)}>edit user</Button>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center mb-3">
@@ -71,8 +78,26 @@ export class ProfileView extends React.Component {
                                 <Button variant="link" onClick={() => this.showModal()}>Click here to delete user</Button>
                             </Col>
                         </Row>
+                        {edit && <Row>
+                            <Col>edit mode on</Col>
+                            <Col><Button variant="link" onClick={() => this.editMode(false)}>click here to return</Button></Col>
+                        </Row>}
                     </Col>
                 </Row>
+                <Modal show={show} onHide={this.showModal(false)}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>Modal heading</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="secondary" onClick={() => this.showModal(false)}>
+                            Close
+                        </Button>
+                        <Button variant="primary" onClick={() => this.showModal(false)}>
+                            Save Changes
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
             </Container>
         );
     }
