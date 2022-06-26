@@ -57,7 +57,7 @@ export class MainView extends React.Component {
         return (
             <Router>
                 <Navbar user={user} />
-                <Row className="justify-content-md-center movies-list">
+                <Row className="justify-content-md-center main-view">
                     <Switch>
                         <Route exact path="/" render={() => {
                             // If no user is present, displays LoginView. When user logs in, user is passed as a prop to LoginView
@@ -96,7 +96,7 @@ export class MainView extends React.Component {
                         <Route path={`/users/${user}`} render={() => {
                             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             return (
-                                <Col sm={10}>
+                                <Col sm={6}>
                                     <ProfileView user={user} />
                                 </Col>
                             )
