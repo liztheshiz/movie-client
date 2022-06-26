@@ -84,7 +84,7 @@ export function RegistrationView(props) {
                 const data = res.data;
                 console.log(data);
                 window.open('/', '_self');
-                // props.onLoggedIn(data);
+                // props.onLoggedIn(data); // Logs user in automatically when they register
             }).catch(err => {
                 console.log(err)
             });
