@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+
+import { Link } from 'react-router-dom';
 
 export class MovieView extends React.Component {
     /*escapeToHome(e) {
@@ -38,7 +41,9 @@ export class MovieView extends React.Component {
                         <Row className="justify-content-md-center mb-3">
                             <Col className="movie-director" lg={10}>
                                 <span className="label">Director: </span>
-                                <span className="value">{movie.Director.Name}</span>
+                                <Link to={`/directors/${movie.Director.Name}`}>
+                                    <Button variant="link">{movie.Director.Name}</Button>
+                                </Link>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center mb-4">
