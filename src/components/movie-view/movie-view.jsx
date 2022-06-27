@@ -49,7 +49,9 @@ export class MovieView extends React.Component {
                         <Row className="justify-content-md-center mb-4">
                             <Col className="movie-genre" lg={10}>
                                 <span className="label">Genre: </span>
-                                <span className="value">{movie.Genre.Name}</span>
+                                <Link to={`/genres/${movie.Genre.Name}`}>
+                                    <Button variant="link">{movie.Genre.Name}</Button>
+                                </Link>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center mb-4">
