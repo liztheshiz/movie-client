@@ -11,6 +11,7 @@ import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { DirectorView } from '../director-view/director-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { ProfileView } from '../profile-view/profile-view';
 
@@ -90,6 +91,16 @@ export class MainView extends React.Component {
                             return (
                                 <Col sm={10}>
                                     <MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
+                                </Col>
+                            )
+                        }} />
+                        <Route path="/movies/directors/:director" render={({ match, history }) => {
+                            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                            if (movies.length === 0) return <div className="main-view" />;
+
+                            return (
+                                <Col sm={10}>
+                                    <DirectorView movie={movies.find(m => m.Director === match.params.director)} onBackClick={() => history.goBack()} />
                                 </Col>
                             )
                         }} />
