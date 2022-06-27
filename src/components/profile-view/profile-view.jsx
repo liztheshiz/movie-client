@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -21,11 +22,6 @@ export class ProfileView extends React.Component {
 
     deleteUser() {
         alert('User deleted!');
-    }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        alert('you did it!');
     }
 
     isAlphaNumeric(str) {
@@ -73,6 +69,35 @@ export class ProfileView extends React.Component {
         return isReq;
     }
 
+    handleSubmit(e) {
+        // e.preventDefault(); // this doesn't work for some reason :(
+        alert('you did it!');
+
+        /*
+        // Only sends axios request if all fields pass client-side validation check
+        const isReq = this.validate();
+        if (isReq) {
+            // Adds new user to database, then logs them in
+            let request = {
+                Username: username,
+                // Password: password,
+                Email: email,
+                Birthday: birthday
+            };
+            // NEXT LINE FOR DEBUGGING!!
+            console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}`);
+            axios.put('https://cinemadatabase.herokuapp.com/users', request).then(res => {
+                const data = res.data;
+                console.log(data);
+                window.open('/', '_self');
+                // props.onLoggedIn(data); // Logs user in automatically when they register
+            }).catch(err => {
+                console.log(err)
+            });
+        }
+        */
+    }
+
 
     // LIFECYCLE METHODS
 
@@ -86,6 +111,8 @@ export class ProfileView extends React.Component {
             emailErr: '',
             birthdayErr: ''
         };
+
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     render() {
@@ -99,9 +126,9 @@ export class ProfileView extends React.Component {
                     <Col className="profile-title" xs={8} sm={6} lg={4} xl={5}>
                         <h2 className="value">{user}</h2>
                     </Col>
-                    <Col>
-                        <Button variant="outline-dark" size="sm" onClick={() => this.editMode(true)}>Edit</Button>
-                    </Col>
+                    {!edit && <Col>
+                        <Button variant="outline-dark" size="sm" onClick={() => this.editMode(true)}>edit</Button>
+                    </Col>}
                 </Row>
                 <Row className="justify-content-sm-center mb-5">
                     <Col sm={8} md={6} lg={4}>
@@ -154,7 +181,7 @@ export class ProfileView extends React.Component {
         );
     }
 
-    /*
+    /* this render function is just to hold the modal skeleton until Modal is imported correctly...
     render() {
         <Modal show={show} onHide={this.showModal(false)}>
             <Modal.Header closeButton>
