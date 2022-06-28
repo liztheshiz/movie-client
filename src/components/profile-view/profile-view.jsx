@@ -119,6 +119,7 @@ export function ProfileView(props) {
             }).then(res => {
                 const data = res.data;
                 console.log(data);
+                window.open(`/users/${props.user}`, '_self');
             }).catch(err => {
                 console.log(err)
             });
