@@ -9,6 +9,8 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 // import Modal from 'react-bootstrap/Modal';
 
+import { MoviesList } from '../movies-list/movies-list';
+
 export function ProfileView(props) {
     const [edit, setEdit] = useState(false);
     const [show, setShow] = useState(false);
@@ -179,6 +181,7 @@ export function ProfileView(props) {
                     </Form>
                 </Col>
             </Row>
+            <MoviesList />
             <Row className="justify-content-sm-center mb-4">
                 <Col className="text-center">
                     <Button variant="link" onClick={() => showModal(true)}>Click here to delete user</Button>
