@@ -37933,6 +37933,20 @@ function ProfileView(props) {
     const deleteUser = ()=>{
         alert('User deleted!');
     };
+    const getUser = (user)=>{
+        _axiosDefault.default.get(`https://cinemadatabase.herokuapp.com/users/${user}`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        }).then((res)=>{
+            console.log('Done!');
+            setUsername(res.data.Username);
+            setPassword(res.data.Password);
+            setEmail(res.data.Email);
+            setBirthday(res.data.Birthday);
+        }).catch((err)=>console.log(err)
+        );
+    };
     const isAlphaNumeric = (str)=>{
         /^[a-z0-9]+$/gi.test(str);
     };
@@ -37967,20 +37981,6 @@ function ProfileView(props) {
         // CHECK IF BIRTHDAY MATCHES FORMAT MM/DD/YY HERE!!
         //
         return isReq;
-    };
-    const getUser = (user)=>{
-        _axiosDefault.default.get(`https://cinemadatabase.herokuapp.com/users/${user}`, {
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`
-            }
-        }).then((res)=>{
-            console.log('Done!');
-            setUsername(res.data.Username);
-            setPassword(res.data.Password);
-            setEmail(res.data.Email);
-            setBirthday(res.data.Birthday);
-        }).catch((err)=>console.log(err)
-        );
     };
     const handleSubmit = (e)=>{
         e.preventDefault(); // this doesn't work for some reason :(
