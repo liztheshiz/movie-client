@@ -37996,13 +37996,12 @@ function ProfileView(props) {
             };
             // NEXT LINE FOR DEBUGGING!!
             console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}`);
-            _axiosDefault.default.put(`https://cinemadatabase.herokuapp.com/users/${props.user}`, request).then((res)=>{
+        /*axios.put(`https://cinemadatabase.herokuapp.com/users/${props.user}`, request).then(res => {
                 const data = res.data;
                 console.log(data);
-            }).catch((err)=>{
-                console.log(err);
-            });
-        }
+            }).catch(err => {
+                console.log(err)
+            });*/ }
     };
     // RENDER
     getUser(props.user);
