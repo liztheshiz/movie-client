@@ -64,7 +64,7 @@ export class MainView extends React.Component {
                         <Route exact path="/" render={() => {
                             // If no user is present, displays LoginView. When user logs in, user is passed as a prop to LoginView
                             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-                            if (movies.length === 0) return <div className="main-view" />;
+                            if (movies.length === 0) return <div className="main-view loading">Loading...</div>;
 
                             return (
                                 <div>
@@ -97,7 +97,7 @@ export class MainView extends React.Component {
                         }} />
                         <Route path="/directors/:director" render={({ match, history }) => {
                             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-                            if (movies.length === 0) return <div className="main-view" />;
+                            if (movies.length === 0) return <div className="main-view loading">Loading...</div>;
 
                             return (
                                 <Col sm={10}>
@@ -107,7 +107,7 @@ export class MainView extends React.Component {
                         }} />
                         <Route path="/genres/:genre" render={({ match, history }) => {
                             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-                            if (movies.length === 0) return <div className="main-view" />;
+                            if (movies.length === 0) return <div className="main-view loading">Loading...</div>;
 
                             return (
                                 <Col sm={10}>
