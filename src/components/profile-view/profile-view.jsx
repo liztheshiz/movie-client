@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
@@ -110,14 +110,16 @@ export function ProfileView(props) {
     }
 
 
-    // LIFECYCLE METHODS
+    // RENDER
+
+    getUser(props.user);
 
     return (
         <Container className="profile-view border-dark border-3 mt-5">
             <Row className="mb-4">
                 <Col xs={0} sm={2} md={2} lg={3}></Col>
                 <Col className="profile-title" xs={8} sm={6} lg={4} xl={5}>
-                    <h2 className="value">{user}</h2>
+                    <h2 className="value">{props.user}</h2>
                 </Col>
                 {!edit && <Col>
                     <Button variant="outline-dark" size="sm" onClick={() => editMode(true)}>Edit</Button>
@@ -128,8 +130,8 @@ export function ProfileView(props) {
                     <Form>
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
-                            {!edit && <Form.Control placeholder={user} disabled />}
-                            {edit && <Form.Control type="text" placeholder={user} onSubmit={e => setUsername(e.target.value)} />}
+                            {!edit && <Form.Control placeholder={props.user} disabled />}
+                            {edit && <Form.Control type="text" placeholder={props.user} onSubmit={e => setUsername(e.target.value)} />}
                             {usernameErr && <Form.Text className="text-muted">{usernameErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formPassword">
