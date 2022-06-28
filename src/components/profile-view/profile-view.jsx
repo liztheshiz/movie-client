@@ -12,6 +12,10 @@ import Form from 'react-bootstrap/Form';
 export function ProfileView(props) {
     const [edit, setEdit] = useState(false);
     const [show, setShow] = useState(false);
+    const [currentUsername, setCurrentUsername] = useState('');
+    const [currentPassword, setCurrentPassword] = useState('');
+    const [currentEmail, setCurrentEmail] = useState('');
+    const [currentBirthday, setCurrentBirthday] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -23,7 +27,16 @@ export function ProfileView(props) {
 
     // CUSTOM METHODS
 
-    const editMode = (bool) => { setEdit(bool); }
+    const editMode = (bool) => {
+        // When user cancels an edit, edit values are reset
+        if (bool === false) {
+            setUsername('');
+            setPassword('');
+            setEmail('');
+            setBirthday('');
+        }
+        setEdit(bool);
+    }
 
     const showModal = (bool) => { setShow(bool); }
 
@@ -31,15 +44,14 @@ export function ProfileView(props) {
         alert('User deleted!');
     }
 
-    const getUser = (user) => {
-        axios.get(`https://cinemadatabase.herokuapp.com/users/${user}`, {
+    const getUser = () => {
+        axios.get(`https://cinemadatabase.herokuapp.com/users/${props.user}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(res => {
-            console.log('Done!');
-            setUsername(res.data.Username);
-            setPassword(res.data.Password);
-            setEmail(res.data.Email);
-            setBirthday(res.data.Birthday);
+            setCurrentUsername(res.data.Username);
+            setCurrentPassword(res.data.Password);
+            setCurrentEmail(res.data.Email);
+            setCurrentBirthday(res.data.Birthday);
         }).catch(err => console.log(err));
     }
 
@@ -51,8 +63,9 @@ export function ProfileView(props) {
         setUsernameErr('');
         setPasswordErr('');
         setEmailErr('');
+        setBirthdayErr('');
 
-        if (username) {
+        if (!(username === '')) {
             if (username.length < 5) {
                 setUsernameErr('Username must be at least 5 characters long');
                 isReq = false;
@@ -88,7 +101,8 @@ export function ProfileView(props) {
         // alert('you did it!'); // for debugging
 
         // Only sends axios request if all fields pass client-side validation check
-        const isReq = validate();
+        //const isReq = validate();
+        const isReq = true;
         if (isReq) {
             // Updates user with given info
             let request = {
@@ -113,7 +127,7 @@ export function ProfileView(props) {
 
     // RENDER
 
-    getUser(props.user);
+    getUser();
 
     return (
         <Container className="profile-view border-dark border-3 mt-5">
@@ -131,27 +145,27 @@ export function ProfileView(props) {
                     <Form>
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
-                            {!edit && <Form.Control placeholder={props.user} disabled />}
-                            {edit && <Form.Control type="text" placeholder={props.user} onSubmit={e => setUsername(e.target.value)} />}
+                            {!edit && <Form.Control placeholder={currentUsername} disabled />}
+                            {edit && <Form.Control type="text" placeholder={currentUsername} onChange={e => setUsername(e.target.value)} />}
                             {usernameErr && <Form.Text className="text-muted">{usernameErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formPassword">
                             <Form.Label>Password:</Form.Label>
                             {!edit && <Form.Control type="password" placeholder="Hidden" disabled />}
-                            {edit && <Form.Control type="password" placeholder="New password" onSubmit={e => setPassword(e.target.value)} />}
+                            {edit && <Form.Control type="password" placeholder="New password" onChange={e => setPassword(e.target.value)} />}
                             {passwordErr && <Form.Text className="text-muted">{passwordErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formEmail">
                             <Form.Label>Email:</Form.Label>
-                            {!edit && <Form.Control placeholder={email} disabled />}
-                            {edit && <Form.Control type="email" placeholder={email} onSubmit={e => setEmail(e.target.value)} />}
+                            {!edit && <Form.Control placeholder={currentEmail} disabled />}
+                            {edit && <Form.Control type="email" placeholder={currentEmail} onChange={e => setEmail(e.target.value)} />}
                             {emailErr && <Form.Text className="text-muted">{emailErr}</Form.Text>}
                         </Form.Group>
-                        {birthday && <Form.Group className="mt-3" controlId="formBirthday">
+                        {currentBirthday && <Form.Group className="mt-3" controlId="formBirthday">
                             <Form.Label>Birthday:</Form.Label>
-                            {edit && <Form.Text> &#x28;This field can be left blank&#x29;</Form.Text>}
-                            {!edit && <Form.Control placeholder={birthday} disabled />}
-                            {edit && <Form.Control type="string" placeholder={birthday} onSubmit={e => setBirthday(e.target.value)} />}
+                            {edit && <Form.Text> &#x28;Leave blank to erase data&#x29;</Form.Text>}
+                            {!edit && <Form.Control placeholder={currentBirthday} disabled />}
+                            {edit && <Form.Control type="string" placeholder={currentBirthday} onChange={e => setBirthday(e.target.value)} />}
                             {edit && <Form.Text className="text-muted">
                                 Please use format MM/DD/YY
                             </Form.Text>}
