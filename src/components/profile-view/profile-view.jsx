@@ -76,6 +76,7 @@ export function ProfileView(props) {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(res => {
             console.log('Done!');
+            setUsername(res.data.Username);
             setPassword(res.data.Password);
             setEmail(res.data.Email);
             setBirthday(res.data.Birthday);
