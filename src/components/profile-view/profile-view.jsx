@@ -35,31 +35,28 @@ export class ProfileView extends React.Component {
         this.setState({ passwordErr: '' });
         this.setState({ emailErr: '' });
 
-        if (!username) {
-            this.setState({ usernameErr: 'Username Required' });
-            isReq = false;
-        } else if (username.length < 5) {
-            this.setState({ usernameErr: 'Username must be at least 5 characters long' });
-            isReq = false;
-        } else if (!isAlphaNumeric(username)) {
-            this.setState({ usernameErr: 'Username must include only alphanumeric characters' });
-            isReq = false;
+        if (this.username) {
+            if (this.username.length < 5) {
+                this.setState({ usernameErr: 'Username must be at least 5 characters long' });
+                isReq = false;
+            } else if (!isAlphaNumeric(this.username)) {
+                this.setState({ usernameErr: 'Username must include only alphanumeric characters' });
+                isReq = false;
+            }
         }
 
-        if (!password) {
-            this.setState({ passwordErr: 'Password Required' });
-            isReq = false;
-        } else if (password.length < 8) {
-            this.setState({ passwordErr: 'Password must be at least 8 characters long' });
-            isReq = false;
+        if (this.password) {
+            if (this.password.length < 8) {
+                this.setState({ passwordErr: 'Password must be at least 8 characters long' });
+                isReq = false;
+            }
         }
 
-        if (!email) {
-            this.setState({ emailErr: 'Email Required' });
-            isReq = false;
-        } else if (email.indexOf('@') === -1) {
-            this.setState({ emailErr: 'Email is not valid' });
-            isReq = false;
+        if (this.email) {
+            if (this.email.indexOf('@') === -1) {
+                this.setState({ emailErr: 'Email is not valid' });
+                isReq = false;
+            }
         }
 
         //
@@ -82,28 +79,28 @@ export class ProfileView extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault(); // this doesn't work for some reason :(
-        alert('you did it!');
+        // alert('you did it!'); // for debugging
 
         // Only sends axios request if all fields pass client-side validation check
         const isReq = this.validate();
         if (isReq) {
             // Updates user with given info
             let request = {
-                Username: username,
-                // Password: password,
-                Email: email,
-                Birthday: birthday
+                Username: this.username,
+                Password: this.password,
+                Email: this.email,
+                Birthday: this.birthday
             };
+
             // NEXT LINE FOR DEBUGGING!!
             console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}`);
-            /*
-            axios.put('https://cinemadatabase.herokuapp.com/users', request).then(res => {
+
+            axios.put(`https://cinemadatabase.herokuapp.com/users/${props.user}`, request).then(res => {
                 const data = res.data;
                 console.log(data);
             }).catch(err => {
                 console.log(err)
             });
-            */
         }
     }
 
@@ -116,6 +113,7 @@ export class ProfileView extends React.Component {
         this.state = {
             edit: false,
             show: false,
+            username: '',
             password: '',
             email: '',
             birthday: '',
@@ -132,7 +130,7 @@ export class ProfileView extends React.Component {
 
     render() {
         const { user } = this.props;
-        const { edit, show, password, email, birthday, usernameErr, passwordErr, emailErr, birthdayErr } = this.state;
+        const { edit, show, username, password, email, birthday, usernameErr, passwordErr, emailErr, birthdayErr } = this.state;
 
         return (
             <Container className="profile-view border-dark border-3 mt-5">
@@ -151,38 +149,33 @@ export class ProfileView extends React.Component {
                             <Form.Group controlId="formUsername">
                                 <Form.Label>Username:</Form.Label>
                                 {!edit && <Form.Control placeholder={user} disabled />}
-                                {edit && <Form.Control type="text" placeholder={user} onChange={e => setUsername(e.target.value)} />}
+                                {edit && <Form.Control type="text" placeholder={user} onSubmit={e => setState({ username: e.target.value })} />}
                                 {usernameErr && <Form.Text className="text-muted">{usernameErr}</Form.Text>}
                             </Form.Group>
-                            {edit && <Form.Group className="mt-3" controlId="formPassword">
+                            <Form.Group className="mt-3" controlId="formPassword">
                                 <Form.Label>Password:</Form.Label>
-                                <Form.Control type="password" placeholder="New password" onSubmit={e => this.setState({ password: e.target.value })} />
-                                <Form.Text>Only fill out this field if you wish to change your password</Form.Text>
+                                {!edit && <Form.Control type="password" placeholder="Hidden" disabled />}
+                                {edit && <Form.Control type="password" placeholder="New password" onSubmit={e => this.setState({ password: e.target.value })} />}
                                 {passwordErr && <Form.Text className="text-muted">{passwordErr}</Form.Text>}
-                            </Form.Group>}
+                            </Form.Group>
                             <Form.Group className="mt-3" controlId="formEmail">
                                 <Form.Label>Email:</Form.Label>
                                 {!edit && <Form.Control placeholder={email} disabled />}
-                                {edit && <Form.Control type="email" placeholder={email} onChange={e => setEmail(e.target.value)} />}
+                                {edit && <Form.Control type="email" placeholder={email} onSubmit={e => setState({ email: e.target.value })} />}
                                 {emailErr && <Form.Text className="text-muted">{emailErr}</Form.Text>}
                             </Form.Group>
-                            <Form.Group className="mt-3" controlId="formBirthday">
+                            {birthday && <Form.Group className="mt-3" controlId="formBirthday">
                                 <Form.Label>Birthday:</Form.Label>
                                 {edit && <Form.Text> &#x28;This field can be left blank&#x29;</Form.Text>}
                                 {!edit && <Form.Control placeholder={birthday} disabled />}
-                                {edit && <Form.Control type="string" placeholder={birthday} onChange={e => setBirthday(e.target.value)} />}
+                                {edit && <Form.Control type="string" placeholder={birthday} onSubmit={e => setState({ birthday: e.target.value })} />}
                                 {edit && <Form.Text className="text-muted">
                                     Please use format MM/DD/YY
                                 </Form.Text>}
-                            </Form.Group>
-                            {edit && <Form.Group className="mt-3" controlId="formPasswordConfirm">
-                                <Form.Label>Please enter your current password for changes to take effect:</Form.Label>
-                                <Form.Control type="password" placeholder={password} onChange={e => setPassword(e.target.value)} />
-                                {passwordErr && <Form.Text className="text-muted">{passwordErr}</Form.Text>}
                             </Form.Group>}
                             {edit && <Row className="justify-content-sm-center mt-4">
                                 <Col><Button variant="outline-secondary" onClick={() => this.editMode(false)}>Cancel</Button></Col>
-                                <Col><Button variant="dark" type="submit" onClick={() => this.handleSubmit(e)}>Submit</Button></Col>
+                                <Col><Button variant="dark" type="submit" onClick={() => this.handleSubmit()}>Submit</Button></Col>
                             </Row>}
                         </Form>
                     </Col>
