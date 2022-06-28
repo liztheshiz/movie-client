@@ -114,7 +114,9 @@ export function ProfileView(props) {
             // NEXT LINE FOR DEBUGGING!!
             console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}`);
 
-            axios.put(`https://cinemadatabase.herokuapp.com/users/${props.user}`, request).then(res => {
+            axios.put(`https://cinemadatabase.herokuapp.com/users/${props.user}`, request, {
+                headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+            }).then(res => {
                 const data = res.data;
                 console.log(data);
             }).catch(err => {
@@ -160,15 +162,15 @@ export function ProfileView(props) {
                             {edit && <Form.Control type="email" placeholder={currentEmail} onChange={e => setEmail(e.target.value)} />}
                             {emailErr && <Form.Text className="text-muted">{emailErr}</Form.Text>}
                         </Form.Group>
-                        {currentBirthday && <Form.Group className="mt-3" controlId="formBirthday">
+                        <Form.Group className="mt-3" controlId="formBirthday">
                             <Form.Label>Birthday:</Form.Label>
-                            {edit && <Form.Text> &#x28;Leave blank to erase data&#x29;</Form.Text>}
-                            {!edit && <Form.Control placeholder={currentBirthday} disabled />}
+                            {!currentBirthday && !edit && <Form.Text>No birthday present</Form.Text>}
+                            {currentBirthday && !edit && <Form.Control placeholder={currentBirthday} disabled />}
                             {edit && <Form.Control type="string" placeholder={currentBirthday} onChange={e => setBirthday(e.target.value)} />}
                             {edit && <Form.Text className="text-muted">
                                 Please use format MM/DD/YY
                             </Form.Text>}
-                        </Form.Group>}
+                        </Form.Group>
                         {edit && <Row className="justify-content-sm-center mt-4">
                             <Col><Button variant="outline-secondary" onClick={() => editMode(false)}>Cancel</Button></Col>
                             <Col><Button variant="dark" type="submit" onClick={handleSubmit}>Submit</Button></Col>
