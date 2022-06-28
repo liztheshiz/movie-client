@@ -18,6 +18,7 @@ export function ProfileView(props) {
     const [currentPassword, setCurrentPassword] = useState('');
     const [currentEmail, setCurrentEmail] = useState('');
     const [currentBirthday, setCurrentBirthday] = useState('');
+    const [currentFavMovies, setCurrentFavMovies] = useState('');
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -54,6 +55,7 @@ export function ProfileView(props) {
             setCurrentPassword(res.data.Password);
             setCurrentEmail(res.data.Email);
             setCurrentBirthday(res.data.Birthday);
+            setCurrentFavMovies(res.data.FavoriteMovies);
         }).catch(err => console.log(err));
     }
 
@@ -181,7 +183,7 @@ export function ProfileView(props) {
                     </Form>
                 </Col>
             </Row>
-            <MoviesList />
+            <MoviesList favMovies={currentFavMovies} movies={props.movies} isProfile={true} />
             <Row className="justify-content-sm-center mb-4">
                 <Col className="text-center">
                     <Button variant="link" onClick={() => showModal(true)}>Click here to delete user</Button>
