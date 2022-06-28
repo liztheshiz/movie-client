@@ -97,8 +97,7 @@ export function ProfileView(props) {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // this doesn't work for some reason :(
-        // alert('you did it!'); // for debugging
+        e.preventDefault();
 
         // Only sends axios request if all fields pass client-side validation check
         //const isReq = validate();
@@ -115,12 +114,12 @@ export function ProfileView(props) {
             // NEXT LINE FOR DEBUGGING!!
             console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}`);
 
-            /*axios.put(`https://cinemadatabase.herokuapp.com/users/${props.user}`, request).then(res => {
+            axios.put(`https://cinemadatabase.herokuapp.com/users/${props.user}`, request).then(res => {
                 const data = res.data;
                 console.log(data);
             }).catch(err => {
                 console.log(err)
-            });*/
+            });
         }
     }
 
