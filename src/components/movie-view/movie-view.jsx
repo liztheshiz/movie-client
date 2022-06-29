@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import axios from 'axios';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -23,12 +24,22 @@ export class MovieView extends React.Component {
         document.removeEventListener('keydown', this.escapeToHome);
     }*/
 
-    addToFavorites(movieId) {
+    addToFavorites(user, movieId) {
         axios.post(`https://cinemadatabase.herokuapp.com/users/${user}/FavoriteMovies/${movieId}`, {
-            headers: { Authorization: `Bearer ${token}` }
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(res => {
+            this.setState({ starred: true });
+        }).catch(err => console.log(err));
+    }
 
-        })
+
+    // LIFECYCLE METHODS
+
+    constructor() {
+        super();
+        this.state = {
+            starred: false
+        };
     }
 
     render() {
@@ -42,8 +53,11 @@ export class MovieView extends React.Component {
                             <Col xs={1}>
                                 <Button variant="outline-dark" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>
                             </Col>
-                            <Col className="movie-title" xs={11}>
+                            <Col className="movie-title" xs={10}>
                                 <h2 className="value">{movie.Title}</h2>
+                            </Col>
+                            <Col xs={1}>
+                                <Button variant="outline-dark" size="sm" onClick={() => { this.addToFavorites(user, movie._id); }}>Fav</Button>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center mb-3">
