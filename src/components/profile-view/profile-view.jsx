@@ -18,7 +18,7 @@ export function ProfileView(props) {
     const [currentPassword, setCurrentPassword] = useState('');
     const [currentEmail, setCurrentEmail] = useState('');
     const [currentBirthday, setCurrentBirthday] = useState('');
-    const [currentFavMovies, setCurrentFavMovies] = useState('');
+    const [currentFavMovies, setCurrentFavMovies] = useState([]);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');

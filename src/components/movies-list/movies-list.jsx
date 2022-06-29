@@ -8,18 +8,22 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
 export function MoviesList(props) {
-    const [movies, setMovies] = useState('');
+    const { movies, favMovies, isProfile } = props;
 
-    if (isProfile) {
-        props.favMovies.forEach(i => {
-            movie = props.movies.find(m => m._id === props.favMovies[i]);
+    /*if (isProfile) {
+        favMovies.forEach(i => {
+            movie = movies.find(m => m._id === favMovies[i]);
             movies.push(movie);
         })
-    }
+    }*/
+
+    const favMoviesList = movies.filter(m => {
+        return favMovies.includes(m._id)
+    })
 
     return (
         <Row>
-            {movies.map(m =>
+            {favMoviesList.map(m =>
                 <Col sm={6} md={4} lg={3} key={m._id}>
                     <MovieCard movie={m} />
                     {isProfile && <Button>Delete</Button>}

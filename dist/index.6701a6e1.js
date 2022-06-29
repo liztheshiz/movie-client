@@ -25560,7 +25560,8 @@ class MainView extends _reactDefault.default.Component {
                                     return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         sm: 10,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
-                                            user: user
+                                            user: user,
+                                            movies: movies
                                         })
                                     }));
                                 },
@@ -37923,7 +37924,7 @@ function ProfileView(props) {
     const [currentPassword, setCurrentPassword] = _react.useState('');
     const [currentEmail, setCurrentEmail] = _react.useState('');
     const [currentBirthday, setCurrentBirthday] = _react.useState('');
-    const [currentFavMovies, setCurrentFavMovies] = _react.useState('');
+    const [currentFavMovies, setCurrentFavMovies] = _react.useState([]);
     const [username, setUsername] = _react.useState('');
     const [password, setPassword] = _react.useState('');
     const [email, setEmail] = _react.useState('');
@@ -38374,6 +38375,7 @@ function ProfileView(props) {
             /*#__PURE__*/ _jsxRuntime.jsx(_moviesList.MoviesList, {
                 favMovies: currentFavMovies,
                 movies: props.movies,
+                isProfile: true,
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
                     lineNumber: 186
@@ -38468,7 +38470,7 @@ function ProfileView(props) {
         ]
     }));
 }
-_s(ProfileView, "NtU6dEhOVL5ZzMIQ4Nik7MhHYr0=");
+_s(ProfileView, "gOPgwkptjNtIIdwEyDSuez3Pv60=");
 _c = ProfileView;
 /* this render function is just to hold the modal skeleton until Modal is imported correctly...
 render() {
@@ -38522,20 +38524,28 @@ var _colDefault = parcelHelpers.interopDefault(_col);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 function MoviesList(props) {
-    const movies = props.movies;
+    const { movies , favMovies , isProfile  } = props;
+    /*if (isProfile) {
+        favMovies.forEach(i => {
+            movie = movies.find(m => m._id === favMovies[i]);
+            movies.push(movie);
+        })
+    }*/ const favMoviesList = movies.filter((m)=>{
+        return favMovies.includes(m._id);
+    });
     return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 14
+            lineNumber: 25
         },
         __self: this,
-        children: movies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+        children: favMoviesList.map((m)=>/*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                 sm: 6,
                 md: 4,
                 lg: 3,
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 16
+                    lineNumber: 27
                 },
                 __self: this,
                 children: [
@@ -38543,17 +38553,17 @@ function MoviesList(props) {
                         movie: m,
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 17
+                            lineNumber: 28
                         },
                         __self: this
                     }),
                     isProfile && /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 18
+                            lineNumber: 29
                         },
                         __self: this,
-                        children: "Delte"
+                        children: "Delete"
                     })
                 ]
             }, m._id)
@@ -38562,6 +38572,7 @@ function MoviesList(props) {
 }
 _c = MoviesList;
 MoviesList.propTypes = {
+    favMovies: _propTypesDefault.default.array.isRequired,
     movies: _propTypesDefault.default.array.isRequired,
     isProfile: _propTypesDefault.default.bool.isRequired
 };
