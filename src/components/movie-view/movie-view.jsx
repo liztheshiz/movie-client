@@ -23,8 +23,16 @@ export class MovieView extends React.Component {
         document.removeEventListener('keydown', this.escapeToHome);
     }*/
 
+    addToFavorites(movieId) {
+        axios.post(`https://cinemadatabase.herokuapp.com/users/${user}/FavoriteMovies/${movieId}`, {
+            headers: { Authorization: `Bearer ${token}` }
+        }).then(res => {
+
+        })
+    }
+
     render() {
-        const { movie, onBackClick } = this.props;
+        const { user, movie, onBackClick } = this.props;
 
         return (
             <Container className="movie-view border-dark border-3 mt-5">
@@ -71,6 +79,7 @@ export class MovieView extends React.Component {
 }
 
 MovieView.propTypes = {
+    user: PropTypes.string.isRequired,
     movie: PropTypes.shape({
         Title: PropTypes.string.isRequired,
         Description: PropTypes.string.isRequired,
