@@ -22,9 +22,10 @@ export function RegistrationView(props) {
 
     // CUSTOM METHODS
 
+    // Used to validate if string is alphanumeric
     const isAlphaNumeric = str => /^[a-z0-9]+$/gi.test(str);
 
-    // Validate user inputs
+    // Validates user inputs
     const validate = () => {
         let isReq = true;
         setUsernameErr('');
@@ -65,6 +66,7 @@ export function RegistrationView(props) {
         return isReq;
     }
 
+    // If fields pass validation checks, posts user info to database and logs them in
     const handleRegister = (e) => {
         e.preventDefault(); // prevents page from refreshing when clicking submit button
 
@@ -81,10 +83,12 @@ export function RegistrationView(props) {
             // NEXT LINE FOR DEBUGGING!!
             console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}`);
             axios.post('https://cinemadatabase.herokuapp.com/users', request).then(res => {
-                const data = res.data;
-                console.log(data);
+                alert('User successfully registered! Redirecting to login...');
                 window.open('/', '_self');
-                // props.onLoggedIn(data); // Logs user in automatically when they register
+
+                /* const data = { user: { Username: res.data.Username, Password: res.data.Password } };
+                console.log(data);
+                props.onLoggedIn(data); // Logs user in automatically when they register */
             }).catch(err => {
                 console.log(err);
             });
