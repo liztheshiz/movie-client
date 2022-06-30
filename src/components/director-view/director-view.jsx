@@ -6,9 +6,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+import { MoviesList } from '../movies-list/movies-list';
+
 export class DirectorView extends React.Component {
     render() {
-        const { movie, onBackClick } = this.props;
+        const { movie, movies, onBackClick } = this.props;
 
         return (
             <Container className="director-view border-dark border-3 mt-5">
@@ -42,6 +44,10 @@ export class DirectorView extends React.Component {
                         </Row>}
                     </Col>
                 </Row>
+                <Row>
+                    <Col><h3>Movies with this director:</h3></Col>
+                </Row>
+                <MoviesList movies={movies} favMovies={[]} listType={"director"} name={movie.Director.Name} />
             </Container>
         );
     }
@@ -63,5 +69,6 @@ DirectorView.propTypes = {
         }),
         ImagePath: PropTypes.string.isRequired
     }).isRequired,
+    movies: PropTypes.array.isRequired,
     onBackClick: PropTypes.func.isRequired
 }

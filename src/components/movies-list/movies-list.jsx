@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 export function MoviesList(props) {
-    const { movies, favMovies, listType, removeFromFavorites, genre, director } = props;
+    const { movies, favMovies, listType, removeFromFavorites, name } = props;
 
     /*if (isProfile) {
         favMovies.forEach(i => {
@@ -18,8 +18,8 @@ export function MoviesList(props) {
 
     const moviesList = movies.filter(m => {
         if (listType === "profile") return favMovies.includes(m._id);
-        if (listType === "genre") return m.Genre.Name === genre;
-        if (listType === "director") return m.Director.Name === director;
+        if (listType === "genre") return m.Genre.Name === name;
+        if (listType === "director") return m.Director.Name === name;
     })
 
     return (
@@ -38,6 +38,5 @@ MoviesList.propTypes = {
     movies: PropTypes.array.isRequired,
     listType: PropTypes.string.isRequired,
     removeFromFavorites: PropTypes.func,
-    genre: PropTypes.string,
-    director: PropTypes.string
+    name: PropTypes.string
 }

@@ -25517,6 +25517,7 @@ class MainView extends _reactDefault.default.Component {
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_directorView.DirectorView, {
                                             movie: movies.find((m)=>m.Director.Name === match.params.director
                                             ),
+                                            movies: movies,
                                             onBackClick: ()=>history.goBack()
                                         })
                                     }));
@@ -38617,7 +38618,7 @@ var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 function MoviesList(props) {
-    const { movies , favMovies , listType , removeFromFavorites , genre , director  } = props;
+    const { movies , favMovies , listType , removeFromFavorites , name  } = props;
     /*if (isProfile) {
         favMovies.forEach(i => {
             movie = movies.find(m => m._id === favMovies[i]);
@@ -38625,8 +38626,8 @@ function MoviesList(props) {
         })
     }*/ const moviesList = movies.filter((m)=>{
         if (listType === "profile") return favMovies.includes(m._id);
-        if (listType === "genre") return m.Genre.Name === genre;
-        if (listType === "director") return m.Director.Name === director;
+        if (listType === "genre") return m.Genre.Name === name;
+        if (listType === "director") return m.Director.Name === name;
     });
     return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
         __source: {
@@ -38663,8 +38664,7 @@ MoviesList.propTypes = {
     movies: _propTypesDefault.default.array.isRequired,
     listType: _propTypesDefault.default.string.isRequired,
     removeFromFavorites: _propTypesDefault.default.func,
-    genre: _propTypesDefault.default.string,
-    director: _propTypesDefault.default.string
+    name: _propTypesDefault.default.string
 };
 var _c;
 $RefreshReg$(_c, "MoviesList");
@@ -38698,194 +38698,230 @@ var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _moviesList = require("../movies-list/movies-list");
 class DirectorView extends _reactDefault.default.Component {
     render() {
-        const { movie , onBackClick  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+        const { movie , movies , onBackClick  } = this.props;
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
             className: "director-view border-dark border-3 mt-5",
             __source: {
                 fileName: "src/components/director-view/director-view.jsx",
-                lineNumber: 14
+                lineNumber: 16
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                className: "mt-5",
-                __source: {
-                    fileName: "src/components/director-view/director-view.jsx",
-                    lineNumber: 15
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                    sm: 10,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                    className: "mt-5",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
-                        lineNumber: 16
+                        lineNumber: 17
                     },
                     __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
-                            className: "mb-4",
-                            __source: {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 17
-                            },
-                            __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                    xs: 1,
-                                    __source: {
-                                        fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 18
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                        variant: "outline-dark",
-                                        size: "sm",
-                                        onClick: ()=>{
-                                            onBackClick(null);
-                                        },
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                        sm: 10,
+                        __source: {
+                            fileName: "src/components/director-view/director-view.jsx",
+                            lineNumber: 18
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                                className: "mb-4",
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 19
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        xs: 1,
                                         __source: {
                                             fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 19
+                                            lineNumber: 20
                                         },
                                         __self: this,
-                                        children: "<"
-                                    })
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                    className: "director-name",
-                                    xs: 11,
-                                    __source: {
-                                        fileName: "src/components/director-view/director-view.jsx",
-                                        lineNumber: 21
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
-                                        className: "value",
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                            variant: "outline-dark",
+                                            size: "sm",
+                                            onClick: ()=>{
+                                                onBackClick(null);
+                                            },
+                                            __source: {
+                                                fileName: "src/components/director-view/director-view.jsx",
+                                                lineNumber: 21
+                                            },
+                                            __self: this,
+                                            children: "<"
+                                        })
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        className: "director-name",
+                                        xs: 11,
                                         __source: {
                                             fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 22
+                                            lineNumber: 23
                                         },
                                         __self: this,
-                                        children: movie.Director.Name
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                            className: "value",
+                                            __source: {
+                                                fileName: "src/components/director-view/director-view.jsx",
+                                                lineNumber: 24
+                                            },
+                                            __self: this,
+                                            children: movie.Director.Name
+                                        })
                                     })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                                className: "justify-content-md-center mb-4",
+                                __source: {
+                                    fileName: "src/components/director-view/director-view.jsx",
+                                    lineNumber: 27
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                    className: "director-bio",
+                                    lg: 10,
+                                    __source: {
+                                        fileName: "src/components/director-view/director-view.jsx",
+                                        lineNumber: 28
+                                    },
+                                    __self: this,
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                            className: "label",
+                                            __source: {
+                                                fileName: "src/components/director-view/director-view.jsx",
+                                                lineNumber: 29
+                                            },
+                                            __self: this,
+                                            children: "Bio: "
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                            className: "value",
+                                            __source: {
+                                                fileName: "src/components/director-view/director-view.jsx",
+                                                lineNumber: 30
+                                            },
+                                            __self: this,
+                                            children: movie.Director.Bio
+                                        })
+                                    ]
                                 })
-                            ]
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                            className: "justify-content-md-center mb-4",
-                            __source: {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 25
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                                className: "director-bio",
-                                lg: 10,
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                                className: "justify-content-md-center mb-4",
                                 __source: {
                                     fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 26
+                                    lineNumber: 33
                                 },
                                 __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "label",
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 27
-                                        },
-                                        __self: this,
-                                        children: "Bio: "
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 28
-                                        },
-                                        __self: this,
-                                        children: movie.Director.Bio
-                                    })
-                                ]
-                            })
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                            className: "justify-content-md-center mb-4",
-                            __source: {
-                                fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 31
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                                className: "director-birth",
-                                lg: 10,
+                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                    className: "director-birth",
+                                    lg: 10,
+                                    __source: {
+                                        fileName: "src/components/director-view/director-view.jsx",
+                                        lineNumber: 34
+                                    },
+                                    __self: this,
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                            className: "label",
+                                            __source: {
+                                                fileName: "src/components/director-view/director-view.jsx",
+                                                lineNumber: 35
+                                            },
+                                            __self: this,
+                                            children: "Born: "
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                            className: "value",
+                                            __source: {
+                                                fileName: "src/components/director-view/director-view.jsx",
+                                                lineNumber: 36
+                                            },
+                                            __self: this,
+                                            children: movie.Director.Birth
+                                        })
+                                    ]
+                                })
+                            }),
+                            movie.Director.Death && /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                                className: "justify-content-md-center mb-4",
                                 __source: {
                                     fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 32
+                                    lineNumber: 39
                                 },
                                 __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "label",
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 33
-                                        },
-                                        __self: this,
-                                        children: "Born: "
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 34
-                                        },
-                                        __self: this,
-                                        children: movie.Director.Birth
-                                    })
-                                ]
+                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                    className: "director-death",
+                                    lg: 10,
+                                    __source: {
+                                        fileName: "src/components/director-view/director-view.jsx",
+                                        lineNumber: 40
+                                    },
+                                    __self: this,
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                            className: "label",
+                                            __source: {
+                                                fileName: "src/components/director-view/director-view.jsx",
+                                                lineNumber: 41
+                                            },
+                                            __self: this,
+                                            children: "Died: "
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                            className: "value",
+                                            __source: {
+                                                fileName: "src/components/director-view/director-view.jsx",
+                                                lineNumber: 42
+                                            },
+                                            __self: this,
+                                            children: movie.Director.Death
+                                        })
+                                    ]
+                                })
                             })
-                        }),
-                        movie.Director.Death && /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                            className: "justify-content-md-center mb-4",
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                    __source: {
+                        fileName: "src/components/director-view/director-view.jsx",
+                        lineNumber: 47
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        __source: {
+                            fileName: "src/components/director-view/director-view.jsx",
+                            lineNumber: 48
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("h3", {
                             __source: {
                                 fileName: "src/components/director-view/director-view.jsx",
-                                lineNumber: 37
+                                lineNumber: 48
                             },
                             __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                                className: "director-death",
-                                lg: 10,
-                                __source: {
-                                    fileName: "src/components/director-view/director-view.jsx",
-                                    lineNumber: 38
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "label",
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 39
-                                        },
-                                        __self: this,
-                                        children: "Died: "
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
-                                        __source: {
-                                            fileName: "src/components/director-view/director-view.jsx",
-                                            lineNumber: 40
-                                        },
-                                        __self: this,
-                                        children: movie.Director.Death
-                                    })
-                                ]
-                            })
+                            children: "Movies with this director:"
                         })
-                    ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_moviesList.MoviesList, {
+                    movies: movies,
+                    favMovies: [],
+                    listType: "director",
+                    name: movie.Director.Name,
+                    __source: {
+                        fileName: "src/components/director-view/director-view.jsx",
+                        lineNumber: 50
+                    },
+                    __self: this
                 })
-            })
+            ]
         }));
     }
 }
@@ -38905,6 +38941,7 @@ DirectorView.propTypes = {
         }),
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
+    movies: _propTypesDefault.default.array.isRequired,
     onBackClick: _propTypesDefault.default.func.isRequired
 };
 
@@ -38913,7 +38950,7 @@ DirectorView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"8WCoL":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","../movies-list/movies-list":"1kGQ5"}],"8WCoL":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5f0a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -39042,14 +39079,36 @@ class GenreView extends _reactDefault.default.Component {
                         ]
                     })
                 }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                    __source: {
+                        fileName: "src/components/genre-view/genre-view.jsx",
+                        lineNumber: 34
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        __source: {
+                            fileName: "src/components/genre-view/genre-view.jsx",
+                            lineNumber: 35
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("h3", {
+                            __source: {
+                                fileName: "src/components/genre-view/genre-view.jsx",
+                                lineNumber: 35
+                            },
+                            __self: this,
+                            children: "Movies with this genre:"
+                        })
+                    })
+                }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_moviesList.MoviesList, {
                     movies: movies,
                     favMovies: [],
                     listType: "genre",
-                    genre: movie.Genre.Name,
+                    name: movie.Genre.Name,
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 34
+                        lineNumber: 37
                     },
                     __self: this
                 })

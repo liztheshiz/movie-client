@@ -31,7 +31,10 @@ export class GenreView extends React.Component {
                         </Row>
                     </Col>
                 </Row>
-                <MoviesList movies={movies} favMovies={[]} listType={"genre"} genre={movie.Genre.Name} />
+                <Row>
+                    <Col><h3>Movies with this genre:</h3></Col>
+                </Row>
+                <MoviesList movies={movies} favMovies={[]} listType={"genre"} name={movie.Genre.Name} />
             </Container>
         );
     }
