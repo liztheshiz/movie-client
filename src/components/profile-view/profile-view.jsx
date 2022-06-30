@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
@@ -139,7 +139,9 @@ export function ProfileView(props) {
 
     // RENDER
 
-    getUser();
+    useEffect(() => {
+        getUser();
+    }, []);
 
     return (
         <Container className="profile-view border-dark border-3 mt-5">
