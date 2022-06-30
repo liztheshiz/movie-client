@@ -30,6 +30,7 @@ export function ProfileView(props) {
 
     // CUSTOM METHODS
 
+    // Changes edit var to given bool; determines if user can edit form fields
     const editMode = (bool) => {
         // When user cancels an edit, edit values are reset
         if (bool === false) {
@@ -41,8 +42,10 @@ export function ProfileView(props) {
         setEdit(bool);
     }
 
+    // Changes show var to given bool; determines if modal is showing after user clicks delete button (for now modal doesn't work, displays under button)
     const showModal = (bool) => { setShow(bool); }
 
+    // Deletes current user
     const deleteUser = () => {
         axios.delete(`https://cinemadatabase.herokuapp.com/users/${props.user}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
@@ -53,6 +56,7 @@ export function ProfileView(props) {
         }).catch(err => console.log(err));
     }
 
+    // Fetches current user's information from database and saves its values in the state
     const getUser = () => {
         axios.get(`https://cinemadatabase.herokuapp.com/users/${props.user}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
@@ -65,9 +69,10 @@ export function ProfileView(props) {
         }).catch(err => console.log(err));
     }
 
+    // Used to validate if string is alphanumeric
     const isAlphaNumeric = (str) => { /^[a-z0-9]+$/gi.test(str); }
 
-    // Validate user inputs
+    // Validates user inputs
     const validate = () => {
         let isReq = true;
         setUsernameErr('');
@@ -100,12 +105,13 @@ export function ProfileView(props) {
         }
 
         //
-        // CHECK IF BIRTHDAY MATCHES FORMAT MM/DD/YY HERE!!
+        // CHECK IF BIRTHDAY MATCHES FORMAT MM/DD/YY HERE (WHEN PRESENT)!!
         //
 
         return isReq;
     }
 
+    // Updates current user's info with what is given in the profile form
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -136,6 +142,7 @@ export function ProfileView(props) {
         }
     }
 
+    // Removes given movie from user's list of favorites
     const removeFromFavorites = (movieid) => {
         axios.delete(`https://cinemadatabase.herokuapp.com/users/${props.user}/FavoriteMovies/${movieid}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
