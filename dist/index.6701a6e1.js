@@ -25637,7 +25637,8 @@ class MovieCard extends _reactDefault.default.Component {
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Img, {
                             variant: "top",
-                            src: "../../img/placeholder.png" /*{movie.ImagePath}*/ ,
+                            crossOrigin: "anonymous",
+                            src: movie.ImagePath,
                             __source: {
                                 fileName: "src/components/movie-card/movie-card.jsx",
                                 lineNumber: 20
@@ -29641,7 +29642,8 @@ class MovieView extends _reactDefault.default.Component {
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                            src: "../../img/placeholder.png" /*{movie.ImagePath}*/ ,
+                            crossOrigin: "anonymous",
+                            src: movie.ImagePath,
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
                                 lineNumber: 87
