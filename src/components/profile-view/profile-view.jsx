@@ -139,7 +139,7 @@ export function ProfileView(props) {
 
     // RENDER
 
-    // Should keep getUser from being called continuously; needs more testing
+    // Keeps getUser from being called continuously
     useEffect(() => {
         getUser();
     }, []);
