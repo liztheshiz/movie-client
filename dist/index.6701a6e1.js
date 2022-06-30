@@ -25559,7 +25559,7 @@ class MainView extends _reactDefault.default.Component {
                                         onLoggedIn: (user1)=>this.onLoggedIn(user1)
                                     }));
                                     return(/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                        sm: 10,
+                                        sm: 12,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_profileView.ProfileView, {
                                             user: user,
                                             movies: movies
@@ -38368,7 +38368,7 @@ function ProfileView(props) {
                                             lineNumber: 172
                                         },
                                         __self: this,
-                                        children: "No birthday present"
+                                        children: " No birthday present"
                                     }),
                                     currentBirthday && !edit && /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
                                         placeholder: currentBirthday,
@@ -38620,8 +38620,8 @@ function MoviesList(props) {
         __self: this,
         children: favMoviesList.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                 sm: 6,
-                md: 4,
-                lg: 3,
+                lg: 4,
+                xl: 3,
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
                     lineNumber: 27

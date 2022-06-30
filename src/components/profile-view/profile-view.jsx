@@ -169,7 +169,7 @@ export function ProfileView(props) {
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formBirthday">
                             <Form.Label>Birthday:</Form.Label>
-                            {!currentBirthday && !edit && <Form.Text>No birthday present</Form.Text>}
+                            {!currentBirthday && !edit && <Form.Text> No birthday present</Form.Text>}
                             {currentBirthday && !edit && <Form.Control placeholder={currentBirthday} disabled />}
                             {edit && <Form.Control type="string" placeholder={currentBirthday} onChange={e => setBirthday(e.target.value)} />}
                             {edit && <Form.Text className="text-muted">

@@ -24,7 +24,7 @@ export function MoviesList(props) {
     return (
         <Row>
             {favMoviesList.map(m =>
-                <Col sm={6} md={4} lg={3} key={m._id}>
+                <Col sm={6} lg={4} xl={3} key={m._id}>
                     <MovieCard movie={m} isProfile={isProfile} />
                 </Col>
             )}
