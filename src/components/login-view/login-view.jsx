@@ -17,7 +17,7 @@ export function LoginView(props) {
     const [usernameErr, setUsernameErr] = useState('');
     const [passwordErr, setPasswordErr] = useState('');
 
-    // validate user inputs
+    // Validates user inputs
     const validate = () => {
         let isReq = true;
         setUsernameErr('');
@@ -42,6 +42,7 @@ export function LoginView(props) {
         return isReq;
     }
 
+    // If fields pass validation checks, logs user in
     const handleSubmit = (e) => {
         e.preventDefault(); // prevents page from refreshing when clicking submit button
 
