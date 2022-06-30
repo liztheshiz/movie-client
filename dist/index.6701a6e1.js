@@ -25542,6 +25542,7 @@ class MainView extends _reactDefault.default.Component {
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_genreView.GenreView, {
                                             movie: movies.find((m)=>m.Genre.Name === match.params.genre
                                             ),
+                                            movies: movies,
                                             onBackClick: ()=>history.goBack()
                                         })
                                     }));
@@ -25622,7 +25623,7 @@ var _colDefault = parcelHelpers.interopDefault(_col);
 var _movieCardScss = require("./movie-card.scss");
 class MovieCard extends _reactDefault.default.Component {
     render() {
-        const { movie , isProfile , removeFromFavorites  } = this.props;
+        const { movie , listType , removeFromFavorites  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
@@ -25686,7 +25687,7 @@ class MovieCard extends _reactDefault.default.Component {
                         })
                     ]
                 }),
-                isProfile && /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                listType === "profile" && /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
                     className: "justify-content-sm-center mt-3",
                     __source: {
                         fileName: "src/components/movie-card/movie-card.jsx",
@@ -25734,8 +25735,8 @@ MovieCard.propTypes = {
         }),
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
-    isProfile: _propTypesDefault.default.bool.isRequired,
-    removeFromFavorites: _propTypesDefault.default.func.isRequired
+    listType: _propTypesDefault.default.string.isRequired,
+    removeFromFavorites: _propTypesDefault.default.func
 };
 
   $parcel$ReactRefreshHelpers$4249.postlude(module);
@@ -38468,7 +38469,7 @@ function ProfileView(props) {
             /*#__PURE__*/ _jsxRuntime.jsx(_moviesList.MoviesList, {
                 favMovies: currentFavMovies,
                 movies: props.movies,
-                isProfile: true,
+                listType: "profile",
                 removeFromFavorites: removeFromFavorites,
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
@@ -38616,37 +38617,39 @@ var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 function MoviesList(props) {
-    const { movies , favMovies , isProfile , removeFromFavorites  } = props;
+    const { movies , favMovies , listType , removeFromFavorites , genre , director  } = props;
     /*if (isProfile) {
         favMovies.forEach(i => {
             movie = movies.find(m => m._id === favMovies[i]);
             movies.push(movie);
         })
-    }*/ const favMoviesList = movies.filter((m)=>{
-        return favMovies.includes(m._id);
+    }*/ const moviesList = movies.filter((m)=>{
+        if (listType === "profile") return favMovies.includes(m._id);
+        if (listType === "genre") return m.Genre.Name === genre;
+        if (listType === "director") return m.Director.Name === director;
     });
     return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 24
+            lineNumber: 26
         },
         __self: this,
-        children: favMoviesList.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+        children: moviesList.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                 sm: 6,
                 lg: 4,
                 xl: 3,
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 26
+                    lineNumber: 28
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                     movie: m,
-                    isProfile: isProfile,
+                    listType: listType,
                     removeFromFavorites: removeFromFavorites,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 27
+                        lineNumber: 29
                     },
                     __self: this
                 })
@@ -38658,8 +38661,10 @@ _c = MoviesList;
 MoviesList.propTypes = {
     favMovies: _propTypesDefault.default.array.isRequired,
     movies: _propTypesDefault.default.array.isRequired,
-    isProfile: _propTypesDefault.default.bool.isRequired,
-    removeFromFavorites: _propTypesDefault.default.func.isRequired
+    listType: _propTypesDefault.default.string.isRequired,
+    removeFromFavorites: _propTypesDefault.default.func,
+    genre: _propTypesDefault.default.string,
+    director: _propTypesDefault.default.string
 };
 var _c;
 $RefreshReg$(_c, "MoviesList");
@@ -38932,109 +38937,123 @@ var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _moviesList = require("../movies-list/movies-list");
 class GenreView extends _reactDefault.default.Component {
     render() {
-        const { movie , onBackClick  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+        const { movie , movies , onBackClick  } = this.props;
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
             className: "genre-view border-dark border-3 mt-5",
             __source: {
                 fileName: "src/components/genre-view/genre-view.jsx",
-                lineNumber: 14
+                lineNumber: 16
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                className: "mt-5",
-                __source: {
-                    fileName: "src/components/genre-view/genre-view.jsx",
-                    lineNumber: 15
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                    sm: 10,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                    className: "mt-5",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
-                        lineNumber: 16
+                        lineNumber: 17
                     },
                     __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
-                            className: "mb-4",
-                            __source: {
-                                fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 17
-                            },
-                            __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                    xs: 1,
-                                    __source: {
-                                        fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 18
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                        variant: "outline-dark",
-                                        size: "sm",
-                                        onClick: ()=>{
-                                            onBackClick(null);
-                                        },
+                    children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                        sm: 10,
+                        __source: {
+                            fileName: "src/components/genre-view/genre-view.jsx",
+                            lineNumber: 18
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                                className: "mb-4",
+                                __source: {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 19
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        xs: 1,
                                         __source: {
                                             fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 19
+                                            lineNumber: 20
                                         },
                                         __self: this,
-                                        children: "<"
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                            variant: "outline-dark",
+                                            size: "sm",
+                                            onClick: ()=>{
+                                                onBackClick(null);
+                                            },
+                                            __source: {
+                                                fileName: "src/components/genre-view/genre-view.jsx",
+                                                lineNumber: 21
+                                            },
+                                            __self: this,
+                                            children: "<"
+                                        })
+                                    }),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                        className: "genre-name",
+                                        xs: 11,
+                                        __source: {
+                                            fileName: "src/components/genre-view/genre-view.jsx",
+                                            lineNumber: 23
+                                        },
+                                        __self: this,
+                                        children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                            className: "value",
+                                            __source: {
+                                                fileName: "src/components/genre-view/genre-view.jsx",
+                                                lineNumber: 24
+                                            },
+                                            __self: this,
+                                            children: movie.Genre.Name
+                                        })
                                     })
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                    className: "genre-name",
-                                    xs: 11,
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                                className: "justify-content-md-center mb-4",
+                                __source: {
+                                    fileName: "src/components/genre-view/genre-view.jsx",
+                                    lineNumber: 27
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                    className: "genre-description",
+                                    lg: 10,
                                     __source: {
                                         fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 21
+                                        lineNumber: 28
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("span", {
                                         className: "value",
                                         __source: {
                                             fileName: "src/components/genre-view/genre-view.jsx",
-                                            lineNumber: 22
+                                            lineNumber: 29
                                         },
                                         __self: this,
-                                        children: movie.Genre.Name
+                                        children: movie.Genre.Description
                                     })
                                 })
-                            ]
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                            className: "justify-content-md-center mb-4",
-                            __source: {
-                                fileName: "src/components/genre-view/genre-view.jsx",
-                                lineNumber: 25
-                            },
-                            __self: this,
-                            children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                className: "genre-description",
-                                lg: 10,
-                                __source: {
-                                    fileName: "src/components/genre-view/genre-view.jsx",
-                                    lineNumber: 26
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                    className: "value",
-                                    __source: {
-                                        fileName: "src/components/genre-view/genre-view.jsx",
-                                        lineNumber: 27
-                                    },
-                                    __self: this,
-                                    children: movie.Genre.Description
-                                })
                             })
-                        })
-                    ]
+                        ]
+                    })
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_moviesList.MoviesList, {
+                    movies: movies,
+                    favMovies: [],
+                    listType: "genre",
+                    genre: movie.Genre.Name,
+                    __source: {
+                        fileName: "src/components/genre-view/genre-view.jsx",
+                        lineNumber: 34
+                    },
+                    __self: this
                 })
-            })
+            ]
         }));
     }
 }
@@ -39054,6 +39073,7 @@ GenreView.propTypes = {
         }),
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
+    movies: _propTypesDefault.default.array.isRequired,
     onBackClick: _propTypesDefault.default.func.isRequired
 };
 
@@ -39062,6 +39082,6 @@ GenreView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}]},["9NtYk","k2XMz","dLPEP"], "dLPEP", "parcelRequire315a")
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Button":"9CzHT","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","../movies-list/movies-list":"1kGQ5"}]},["9NtYk","k2XMz","dLPEP"], "dLPEP", "parcelRequire315a")
 
 //# sourceMappingURL=index.6701a6e1.js.map

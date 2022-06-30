@@ -191,7 +191,7 @@ export function ProfileView(props) {
                     </Form>
                 </Col>
             </Row>
-            <MoviesList favMovies={currentFavMovies} movies={props.movies} isProfile={true} removeFromFavorites={removeFromFavorites} />
+            <MoviesList favMovies={currentFavMovies} movies={props.movies} listType={"profile"} removeFromFavorites={removeFromFavorites} />
             <Row className="justify-content-sm-center my-4">
                 <Col className="text-center">
                     <Button variant="link" onClick={() => showModal(true)}>Click here to delete user</Button>

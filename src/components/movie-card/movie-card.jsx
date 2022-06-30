@@ -12,7 +12,7 @@ import './movie-card.scss';
 
 export class MovieCard extends React.Component {
     render() {
-        const { movie, isProfile, removeFromFavorites } = this.props;
+        const { movie, listType, removeFromFavorites } = this.props;
 
         return (
             <>
@@ -26,7 +26,7 @@ export class MovieCard extends React.Component {
                         </Link>
                     </Card.Body>
                 </Card >
-                {isProfile && <Row className="justify-content-sm-center mt-3">
+                {(listType === "profile") && <Row className="justify-content-sm-center mt-3">
                     <Col className="text-center"><Button variant="dark" size="sm" onClick={() => removeFromFavorites(movie._id)}>Remove</Button></Col>
                 </Row>}
             </>
@@ -51,6 +51,6 @@ MovieCard.propTypes = {
         }),
         ImagePath: PropTypes.string.isRequired
     }).isRequired,
-    isProfile: PropTypes.bool.isRequired,
-    removeFromFavorites: PropTypes.func.isRequired
+    listType: PropTypes.string.isRequired,
+    removeFromFavorites: PropTypes.func
 }

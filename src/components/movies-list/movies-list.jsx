@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 export function MoviesList(props) {
-    const { movies, favMovies, isProfile, removeFromFavorites } = props;
+    const { movies, favMovies, listType, removeFromFavorites, genre, director } = props;
 
     /*if (isProfile) {
         favMovies.forEach(i => {
@@ -16,15 +16,17 @@ export function MoviesList(props) {
         })
     }*/
 
-    const favMoviesList = movies.filter(m => {
-        return favMovies.includes(m._id)
+    const moviesList = movies.filter(m => {
+        if (listType === "profile") return favMovies.includes(m._id);
+        if (listType === "genre") return m.Genre.Name === genre;
+        if (listType === "director") return m.Director.Name === director;
     })
 
     return (
         <Row>
-            {favMoviesList.map(m =>
+            {moviesList.map(m =>
                 <Col sm={6} lg={4} xl={3} key={m._id}>
-                    <MovieCard movie={m} isProfile={isProfile} removeFromFavorites={removeFromFavorites} />
+                    <MovieCard movie={m} listType={listType} removeFromFavorites={removeFromFavorites} />
                 </Col>
             )}
         </Row>
@@ -34,6 +36,8 @@ export function MoviesList(props) {
 MoviesList.propTypes = {
     favMovies: PropTypes.array.isRequired,
     movies: PropTypes.array.isRequired,
-    isProfile: PropTypes.bool.isRequired,
-    removeFromFavorites: PropTypes.func.isRequired
+    listType: PropTypes.string.isRequired,
+    removeFromFavorites: PropTypes.func,
+    genre: PropTypes.string,
+    director: PropTypes.string
 }

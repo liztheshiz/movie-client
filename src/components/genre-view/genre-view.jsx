@@ -6,9 +6,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 
+import { MoviesList } from '../movies-list/movies-list';
+
 export class GenreView extends React.Component {
     render() {
-        const { movie, onBackClick } = this.props;
+        const { movie, movies, onBackClick } = this.props;
 
         return (
             <Container className="genre-view border-dark border-3 mt-5">
@@ -29,6 +31,7 @@ export class GenreView extends React.Component {
                         </Row>
                     </Col>
                 </Row>
+                <MoviesList movies={movies} favMovies={[]} listType={"genre"} genre={movie.Genre.Name} />
             </Container>
         );
     }
@@ -50,5 +53,6 @@ GenreView.propTypes = {
         }),
         ImagePath: PropTypes.string.isRequired
     }).isRequired,
+    movies: PropTypes.array.isRequired,
     onBackClick: PropTypes.func.isRequired
 }
