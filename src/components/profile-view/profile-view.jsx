@@ -44,7 +44,13 @@ export function ProfileView(props) {
     const showModal = (bool) => { setShow(bool); }
 
     const deleteUser = () => {
-        alert('User deleted!');
+        axios.delete(`https://cinemadatabase.herokuapp.com/users/${props.user}`, {
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        }).then(res => {
+            alert('User deleted!');
+            localStorage.clear();
+            window.open("/", "_self");
+        }).catch(err => console.log(err));
     }
 
     const getUser = () => {
