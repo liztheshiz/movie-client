@@ -25,12 +25,7 @@ export function MoviesList(props) {
         <Row>
             {favMoviesList.map(m =>
                 <Col sm={6} md={4} lg={3} key={m._id}>
-                    <MovieCard movie={m} />
-                    {isProfile && <Row className="justify-content-sm-center">
-                        <Col xs={1}>
-                            <Button>Delete</Button>
-                        </Col>
-                    </Row>}
+                    <MovieCard movie={m} isProfile={isProfile} />
                 </Col>
             )}
         </Row>
