@@ -130,6 +130,12 @@ export function ProfileView(props) {
         }
     }
 
+    const removeFromFavorites = (movieid) => {
+        axios.delete(`https://cinemadatabase.herokuapp.com/users/${props.user}/FavoriteMovies/${movieid}`, {
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        }).then(res => alert('Movie removed from favorites list!')).catch(err => console.log(err));
+    }
+
 
     // RENDER
 
@@ -183,7 +189,7 @@ export function ProfileView(props) {
                     </Form>
                 </Col>
             </Row>
-            <MoviesList favMovies={currentFavMovies} movies={props.movies} isProfile={true} />
+            <MoviesList favMovies={currentFavMovies} movies={props.movies} isProfile={true} removeFromFavorites={removeFromFavorites} />
             <Row className="justify-content-sm-center my-4">
                 <Col className="text-center">
                     <Button variant="link" onClick={() => showModal(true)}>Click here to delete user</Button>

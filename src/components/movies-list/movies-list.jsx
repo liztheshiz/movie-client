@@ -5,10 +5,9 @@ import { MovieCard } from '../movie-card/movie-card';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
 
 export function MoviesList(props) {
-    const { movies, favMovies, isProfile } = props;
+    const { movies, favMovies, isProfile, removeFromFavorites } = props;
 
     /*if (isProfile) {
         favMovies.forEach(i => {
@@ -25,7 +24,7 @@ export function MoviesList(props) {
         <Row>
             {favMoviesList.map(m =>
                 <Col sm={6} lg={4} xl={3} key={m._id}>
-                    <MovieCard movie={m} isProfile={isProfile} />
+                    <MovieCard movie={m} isProfile={isProfile} removeFromFavorites={removeFromFavorites} />
                 </Col>
             )}
         </Row>
@@ -35,5 +34,6 @@ export function MoviesList(props) {
 MoviesList.propTypes = {
     favMovies: PropTypes.array.isRequired,
     movies: PropTypes.array.isRequired,
-    isProfile: PropTypes.bool.isRequired
+    isProfile: PropTypes.bool.isRequired,
+    removeFromFavorites: PropTypes.func.isRequired
 }
