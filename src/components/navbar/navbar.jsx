@@ -8,6 +8,8 @@ import Nav from 'react-bootstrap/Nav';
 export class Navbar extends React.Component {
     // CUSTOM METHODS
 
+    // Checks if there is a token stores in localStorage
+    // Used to determine if user is logged in
     getToken() {
         let accessToken = localStorage.getItem('token');
         if (accessToken) {
@@ -17,6 +19,7 @@ export class Navbar extends React.Component {
         }
     }
 
+    // Logs user out of site
     onLoggedOut() {
         localStorage.clear();
         window.open("/", "_self");
@@ -32,14 +35,14 @@ export class Navbar extends React.Component {
             <Navbar bg="dark" variant="dark" expand="md" >
                 <Container>
                     <Navbar.Brand href="/">CinemaDatabase</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+                    {this.getToken() && <Navbar.Toggle aria-controls="basic-navbar-nav" />}
+                    {this.getToken() && <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                         <Nav className="me-auto">
-                            {this.getToken() && <Nav.Link href="/about.html">About</Nav.Link>}
-                            {this.getToken() && <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>}
-                            {this.getToken() && <Nav.Link onClick={() => this.onLoggedOut()}>Logout</Nav.Link>}
+                            <Nav.Link href="/about.html">About</Nav.Link>
+                            <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
+                            <Nav.Link onClick={() => this.onLoggedOut()}>Logout</Nav.Link>
                         </Nav>
-                    </Navbar.Collapse>
+                    </Navbar.Collapse>}
                 </Container>
             </Navbar >
         )

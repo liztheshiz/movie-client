@@ -34129,11 +34129,14 @@ var _nav = require("react-bootstrap/Nav");
 var _navDefault = parcelHelpers.interopDefault(_nav);
 class Navbar extends _reactDefault.default.Component {
     // CUSTOM METHODS
+    // Checks if there is a token stores in localStorage
+    // Used to determine if user is logged in
     getToken() {
         let accessToken = localStorage.getItem('token');
         if (accessToken) return accessToken;
         else return false;
     }
+    // Logs user out of site
     onLoggedOut() {
         localStorage.clear();
         window.open("/", "_self");
@@ -34147,13 +34150,13 @@ class Navbar extends _reactDefault.default.Component {
             expand: "md",
             __source: {
                 fileName: "src/components/navbar/navbar.jsx",
-                lineNumber: 32
+                lineNumber: 35
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
                 __source: {
                     fileName: "src/components/navbar/navbar.jsx",
-                    lineNumber: 33
+                    lineNumber: 36
                 },
                 __self: this,
                 children: [
@@ -34161,59 +34164,59 @@ class Navbar extends _reactDefault.default.Component {
                         href: "/",
                         __source: {
                             fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 34
+                            lineNumber: 37
                         },
                         __self: this,
                         children: "CinemaDatabase"
                     }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Toggle, {
+                    this.getToken() && /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Toggle, {
                         "aria-controls": "basic-navbar-nav",
                         __source: {
                             fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 35
+                            lineNumber: 38
                         },
                         __self: this
                     }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Collapse, {
+                    this.getToken() && /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Collapse, {
                         id: "basic-navbar-nav",
                         className: "justify-content-end",
                         __source: {
                             fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 36
+                            lineNumber: 39
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_navDefault.default, {
                             className: "me-auto",
                             __source: {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 37
+                                lineNumber: 40
                             },
                             __self: this,
                             children: [
-                                this.getToken() && /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
                                     href: "/about.html",
                                     __source: {
                                         fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 38
+                                        lineNumber: 41
                                     },
                                     __self: this,
                                     children: "About"
                                 }),
-                                this.getToken() && /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
                                     href: `/users/${user}`,
                                     __source: {
                                         fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 39
+                                        lineNumber: 42
                                     },
                                     __self: this,
                                     children: "Profile"
                                 }),
-                                this.getToken() && /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
+                                /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
                                     onClick: ()=>this.onLoggedOut()
                                     ,
                                     __source: {
                                         fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 40
+                                        lineNumber: 43
                                     },
                                     __self: this,
                                     children: "Logout"
