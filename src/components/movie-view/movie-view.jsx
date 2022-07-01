@@ -12,11 +12,10 @@ import { Link } from 'react-router-dom';
 export class MovieView extends React.Component {
 
     // Adds given movie to given user's favorites list
+    // CURRENTLY THROWS 401 UNAUTHORIZED ERROR FOR UNKNOWN REASON - REQUIRES DEBUGGING
     addToFavorites(user, movieId) {
-        const headers = { Authorization: `Bearer ${localStorage.getItem('token')}` }
-
         axios.post(`https://cinemadatabase.herokuapp.com/users/${user}/FavoriteMovies/${movieId}`, {
-            headers: headers
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(res => {
             this.setState({ starred: true });
         }).catch(err => console.log(err));
