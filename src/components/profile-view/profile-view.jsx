@@ -205,6 +205,12 @@ export function ProfileView(props) {
                     </Form>
                 </Col>
             </Row>
+            {(currentFavMovies.length > 0) && <Row>
+                <Col><h3>Favorites list:</h3></Col>
+            </Row>}
+            {(currentFavMovies.length === 0) && <Row>
+                <Col><h3>Favorites list is empty! Return to home to view available movies.</h3></Col>
+            </Row>}
             <MoviesList favMovies={currentFavMovies} movies={props.movies} listType={"profile"} removeFromFavorites={removeFromFavorites} />
             <Row className="justify-content-sm-center my-4">
                 <Col className="text-center">

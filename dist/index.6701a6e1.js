@@ -38504,6 +38504,50 @@ function ProfileView(props) {
                     })
                 })
             }),
+            currentFavMovies.length > 0 && /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                __source: {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 208
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    __source: {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 209
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("h3", {
+                        __source: {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 209
+                        },
+                        __self: this,
+                        children: "Favorites list:"
+                    })
+                })
+            }),
+            currentFavMovies.length === 0 && /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                __source: {
+                    fileName: "src/components/profile-view/profile-view.jsx",
+                    lineNumber: 211
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    __source: {
+                        fileName: "src/components/profile-view/profile-view.jsx",
+                        lineNumber: 212
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx("h3", {
+                        __source: {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 212
+                        },
+                        __self: this,
+                        children: "Favorites list is empty! Return to home to view available movies."
+                    })
+                })
+            }),
             /*#__PURE__*/ _jsxRuntime.jsx(_moviesList.MoviesList, {
                 favMovies: currentFavMovies,
                 movies: props.movies,
@@ -38511,7 +38555,7 @@ function ProfileView(props) {
                 removeFromFavorites: removeFromFavorites,
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 208
+                    lineNumber: 214
                 },
                 __self: this
             }),
@@ -38519,14 +38563,14 @@ function ProfileView(props) {
                 className: "justify-content-sm-center my-4",
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 209
+                    lineNumber: 215
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                     className: "text-center",
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 210
+                        lineNumber: 216
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -38535,7 +38579,7 @@ function ProfileView(props) {
                         ,
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 211
+                            lineNumber: 217
                         },
                         __self: this,
                         children: "Click here to delete user"
@@ -38545,7 +38589,7 @@ function ProfileView(props) {
             show && /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 214
+                    lineNumber: 220
                 },
                 __self: this,
                 children: [
@@ -38553,7 +38597,7 @@ function ProfileView(props) {
                         sm: 8,
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 215
+                            lineNumber: 221
                         },
                         __self: this,
                         children: "Are you certain you want to delete this user? This action is irreversible!"
@@ -38562,7 +38606,7 @@ function ProfileView(props) {
                         sm: 2,
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 216
+                            lineNumber: 222
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -38572,7 +38616,7 @@ function ProfileView(props) {
                             ,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 216
+                                lineNumber: 222
                             },
                             __self: this,
                             children: "Cancel"
@@ -38582,7 +38626,7 @@ function ProfileView(props) {
                         sm: 2,
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 217
+                            lineNumber: 223
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -38592,7 +38636,7 @@ function ProfileView(props) {
                             ,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 217
+                                lineNumber: 223
                             },
                             __self: this,
                             children: "Delete"
