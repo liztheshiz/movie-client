@@ -13,12 +13,18 @@ export class MovieView extends React.Component {
 
     // Adds given movie to given user's favorites list
     // CURRENTLY THROWS 401 UNAUTHORIZED ERROR FOR UNKNOWN REASON - REQUIRES DEBUGGING
-    addToFavorites(user, movieId) {
-        axios.post(`https://cinemadatabase.herokuapp.com/users/${user}/FavoriteMovies/${movieId}`, {
-            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-        }).then(res => {
-            this.setState({ starred: true });
-        }).catch(err => console.log(err));
+    addToFavorites() {
+        let token = localStorage.getItem('token');
+        let user = localStorage.getItem("user");
+
+        axios.post(`https://cinemadatabase.herokuapp.com/users/${user}/FavoriteMovies/${movie._id}`, {},
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            }).then(res => {
+                this.setState({ starred: true });
+            }).catch(err => console.log(err));
     }
 
 
@@ -32,7 +38,7 @@ export class MovieView extends React.Component {
     }
 
     render() {
-        const { user, movie, onBackClick } = this.props;
+        const { movie, onBackClick } = this.props;
 
         return (
             <Container className="movie-view border-dark border-3 mt-5">
@@ -46,7 +52,7 @@ export class MovieView extends React.Component {
                                 <h2 className="value">{movie.Title}</h2>
                             </Col>
                             <Col xs={1}>
-                                <Button variant="outline-dark" size="sm" onClick={() => { this.addToFavorites(user, movie._id); }}>Fav</Button>
+                                <Button variant="outline-dark" size="sm" onClick={() => { this.addToFavorites(); }}>Fav</Button>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center mb-3">
@@ -82,7 +88,6 @@ export class MovieView extends React.Component {
 }
 
 MovieView.propTypes = {
-    user: PropTypes.string.isRequired,
     movie: PropTypes.shape({
         Title: PropTypes.string.isRequired,
         Description: PropTypes.string.isRequired,
