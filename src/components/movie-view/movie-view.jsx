@@ -10,23 +10,13 @@ import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
 export class MovieView extends React.Component {
-    /*escapeToHome(e) {
-        if (e.key === 'Escape') {
-            console.log('Returning home');
-        }
-    }
 
-    componentDidMount() {
-        document.addEventListener('keydown', this.escapeToHome);
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener('keydown', this.escapeToHome);
-    }*/
-
+    // Adds given movie to given user's favorites list
     addToFavorites(user, movieId) {
+        const headers = { Authorization: `Bearer ${localStorage.getItem('token')}` }
+
         axios.post(`https://cinemadatabase.herokuapp.com/users/${user}/FavoriteMovies/${movieId}`, {
-            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+            headers: headers
         }).then(res => {
             this.setState({ starred: true });
         }).catch(err => console.log(err));
