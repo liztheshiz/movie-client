@@ -11,6 +11,7 @@ import { Link } from 'react-router-dom';
 
 export class MovieView extends React.Component {
 
+    /*
     // Adds given movie to given user's favorites list
     // CURRENTLY THROWS 401 UNAUTHORIZED ERROR FOR UNKNOWN REASON - REQUIRES DEBUGGING
     addToFavorites() {
@@ -26,6 +27,7 @@ export class MovieView extends React.Component {
                 this.setState({ starred: true });
             }).catch(err => console.log(err));
     }
+    */
 
 
     // LIFECYCLE METHODS
