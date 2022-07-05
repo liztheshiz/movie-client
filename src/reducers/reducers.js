@@ -22,12 +22,9 @@ function movies(state = [], action) {
     }
 }
 
-function moviesApp(state = {}, action) {
-    return {
-        visibilityFilter: visibilityFilter(state.visibilityFilter, action),
-        movies: movies(state.movies, action)
-    }
-}
+const moviesApp = combineReducers({
+    visibilityFilter, movies
+});
 
 
 export default moviesApp;
