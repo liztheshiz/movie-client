@@ -9,7 +9,7 @@ import moviesApp from './reducers/reducers';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 
 // Import components
-import { MainView } from './components/main-view/main-view';
+import MainView from './components/main-view/main-view';
 
 // Import custom styling
 import './index.scss';

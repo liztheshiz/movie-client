@@ -29,7 +29,7 @@ class MainView extends React.Component {
         axios.get('https://cinemadatabase.herokuapp.com/movies', {
             headers: { Authorization: `Bearer ${token}` }
         }).then(res => {
-            this.props.setMovies(response.data);
+            this.props.setMovies(res.data);
         }).catch(err => console.log(err));
     }
 
