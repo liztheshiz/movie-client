@@ -1,22 +1,27 @@
 import React from 'react';
 import axios from 'axios';
 
+import { connect } from 'react-redux';
+
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 
+import { setMovies } from '../../actions/actions';
+
 import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
-import { MovieCard } from '../movie-card/movie-card';
+// import { MovieCard } from '../movie-card/movie-card';
+import MoviesList from '../movies-list/movies-list';
 import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { ProfileView } from '../profile-view/profile-view';
 
-export class MainView extends React.Component {
+class MainView extends React.Component {
     // CUSTOM METHODS
 
     // Gets movie list from database and adds list to local 'movies' var
@@ -24,9 +29,7 @@ export class MainView extends React.Component {
         axios.get('https://cinemadatabase.herokuapp.com/movies', {
             headers: { Authorization: `Bearer ${token}` }
         }).then(res => {
-            this.setState({
-                movies: res.data
-            });
+            this.props.setMovies(response.data);
         }).catch(err => console.log(err));
     }
 
@@ -48,13 +51,13 @@ export class MainView extends React.Component {
     constructor() {
         super();
         this.state = {
-            movies: [],
             user: null
         };
     }
 
     render() {
-        const { movies, user } = this.state;
+        const { movies } = this.props;
+        const { user } = this.state;
 
         return (
             <Router>
@@ -71,13 +74,7 @@ export class MainView extends React.Component {
                                     <Row className="mt-5 mb-4">
                                         <h1>Welcome, {user}!</h1>
                                     </Row>
-                                    <Row>
-                                        {movies.map(m =>
-                                            <Col sm={6} md={4} lg={3} key={m._id}>
-                                                <MovieCard movie={m} />
-                                            </Col>
-                                        )}
-                                    </Row>
+                                    <MoviesList movies={movies} />;
                                 </div>
                             )
                         }} />
@@ -139,3 +136,9 @@ export class MainView extends React.Component {
         }
     }
 }
+
+let mapStateToProps = state => {
+    return { movies: state.movies }
+}
+
+export default connect(mapStateToProps, { setMovies })(MainView);
