@@ -952,7 +952,7 @@ var _reactRedux = require("react-redux");
 var _reducers = require("./reducers/reducers");
 var _reducersDefault = parcelHelpers.interopDefault(_reducers);
 var _reduxDevtoolsExtension = require("redux-devtools-extension");
-// Import components
+// Import as default component
 var _mainView = require("./components/main-view/main-view");
 var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
 // Import custom styling

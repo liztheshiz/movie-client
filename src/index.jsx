@@ -8,7 +8,7 @@ import moviesApp from './reducers/reducers';
 
 import { devToolsEnhancer } from 'redux-devtools-extension';
 
-// Import components
+// Import as default component
 import MainView from './components/main-view/main-view';
 
 // Import custom styling
