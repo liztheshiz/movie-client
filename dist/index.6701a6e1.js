@@ -25363,7 +25363,6 @@ var _navbar = require("../navbar/navbar");
 var _loginView = require("../login-view/login-view");
 // import { MovieCard } from '../movie-card/movie-card';
 var _moviesList = require("../movies-list/movies-list");
-var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
 var _movieView = require("../movie-view/movie-view");
 var _directorView = require("../director-view/director-view");
 var _genreView = require("../genre-view/genre-view");
@@ -25455,7 +25454,7 @@ class MainView extends _reactDefault.default.Component {
                                                     ]
                                                 })
                                             }),
-                                            /*#__PURE__*/ _jsxRuntime.jsx(_moviesListDefault.default, {
+                                            /*#__PURE__*/ _jsxRuntime.jsx(_moviesList.MoviesList, {
                                                 movies: movies
                                             }),
                                             ";"
