@@ -9,7 +9,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 // import Modal from 'react-bootstrap/Modal';
 
-import { MoviesList } from '../movies-list/movies-list';
+import MoviesList from '../movies-list/movies-list';
 
 export function ProfileView(props) {
     const [edit, setEdit] = useState(false);

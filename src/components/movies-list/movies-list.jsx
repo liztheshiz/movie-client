@@ -8,11 +8,6 @@ import { MovieCard } from '../movie-card/movie-card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const mapStateToProps = state => {
-    const { visibilityFilter } = state;
-    return { visibilityFilter };
-};
-
 function MoviesList(props) {
     //const { movies, favMovies, listType, removeFromFavorites, name } = props;
     const { movies, visibilityFilter, listType, removeFromFavorites, name } = props;
@@ -52,6 +47,11 @@ function MoviesList(props) {
         </Row>
     );*/
 }
+
+const mapStateToProps = state => {
+    const { visibilityFilter } = state;
+    return { visibilityFilter };
+};
 
 export default connect(mapStateToProps)(MoviesList);
 

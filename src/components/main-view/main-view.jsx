@@ -14,7 +14,7 @@ import { setMovies } from '../../actions/actions';
 import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
 // import { MovieCard } from '../movie-card/movie-card';
-import { MoviesList } from '../movies-list/movies-list';
+import MoviesList from '../movies-list/movies-list';
 import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
