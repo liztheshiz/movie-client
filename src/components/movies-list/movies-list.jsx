@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
+import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
 import { MovieCard } from '../movie-card/movie-card';
 
 import Row from 'react-bootstrap/Row';
@@ -27,6 +28,9 @@ function MoviesList(props) {
 
     return (
         <Row>
+            <Col xs={12}>
+                <VisibilityFilterInput visibilityFilter={visibilityFilter} />
+            </Col>
             {filteredMovies.map(m =>
                 <Col sm={6} lg={4} xl={3} key={m._id}>
                     <MovieCard movie={m} />
