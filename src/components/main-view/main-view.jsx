@@ -33,6 +33,14 @@ class MainView extends React.Component {
         }).catch(err => console.log(err));
     }
 
+    getUser(token) {
+        axios.get(`https://cinemadatabase.herokuapp.com/users/${localStorage.getItem('user')}`, {
+            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+        }).then(res => {
+            this.props.setUser(res.data)
+        }).catch(err => console.log(err));
+    }
+
     // When user successfully logs in, saves user in the state, and user + JWT in local storage
     onLoggedIn(authData) {
         console.log(authData);
@@ -50,14 +58,10 @@ class MainView extends React.Component {
 
     constructor() {
         super();
-        this.state = {
-            user: null
-        };
     }
 
     render() {
-        const { movies } = this.props;
-        const { user } = this.state;
+        const { movies, user } = this.props;
 
         return (
             <Router>
@@ -129,16 +133,14 @@ class MainView extends React.Component {
     componentDidMount() {
         let accessToken = localStorage.getItem('token');
         if (accessToken) {
-            this.setState({
-                user: localStorage.getItem('user')
-            });
             this.getMovies(accessToken);
+            this.getUser(accessToken);
         }
     }
 }
 
 let mapStateToProps = state => {
-    return { movies: state.movies }
+    return { movies: state.movies, user: state.user }
 }
 
 export default connect(mapStateToProps, { setMovies })(MainView);

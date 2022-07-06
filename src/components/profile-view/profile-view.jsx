@@ -14,7 +14,7 @@ import MoviesList from '../movies-list/movies-list';
 export function ProfileView(props) {
     const [edit, setEdit] = useState(false);
     const [show, setShow] = useState(false);
-    const [currentUsername, setCurrentUsername] = useState('');
+    const [currentUsername, setCurrentUsername] = props.user.Username;
     const [currentPassword, setCurrentPassword] = useState('');
     const [currentEmail, setCurrentEmail] = useState('');
     const [currentBirthday, setCurrentBirthday] = useState('');

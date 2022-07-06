@@ -25382,6 +25382,16 @@ class MainView extends _reactDefault.default.Component {
         }).catch((err)=>console.log(err)
         );
     }
+    getUser(token) {
+        _axiosDefault.default.get(`https://cinemadatabase.herokuapp.com/users/${localStorage.getItem('user')}`, {
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('token')}`
+            }
+        }).then((res)=>{
+            this.props.setUser(res.data);
+        }).catch((err)=>console.log(err)
+        );
+    }
     // When user successfully logs in, saves user in the state, and user + JWT in local storage
     onLoggedIn(authData) {
         console.log(authData);
@@ -25395,17 +25405,13 @@ class MainView extends _reactDefault.default.Component {
     // LIFECYCLE METHODS
     constructor(){
         super();
-        this.state = {
-            user: null
-        };
     }
     render() {
-        const { movies  } = this.props;
-        const { user  } = this.state;
+        const { movies , user  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 63
+                lineNumber: 67
             },
             __self: this,
             children: [
@@ -25413,7 +25419,7 @@ class MainView extends _reactDefault.default.Component {
                     user: user,
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 64
+                        lineNumber: 68
                     },
                     __self: this
                 }),
@@ -25421,13 +25427,13 @@ class MainView extends _reactDefault.default.Component {
                     className: "justify-content-md-center main-view",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 65
+                        lineNumber: 69
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Switch, {
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 66
+                            lineNumber: 70
                         },
                         __self: this,
                         children: [
@@ -25465,7 +25471,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 67
+                                    lineNumber: 71
                                 },
                                 __self: this
                             }),
@@ -25482,7 +25488,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 81
+                                    lineNumber: 85
                                 },
                                 __self: this
                             }),
@@ -25507,7 +25513,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 85
+                                    lineNumber: 89
                                 },
                                 __self: this
                             }),
@@ -25533,7 +25539,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 95
+                                    lineNumber: 99
                                 },
                                 __self: this
                             }),
@@ -25559,7 +25565,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 105
+                                    lineNumber: 109
                                 },
                                 __self: this
                             }),
@@ -25579,7 +25585,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 115
+                                    lineNumber: 119
                                 },
                                 __self: this
                             })
@@ -25592,16 +25598,15 @@ class MainView extends _reactDefault.default.Component {
     componentDidMount() {
         let accessToken = localStorage.getItem('token');
         if (accessToken) {
-            this.setState({
-                user: localStorage.getItem('user')
-            });
             this.getMovies(accessToken);
+            this.getUser(accessToken);
         }
     }
 }
 let mapStateToProps = (state)=>{
     return {
-        movies: state.movies
+        movies: state.movies,
+        user: state.user
     };
 };
 exports.default = _reactRedux.connect(mapStateToProps, {
@@ -37759,7 +37764,7 @@ function ProfileView(props) {
     _s();
     const [edit, setEdit] = _react.useState(false);
     const [show, setShow] = _react.useState(false);
-    const [currentUsername, setCurrentUsername] = _react.useState('');
+    const [currentUsername, setCurrentUsername] = props.user.Username;
     const [currentPassword, setCurrentPassword] = _react.useState('');
     const [currentEmail, setCurrentEmail] = _react.useState('');
     const [currentBirthday, setCurrentBirthday] = _react.useState('');
@@ -38382,7 +38387,7 @@ function ProfileView(props) {
         ]
     }));
 }
-_s(ProfileView, "vX+TEeEw1yPVng8DAtyqIRzaXWc=");
+_s(ProfileView, "KIaPaYQl/s6sykPuGwJaQtz8068=");
 _c = ProfileView;
 /* this render function is just to hold the modal skeleton until Modal is imported correctly...
 render() {
@@ -41503,10 +41508,10 @@ function movies(state = [], action) {
             return state;
     }
 }
-function setUser(state = {
+function user(state = {
 }, action) {
     switch(action.type){
-        case SET_USER:
+        case _actions.SET_USER:
             return action.value;
         default:
             return state;
@@ -41515,7 +41520,7 @@ function setUser(state = {
 const moviesApp = _redux.combineReducers({
     visibilityFilter,
     movies,
-    setUser
+    user
 });
 exports.default = moviesApp;
 
