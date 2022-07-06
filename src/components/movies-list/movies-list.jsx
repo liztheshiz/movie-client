@@ -25,11 +25,15 @@ function MoviesList(props) {
         filteredMovies = movies.filter(m => m.Title.toLowerCase().includes(visibilityFilter.toLowerCase()));
     }
 
-    return filteredMovies.map(m => (
-        <Col md={3} key={m._id}>
-            <MovieCard movie={m} />
-        </Col>
-    ));
+    return (
+        <Row>
+            {filteredMovies.map(m =>
+                <Col sm={6} lg={4} xl={3} key={m._id}>
+                    <MovieCard movie={m} />
+                </Col>
+            )}
+        </Row>
+    )
 
     /*const moviesList = movies.filter(m => {
         if (listType === "profile") return movies.includes(m._id);

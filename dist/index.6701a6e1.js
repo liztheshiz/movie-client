@@ -38442,23 +38442,32 @@ function MoviesList(props) {
         })
     }*/ if (visibilityFilter !== '') filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
     );
-    return filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-            md: 3,
-            __source: {
-                fileName: "src/components/movies-list/movies-list.jsx",
-                lineNumber: 29
-            },
-            __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
-                movie: m,
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+        __source: {
+            fileName: "src/components/movies-list/movies-list.jsx",
+            lineNumber: 29
+        },
+        __self: this,
+        children: filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                sm: 6,
+                lg: 4,
+                xl: 3,
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 30
+                    lineNumber: 31
                 },
-                __self: this
-            })
-        }, m._id)
-    );
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
+                    movie: m,
+                    __source: {
+                        fileName: "src/components/movies-list/movies-list.jsx",
+                        lineNumber: 32
+                    },
+                    __self: this
+                })
+            }, m._id)
+        )
+    }));
 /*const moviesList = movies.filter(m => {
         if (listType === "profile") return movies.includes(m._id);
         if (listType === "genre") return m.Genre.Name === name;
