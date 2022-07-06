@@ -38293,7 +38293,7 @@ function ProfileView(props) {
                 },
                 __self: this
             }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+            !show && /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
                 className: "justify-content-sm-center my-4",
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
@@ -38434,20 +38434,14 @@ var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 function MoviesList(props) {
-    //const { movies, favMovies, listType, removeFromFavorites, name } = props;
     const { movies , visibilityFilter , listType , removeFromFavorites , name  } = props;
     let filteredMovies = movies;
-    /*if (isProfile) {
-        favMovies.forEach(i => {
-            movie = movies.find(m => m._id === favMovies[i]);
-            movies.push(movie);
-        })
-    }*/ if (visibilityFilter !== '') filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
+    if (visibilityFilter !== '') filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
     );
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 30
+            lineNumber: 22
         },
         __self: this,
         children: [
@@ -38455,14 +38449,14 @@ function MoviesList(props) {
                 xs: 12,
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 31
+                    lineNumber: 23
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_visibilityFilterInputDefault.default, {
                     visibilityFilter: visibilityFilter,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 32
+                        lineNumber: 24
                     },
                     __self: this
                 })
@@ -38473,14 +38467,15 @@ function MoviesList(props) {
                     xl: 3,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 35
+                        lineNumber: 27
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
                         movie: m,
+                        listType: listType,
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 36
+                            lineNumber: 28
                         },
                         __self: this
                     })
@@ -38510,11 +38505,14 @@ const mapStateToProps = (state)=>{
         visibilityFilter
     };
 };
-exports.default = _reactRedux.connect(mapStateToProps)(MoviesList); /*MoviesList.propTypes = {
-    listType: PropTypes.string.isRequired,
-    removeFromFavorites: PropTypes.func,
-    name: PropTypes.string
-}*/ 
+exports.default = _reactRedux.connect(mapStateToProps)(MoviesList);
+MoviesList.propTypes = {
+    movies: _propTypesDefault.default.array.isRequired,
+    visibilityFilter: _propTypesDefault.default.func.isRequired,
+    listType: _propTypesDefault.default.string.isRequired,
+    removeFromFavorites: _propTypesDefault.default.func,
+    name: _propTypesDefault.default.string
+};
 var _c;
 $RefreshReg$(_c, "MoviesList");
 
@@ -40406,12 +40404,17 @@ parcelHelpers.export(exports, "SET_MOVIES", ()=>SET_MOVIES
 );
 parcelHelpers.export(exports, "SET_FILTER", ()=>SET_FILTER
 );
+parcelHelpers.export(exports, "GET_USER", ()=>GET_USER
+);
 parcelHelpers.export(exports, "setMovies", ()=>setMovies
 );
 parcelHelpers.export(exports, "setFilter", ()=>setFilter
 );
+parcelHelpers.export(exports, "getUser", ()=>getUser
+);
 const SET_MOVIES = 'SET_MOVIES';
 const SET_FILTER = 'SET_FILTER';
+const GET_USER = 'GET_USER';
 function setMovies(value) {
     return {
         type: SET_MOVIES,
@@ -40421,6 +40424,12 @@ function setMovies(value) {
 function setFilter(value) {
     return {
         type: SET_FILTER,
+        value
+    };
+}
+function getUser(value) {
+    return {
+        type: GET_USER,
         value
     };
 }
@@ -41493,9 +41502,19 @@ function movies(state = [], action) {
             return state;
     }
 }
+function getUser(state = {
+}, action) {
+    switch(action.type){
+        case _actions.GET_USER:
+            return action.value;
+        default:
+            return state;
+    }
+}
 const moviesApp = _redux.combineReducers({
     visibilityFilter,
-    movies
+    movies,
+    getUser
 });
 exports.default = moviesApp;
 

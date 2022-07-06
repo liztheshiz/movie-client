@@ -10,17 +10,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 function MoviesList(props) {
-    //const { movies, favMovies, listType, removeFromFavorites, name } = props;
     const { movies, visibilityFilter, listType, removeFromFavorites, name } = props;
 
     let filteredMovies = movies;
-
-    /*if (isProfile) {
-        favMovies.forEach(i => {
-            movie = movies.find(m => m._id === favMovies[i]);
-            movies.push(movie);
-        })
-    }*/
 
     if (visibilityFilter !== '') {
         filteredMovies = movies.filter(m => m.Title.toLowerCase().includes(visibilityFilter.toLowerCase()));
@@ -33,7 +25,7 @@ function MoviesList(props) {
             </Col>
             {filteredMovies.map(m =>
                 <Col sm={6} lg={4} xl={3} key={m._id}>
-                    <MovieCard movie={m} />
+                    <MovieCard movie={m} listType={listType} />
                 </Col>
             )}
         </Row>
@@ -63,8 +55,10 @@ const mapStateToProps = state => {
 
 export default connect(mapStateToProps)(MoviesList);
 
-/*MoviesList.propTypes = {
+MoviesList.propTypes = {
+    movies: PropTypes.array.isRequired,
+    visibilityFilter: PropTypes.func.isRequired,
     listType: PropTypes.string.isRequired,
     removeFromFavorites: PropTypes.func,
     name: PropTypes.string
-}*/
+}
