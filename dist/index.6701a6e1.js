@@ -40405,17 +40405,17 @@ parcelHelpers.export(exports, "SET_MOVIES", ()=>SET_MOVIES
 );
 parcelHelpers.export(exports, "SET_FILTER", ()=>SET_FILTER
 );
-parcelHelpers.export(exports, "GET_USER", ()=>GET_USER
+parcelHelpers.export(exports, "SET_USER", ()=>SET_USER
 );
 parcelHelpers.export(exports, "setMovies", ()=>setMovies
 );
 parcelHelpers.export(exports, "setFilter", ()=>setFilter
 );
-parcelHelpers.export(exports, "getUser", ()=>getUser
+parcelHelpers.export(exports, "setUser", ()=>setUser
 );
 const SET_MOVIES = 'SET_MOVIES';
 const SET_FILTER = 'SET_FILTER';
-const GET_USER = 'GET_USER';
+const SET_USER = 'SET_USER';
 function setMovies(value) {
     return {
         type: SET_MOVIES,
@@ -40428,9 +40428,9 @@ function setFilter(value) {
         value
     };
 }
-function getUser(value) {
+function setUser(value) {
     return {
-        type: GET_USER,
+        type: SET_USER,
         value
     };
 }
@@ -41503,10 +41503,10 @@ function movies(state = [], action) {
             return state;
     }
 }
-function getUser(state = {
+function setUser(state = {
 }, action) {
     switch(action.type){
-        case _actions.GET_USER:
+        case SET_USER:
             return action.value;
         default:
             return state;
@@ -41515,7 +41515,7 @@ function getUser(state = {
 const moviesApp = _redux.combineReducers({
     visibilityFilter,
     movies,
-    getUser
+    setUser
 });
 exports.default = moviesApp;
 
