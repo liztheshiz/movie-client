@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
+import { connect } from 'react-redux';
+
 import { MovieCard } from '../movie-card/movie-card';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-export function MoviesList(props) {
-    const { movies, favMovies, listType, removeFromFavorites, name } = props;
+const mapStateToProps = state => {
+    const { visibilityFilter } = state;
+    return { visibilityFilter };
+};
+
+function MoviesList(props) {
+    //const { movies, favMovies, listType, removeFromFavorites, name } = props;
+    const { movies, visibilityFilter, listType, removeFromFavorites, name } = props;
+
+    let filteredMovies = movies;
 
     /*if (isProfile) {
         favMovies.forEach(i => {
@@ -16,8 +26,18 @@ export function MoviesList(props) {
         })
     }*/
 
-    const moviesList = movies.filter(m => {
-        if (listType === "profile") return favMovies.includes(m._id);
+    if (visibilityFilter !== '') {
+        filteredMovies = movies.filter(m => m.Title.toLowerCase().includes(visibilityFilter.toLowerCase()));
+    }
+
+    return filteredMovies.map(m => (
+        <Col md={3} key={m._id}>
+            <MovieCard movie={m} />
+        </Col>
+    ));
+
+    /*const moviesList = movies.filter(m => {
+        if (listType === "profile") return movies.includes(m._id);
         if (listType === "genre") return m.Genre.Name === name;
         if (listType === "director") return m.Director.Name === name;
     })
@@ -30,13 +50,13 @@ export function MoviesList(props) {
                 </Col>
             )}
         </Row>
-    );
+    );*/
 }
 
-MoviesList.propTypes = {
-    favMovies: PropTypes.array.isRequired,
-    movies: PropTypes.array.isRequired,
+export default connect(mapStateToProps)(MoviesList);
+
+/*MoviesList.propTypes = {
     listType: PropTypes.string.isRequired,
     removeFromFavorites: PropTypes.func,
     name: PropTypes.string
-}
+}*/
