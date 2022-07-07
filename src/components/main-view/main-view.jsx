@@ -35,7 +35,7 @@ class MainView extends React.Component {
 
     getUser(token) {
         axios.get(`https://cinemadatabase.herokuapp.com/users/${localStorage.getItem('user')}`, {
-            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
+            headers: { Authorization: `Bearer ${token}` }
         }).then(res => {
             this.props.setUser(res.data)
         }).catch(err => console.log(err));
