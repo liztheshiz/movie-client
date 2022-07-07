@@ -47,6 +47,7 @@ class MainView extends React.Component {
         localStorage.setItem('token', authData.token);
         localStorage.setItem('user', authData.user.Username);
         this.getMovies(authData.token);
+        this.getUser(authData.token);
     }
 
 
@@ -73,7 +74,7 @@ class MainView extends React.Component {
                                     <Row className="mt-5 mb-4">
                                         <h1>Welcome, {user.Username}!</h1>
                                     </Row>
-                                    <MoviesList movies={movies} listType="all" />;
+                                    <MoviesList movies={movies} listType="main" />;
                                 </div>
                             )
                         }} />
