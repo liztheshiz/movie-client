@@ -13,7 +13,7 @@ export class Navbar extends React.Component {
     getToken() {
         let accessToken = localStorage.getItem('token');
         if (accessToken) {
-            return accessToken;
+            return true;
         } else {
             return false;
         }

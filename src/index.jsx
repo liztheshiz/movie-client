@@ -10,6 +10,7 @@ import { devToolsEnhancer } from 'redux-devtools-extension';
 
 // Import as default component
 import MainView from './components/main-view/main-view';
+import { Navbar } from './components/navbar/navbar';
 
 // Import custom styling
 import './index.scss';
@@ -21,6 +22,7 @@ class MyFlixApplication extends React.Component {
     render() {
         return (
             <Provider store={store}>
+                <Navbar />
                 <Container>
                     <MainView />
                 </Container>
