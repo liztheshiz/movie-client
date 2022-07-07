@@ -14,11 +14,6 @@ import MoviesList from '../movies-list/movies-list';
 export function ProfileView(props) {
     const [edit, setEdit] = useState(false);
     const [show, setShow] = useState(false);
-    const [currentUsername, setCurrentUsername] = props.user.Username;
-    const [currentPassword, setCurrentPassword] = useState('');
-    const [currentEmail, setCurrentEmail] = useState('');
-    const [currentBirthday, setCurrentBirthday] = useState('');
-    const [currentFavMovies, setCurrentFavMovies] = useState([]);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -38,6 +33,10 @@ export function ProfileView(props) {
             setPassword('');
             setEmail('');
             setBirthday('');
+            setUsernameErr('');
+            setPasswordErr('');
+            setEmailErr('');
+            setBirthdayErr('');
         }
         setEdit(bool);
     }
@@ -70,7 +69,7 @@ export function ProfileView(props) {
     }*/
 
     // Used to validate if string is alphanumeric
-    const isAlphaNumeric = (str) => { /^[a-z0-9]+$/gi.test(str); }
+    const isAlphaNumeric = str => /^[a-z0-9]+$/gi.test(str);
 
     // Validates user inputs
     const validate = () => {
@@ -81,6 +80,7 @@ export function ProfileView(props) {
         setBirthdayErr('');
 
         if (!(username === '')) {
+            console.log(username);
             if (username.length < 5) {
                 setUsernameErr('Username must be at least 5 characters long');
                 isReq = false;
@@ -116,8 +116,8 @@ export function ProfileView(props) {
         e.preventDefault();
 
         // Only sends axios request if all fields pass client-side validation check
-        //const isReq = validate();
-        const isReq = true;
+        const isReq = validate();
+        //const isReq = true;
         if (isReq) {
             // Updates user with given info
             let request = {
@@ -130,12 +130,13 @@ export function ProfileView(props) {
             // NEXT LINE FOR DEBUGGING!!
             console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}`);
 
-            axios.put(`https://cinemadatabase.herokuapp.com/users/${props.user}`, request, {
+            axios.put(`https://cinemadatabase.herokuapp.com/users/${props.user.Username}`, request, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             }).then(res => {
                 const data = res.data;
                 console.log(data);
-                window.open(`/users/${props.user.Username}`, '_self');
+                localStorage.setItem('user', username);
+                window.open(`/users/${username}`, '_self');
             }).catch(err => {
                 console.log(err)
             });

@@ -67,7 +67,7 @@ class MainView extends React.Component {
                     <Switch>
                         <Route exact path="/" render={() => {
                             // If no user is present, displays LoginView. When user logs in, user is passed as a prop to LoginView
-                            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                            if (!localStorage.getItem('user')) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             if (movies.length === 0) return <div className="main-view loading">Loading...</div>;
 
                             return (
@@ -80,11 +80,11 @@ class MainView extends React.Component {
                             )
                         }} />
                         <Route exact path="/register" render={() => {
-                            if (user) return <Redirect to="/" />
+                            if (localStorage.getItem('user')) return <Redirect to="/" />
                             return <RegistrationView onLoggedIn={user => this.onLoggedIn(user)} />;
                         }} />
                         <Route path="/movies/titles/:movieid" render={({ match, history }) => {
-                            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                            if (!localStorage.getItem('user')) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             if (movies.length === 0) return <div className="main-view loading">Loading...</div>;
 
                             return (
@@ -94,7 +94,7 @@ class MainView extends React.Component {
                             )
                         }} />
                         <Route path="/directors/:director" render={({ match, history }) => {
-                            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                            if (!localStorage.getItem('user')) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             if (movies.length === 0) return <div className="main-view loading">Loading...</div>;
 
                             return (
@@ -104,7 +104,7 @@ class MainView extends React.Component {
                             )
                         }} />
                         <Route path="/genres/:genre" render={({ match, history }) => {
-                            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                            if (!localStorage.getItem('user')) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             if (movies.length === 0) return <div className="main-view loading">Loading...</div>;
 
                             return (
@@ -114,7 +114,7 @@ class MainView extends React.Component {
                             )
                         }} />
                         <Route path={`/users/${user.Username}`} render={() => {
-                            if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+                            if (!localStorage.getItem('user')) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             return (
                                 <Col sm={12}>
                                     <ProfileView user={user} movies={movies} />
