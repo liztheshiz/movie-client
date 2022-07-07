@@ -11,7 +11,6 @@ import { Switch } from 'react-router-dom';
 
 import { setMovies, setUser } from '../../actions/actions';
 
-import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
 import MoviesList from '../movies-list/movies-list';
 import { MovieView } from '../movie-view/movie-view';
