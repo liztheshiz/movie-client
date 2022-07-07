@@ -29,8 +29,6 @@ export class Navbar extends React.Component {
     // LIFECYCLE METHODS
 
     render() {
-        const { user } = this.props;
-
         return (
             <Navbar bg="dark" variant="dark" expand="md" >
                 <Container>
@@ -39,7 +37,7 @@ export class Navbar extends React.Component {
                     {this.getToken() && <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                         <Nav className="me-auto">
                             <Nav.Link href="/about.html">About</Nav.Link>
-                            <Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
+                            <Nav.Link href={`/users/${localStorage.getItem('user')}`}>Profile</Nav.Link>
                             <Nav.Link onClick={() => this.onLoggedOut()}>Logout</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>}
@@ -47,8 +45,4 @@ export class Navbar extends React.Component {
             </Navbar >
         )
     }
-}
-
-Navbar.propTypes = {
-    user: PropTypes.string
 }

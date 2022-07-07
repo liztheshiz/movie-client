@@ -9,7 +9,7 @@ import Col from 'react-bootstrap/Col';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 
-import { setMovies } from '../../actions/actions';
+import { setMovies, setUser } from '../../actions/actions';
 
 import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
@@ -44,9 +44,7 @@ class MainView extends React.Component {
     // When user successfully logs in, saves user in the state, and user + JWT in local storage
     onLoggedIn(authData) {
         console.log(authData);
-        this.setState({
-            user: authData.user.Username
-        });
+        //this.props.setUser(res.data);
 
         localStorage.setItem('token', authData.token);
         localStorage.setItem('user', authData.user.Username);
@@ -76,7 +74,7 @@ class MainView extends React.Component {
                             return (
                                 <div>
                                     <Row className="mt-5 mb-4">
-                                        <h1>Welcome, {user}!</h1>
+                                        <h1>Welcome, {user.Username}!</h1>
                                     </Row>
                                     <MoviesList movies={movies} listType="all" />;
                                 </div>
@@ -116,7 +114,7 @@ class MainView extends React.Component {
                                 </Col>
                             )
                         }} />
-                        <Route path={`/users/${user}`} render={() => {
+                        <Route path={`/users/${user.Username}`} render={() => {
                             if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />
                             return (
                                 <Col sm={12}>
@@ -143,4 +141,4 @@ let mapStateToProps = state => {
     return { movies: state.movies, user: state.user }
 }
 
-export default connect(mapStateToProps, { setMovies })(MainView);
+export default connect(mapStateToProps, { setMovies, setUser })(MainView);

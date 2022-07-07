@@ -57,7 +57,7 @@ export default connect(mapStateToProps)(MoviesList);
 
 MoviesList.propTypes = {
     movies: PropTypes.array.isRequired,
-    visibilityFilter: PropTypes.func.isRequired,
+    visibilityFilter: PropTypes.string.isRequired,
     listType: PropTypes.string.isRequired,
     removeFromFavorites: PropTypes.func,
     name: PropTypes.string

@@ -47,7 +47,7 @@ export function ProfileView(props) {
 
     // Deletes current user
     const deleteUser = () => {
-        axios.delete(`https://cinemadatabase.herokuapp.com/users/${props.user}`, {
+        axios.delete(`https://cinemadatabase.herokuapp.com/users/${props.user.Username}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(res => {
             alert('User deleted!');
@@ -57,7 +57,7 @@ export function ProfileView(props) {
     }
 
     // Fetches current user's information from database and saves its values in the state
-    const getUser = () => {
+    /*const getUser = () => {
         axios.get(`https://cinemadatabase.herokuapp.com/users/${props.user}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(res => {
@@ -67,7 +67,7 @@ export function ProfileView(props) {
             setCurrentBirthday(res.data.Birthday);
             setCurrentFavMovies(res.data.FavoriteMovies);
         }).catch(err => console.log(err));
-    }
+    }*/
 
     // Used to validate if string is alphanumeric
     const isAlphaNumeric = (str) => { /^[a-z0-9]+$/gi.test(str); }
@@ -135,7 +135,7 @@ export function ProfileView(props) {
             }).then(res => {
                 const data = res.data;
                 console.log(data);
-                window.open(`/users/${props.user}`, '_self');
+                window.open(`/users/${props.user.Username}`, '_self');
             }).catch(err => {
                 console.log(err)
             });
@@ -144,7 +144,7 @@ export function ProfileView(props) {
 
     // Removes given movie from user's list of favorites
     const removeFromFavorites = (movieid) => {
-        axios.delete(`https://cinemadatabase.herokuapp.com/users/${props.user}/FavoriteMovies/${movieid}`, {
+        axios.delete(`https://cinemadatabase.herokuapp.com/users/${props.user.Username}/FavoriteMovies/${movieid}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(res => alert('Movie removed from favorites list!')).catch(err => console.log(err));
     }
@@ -153,16 +153,16 @@ export function ProfileView(props) {
     // RENDER
 
     // Keeps getUser from being called continuously
-    useEffect(() => {
+    /*useEffect(() => {
         getUser();
-    }, []);
+    }, []);*/
 
     return (
         <Container className="profile-view border-dark border-3 mt-5">
             <Row className="mb-4">
                 <Col xs={0} sm={2} md={2} lg={3}></Col>
                 <Col className="profile-title" xs={8} sm={6} lg={4} xl={5}>
-                    <h2 className="value">{props.user}</h2>
+                    <h2 className="value">{props.user.Username}</h2>
                 </Col>
                 {!edit && <Col>
                     <Button variant="outline-dark" size="sm" onClick={() => editMode(true)}>Edit</Button>
@@ -173,8 +173,8 @@ export function ProfileView(props) {
                     <Form>
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
-                            {!edit && <Form.Control placeholder={currentUsername} disabled />}
-                            {edit && <Form.Control type="text" placeholder={currentUsername} onChange={e => setUsername(e.target.value)} />}
+                            {!edit && <Form.Control placeholder={props.user.Username} disabled />}
+                            {edit && <Form.Control type="text" placeholder={props.user.Username} onChange={e => setUsername(e.target.value)} />}
                             {usernameErr && <Form.Text className="text-muted">{usernameErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formPassword">
@@ -185,15 +185,15 @@ export function ProfileView(props) {
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formEmail">
                             <Form.Label>Email:</Form.Label>
-                            {!edit && <Form.Control placeholder={currentEmail} disabled />}
-                            {edit && <Form.Control type="email" placeholder={currentEmail} onChange={e => setEmail(e.target.value)} />}
+                            {!edit && <Form.Control placeholder={props.user.Email} disabled />}
+                            {edit && <Form.Control type="email" placeholder={props.user.Email} onChange={e => setEmail(e.target.value)} />}
                             {emailErr && <Form.Text className="text-muted">{emailErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formBirthday">
                             <Form.Label>Birthday:</Form.Label>
-                            {!currentBirthday && !edit && <Form.Text> No birthday present</Form.Text>}
-                            {currentBirthday && !edit && <Form.Control placeholder={currentBirthday} disabled />}
-                            {edit && <Form.Control type="string" placeholder={currentBirthday} onChange={e => setBirthday(e.target.value)} />}
+                            {!props.user.Birthday && !edit && <Form.Text> No birthday present</Form.Text>}
+                            {props.user.Birthday && !edit && <Form.Control placeholder={props.user.Birthday} disabled />}
+                            {edit && <Form.Control type="string" placeholder={props.user.Birthday} onChange={e => setBirthday(e.target.value)} />}
                             {edit && <Form.Text className="text-muted">
                                 Please use format MM/DD/YY
                             </Form.Text>}
@@ -205,13 +205,13 @@ export function ProfileView(props) {
                     </Form>
                 </Col>
             </Row>
-            {(currentFavMovies.length > 0) && <Row>
+            {(props.user.FavoriteMovies.length > 0) && <Row>
                 <Col><h3>Favorites list:</h3></Col>
             </Row>}
-            {(currentFavMovies.length === 0) && <Row>
+            {(props.user.FavoriteMovies.length === 0) && <Row>
                 <Col><h3>Favorites list is empty! Return to home to view available movies.</h3></Col>
             </Row>}
-            <MoviesList favMovies={currentFavMovies} movies={props.movies} listType={"profile"} removeFromFavorites={removeFromFavorites} />
+            <MoviesList movies={props.movies} listType={"profile"} removeFromFavorites={removeFromFavorites} />
             {!show && <Row className="justify-content-sm-center my-4">
                 <Col className="text-center">
                     <Button variant="link" onClick={() => showModal(true)}>Click here to delete user</Button>
@@ -246,5 +246,5 @@ render() {
 */
 
 ProfileView.propTypes = {
-    user: PropTypes.string.isRequired
+    //user: PropTypes.string.isRequired
 }
