@@ -14,15 +14,13 @@ function MoviesList(props) {
 
     let filteredMovies = movies;
 
-    if (visibilityFilter !== '' && listType === 'main') {
-        filteredMovies = movies.filter(m => m.Title.toLowerCase().includes(visibilityFilter.toLowerCase()));
-    } else {
-        filteredMovies = movies.filter(m => {
-            if (listType === "profile") return user.FavoriteMovies.includes(m._id);
-            if (listType === "genre") return m.Genre.Name === name;
-            if (listType === "director") return m.Director.Name === name;
-        })
-    }
+    filteredMovies = movies.filter(m => {
+        if (listType === "main") return m.Title.toLowerCase().includes(visibilityFilter.toLowerCase());
+        if (listType === "profile") return user.FavoriteMovies.includes(m._id);
+        if (listType === "genre") return m.Genre.Name === name;
+        if (listType === "director") return m.Director.Name === name;
+    })
+
 
     return (
         <Row>
