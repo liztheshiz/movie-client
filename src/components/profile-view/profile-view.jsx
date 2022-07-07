@@ -212,7 +212,7 @@ export function ProfileView(props) {
             {(props.user.FavoriteMovies.length === 0) && <Row>
                 <Col><h3>Favorites list is empty! Return to home to view available movies.</h3></Col>
             </Row>}
-            <MoviesList movies={props.movies} listType={"profile"} removeFromFavorites={removeFromFavorites} />
+            <MoviesList movies={props.movies} user={props.user} listType={"profile"} removeFromFavorites={removeFromFavorites} />
             {!show && <Row className="justify-content-sm-center my-4">
                 <Col className="text-center">
                     <Button variant="link" onClick={() => showModal(true)}>Click here to delete user</Button>

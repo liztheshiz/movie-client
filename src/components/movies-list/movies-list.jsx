@@ -10,19 +10,25 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 function MoviesList(props) {
-    const { movies, visibilityFilter, listType, removeFromFavorites, name } = props;
+    const { movies, user, visibilityFilter, listType, removeFromFavorites, name } = props;
 
     let filteredMovies = movies;
 
-    if (visibilityFilter !== '') {
+    if (visibilityFilter !== '' && listType === 'main') {
         filteredMovies = movies.filter(m => m.Title.toLowerCase().includes(visibilityFilter.toLowerCase()));
+    } else {
+        filteredMovies = movies.filter(m => {
+            if (listType === "profile") return user.FavoriteMovies.includes(m._id);
+            if (listType === "genre") return m.Genre.Name === name;
+            if (listType === "director") return m.Director.Name === name;
+        })
     }
 
     return (
         <Row>
-            <Col xs={12}>
+            {listType === 'main' && <Col xs={12}>
                 <VisibilityFilterInput visibilityFilter={visibilityFilter} />
-            </Col>
+            </Col>}
             {filteredMovies.map(m =>
                 <Col sm={6} lg={4} xl={3} key={m._id}>
                     <MovieCard movie={m} listType={listType} removeFromFavorites={removeFromFavorites} />

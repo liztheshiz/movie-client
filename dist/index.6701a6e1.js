@@ -34390,6 +34390,7 @@ function ProfileView(props) {
             }),
             /*#__PURE__*/ _jsxRuntime.jsx(_moviesListDefault.default, {
                 movies: props.movies,
+                user: props.user,
                 listType: "profile",
                 removeFromFavorites: removeFromFavorites,
                 __source: {
@@ -34538,29 +34539,34 @@ var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 function MoviesList(props) {
-    const { movies , visibilityFilter , listType , removeFromFavorites , name  } = props;
+    const { movies , user , visibilityFilter , listType , removeFromFavorites , name  } = props;
     let filteredMovies = movies;
-    if (visibilityFilter !== '') filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
+    if (visibilityFilter !== '' && listType === 'main') filteredMovies = movies.filter((m)=>m.Title.toLowerCase().includes(visibilityFilter.toLowerCase())
     );
+    else filteredMovies = movies.filter((m)=>{
+        if (listType === "profile") return user.FavoriteMovies.includes(m._id);
+        if (listType === "genre") return m.Genre.Name === name;
+        if (listType === "director") return m.Director.Name === name;
+    });
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
-            lineNumber: 22
+            lineNumber: 28
         },
         __self: this,
         children: [
-            /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+            listType === 'main' && /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                 xs: 12,
                 __source: {
                     fileName: "src/components/movies-list/movies-list.jsx",
-                    lineNumber: 23
+                    lineNumber: 29
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_visibilityFilterInputDefault.default, {
                     visibilityFilter: visibilityFilter,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 24
+                        lineNumber: 30
                     },
                     __self: this
                 })
@@ -34571,7 +34577,7 @@ function MoviesList(props) {
                     xl: 3,
                     __source: {
                         fileName: "src/components/movies-list/movies-list.jsx",
-                        lineNumber: 27
+                        lineNumber: 33
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -34580,7 +34586,7 @@ function MoviesList(props) {
                         removeFromFavorites: removeFromFavorites,
                         __source: {
                             fileName: "src/components/movies-list/movies-list.jsx",
-                            lineNumber: 28
+                            lineNumber: 34
                         },
                         __self: this
                     })
