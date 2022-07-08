@@ -13,7 +13,6 @@ import './movie-card.scss';
 
 export class MovieCard extends React.Component {
     // Adds given movie to given user's favorites list
-    // CURRENTLY THROWS 401 UNAUTHORIZED ERROR FOR UNKNOWN REASON - REQUIRES DEBUGGING
     addToFavorites(movie) {
         let token = localStorage.getItem('token');
         let user = localStorage.getItem("user");
