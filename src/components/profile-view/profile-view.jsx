@@ -197,7 +197,7 @@ export function ProfileView(props) {
                     <Button variant="link" onClick={() => showModal(true)}>Click here to delete user</Button>
                 </Col>
             </Row>}
-            {show && <Row>
+            {show && <Row className="my-4">
                 <Col sm={8}>Are you certain you want to delete this user? This action is irreversible!</Col>
                 <Col sm={2}><Button variant="outline-secondary" size="sm" onClick={() => showModal(false)}>Cancel</Button></Col>
                 <Col sm={2}><Button variant="danger" size="sm" onClick={() => deleteUser()}>Delete</Button></Col>

@@ -34,22 +34,6 @@ function MoviesList(props) {
             )}
         </Row>
     )
-
-    /*const moviesList = movies.filter(m => {
-        if (listType === "profile") return movies.includes(m._id);
-        if (listType === "genre") return m.Genre.Name === name;
-        if (listType === "director") return m.Director.Name === name;
-    })
-
-    return (
-        <Row>
-            {moviesList.map(m =>
-                <Col sm={6} lg={4} xl={3} key={m._id}>
-                    <MovieCard movie={m} listType={listType} removeFromFavorites={removeFromFavorites} />
-                </Col>
-            )}
-        </Row>
-    );*/
 }
 
 const mapStateToProps = state => {
