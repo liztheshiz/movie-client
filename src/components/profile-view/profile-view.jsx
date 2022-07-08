@@ -56,19 +56,6 @@ export function ProfileView(props) {
         }).catch(err => console.log(err));
     }
 
-    // Fetches current user's information from database and saves its values in the state
-    /*const getUser = () => {
-        axios.get(`https://cinemadatabase.herokuapp.com/users/${props.user}`, {
-            headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
-        }).then(res => {
-            setCurrentUsername(res.data.Username);
-            setCurrentPassword(res.data.Password);
-            setCurrentEmail(res.data.Email);
-            setCurrentBirthday(res.data.Birthday);
-            setCurrentFavMovies(res.data.FavoriteMovies);
-        }).catch(err => console.log(err));
-    }*/
-
     // Used to validate if string is alphanumeric
     const isAlphaNumeric = str => /^[a-z0-9]+$/gi.test(str);
 
@@ -127,10 +114,6 @@ export function ProfileView(props) {
                 Email: email,
                 Birthday: birthday
             };
-
-            // NEXT LINE FOR DEBUGGING!!
-            console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}`);
-
             axios.put(`https://cinemadatabase.herokuapp.com/users/${props.user.Username}`, request, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             }).then(res => {
@@ -153,11 +136,6 @@ export function ProfileView(props) {
 
 
     // RENDER
-
-    // Keeps getUser from being called continuously
-    /*useEffect(() => {
-        getUser();
-    }, []);*/
 
     return (
         <Container className="profile-view border-dark border-3 mt-5">
