@@ -34422,7 +34422,7 @@ function ProfileView(props) {
                 })
             }),
             show && /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
-                className: "my-4",
+                className: "justify-content-sm-center my-4",
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
                     lineNumber: 203
@@ -34430,7 +34430,9 @@ function ProfileView(props) {
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        xs: 12,
                         sm: 8,
+                        xl: 6,
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
                             lineNumber: 204
@@ -34439,10 +34441,21 @@ function ProfileView(props) {
                         children: "Are you certain you want to delete this user? This action is irreversible!"
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                        sm: 2,
+                        xs: 3,
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
                             lineNumber: 205
+                        },
+                        __self: this
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        xs: 3,
+                        sm: 2,
+                        xl: 1,
+                        className: "my-3",
+                        __source: {
+                            fileName: "src/components/profile-view/profile-view.jsx",
+                            lineNumber: 206
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -34452,17 +34465,20 @@ function ProfileView(props) {
                             ,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 205
+                                lineNumber: 206
                             },
                             __self: this,
                             children: "Cancel"
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        xs: 3,
                         sm: 2,
+                        xl: 1,
+                        className: "my-3",
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 206
+                            lineNumber: 207
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -34472,7 +34488,7 @@ function ProfileView(props) {
                             ,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 206
+                                lineNumber: 207
                             },
                             __self: this,
                             children: "Delete"
