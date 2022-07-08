@@ -8,17 +8,6 @@ import Nav from 'react-bootstrap/Nav';
 export class Navbar extends React.Component {
     // CUSTOM METHODS
 
-    // Checks if there is a token stores in localStorage
-    // Used to determine if user is logged in
-    getToken() {
-        let accessToken = localStorage.getItem('token');
-        if (accessToken) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
     // Logs user out of site
     onLoggedOut() {
         localStorage.clear();
@@ -33,8 +22,8 @@ export class Navbar extends React.Component {
             <Navbar bg="dark" variant="dark" expand="md" >
                 <Container>
                     <Navbar.Brand href="/">CinemaDatabase</Navbar.Brand>
-                    {this.getToken() && <Navbar.Toggle aria-controls="basic-navbar-nav" />}
-                    {this.getToken() && <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+                    {localStorage.getItem('token') && <Navbar.Toggle aria-controls="basic-navbar-nav" />}
+                    {localStorage.getItem('token') && <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                         <Nav className="me-auto">
                             <Nav.Link href="/about.html">About</Nav.Link>
                             <Nav.Link href={`/users/${localStorage.getItem('user')}`}>Profile</Nav.Link>

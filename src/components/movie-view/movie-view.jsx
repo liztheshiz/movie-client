@@ -22,7 +22,7 @@ export class MovieView extends React.Component {
                     Authorization: `Bearer ${token}`
                 }
             }).then(res => {
-                alert('It worked!!');
+                alert(`${res.data}`);
             }).catch(err => console.log(err));
     }
 

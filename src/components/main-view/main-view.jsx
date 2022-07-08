@@ -11,6 +11,7 @@ import { Switch } from 'react-router-dom';
 
 import { setMovies, setUser } from '../../actions/actions';
 
+import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
 import MoviesList from '../movies-list/movies-list';
 import { MovieView } from '../movie-view/movie-view';
@@ -62,6 +63,7 @@ class MainView extends React.Component {
 
         return (
             <Router>
+                <Navbar />
                 <Row className="justify-content-md-center main-view">
                     <Switch>
                         <Route exact path="/" render={() => {
