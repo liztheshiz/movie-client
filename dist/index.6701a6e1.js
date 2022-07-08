@@ -25687,7 +25687,7 @@ class MovieView extends _reactDefault.default.Component {
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                        sm: 10,
+                        sm: 9,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 48
@@ -25863,7 +25863,7 @@ class MovieView extends _reactDefault.default.Component {
                                     lineNumber: 76
                                 },
                                 __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                     className: "movie-description",
                                     lg: 10,
                                     __source: {
@@ -25871,36 +25871,25 @@ class MovieView extends _reactDefault.default.Component {
                                         lineNumber: 77
                                     },
                                     __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                            className: "label",
-                                            __source: {
-                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 78
-                                            },
-                                            __self: this,
-                                            children: "Description: "
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                            className: "value",
-                                            __source: {
-                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 79
-                                            },
-                                            __self: this,
-                                            children: movie.Description
-                                        })
-                                    ]
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                        className: "value",
+                                        __source: {
+                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                            lineNumber: 78
+                                        },
+                                        __self: this,
+                                        children: movie.Description
+                                    })
                                 })
                             })
                         ]
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                         className: "movie-poster",
-                        sm: 2,
+                        sm: 3,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 83
+                            lineNumber: 82
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
@@ -25908,7 +25897,7 @@ class MovieView extends _reactDefault.default.Component {
                             src: movie.ImagePath,
                             __source: {
                                 fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 84
+                                lineNumber: 83
                             },
                             __self: this
                         })
