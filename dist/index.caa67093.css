@@ -8,6 +8,10 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+.bg-col {
+  background-color: rgba(44, 53, 232, 0.05);
+}
 .movie-card {
   font-family: "Poppins", sans-serif;
 }
