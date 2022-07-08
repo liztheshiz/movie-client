@@ -17,10 +17,10 @@ export class DirectorView extends React.Component {
                 <Row className="mt-5">
                     <Col sm={10}>
                         <Row className="mb-4">
-                            <Col xs={1}>
+                            <Col xs={2} s={1}>
                                 <Button variant="outline-dark" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>
                             </Col>
-                            <Col className="director-name" xs={11}>
+                            <Col className="director-name" xs={9} s={10}>
                                 <h2 className="value">{movie.Director.Name}</h2>
                             </Col>
                         </Row>
