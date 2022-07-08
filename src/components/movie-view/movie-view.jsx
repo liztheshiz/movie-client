@@ -11,12 +11,10 @@ import { Link } from 'react-router-dom';
 
 export class MovieView extends React.Component {
 
-    /*
     // Adds given movie to given user's favorites list
-    // CURRENTLY THROWS 401 UNAUTHORIZED ERROR FOR UNKNOWN REASON - REQUIRES DEBUGGING
-    addToFavorites() {
+    addToFavorites(movie) {
         let token = localStorage.getItem('token');
-        let user = localStorage.getItem("user");
+        let user = localStorage.getItem('user');
 
         axios.post(`https://cinemadatabase.herokuapp.com/users/${user}/FavoriteMovies/${movie._id}`, {},
             {
@@ -24,10 +22,10 @@ export class MovieView extends React.Component {
                     Authorization: `Bearer ${token}`
                 }
             }).then(res => {
-                this.setState({ starred: true });
+                //this.setState({ starred: true });
+                alert('It worked!!');
             }).catch(err => console.log(err));
     }
-    */
 
 
     // LIFECYCLE METHODS
@@ -54,7 +52,7 @@ export class MovieView extends React.Component {
                                 <h2 className="value">{movie.Title}</h2>
                             </Col>
                             <Col xs={1}>
-                                <Button variant="outline-dark" size="sm" onClick={() => { this.addToFavorites(); }}>Fav</Button>
+                                <Button variant="outline-dark" size="sm" onClick={() => { this.addToFavorites(movie); }}>Fav</Button>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center mb-3">
