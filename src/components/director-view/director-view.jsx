@@ -26,7 +26,6 @@ export class DirectorView extends React.Component {
                         </Row>
                         <Row className="justify-content-md-center mb-4">
                             <Col className="director-bio" lg={10}>
-                                <span className="label">Bio: </span>
                                 <span className="value">{movie.Director.Bio}</span>
                             </Col>
                         </Row>
