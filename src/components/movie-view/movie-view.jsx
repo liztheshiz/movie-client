@@ -22,9 +22,13 @@ export class MovieView extends React.Component {
                     Authorization: `Bearer ${token}`
                 }
             }).then(res => {
-                //this.setState({ starred: true });
                 alert('It worked!!');
             }).catch(err => console.log(err));
+    }
+
+    // Checks if movieid is already present in user's favorites list
+    isFavorite(user, movie) {
+        return user.FavoriteMovies.includes(movie._id);
     }
 
 
@@ -32,13 +36,10 @@ export class MovieView extends React.Component {
 
     constructor() {
         super();
-        this.state = {
-            starred: false
-        };
     }
 
     render() {
-        const { movie, onBackClick } = this.props;
+        const { movie, user, onBackClick } = this.props;
 
         return (
             <Container className="movie-view border-dark border-3 mt-5">
@@ -51,9 +52,9 @@ export class MovieView extends React.Component {
                             <Col className="movie-title" xs={10}>
                                 <h2 className="value">{movie.Title}</h2>
                             </Col>
-                            <Col xs={1}>
+                            {!this.isFavorite(user, movie) && <Col xs={1}>
                                 <Button variant="outline-dark" size="sm" onClick={() => { this.addToFavorites(movie); }}>Fav</Button>
-                            </Col>
+                            </Col>}
                         </Row>
                         <Row className="justify-content-md-center mb-3">
                             <Col className="movie-director" lg={10}>

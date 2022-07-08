@@ -12,21 +12,6 @@ import Col from 'react-bootstrap/Col';
 import './movie-card.scss';
 
 export class MovieCard extends React.Component {
-    // Adds given movie to given user's favorites list
-    addToFavorites(movie) {
-        let token = localStorage.getItem('token');
-        let user = localStorage.getItem('user');
-
-        axios.post(`https://cinemadatabase.herokuapp.com/users/${user}/FavoriteMovies/${movie._id}`, {},
-            {
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            }).then(res => {
-                this.setState({ starred: true });
-            }).catch(err => console.log(err));
-    }
-
     render() {
         const { movie, listType, removeFromFavorites } = this.props;
 
@@ -40,7 +25,6 @@ export class MovieCard extends React.Component {
                         <Link to={`/movies/titles/${movie._id}`}>
                             <Button variant="outline-dark">View details</Button>
                         </Link>
-                        <Button variant="dark" size="sm" onClick={() => { this.addToFavorites(movie); }}>Favorite</Button>
                     </Card.Body>
                 </Card >
                 {(listType === "profile") && <Row className="justify-content-sm-center mt-3">
