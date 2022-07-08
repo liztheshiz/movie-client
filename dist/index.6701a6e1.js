@@ -33879,6 +33879,14 @@ function ProfileView(props) {
     const [emailErr, setEmailErr] = _react.useState('');
     const [birthdayErr, setBirthdayErr] = _react.useState('');
     // CUSTOM METHODS
+    const getDate = (string)=>{
+        let date = new Date(string);
+        return date.toLocaleDateString('en-us', {
+            month: '2-digit',
+            day: '2-digit',
+            year: '2-digit'
+        });
+    };
     // Changes edit var to given bool; determines if user can edit form fields
     const editMode = (bool)=>{
         // When user cancels an edit, edit values are reset
@@ -33994,7 +34002,7 @@ function ProfileView(props) {
         className: "profile-view border-dark border-3 mt-5",
         __source: {
             fileName: "src/components/profile-view/profile-view.jsx",
-            lineNumber: 144
+            lineNumber: 149
         },
         __self: this,
         children: [
@@ -34002,7 +34010,7 @@ function ProfileView(props) {
                 className: "mb-4",
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 145
+                    lineNumber: 150
                 },
                 __self: this,
                 children: [
@@ -34013,7 +34021,7 @@ function ProfileView(props) {
                         lg: 3,
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 146
+                            lineNumber: 151
                         },
                         __self: this
                     }),
@@ -34025,14 +34033,14 @@ function ProfileView(props) {
                         xl: 5,
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 147
+                            lineNumber: 152
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
                             className: "value",
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 148
+                                lineNumber: 153
                             },
                             __self: this,
                             children: props.user.Username
@@ -34041,7 +34049,7 @@ function ProfileView(props) {
                     !edit && /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 150
+                            lineNumber: 155
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -34051,7 +34059,7 @@ function ProfileView(props) {
                             ,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 151
+                                lineNumber: 156
                             },
                             __self: this,
                             children: "Edit"
@@ -34063,7 +34071,7 @@ function ProfileView(props) {
                 className: "justify-content-sm-center mb-5",
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 154
+                    lineNumber: 159
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
@@ -34072,13 +34080,13 @@ function ProfileView(props) {
                     lg: 4,
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 155
+                        lineNumber: 160
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 156
+                            lineNumber: 161
                         },
                         __self: this,
                         children: [
@@ -34086,14 +34094,14 @@ function ProfileView(props) {
                                 controlId: "formUsername",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 157
+                                    lineNumber: 162
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 158
+                                            lineNumber: 163
                                         },
                                         __self: this,
                                         children: "Username:"
@@ -34103,7 +34111,7 @@ function ProfileView(props) {
                                         disabled: true,
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 159
+                                            lineNumber: 164
                                         },
                                         __self: this
                                     }),
@@ -34114,7 +34122,7 @@ function ProfileView(props) {
                                         ,
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 160
+                                            lineNumber: 165
                                         },
                                         __self: this
                                     }),
@@ -34122,7 +34130,7 @@ function ProfileView(props) {
                                         className: "text-muted",
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 161
+                                            lineNumber: 166
                                         },
                                         __self: this,
                                         children: usernameErr
@@ -34134,14 +34142,14 @@ function ProfileView(props) {
                                 controlId: "formPassword",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 163
+                                    lineNumber: 168
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 164
+                                            lineNumber: 169
                                         },
                                         __self: this,
                                         children: "Password:"
@@ -34152,7 +34160,7 @@ function ProfileView(props) {
                                         disabled: true,
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 165
+                                            lineNumber: 170
                                         },
                                         __self: this
                                     }),
@@ -34163,7 +34171,7 @@ function ProfileView(props) {
                                         ,
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 166
+                                            lineNumber: 171
                                         },
                                         __self: this
                                     }),
@@ -34171,7 +34179,7 @@ function ProfileView(props) {
                                         className: "text-muted",
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 167
+                                            lineNumber: 172
                                         },
                                         __self: this,
                                         children: passwordErr
@@ -34183,14 +34191,14 @@ function ProfileView(props) {
                                 controlId: "formEmail",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 169
+                                    lineNumber: 174
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 170
+                                            lineNumber: 175
                                         },
                                         __self: this,
                                         children: "Email:"
@@ -34200,7 +34208,7 @@ function ProfileView(props) {
                                         disabled: true,
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 171
+                                            lineNumber: 176
                                         },
                                         __self: this
                                     }),
@@ -34211,7 +34219,7 @@ function ProfileView(props) {
                                         ,
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 172
+                                            lineNumber: 177
                                         },
                                         __self: this
                                     }),
@@ -34219,7 +34227,7 @@ function ProfileView(props) {
                                         className: "text-muted",
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 173
+                                            lineNumber: 178
                                         },
                                         __self: this,
                                         children: emailErr
@@ -34231,14 +34239,14 @@ function ProfileView(props) {
                                 controlId: "formBirthday",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 175
+                                    lineNumber: 180
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 176
+                                            lineNumber: 181
                                         },
                                         __self: this,
                                         children: "Birthday:"
@@ -34246,28 +34254,28 @@ function ProfileView(props) {
                                     !props.user.Birthday && !edit && /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Text, {
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 177
+                                            lineNumber: 182
                                         },
                                         __self: this,
                                         children: " No birthday present"
                                     }),
                                     props.user.Birthday && !edit && /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                        placeholder: props.user.Birthday,
+                                        placeholder: getDate(props.user.Birthday),
                                         disabled: true,
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 178
+                                            lineNumber: 183
                                         },
                                         __self: this
                                     }),
                                     edit && /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
                                         type: "string",
-                                        placeholder: props.user.Birthday,
+                                        placeholder: getDate(props.user.Birthday),
                                         onChange: (e)=>setBirthday(e.target.value)
                                         ,
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 179
+                                            lineNumber: 184
                                         },
                                         __self: this
                                     }),
@@ -34275,7 +34283,7 @@ function ProfileView(props) {
                                         className: "text-muted",
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 180
+                                            lineNumber: 185
                                         },
                                         __self: this,
                                         children: "Please use format MM/DD/YY"
@@ -34286,14 +34294,14 @@ function ProfileView(props) {
                                 className: "justify-content-sm-center mt-4",
                                 __source: {
                                     fileName: "src/components/profile-view/profile-view.jsx",
-                                    lineNumber: 184
+                                    lineNumber: 189
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 185
+                                            lineNumber: 190
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -34302,7 +34310,7 @@ function ProfileView(props) {
                                             ,
                                             __source: {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                                lineNumber: 185
+                                                lineNumber: 190
                                             },
                                             __self: this,
                                             children: "Cancel"
@@ -34311,7 +34319,7 @@ function ProfileView(props) {
                                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         __source: {
                                             fileName: "src/components/profile-view/profile-view.jsx",
-                                            lineNumber: 186
+                                            lineNumber: 191
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -34320,7 +34328,7 @@ function ProfileView(props) {
                                             onClick: handleSubmit,
                                             __source: {
                                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                                lineNumber: 186
+                                                lineNumber: 191
                                             },
                                             __self: this,
                                             children: "Submit"
@@ -34335,19 +34343,19 @@ function ProfileView(props) {
             props.user.FavoriteMovies.length > 0 && /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 191
+                    lineNumber: 196
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 192
+                        lineNumber: 197
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("h3", {
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 192
+                            lineNumber: 197
                         },
                         __self: this,
                         children: "Favorites list:"
@@ -34357,19 +34365,19 @@ function ProfileView(props) {
             props.user.FavoriteMovies.length === 0 && /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 194
+                    lineNumber: 199
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 195
+                        lineNumber: 200
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("h3", {
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 195
+                            lineNumber: 200
                         },
                         __self: this,
                         children: "Favorites list is empty! Return to home to view available movies."
@@ -34383,7 +34391,7 @@ function ProfileView(props) {
                 removeFromFavorites: removeFromFavorites,
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 197
+                    lineNumber: 202
                 },
                 __self: this
             }),
@@ -34391,14 +34399,14 @@ function ProfileView(props) {
                 className: "justify-content-sm-center my-4",
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 198
+                    lineNumber: 203
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                     className: "text-center",
                     __source: {
                         fileName: "src/components/profile-view/profile-view.jsx",
-                        lineNumber: 199
+                        lineNumber: 204
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -34407,7 +34415,7 @@ function ProfileView(props) {
                         ,
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 200
+                            lineNumber: 205
                         },
                         __self: this,
                         children: "Click here to delete user"
@@ -34418,7 +34426,7 @@ function ProfileView(props) {
                 className: "justify-content-xs-center my-4",
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
-                    lineNumber: 203
+                    lineNumber: 208
                 },
                 __self: this,
                 children: [
@@ -34430,7 +34438,7 @@ function ProfileView(props) {
                         className: "my-3",
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 204
+                            lineNumber: 209
                         },
                         __self: this,
                         children: "Are you certain you want to delete this user? This action is irreversible!"
@@ -34442,7 +34450,7 @@ function ProfileView(props) {
                         className: "my-3",
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 205
+                            lineNumber: 210
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -34452,7 +34460,7 @@ function ProfileView(props) {
                             ,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 205
+                                lineNumber: 210
                             },
                             __self: this,
                             children: "Cancel"
@@ -34465,7 +34473,7 @@ function ProfileView(props) {
                         className: "my-3",
                         __source: {
                             fileName: "src/components/profile-view/profile-view.jsx",
-                            lineNumber: 206
+                            lineNumber: 211
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -34475,7 +34483,7 @@ function ProfileView(props) {
                             ,
                             __source: {
                                 fileName: "src/components/profile-view/profile-view.jsx",
-                                lineNumber: 206
+                                lineNumber: 211
                             },
                             __self: this,
                             children: "Delete"

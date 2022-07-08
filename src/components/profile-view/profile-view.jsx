@@ -25,6 +25,11 @@ export function ProfileView(props) {
 
     // CUSTOM METHODS
 
+    const getDate = (string) => {
+        let date = new Date(string);
+        return date.toLocaleDateString('en-us', { month: '2-digit', day: '2-digit', year: '2-digit' });
+    }
+
     // Changes edit var to given bool; determines if user can edit form fields
     const editMode = (bool) => {
         // When user cancels an edit, edit values are reset
@@ -175,8 +180,8 @@ export function ProfileView(props) {
                         <Form.Group className="mt-3" controlId="formBirthday">
                             <Form.Label>Birthday:</Form.Label>
                             {!props.user.Birthday && !edit && <Form.Text> No birthday present</Form.Text>}
-                            {props.user.Birthday && !edit && <Form.Control placeholder={props.user.Birthday} disabled />}
-                            {edit && <Form.Control type="string" placeholder={props.user.Birthday} onChange={e => setBirthday(e.target.value)} />}
+                            {props.user.Birthday && !edit && <Form.Control placeholder={getDate(props.user.Birthday)} disabled />}
+                            {edit && <Form.Control type="string" placeholder={getDate(props.user.Birthday)} onChange={e => setBirthday(e.target.value)} />}
                             {edit && <Form.Text className="text-muted">
                                 Please use format MM/DD/YY
                             </Form.Text>}
