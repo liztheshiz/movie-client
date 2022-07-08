@@ -80,7 +80,7 @@ export class MovieView extends React.Component {
                             </Col>
                         </Row>
                     </Col>
-                    <Col className="movie-poster" sm={3}>
+                    <Col className="movie-poster mb-4" sm={3}>
                         <img crossOrigin="anonymous" src={movie.ImagePath} />
                     </Col>
                 </Row>

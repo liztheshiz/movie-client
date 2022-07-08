@@ -25887,7 +25887,7 @@ class MovieView extends _reactDefault.default.Component {
                         ]
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                        className: "movie-poster",
+                        className: "movie-poster mb-4",
                         sm: 3,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
