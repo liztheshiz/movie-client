@@ -23,6 +23,7 @@ export class MovieView extends React.Component {
                 }
             }).then(res => {
                 alert(`${res.data}`);
+                window.open(`/movies/titles/${movie._id}`, '_self');
             }).catch(err => console.log(err));
     }
 
