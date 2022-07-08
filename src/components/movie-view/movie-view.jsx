@@ -22,8 +22,9 @@ export class MovieView extends React.Component {
                     Authorization: `Bearer ${token}`
                 }
             }).then(res => {
-                alert(`${res.data}`);
-                window.open(`/movies/titles/${movie._id}`, '_self');
+                alert('Movie added to list!');
+                // window.open(`/movies/titles/${movie._id}`, '_self');
+                window.location.reload();
             }).catch(err => console.log(err));
     }
 
@@ -54,7 +55,7 @@ export class MovieView extends React.Component {
                                 <h2 className="value">{movie.Title}</h2>
                             </Col>
                             {!this.isFavorite(user, movie) && <Col xs={1}>
-                                <Button variant="outline-dark" size="sm" onClick={() => { this.addToFavorites(movie); }}>Fav</Button>
+                                <Button variant="outline-dark" type="submit" size="sm" onClick={() => { this.addToFavorites(movie); }}>Fav</Button>
                             </Col>}
                         </Row>
                         <Row className="justify-content-md-center mb-3">
