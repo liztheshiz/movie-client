@@ -9,6 +9,11 @@ import Button from 'react-bootstrap/Button';
 import MoviesList from '../movies-list/movies-list';
 
 export class DirectorView extends React.Component {
+    getYear(string) {
+        let date = new Date(string);
+        return date.getFullYear();
+    }
+
     render() {
         const { movie, movies, onBackClick } = this.props;
 
@@ -32,13 +37,13 @@ export class DirectorView extends React.Component {
                         <Row className="justify-content-md-center mb-4">
                             <Col className="director-birth" lg={10}>
                                 <span className="label">Born: </span>
-                                <span className="value">{movie.Director.Birth}</span>
+                                <span className="value">{this.getYear(movie.Director.Birth)}</span>
                             </Col>
                         </Row>
                         {movie.Director.Death && <Row className="justify-content-md-center mb-4">
                             <Col className="director-death" lg={10}>
                                 <span className="label">Died: </span>
-                                <span className="value">{movie.Director.Death}</span>
+                                <span className="value">{this.getYear(movie.Director.Death)}</span>
                             </Col>
                         </Row>}
                     </Col>
