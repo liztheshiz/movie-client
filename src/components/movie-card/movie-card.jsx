@@ -15,7 +15,7 @@ export class MovieCard extends React.Component {
     // Adds given movie to given user's favorites list
     addToFavorites(movie) {
         let token = localStorage.getItem('token');
-        let user = localStorage.getItem("user");
+        let user = localStorage.getItem('user');
 
         axios.post(`https://cinemadatabase.herokuapp.com/users/${user}/FavoriteMovies/${movie._id}`, {},
             {

@@ -34635,7 +34635,7 @@ class MovieCard extends _reactDefault.default.Component {
     // Adds given movie to given user's favorites list
     addToFavorites(movie) {
         let token = localStorage.getItem('token');
-        let user = localStorage.getItem("user");
+        let user = localStorage.getItem('user');
         _axiosDefault.default.post(`https://cinemadatabase.herokuapp.com/users/${user}/FavoriteMovies/${movie._id}`, {
         }, {
             headers: {
