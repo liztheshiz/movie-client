@@ -36877,7 +36877,8 @@ class GenreView extends _reactDefault.default.Component {
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                        xs: 1,
+                                        xs: 2,
+                                        s: 1,
                                         __source: {
                                             fileName: "src/components/genre-view/genre-view.jsx",
                                             lineNumber: 20
@@ -36899,7 +36900,8 @@ class GenreView extends _reactDefault.default.Component {
                                     }),
                                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         className: "genre-name",
-                                        xs: 11,
+                                        xs: 9,
+                                        s: 10,
                                         __source: {
                                             fileName: "src/components/genre-view/genre-view.jsx",
                                             lineNumber: 23
