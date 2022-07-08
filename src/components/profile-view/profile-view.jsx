@@ -41,7 +41,8 @@ export function ProfileView(props) {
         setEdit(bool);
     }
 
-    // Changes show var to given bool; determines if modal is showing after user clicks delete button (for now modal doesn't work, displays under button)
+    // Changes show var to given bool; determines if modal is showing after user clicks delete button
+    // (for now modal doesn't work; displays under button)
     const showModal = (bool) => { setShow(bool); }
 
     // Deletes current user
