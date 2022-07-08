@@ -104,5 +104,11 @@ MovieView.propTypes = {
         }),
         ImagePath: PropTypes.string.isRequired
     }).isRequired,
+    user: PropTypes.shape({
+        Username: PropTypes.string.isRequired,
+        Password: PropTypes.string.isRequired,
+        Email: PropTypes.string.isRequired,
+        Birthday: PropTypes.string
+    }).isRequired,
     onBackClick: PropTypes.func.isRequired
 }
