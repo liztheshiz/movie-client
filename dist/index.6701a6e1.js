@@ -25351,6 +25351,8 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _reactRedux = require("react-redux");
@@ -25410,14 +25412,14 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 65
+                lineNumber: 66
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_navbar.Navbar, {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 66
+                        lineNumber: 67
                     },
                     __self: this
                 }),
@@ -25425,13 +25427,13 @@ class MainView extends _reactDefault.default.Component {
                     className: "justify-content-md-center main-view",
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 67
+                        lineNumber: 68
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Switch, {
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 68
+                            lineNumber: 69
                         },
                         __self: this,
                         children: [
@@ -25469,7 +25471,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 69
+                                    lineNumber: 70
                                 },
                                 __self: this
                             }),
@@ -25486,7 +25488,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 83
+                                    lineNumber: 84
                                 },
                                 __self: this
                             }),
@@ -25512,7 +25514,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 87
+                                    lineNumber: 88
                                 },
                                 __self: this
                             }),
@@ -25538,7 +25540,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 97
+                                    lineNumber: 98
                                 },
                                 __self: this
                             }),
@@ -25564,7 +25566,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 107
+                                    lineNumber: 108
                                 },
                                 __self: this
                             }),
@@ -25584,7 +25586,7 @@ class MainView extends _reactDefault.default.Component {
                                 },
                                 __source: {
                                     fileName: "src/components/main-view/main-view.jsx",
-                                    lineNumber: 117
+                                    lineNumber: 118
                                 },
                                 __self: this
                             })
@@ -25612,13 +25614,36 @@ exports.default = _reactRedux.connect(mapStateToProps, {
     setMovies: _actions.setMovies,
     setUser: _actions.setUser
 })(MainView);
+MainView.propTypes = {
+    movies: _propTypesDefault.default.arrayOf(shape({
+        Title: _propTypesDefault.default.string.isRequired,
+        Description: _propTypesDefault.default.string.isRequired,
+        Genre: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Description: _propTypesDefault.default.string.isRequired
+        }),
+        Director: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Bio: _propTypesDefault.default.string.isRequired,
+            Birth: _propTypesDefault.default.string.isRequired,
+            Death: _propTypesDefault.default.string
+        }),
+        ImagePath: _propTypesDefault.default.string.isRequired
+    })).isRequired,
+    user: _propTypesDefault.default.shape({
+        Username: _propTypesDefault.default.string.isRequired,
+        Password: _propTypesDefault.default.string.isRequired,
+        Email: _propTypesDefault.default.string.isRequired,
+        Birthday: _propTypesDefault.default.string
+    }).isRequired
+};
 
   $parcel$ReactRefreshHelpers$35bf.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","axios":"iYoWk","../login-view/login-view":"054li","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../profile-view/profile-view":"2E7Aw","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","react-redux":"2L0if","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","../navbar/navbar":"63yS7"}],"ikZdr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","axios":"iYoWk","../login-view/login-view":"054li","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../profile-view/profile-view":"2E7Aw","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","react-redux":"2L0if","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","../navbar/navbar":"63yS7","prop-types":"1tgq3"}],"ikZdr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -25925,6 +25950,7 @@ MovieView.propTypes = {
         }),
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
+    userMovies: _propTypesDefault.default.arrayOf(_propTypesDefault.default.string).isRequired,
     /*user: PropTypes.shape({
         Username: PropTypes.string.isRequired,
         Password: PropTypes.string.isRequired,
@@ -33823,7 +33849,6 @@ function RegistrationView(props) {
 _s(RegistrationView, "tPVpsavGbc3Ol2lOxdlDGGKcN5k=");
 _c = RegistrationView;
 RegistrationView.propTypes = {
-    onLoggedIn: _propTypesDefault.default.func.isRequired
 };
 var _c;
 $RefreshReg$(_c, "RegistrationView");
@@ -34513,6 +34538,27 @@ render() {
     </Modal>
 }
 */ ProfileView.propTypes = {
+    movies: _propTypesDefault.default.arrayOf(shape({
+        Title: _propTypesDefault.default.string.isRequired,
+        Description: _propTypesDefault.default.string.isRequired,
+        Genre: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Description: _propTypesDefault.default.string.isRequired
+        }),
+        Director: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Bio: _propTypesDefault.default.string.isRequired,
+            Birth: _propTypesDefault.default.string.isRequired,
+            Death: _propTypesDefault.default.string
+        }),
+        ImagePath: _propTypesDefault.default.string.isRequired
+    })).isRequired,
+    user: _propTypesDefault.default.shape({
+        Username: _propTypesDefault.default.string.isRequired,
+        Password: _propTypesDefault.default.string.isRequired,
+        Email: _propTypesDefault.default.string.isRequired,
+        Birthday: _propTypesDefault.default.string
+    }).isRequired
 };
 var _c;
 $RefreshReg$(_c, "ProfileView");
@@ -34609,7 +34655,21 @@ const mapStateToProps = (state)=>{
 };
 exports.default = _reactRedux.connect(mapStateToProps)(MoviesList);
 MoviesList.propTypes = {
-    movies: _propTypesDefault.default.array.isRequired,
+    movies: _propTypesDefault.default.arrayOf(shape({
+        Title: _propTypesDefault.default.string.isRequired,
+        Description: _propTypesDefault.default.string.isRequired,
+        Genre: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Description: _propTypesDefault.default.string.isRequired
+        }),
+        Director: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Bio: _propTypesDefault.default.string.isRequired,
+            Birth: _propTypesDefault.default.string.isRequired,
+            Death: _propTypesDefault.default.string
+        }),
+        ImagePath: _propTypesDefault.default.string.isRequired
+    })).isRequired,
     visibilityFilter: _propTypesDefault.default.string.isRequired,
     listType: _propTypesDefault.default.string.isRequired,
     removeFromFavorites: _propTypesDefault.default.func,
@@ -36463,6 +36523,8 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactRedux = require("react-redux");
 var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
@@ -36475,7 +36537,7 @@ function VisibilityFilterInput(props) {
         placeholder: "filter",
         __source: {
             fileName: "src/components/visibility-filter-input/visibility-filter-input.jsx",
-            lineNumber: 9
+            lineNumber: 11
         },
         __self: this
     }));
@@ -36484,6 +36546,9 @@ _c = VisibilityFilterInput;
 exports.default = _reactRedux.connect(null, {
     setFilter: _actions.setFilter
 })(VisibilityFilterInput);
+VisibilityFilterInput.propTypes = {
+    visibilityFilter: _propTypesDefault.default.string.isRequired
+};
 var _c;
 $RefreshReg$(_c, "VisibilityFilterInput");
 
@@ -36492,7 +36557,7 @@ $RefreshReg$(_c, "VisibilityFilterInput");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-redux":"2L0if","react-bootstrap/Form":"5ykgY","../../actions/actions":"1Ttfj","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"1Ttfj":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-redux":"2L0if","react-bootstrap/Form":"5ykgY","../../actions/actions":"1Ttfj","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","prop-types":"1tgq3"}],"1Ttfj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "SET_MOVIES", ()=>SET_MOVIES
@@ -36792,7 +36857,21 @@ DirectorView.propTypes = {
         }),
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
-    movies: _propTypesDefault.default.array.isRequired,
+    movies: _propTypesDefault.default.arrayOf(shape({
+        Title: _propTypesDefault.default.string.isRequired,
+        Description: _propTypesDefault.default.string.isRequired,
+        Genre: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Description: _propTypesDefault.default.string.isRequired
+        }),
+        Director: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Bio: _propTypesDefault.default.string.isRequired,
+            Birth: _propTypesDefault.default.string.isRequired,
+            Death: _propTypesDefault.default.string
+        }),
+        ImagePath: _propTypesDefault.default.string.isRequired
+    })).isRequired,
     onBackClick: _propTypesDefault.default.func.isRequired
 };
 
@@ -36986,7 +37065,21 @@ GenreView.propTypes = {
         }),
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
-    movies: _propTypesDefault.default.array.isRequired,
+    movies: _propTypesDefault.default.arrayOf(shape({
+        Title: _propTypesDefault.default.string.isRequired,
+        Description: _propTypesDefault.default.string.isRequired,
+        Genre: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Description: _propTypesDefault.default.string.isRequired
+        }),
+        Director: _propTypesDefault.default.shape({
+            Name: _propTypesDefault.default.string.isRequired,
+            Bio: _propTypesDefault.default.string.isRequired,
+            Birth: _propTypesDefault.default.string.isRequired,
+            Death: _propTypesDefault.default.string
+        }),
+        ImagePath: _propTypesDefault.default.string.isRequired
+    })).isRequired,
     onBackClick: _propTypesDefault.default.func.isRequired
 };
 
