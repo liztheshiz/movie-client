@@ -9,6 +9,8 @@ import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import './movie-card.scss';
+
 export class MovieCard extends React.Component {
     render() {
         const { movie, listType, removeFromFavorites } = this.props;
@@ -18,7 +20,7 @@ export class MovieCard extends React.Component {
                 <Card className="movie-card my-3 border-dark border-3" /*style={{ width: '18rem' }}*/>
                     <Card.Img variant="top" crossOrigin="anonymous" src={movie.ImagePath} />
                     <Card.Body>
-                        <Card.Title>{movie.Title}</Card.Title>
+                        <Card.Title className="title fs-4">{movie.Title.toUpperCase()}</Card.Title>
                         <Card.Text>{movie.Description}</Card.Text>
                         <Link to={`/movies/titles/${movie._id}`}>
                             <Button variant="outline-dark">View details</Button>
@@ -26,7 +28,7 @@ export class MovieCard extends React.Component {
                     </Card.Body>
                 </Card >
                 {(listType === "profile") && <Row className="justify-content-sm-center mt-3">
-                    <Col className="text-center"><Button variant="dark" size="sm" onClick={() => removeFromFavorites(movie._id)}>Remove</Button></Col>
+                    <Col className="text-center"><Button className="button" variant="dark" size="sm" onClick={() => removeFromFavorites(movie._id)}>Remove</Button></Col>
                 </Row>}
             </>
 
