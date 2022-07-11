@@ -25803,6 +25803,7 @@ class MovieView extends _reactDefault.default.Component {
                                         },
                                         __self: this,
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                            className: "fav-button",
                                             variant: "outline-dark",
                                             type: "submit",
                                             size: "sm",
@@ -25814,7 +25815,7 @@ class MovieView extends _reactDefault.default.Component {
                                                 lineNumber: 73
                                             },
                                             __self: this,
-                                            children: "Fav"
+                                            children: "☆"
                                         })
                                     })
                                 ]
@@ -33933,6 +33934,7 @@ function ProfileView(props) {
     const getDate = (string)=>{
         let date = new Date(string);
         return date.toLocaleDateString('en-us', {
+            timeZone: 'UTC',
             month: '2-digit',
             day: '2-digit',
             year: '2-digit'

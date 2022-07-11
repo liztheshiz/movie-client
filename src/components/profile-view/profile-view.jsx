@@ -27,7 +27,7 @@ export function ProfileView(props) {
 
     const getDate = (string) => {
         let date = new Date(string);
-        return date.toLocaleDateString('en-us', { month: '2-digit', day: '2-digit', year: '2-digit' });
+        return date.toLocaleDateString('en-us', { timeZone: 'UTC', month: '2-digit', day: '2-digit', year: '2-digit' });
     }
 
     // Changes edit var to given bool; determines if user can edit form fields

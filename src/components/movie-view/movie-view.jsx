@@ -70,7 +70,7 @@ export class MovieView extends React.Component {
                                 <h2 className="value">{movie.Title.toUpperCase()}</h2>
                             </Col>
                             {!favorite && <Col xs={1}>
-                                <Button variant="outline-dark" type="submit" size="sm" onClick={() => { this.addToFavorites(movie); }}>Fav</Button>
+                                <Button className="fav-button" variant="outline-dark" type="submit" size="sm" onClick={() => { this.addToFavorites(movie); }}>&#9734;</Button>
                             </Col>}
                         </Row>
                         <Row className="justify-content-md-center mb-3">
