@@ -25615,7 +25615,7 @@ exports.default = _reactRedux.connect(mapStateToProps, {
     setUser: _actions.setUser
 })(MainView);
 MainView.propTypes = {
-    movies: _propTypesDefault.default.arrayOf(shape({
+    movies: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
         Genre: _propTypesDefault.default.shape({
@@ -25682,8 +25682,8 @@ class MovieView extends _reactDefault.default.Component {
             }
         }).then((res)=>{
             alert('Movie added to list!');
-            // window.open(`/movies/titles/${movie._id}`, '_self');
-            window.location.reload();
+        // window.open(`/movies/titles/${movie._id}`, '_self');
+        // window.location.reload();
         }).catch((err)=>console.log(err)
         );
     }

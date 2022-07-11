@@ -145,7 +145,7 @@ let mapStateToProps = state => {
 export default connect(mapStateToProps, { setMovies, setUser })(MainView);
 
 MainView.propTypes = {
-    movies: PropTypes.arrayOf(shape({
+    movies: PropTypes.arrayOf(PropTypes.shape({
         Title: PropTypes.string.isRequired,
         Description: PropTypes.string.isRequired,
         Genre: PropTypes.shape({

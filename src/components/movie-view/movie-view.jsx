@@ -24,7 +24,7 @@ export class MovieView extends React.Component {
             }).then(res => {
                 alert('Movie added to list!');
                 // window.open(`/movies/titles/${movie._id}`, '_self');
-                window.location.reload();
+                // window.location.reload();
             }).catch(err => console.log(err));
     }
 
