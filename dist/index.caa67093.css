@@ -13,13 +13,8 @@ h2 {
   font-family: "Oswald", sans-serif;
 }
 
-.movie-view {
-  border: 3px solid black;
-  border-radius: 3px;
-}
-
 .movie-poster {
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 3px;
 }
 .movie-card {
@@ -36,14 +31,6 @@ h2 {
 }
 .filter {
   border: 2px solid #E6834B !important;
-}
-.director-view {
-  border: 3px solid #57b570;
-  border-radius: 3px;
-}
-.genre-view {
-  border: 3px solid #57b570;
-  border-radius: 3px;
 }
 .navbar {
   background: #E6834B !important;

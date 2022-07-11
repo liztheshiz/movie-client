@@ -8,8 +8,6 @@ import Button from 'react-bootstrap/Button';
 
 import MoviesList from '../movies-list/movies-list';
 
-import './genre-view.scss';
-
 export class GenreView extends React.Component {
     render() {
         const { movie, movies, onBackClick } = this.props;

@@ -60,8 +60,8 @@ export class MovieView extends React.Component {
 
         return (
             <Container className="movie-view make-it-work mt-5">
-                <Row className="mt-5">
-                    <Col sm={9}>
+                <Row className="justify-content-md-center mt-5">
+                    <Col sm={9} lg={7}>
                         <Row className="mb-4">
                             <Col xs={2} s={1}>
                                 <Button variant="outline-dark" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>

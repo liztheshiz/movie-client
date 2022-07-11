@@ -8,8 +8,6 @@ import Button from 'react-bootstrap/Button';
 
 import MoviesList from '../movies-list/movies-list';
 
-import './director-view.scss';
-
 export class DirectorView extends React.Component {
     getYear(string) {
         let date = new Date(string);
