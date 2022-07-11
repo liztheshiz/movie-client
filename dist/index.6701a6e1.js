@@ -25406,10 +25406,9 @@ class MainView extends _reactDefault.default.Component {
         this.getUser(authData.token);
     }
     // LIFECYCLE METHODS
-    constructor(){
+    /*constructor() {
         super();
-    }
-    render() {
+    }*/ render() {
         const { movies , user  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
             __source: {

@@ -58,9 +58,9 @@ class MainView extends React.Component {
 
     // LIFECYCLE METHODS
 
-    constructor() {
+    /*constructor() {
         super();
-    }
+    }*/
 
     render() {
         const { movies, user } = this.props;
