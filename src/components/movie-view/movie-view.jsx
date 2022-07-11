@@ -44,7 +44,7 @@ export class MovieView extends React.Component {
         const { movie, userMovies, onBackClick } = this.props;
 
         return (
-            <Container className="movie-view border-dark border-3 mt-5">
+            <Container className="movie-view make-it-work border-dark border-3 mt-5">
                 <Row className="mt-5">
                     <Col sm={9}>
                         <Row className="mb-4">
