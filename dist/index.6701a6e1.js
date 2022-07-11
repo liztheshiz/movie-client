@@ -40980,18 +40980,139 @@ parcelHelpers.export(exports, "AboutView", ()=>AboutView
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
 var _row = require("react-bootstrap/Row");
 var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 function AboutView() {
-    return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+        className: "about-view mt-5",
         __source: {
             fileName: "src/components/about-view/about-view.jsx",
-            lineNumber: 8
+            lineNumber: 9
         },
         __self: this,
-        children: "about"
+        children: /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+            className: "justify-content-sm-center mt-5",
+            __source: {
+                fileName: "src/components/about-view/about-view.jsx",
+                lineNumber: 10
+            },
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                sm: 9,
+                __source: {
+                    fileName: "src/components/about-view/about-view.jsx",
+                    lineNumber: 11
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                        className: "justify-content-md-center mb-4",
+                        __source: {
+                            fileName: "src/components/about-view/about-view.jsx",
+                            lineNumber: 12
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            className: "about_title",
+                            lg: 10,
+                            __source: {
+                                fileName: "src/components/about-view/about-view.jsx",
+                                lineNumber: 13
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                                className: "value",
+                                __source: {
+                                    fileName: "src/components/about-view/about-view.jsx",
+                                    lineNumber: 14
+                                },
+                                __self: this,
+                                children: "ABOUT THIS WEBSITE"
+                            })
+                        })
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                        className: "justify-content-md-center mb-5",
+                        __source: {
+                            fileName: "src/components/about-view/about-view.jsx",
+                            lineNumber: 17
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            className: "about_text",
+                            lg: 10,
+                            __source: {
+                                fileName: "src/components/about-view/about-view.jsx",
+                                lineNumber: 18
+                            },
+                            __self: this,
+                            children: "About here"
+                        })
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                        className: "justify-content-md-center mb-4",
+                        __source: {
+                            fileName: "src/components/about-view/about-view.jsx",
+                            lineNumber: 22
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            className: "about_dev_title",
+                            lg: 10,
+                            __source: {
+                                fileName: "src/components/about-view/about-view.jsx",
+                                lineNumber: 23
+                            },
+                            __self: this,
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                className: "value",
+                                __source: {
+                                    fileName: "src/components/about-view/about-view.jsx",
+                                    lineNumber: 24
+                                },
+                                __self: this,
+                                children: "ABOUT THE DEVELOPER"
+                            })
+                        })
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                        className: "justify-content-md-center mb-4",
+                        __source: {
+                            fileName: "src/components/about-view/about-view.jsx",
+                            lineNumber: 27
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                            className: "about_dev_text",
+                            lg: 10,
+                            __source: {
+                                fileName: "src/components/about-view/about-view.jsx",
+                                lineNumber: 28
+                            },
+                            __self: this,
+                            children: [
+                                "Liz Stone is a web developer based out of Boston, Massachusetts with a passion for developing clean, practical, and engaging websites. For more information, more websites, or to get in contact, ",
+                                /*#__PURE__*/ _jsxRuntime.jsx("a", {
+                                    href: "https://liztheshiz.github.io/portfolio-website/",
+                                    target: "_blank",
+                                    __source: {
+                                        fileName: "src/components/about-view/about-view.jsx",
+                                        lineNumber: 29
+                                    },
+                                    __self: this,
+                                    children: "visit her portfolio website here"
+                                }),
+                                "."
+                            ]
+                        })
+                    })
+                ]
+            })
+        })
     }));
 }
 _c = AboutView;
@@ -41003,7 +41124,7 @@ $RefreshReg$(_c, "AboutView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ"}],"4d0QS":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","@parcel/transformer-js/src/esmodule-helpers.js":"5lGN4","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"lpaPZ","react-bootstrap/Container":"2PRIq"}],"4d0QS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "__DO_NOT_USE__ActionTypes", ()=>ActionTypes
