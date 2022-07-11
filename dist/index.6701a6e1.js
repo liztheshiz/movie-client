@@ -25464,8 +25464,7 @@ class MainView extends _reactDefault.default.Component {
                                             /*#__PURE__*/ _jsxRuntime.jsx(_moviesListDefault.default, {
                                                 movies: movies,
                                                 listType: "main"
-                                            }),
-                                            ";"
+                                            })
                                         ]
                                     }));
                                 },

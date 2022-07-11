@@ -77,7 +77,7 @@ class MainView extends React.Component {
                                     <Row className="mt-5 mb-4">
                                         <h1>Welcome, {user.Username}!</h1>
                                     </Row>
-                                    <MoviesList movies={movies} listType="main" />;
+                                    <MoviesList movies={movies} listType="main" />
                                 </div>
                             )
                         }} />

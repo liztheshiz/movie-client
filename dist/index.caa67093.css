@@ -5,12 +5,9 @@
   padding: 0;
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-}
-
-.app-container {
+.body {
   background-color: #ffcfbf;
+  font-family: "Poppins", sans-serif;
 }
 .movie-card {
   font-family: "Poppins", sans-serif;
