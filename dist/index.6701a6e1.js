@@ -37147,7 +37147,7 @@ class Navbar extends _reactDefault.default.Component {
                             lineNumber: 26
                         },
                         __self: this,
-                        children: "CINEMADATABASETESTTES"
+                        children: "CINEMA.DATABASE"
                     }),
                     localStorage.getItem('token') && /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Toggle, {
                         "aria-controls": "basic-navbar-nav",
