@@ -25505,7 +25505,7 @@ class MainView extends _reactDefault.default.Component {
                                         children: /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
                                             movie: movies.find((m)=>m._id === match.params.movieid
                                             ),
-                                            user: user,
+                                            userMovies: user.FavoriteMovies,
                                             onBackClick: ()=>history.goBack()
                                         })
                                     }));
@@ -25663,15 +25663,15 @@ class MovieView extends _reactDefault.default.Component {
         );
     }
     // Checks if movieid is already present in user's favorites list
-    isFavorite(user, movie) {
-        return user.FavoriteMovies.includes(movie._id);
+    isFavorite(list, movie) {
+        return list.includes(movie._id);
     }
     // LIFECYCLE METHODS
     constructor(){
         super();
     }
     render() {
-        const { movie , user , onBackClick  } = this.props;
+        const { movie , userMovies , onBackClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
             className: "movie-view border-dark border-3 mt-5",
             __source: {
@@ -25744,7 +25744,7 @@ class MovieView extends _reactDefault.default.Component {
                                             children: movie.Title
                                         })
                                     }),
-                                    !this.isFavorite(user, movie) && /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                    !this.isFavorite(userMovies, movie) && /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         xs: 1,
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
@@ -25925,13 +25925,12 @@ MovieView.propTypes = {
         }),
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
-    user: _propTypesDefault.default.shape({
-        Username: _propTypesDefault.default.string.isRequired,
-        Password: _propTypesDefault.default.string.isRequired,
-        Email: _propTypesDefault.default.string.isRequired,
-        Birthday: _propTypesDefault.default.string
-    }).isRequired,
-    onBackClick: _propTypesDefault.default.func.isRequired
+    /*user: PropTypes.shape({
+        Username: PropTypes.string.isRequired,
+        Password: PropTypes.string.isRequired,
+        Email: PropTypes.string.isRequired,
+        Birthday: PropTypes.string
+    }).isRequired,*/ onBackClick: _propTypesDefault.default.func.isRequired
 };
 
   $parcel$ReactRefreshHelpers$3741.postlude(module);

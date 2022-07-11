@@ -29,8 +29,8 @@ export class MovieView extends React.Component {
     }
 
     // Checks if movieid is already present in user's favorites list
-    isFavorite(user, movie) {
-        return user.FavoriteMovies.includes(movie._id);
+    isFavorite(list, movie) {
+        return list.includes(movie._id);
     }
 
 
@@ -41,7 +41,7 @@ export class MovieView extends React.Component {
     }
 
     render() {
-        const { movie, user, onBackClick } = this.props;
+        const { movie, userMovies, onBackClick } = this.props;
 
         return (
             <Container className="movie-view border-dark border-3 mt-5">
@@ -54,7 +54,7 @@ export class MovieView extends React.Component {
                             <Col className="movie-title" xs={8} s={10}>
                                 <h2 className="value">{movie.Title}</h2>
                             </Col>
-                            {!this.isFavorite(user, movie) && <Col xs={1}>
+                            {!this.isFavorite(userMovies, movie) && <Col xs={1}>
                                 <Button variant="outline-dark" type="submit" size="sm" onClick={() => { this.addToFavorites(movie); }}>Fav</Button>
                             </Col>}
                         </Row>
@@ -105,11 +105,11 @@ MovieView.propTypes = {
         }),
         ImagePath: PropTypes.string.isRequired
     }).isRequired,
-    user: PropTypes.shape({
+    /*user: PropTypes.shape({
         Username: PropTypes.string.isRequired,
         Password: PropTypes.string.isRequired,
         Email: PropTypes.string.isRequired,
         Birthday: PropTypes.string
-    }).isRequired,
+    }).isRequired,*/
     onBackClick: PropTypes.func.isRequired
 }
