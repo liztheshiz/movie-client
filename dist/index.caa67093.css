@@ -14,7 +14,11 @@ h2 {
 }
 
 .movie-view {
-  border: solid black;
+  border: 3px solid #57b570;
+}
+
+.movie-poster {
+  border: 3px solid black;
 }
 .movie-card {
   background: #e8e5d2 !important;

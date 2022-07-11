@@ -25,6 +25,9 @@ export class MovieView extends React.Component {
                 }
             }).then(res => {
                 alert('Movie added to list!');
+                this.setState({
+                    favorite: !this.state.favorite
+                });
                 // window.open(`/movies/titles/${movie._id}`, '_self');
                 // window.location.reload();
             }).catch(err => console.log(err));
@@ -38,12 +41,22 @@ export class MovieView extends React.Component {
 
     // LIFECYCLE METHODS
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
+        this.state = {
+            favorite: this.isFavorite(this.props.userMovies, this.props.movie)
+        };
     }
+
+    /*componentDidUpdate() {
+        this.state = {
+            favorite: this.isFavorite(this.props.userMovies, this.props.movie)
+        };
+    }*/
 
     render() {
         const { movie, userMovies, onBackClick } = this.props;
+        const { favorite } = this.state;
 
         return (
             <Container className="movie-view make-it-work mt-5">
@@ -56,7 +69,7 @@ export class MovieView extends React.Component {
                             <Col className="movie-title" xs={8} s={10}>
                                 <h2 className="value">{movie.Title.toUpperCase()}</h2>
                             </Col>
-                            {!this.isFavorite(userMovies, movie) && <Col xs={1}>
+                            {!favorite && <Col xs={1}>
                                 <Button variant="outline-dark" type="submit" size="sm" onClick={() => { this.addToFavorites(movie); }}>Fav</Button>
                             </Col>}
                         </Row>
@@ -82,8 +95,8 @@ export class MovieView extends React.Component {
                             </Col>
                         </Row>
                     </Col>
-                    <Col className="movie-poster mb-4" sm={3}>
-                        <img crossOrigin="anonymous" src={movie.ImagePath} />
+                    <Col className="mb-4" sm={3}>
+                        <img className="movie-poster" crossOrigin="anonymous" src={movie.ImagePath} />
                     </Col>
                 </Row>
             </Container>
