@@ -25648,7 +25648,7 @@ MainView.propTypes = {
         Password: _propTypesDefault.default.string.isRequired,
         Email: _propTypesDefault.default.string.isRequired,
         Birthday: _propTypesDefault.default.string
-    }).isRequired
+    })
 };
 
   $parcel$ReactRefreshHelpers$35bf.postlude(module);
@@ -34016,8 +34016,8 @@ function ProfileView(props) {
             }).then((res)=>{
                 const data = res.data;
                 console.log(data);
-                localStorage.setItem('user', username);
-                window.open(`/users/${username}`, '_self');
+                localStorage.setItem('user', res.data.Username);
+                window.open(`/users/${res.data.Username}`, '_self');
             }).catch((err)=>{
                 console.log(err);
             });
@@ -41041,7 +41041,7 @@ function AboutView() {
                             lineNumber: 17
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                             className: "about_text",
                             lg: 10,
                             __source: {
@@ -41049,14 +41049,42 @@ function AboutView() {
                                 lineNumber: 18
                             },
                             __self: this,
-                            children: "About here"
+                            children: [
+                                "The purpose of this project was to practice developing both the backend and frontend for a website from scratch. All of the data you'll find on this website - information on films as well as all of your user data - is accessed through the first part of this project that is operating behind-the-scenes: ",
+                                /*#__PURE__*/ _jsxRuntime.jsx("a", {
+                                    href: "https://cinemadatabase.herokuapp.com/",
+                                    target: "_blank",
+                                    __source: {
+                                        fileName: "src/components/about-view/about-view.jsx",
+                                        lineNumber: 19
+                                    },
+                                    __self: this,
+                                    children: "the CinemaDatabase API"
+                                }),
+                                "!",
+                                /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                    __source: {
+                                        fileName: "src/components/about-view/about-view.jsx",
+                                        lineNumber: 20
+                                    },
+                                    __self: this
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                    __source: {
+                                        fileName: "src/components/about-view/about-view.jsx",
+                                        lineNumber: 21
+                                    },
+                                    __self: this
+                                }),
+                                " hello"
+                            ]
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
                         className: "justify-content-md-center mb-4",
                         __source: {
                             fileName: "src/components/about-view/about-view.jsx",
-                            lineNumber: 22
+                            lineNumber: 24
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
@@ -41064,14 +41092,14 @@ function AboutView() {
                             lg: 10,
                             __source: {
                                 fileName: "src/components/about-view/about-view.jsx",
-                                lineNumber: 23
+                                lineNumber: 25
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
                                 className: "value",
                                 __source: {
                                     fileName: "src/components/about-view/about-view.jsx",
-                                    lineNumber: 24
+                                    lineNumber: 26
                                 },
                                 __self: this,
                                 children: "ABOUT THE DEVELOPER"
@@ -41082,7 +41110,7 @@ function AboutView() {
                         className: "justify-content-md-center mb-4",
                         __source: {
                             fileName: "src/components/about-view/about-view.jsx",
-                            lineNumber: 27
+                            lineNumber: 29
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
@@ -41090,7 +41118,7 @@ function AboutView() {
                             lg: 10,
                             __source: {
                                 fileName: "src/components/about-view/about-view.jsx",
-                                lineNumber: 28
+                                lineNumber: 30
                             },
                             __self: this,
                             children: [
@@ -41100,7 +41128,7 @@ function AboutView() {
                                     target: "_blank",
                                     __source: {
                                         fileName: "src/components/about-view/about-view.jsx",
-                                        lineNumber: 29
+                                        lineNumber: 31
                                     },
                                     __self: this,
                                     children: "visit her portfolio website here"
