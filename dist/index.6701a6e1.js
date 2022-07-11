@@ -25815,7 +25815,7 @@ class MovieView extends _reactDefault.default.Component {
                                                 lineNumber: 73
                                             },
                                             __self: this,
-                                            children: "☆"
+                                            children: "♥"
                                         })
                                     })
                                 ]
