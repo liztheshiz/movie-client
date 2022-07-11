@@ -1,23 +1,72 @@
-.app-container {
-  font-family: "Rubik", sans-serif;
+/*@import "../node_modules/bootstrap/scss/bootstrap";*/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.movie-card-title {
-  font-size: 24px;
-  font-weight: 800;
+.body {
+  background-color: #e8e5d2;
+  font-family: "Hepta Slab", serif;
+}
+h2 {
+  font-family: "Oswald", sans-serif;
 }
 
-button {
-  background-color: steelblue;
-  border: 1px #8db3d3 solid;
-  border-radius: 5px;
-  color: cornsilk;
-  font-family: "Rubik", sans-serif;
-  font-weight: 500;
+.movie-view {
+  padding-top: 1px;
+  padding-bottom: 30px;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.9) 2px 3px 0px 5px;
 }
 
-button:hover,
-button:focus {
-  cursor: pointer;
+.movie-poster {
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+.fav-button {
+  border: none !important;
+  background: none !important;
+  font-size: 20px !important;
+}
+.text-red {
+  color: red !important;
+}
+.text-red {
+  color: red !important;
+}
+.movie-card {
+  background: #e8e5d2 !important;
+  border: none !important;
+  box-shadow: rgba(0, 0, 0, 0.9) 1px 2px 0px 4px;
+}
+
+.title {
+  font-family: "Oswald", sans-serif;
+}
+
+.button {
+  background: #E6834B !important;
+}
+.filter {
+  border: 2px solid #E6834B !important;
+}
+.text-red {
+  color: red !important;
+}
+.navbar {
+  background: #E6834B !important;
+}
+
+.brand {
+  font-family: "Oswald", sans-serif;
+}
+h1 {
+  font-family: "Oswald", sans-serif;
+}
+.about_title {
+  border-bottom: 3px solid black !important;
 }
 /*# sourceMappingURL=index.caa67093.css.map */
