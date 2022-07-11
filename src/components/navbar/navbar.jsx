@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
+import './navbar.scss';
+
 export class Navbar extends React.Component {
     // CUSTOM METHODS
 
@@ -21,7 +23,7 @@ export class Navbar extends React.Component {
         return (
             <Navbar bg="dark" variant="dark" expand="md" >
                 <Container>
-                    <Navbar.Brand href="/">CinemaDatabase</Navbar.Brand>
+                    <Navbar.Brand className="brand" href="/">CINEMADATABASETESTTES</Navbar.Brand>
                     {localStorage.getItem('token') && <Navbar.Toggle aria-controls="basic-navbar-nav" />}
                     {localStorage.getItem('token') && <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                         <Nav className="me-auto">

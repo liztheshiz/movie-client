@@ -21,6 +21,8 @@ import { GenreView } from '../genre-view/genre-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { ProfileView } from '../profile-view/profile-view';
 
+import './main-view.scss';
+
 class MainView extends React.Component {
     // CUSTOM METHODS
 

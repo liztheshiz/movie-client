@@ -9,6 +9,8 @@ import Button from 'react-bootstrap/Button';
 
 import { Link } from 'react-router-dom';
 
+import './movie-view.scss';
+
 export class MovieView extends React.Component {
 
     // Adds given movie to given user's favorites list
@@ -44,7 +46,7 @@ export class MovieView extends React.Component {
         const { movie, userMovies, onBackClick } = this.props;
 
         return (
-            <Container className="movie-view make-it-work border-dark border-3 mt-5">
+            <Container className="movie-view make-it-work mt-5">
                 <Row className="mt-5">
                     <Col sm={9}>
                         <Row className="mb-4">

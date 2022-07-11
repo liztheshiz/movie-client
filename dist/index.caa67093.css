@@ -6,7 +6,16 @@
 }
 
 .body {
-  background-color: #ffcfbf;
-  font-family: "Poppins", sans-serif;
+  background-color: #e8e5d2;
+  font-family: "Nixie One", cursive;
+}
+.movie-view {
+  border: solid black;
+}
+.brand {
+  font-family: "Oswald", sans-serif;
+}
+h1 {
+  font-family: "Oswald", sans-serif;
 }
 /*# sourceMappingURL=index.caa67093.css.map */
