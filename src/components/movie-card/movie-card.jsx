@@ -17,8 +17,8 @@ export class MovieCard extends React.Component {
 
         return (
             <>
-                <Card className="movie-card my-3 border-dark border-3" /*style={{ width: '18rem' }}*/>
-                    <Card.Img variant="top" crossOrigin="anonymous" src={movie.ImagePath} />
+                <Card className="movie-card my-3" /*style={{ width: '18rem' }}*/>
+                    <Card.Img className="card_poster" variant="top" crossOrigin="anonymous" src={movie.ImagePath} />
                     <Card.Body>
                         <Card.Title className="title fs-4">{movie.Title.toUpperCase()}</Card.Title>
                         <Card.Text>{movie.Description}</Card.Text>

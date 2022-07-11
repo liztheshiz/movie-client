@@ -14,14 +14,17 @@ h2 {
 }
 
 .movie-view {
-  border: 3px solid #57b570;
+  border: 3px solid black;
+  border-radius: 3px;
 }
 
 .movie-poster {
   border: 3px solid black;
+  border-radius: 3px;
 }
 .movie-card {
   background: #e8e5d2 !important;
+  border: 3px solid black !important;
 }
 
 .title {
@@ -30,6 +33,17 @@ h2 {
 
 .button {
   background: #E6834B !important;
+}
+.filter {
+  border: 2px solid #E6834B !important;
+}
+.director-view {
+  border: 3px solid #57b570;
+  border-radius: 3px;
+}
+.genre-view {
+  border: 3px solid #57b570;
+  border-radius: 3px;
 }
 .navbar {
   background: #E6834B !important;
@@ -40,5 +54,8 @@ h2 {
 }
 h1 {
   font-family: "Oswald", sans-serif;
+}
+.about_title {
+  border-bottom: 3px solid black !important;
 }
 /*# sourceMappingURL=index.caa67093.css.map */

@@ -8,12 +8,14 @@ import Button from 'react-bootstrap/Button';
 
 import MoviesList from '../movies-list/movies-list';
 
+import './genre-view.scss';
+
 export class GenreView extends React.Component {
     render() {
         const { movie, movies, onBackClick } = this.props;
 
         return (
-            <Container className="genre-view border-dark border-3 mt-5">
+            <Container className="genre-view mt-5">
                 <Row className="mt-5">
                     <Col sm={10}>
                         <Row className="mb-4">

@@ -4,14 +4,16 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
+import './about-view.scss';
+
 export function AboutView() {
     return (
         <Container className="about-view mt-5">
             <Row className="justify-content-sm-center mt-5">
                 <Col sm={9}>
                     <Row className="justify-content-md-center mb-4">
-                        <Col className="about_title" lg={10}>
-                            <h1 className="value">ABOUT THIS WEBSITE</h1>
+                        <Col lg={10}>
+                            <h1 className="about_title">ABOUT THIS WEBSITE</h1>
                         </Col>
                     </Row>
                     <Row className="justify-content-md-center mb-5">
@@ -23,7 +25,7 @@ export function AboutView() {
                     </Row>
                     <Row className="justify-content-md-center mb-4">
                         <Col className="about_dev_title" lg={10}>
-                            <h2 className="value">ABOUT THE DEVELOPER</h2>
+                            <h2 className="about_title">ABOUT THE DEVELOPER</h2>
                         </Col>
                     </Row>
                     <Row className="justify-content-md-center mb-4">
