@@ -173,5 +173,5 @@ MainView.propTypes = {
         Password: PropTypes.string.isRequired,
         Email: PropTypes.string.isRequired,
         Birthday: PropTypes.string
-    })
+    }).isRequired
 }

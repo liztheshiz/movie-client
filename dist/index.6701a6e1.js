@@ -25648,7 +25648,7 @@ MainView.propTypes = {
         Password: _propTypesDefault.default.string.isRequired,
         Email: _propTypesDefault.default.string.isRequired,
         Birthday: _propTypesDefault.default.string
-    })
+    }).isRequired
 };
 
   $parcel$ReactRefreshHelpers$35bf.postlude(module);
