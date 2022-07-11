@@ -11,6 +11,8 @@ import Col from 'react-bootstrap/Col';
 
 import { Link } from 'react-router-dom';
 
+import './login-view.scss';
+
 export function LoginView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -81,12 +83,12 @@ export function LoginView(props) {
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
                             <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
-                            {usernameErr && <p>{usernameErr}</p>}
+                            {usernameErr && <p className="text-red">{usernameErr}</p>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formPassword">
                             <Form.Label>Password:</Form.Label>
                             <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
-                            {passwordErr && <p>{passwordErr}</p>}
+                            {passwordErr && <p className="text-red">{passwordErr}</p>}
                         </Form.Group>
                         <Button className="mt-4" variant="dark" type="submit" onClick={handleSubmit}>Login</Button>
                     </Form>

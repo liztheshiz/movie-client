@@ -31,6 +31,12 @@ h2 {
   background: none !important;
   font-size: 20px !important;
 }
+.text-red {
+  color: red !important;
+}
+.text-red {
+  color: red !important;
+}
 .movie-card {
   background: #e8e5d2 !important;
   border: none !important;
@@ -46,6 +52,9 @@ h2 {
 }
 .filter {
   border: 2px solid #E6834B !important;
+}
+.text-red {
+  color: red !important;
 }
 .navbar {
   background: #E6834B !important;

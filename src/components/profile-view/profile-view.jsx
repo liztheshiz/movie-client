@@ -11,6 +11,8 @@ import Form from 'react-bootstrap/Form';
 
 import MoviesList from '../movies-list/movies-list';
 
+import './profile-view.scss';
+
 export function ProfileView(props) {
     const [edit, setEdit] = useState(false);
     const [show, setShow] = useState(false);
@@ -64,6 +66,8 @@ export function ProfileView(props) {
     // Used to validate if string is alphanumeric
     const isAlphaNumeric = str => /^[a-z0-9]+$/gi.test(str);
 
+    const regex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/\d{2}$/;
+
     // Validates user inputs
     const validate = () => {
         let isReq = true;
@@ -97,9 +101,10 @@ export function ProfileView(props) {
             }
         }
 
-        //
-        // CHECK IF BIRTHDAY MATCHES FORMAT MM/DD/YY HERE (WHEN PRESENT)!!
-        //
+        if (birthday && !regex.test(birthday)) {
+            setBirthdayErr('Birthday must use format MM/DD/YY');
+            isReq = false;
+        }
 
         return isReq;
     }
@@ -163,26 +168,27 @@ export function ProfileView(props) {
                             <Form.Label>Username:</Form.Label>
                             {!edit && <Form.Control placeholder={props.user.Username} disabled />}
                             {edit && <Form.Control type="text" placeholder={props.user.Username} onChange={e => setUsername(e.target.value)} />}
-                            {usernameErr && <Form.Text className="text-muted">{usernameErr}</Form.Text>}
+                            {usernameErr && <Form.Text className="text-red">{usernameErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formPassword">
                             <Form.Label>Password:</Form.Label>
                             {!edit && <Form.Control type="password" placeholder="Hidden" disabled />}
                             {edit && <Form.Control type="password" placeholder="New password" onChange={e => setPassword(e.target.value)} />}
-                            {passwordErr && <Form.Text className="text-muted">{passwordErr}</Form.Text>}
+                            {passwordErr && <Form.Text className="text-red">{passwordErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formEmail">
                             <Form.Label>Email:</Form.Label>
                             {!edit && <Form.Control placeholder={props.user.Email} disabled />}
                             {edit && <Form.Control type="email" placeholder={props.user.Email} onChange={e => setEmail(e.target.value)} />}
-                            {emailErr && <Form.Text className="text-muted">{emailErr}</Form.Text>}
+                            {emailErr && <Form.Text className="text-red">{emailErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formBirthday">
                             <Form.Label>Birthday:</Form.Label>
                             {!props.user.Birthday && !edit && <Form.Text> No birthday present</Form.Text>}
                             {props.user.Birthday && !edit && <Form.Control placeholder={getDate(props.user.Birthday)} disabled />}
                             {edit && <Form.Control type="string" placeholder={getDate(props.user.Birthday)} onChange={e => setBirthday(e.target.value)} />}
-                            {edit && <Form.Text className="text-muted">
+                            {birthdayErr && <Form.Text className="text-red">{birthdayErr}</Form.Text>}
+                            {!birthdayErr && edit && <Form.Text className="text-muted">
                                 Please use format MM/DD/YY
                             </Form.Text>}
                         </Form.Group>

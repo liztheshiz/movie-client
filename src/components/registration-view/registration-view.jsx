@@ -10,6 +10,8 @@ import Col from 'react-bootstrap/Col';
 
 import { Link } from 'react-router-dom';
 
+import './registration-view.scss';
+
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -24,6 +26,7 @@ export function RegistrationView(props) {
 
     // Used to validate if string is alphanumeric
     const isAlphaNumeric = str => /^[a-z0-9]+$/gi.test(str);
+
     const regex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/\d{2}$/;
 
     // Validates user inputs
@@ -111,23 +114,23 @@ export function RegistrationView(props) {
                         <Form.Group controlId="formUsername">
                             <Form.Label>Username:</Form.Label>
                             <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
-                            {usernameErr && <Form.Text className="text-muted">{usernameErr}</Form.Text>}
+                            {usernameErr && <Form.Text className="text-red">{usernameErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formPassword">
                             <Form.Label>Password:</Form.Label>
                             <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
-                            {passwordErr && <Form.Text className="text-muted">{passwordErr}</Form.Text>}
+                            {passwordErr && <Form.Text className="text-red">{passwordErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formEmail">
                             <Form.Label>Email:</Form.Label>
                             <Form.Control type="email" onChange={e => setEmail(e.target.value)} />
-                            {emailErr && <Form.Text className="text-muted">{emailErr}</Form.Text>}
+                            {emailErr && <Form.Text className="text-red">{emailErr}</Form.Text>}
                         </Form.Group>
                         <Form.Group className="mt-3" controlId="formBirthday">
                             <Form.Label>Birthday:</Form.Label>
                             <Form.Text> &#x28;This field is optional&#x29;</Form.Text>
                             <Form.Control type="string" onChange={e => setBirthday(e.target.value)} />
-                            {birthdayErr && <Form.Text className="text-muted">{birthdayErr}</Form.Text>}
+                            {birthdayErr && <Form.Text className="text-red">{birthdayErr}</Form.Text>}
                             {!birthdayErr && <Form.Text className="text-muted">
                                 Please use format MM/DD/YY
                             </Form.Text>}
