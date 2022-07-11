@@ -24,6 +24,7 @@ export function RegistrationView(props) {
 
     // Used to validate if string is alphanumeric
     const isAlphaNumeric = str => /^[a-z0-9]+$/gi.test(str);
+    const regex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/\d{2}$/;
 
     // Validates user inputs
     const validate = () => {
@@ -59,9 +60,10 @@ export function RegistrationView(props) {
             isReq = false;
         }
 
-        //
-        // CHECK IF BIRTHDAY MATCHES FORMAT MM/DD/YY HERE!!
-        //
+        if (birthday && !regex.test(birthday)) {
+            setBirthdayErr('Birthday must use format MM/DD/YY');
+            isReq = false;
+        }
 
         return isReq;
     }
@@ -125,9 +127,10 @@ export function RegistrationView(props) {
                             <Form.Label>Birthday:</Form.Label>
                             <Form.Text> &#x28;This field is optional&#x29;</Form.Text>
                             <Form.Control type="string" onChange={e => setBirthday(e.target.value)} />
-                            <Form.Text className="text-muted">
+                            {birthdayErr && <Form.Text className="text-muted">{birthdayErr}</Form.Text>}
+                            {!birthdayErr && <Form.Text className="text-muted">
                                 Please use format MM/DD/YY
-                            </Form.Text>
+                            </Form.Text>}
                         </Form.Group>
                         <Button className="mt-4" variant="dark" type="submit" onClick={handleRegister}>Register</Button>
                     </Form>

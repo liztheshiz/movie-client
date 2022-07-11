@@ -18,7 +18,7 @@ export function AboutView() {
                     </Row>
                     <Row className="justify-content-md-center mb-5">
                         <Col className="about_text" lg={10}>
-                            The purpose of this project was to practice developing both the backend and frontend for a website from scratch. All of the data you'll find on this website - information on films as well as all of your user data - is accessed through the first part of this project that is operating behind-the-scenes: <a href="https://cinemadatabase.herokuapp.com/" target="_blank">the CinemaDatabase API</a>!
+                            The purpose of this project was to practice developing both the backend and frontend for a website from scratch. All of the data you'll find on this website - information on films as well as all of your user data - is accessed through the <a href="https://cinemadatabase.herokuapp.com/" target="_blank">CinemaDatabase API</a>. This part of the project works behind-the-scenes to interact with a datanbase (also built from scratch in MongoDB).
                             <br />
                             <br /> hello
                         </Col>
