@@ -20,6 +20,7 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { ProfileView } from '../profile-view/profile-view';
+import { AboutView } from '../about-view/about-view';
 
 import './main-view.scss';
 
@@ -77,10 +78,15 @@ class MainView extends React.Component {
                             return (
                                 <div>
                                     <Row className="mt-5 mb-4">
-                                        <h1>Welcome, {user.Username}!</h1>
+                                        <h1>WELCOME, {user.Username}!</h1>
                                     </Row>
                                     <MoviesList movies={movies} listType="main" />
                                 </div>
+                            )
+                        }} />
+                        <Route exact path="/about" render={() => {
+                            return (
+                                <AboutView />
                             )
                         }} />
                         <Route exact path="/register" render={() => {
