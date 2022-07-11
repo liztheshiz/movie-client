@@ -1,7 +1,5 @@
 /*@import "../node_modules/bootstrap/scss/bootstrap";*/
 
-$button-color: steelblue;
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,9 +8,8 @@ $button-color: steelblue;
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #ffcfbf;
 }
 
-.bg-col {
+.app-container {
     background-color: #ffcfbf;
 }
