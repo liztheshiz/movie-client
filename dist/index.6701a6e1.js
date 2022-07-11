@@ -36699,7 +36699,7 @@ class DirectorView extends _reactDefault.default.Component {
                                                 lineNumber: 29
                                             },
                                             __self: this,
-                                            children: movie.Director.Name
+                                            children: movie.Director.Name.toUpperCase()
                                         })
                                     })
                                 ]
@@ -36981,7 +36981,7 @@ class GenreView extends _reactDefault.default.Component {
                                                 lineNumber: 24
                                             },
                                             __self: this,
-                                            children: movie.Genre.Name
+                                            children: movie.Genre.Name.toUpperCase()
                                         })
                                     })
                                 ]

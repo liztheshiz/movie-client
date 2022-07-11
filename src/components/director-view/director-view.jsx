@@ -26,7 +26,7 @@ export class DirectorView extends React.Component {
                                 <Button variant="outline-dark" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>
                             </Col>
                             <Col className="director-name" xs={9} s={10}>
-                                <h2 className="value">{movie.Director.Name}</h2>
+                                <h2 className="value">{movie.Director.Name.toUpperCase()}</h2>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center mb-4">

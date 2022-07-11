@@ -21,7 +21,7 @@ export class GenreView extends React.Component {
                                 <Button variant="outline-dark" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>
                             </Col>
                             <Col className="genre-name" xs={9} s={10}>
-                                <h2 className="value">{movie.Genre.Name}</h2>
+                                <h2 className="value">{movie.Genre.Name.toUpperCase()}</h2>
                             </Col>
                         </Row>
                         <Row className="justify-content-md-center mb-4">
