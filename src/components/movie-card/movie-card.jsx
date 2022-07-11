@@ -23,12 +23,12 @@ export class MovieCard extends React.Component {
                         <Card.Title className="title fs-4">{movie.Title.toUpperCase()}</Card.Title>
                         <Card.Text>{movie.Description}</Card.Text>
                         <Link to={`/movies/titles/${movie._id}`}>
-                            <Button variant="outline-dark">View details</Button>
+                            <Button className="button" variant="outline-dark">View details</Button>
                         </Link>
                     </Card.Body>
                 </Card >
                 {(listType === "profile") && <Row className="justify-content-sm-center mt-3">
-                    <Col className="text-center"><Button className="button" variant="dark" size="sm" onClick={() => removeFromFavorites(movie._id)}>Remove</Button></Col>
+                    <Col className="text-center"><Button variant="dark" size="sm" onClick={() => removeFromFavorites(movie._id)}>Remove</Button></Col>
                 </Row>}
             </>
 

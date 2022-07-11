@@ -25767,7 +25767,7 @@ class MovieView extends _reactDefault.default.Component {
                                                 lineNumber: 57
                                             },
                                             __self: this,
-                                            children: movie.Title
+                                            children: movie.Title.toUpperCase()
                                         })
                                     }),
                                     !this.isFavorite(userMovies, movie) && /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
@@ -34539,7 +34539,7 @@ render() {
     </Modal>
 }
 */ ProfileView.propTypes = {
-    movies: _propTypesDefault.default.arrayOf(shape({
+    movies: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
         Genre: _propTypesDefault.default.shape({
@@ -34656,7 +34656,7 @@ const mapStateToProps = (state)=>{
 };
 exports.default = _reactRedux.connect(mapStateToProps)(MoviesList);
 MoviesList.propTypes = {
-    movies: _propTypesDefault.default.arrayOf(shape({
+    movies: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
         Genre: _propTypesDefault.default.shape({
@@ -34767,6 +34767,7 @@ class MovieCard extends _reactDefault.default.Component {
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                        className: "button",
                                         variant: "outline-dark",
                                         __source: {
                                             fileName: "src/components/movie-card/movie-card.jsx",
@@ -34795,7 +34796,6 @@ class MovieCard extends _reactDefault.default.Component {
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                            className: "button",
                             variant: "dark",
                             size: "sm",
                             onClick: ()=>removeFromFavorites(movie._id)
@@ -36860,7 +36860,7 @@ DirectorView.propTypes = {
         }),
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
-    movies: _propTypesDefault.default.arrayOf(shape({
+    movies: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
         Genre: _propTypesDefault.default.shape({
@@ -37068,7 +37068,7 @@ GenreView.propTypes = {
         }),
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
-    movies: _propTypesDefault.default.arrayOf(shape({
+    movies: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
         Genre: _propTypesDefault.default.shape({
@@ -37124,7 +37124,7 @@ class Navbar extends _reactDefault.default.Component {
     // LIFECYCLE METHODS
     render() {
         return(/*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default, {
-            bg: "dark",
+            className: "navbar",
             variant: "dark",
             expand: "md",
             __source: {

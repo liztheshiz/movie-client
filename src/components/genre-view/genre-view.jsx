@@ -56,7 +56,7 @@ GenreView.propTypes = {
         }),
         ImagePath: PropTypes.string.isRequired
     }).isRequired,
-    movies: PropTypes.arrayOf(shape({
+    movies: PropTypes.arrayOf(PropTypes.shape({
         Title: PropTypes.string.isRequired,
         Description: PropTypes.string.isRequired,
         Genre: PropTypes.shape({

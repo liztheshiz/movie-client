@@ -54,7 +54,7 @@ export class MovieView extends React.Component {
                                 <Button variant="outline-dark" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>
                             </Col>
                             <Col className="movie-title" xs={8} s={10}>
-                                <h2 className="value">{movie.Title}</h2>
+                                <h2 className="value">{movie.Title.toUpperCase()}</h2>
                             </Col>
                             {!this.isFavorite(userMovies, movie) && <Col xs={1}>
                                 <Button variant="outline-dark" type="submit" size="sm" onClick={() => { this.addToFavorites(movie); }}>Fav</Button>

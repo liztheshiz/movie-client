@@ -21,7 +21,7 @@ export class Navbar extends React.Component {
 
     render() {
         return (
-            <Navbar bg="dark" variant="dark" expand="md" >
+            <Navbar className="navbar" variant="dark" expand="md" >
                 <Container>
                     <Navbar.Brand className="brand" href="/">CINEMADATABASETESTTES</Navbar.Brand>
                     {localStorage.getItem('token') && <Navbar.Toggle aria-controls="basic-navbar-nav" />}

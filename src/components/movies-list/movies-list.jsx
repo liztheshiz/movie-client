@@ -44,7 +44,7 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps)(MoviesList);
 
 MoviesList.propTypes = {
-    movies: PropTypes.arrayOf(shape({
+    movies: PropTypes.arrayOf(PropTypes.shape({
         Title: PropTypes.string.isRequired,
         Description: PropTypes.string.isRequired,
         Genre: PropTypes.shape({

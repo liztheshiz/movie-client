@@ -9,11 +9,15 @@
   background-color: #e8e5d2;
   font-family: "Nixie One", cursive;
 }
+h2 {
+  font-family: "Oswald", sans-serif;
+}
+
 .movie-view {
   border: solid black;
 }
 .movie-card {
-  background-color: #E6834B;
+  background: #e8e5d2 !important;
 }
 
 .title {
@@ -21,8 +25,12 @@
 }
 
 .button {
-  background-color: #E6834B;
+  background: #E6834B !important;
 }
+.navbar {
+  background: #E6834B !important;
+}
+
 .brand {
   font-family: "Oswald", sans-serif;
 }
