@@ -124,8 +124,8 @@ export function ProfileView(props) {
             }).then(res => {
                 const data = res.data;
                 console.log(data);
-                localStorage.setItem('user', username);
-                window.open(`/users/${username}`, '_self');
+                localStorage.setItem('user', res.data.Username);
+                window.open(`/users/${res.data.Username}`, '_self');
             }).catch(err => {
                 console.log(err)
             });
