@@ -34826,7 +34826,7 @@ MovieCard.propTypes = {
         }),
         ImagePath: _propTypesDefault.default.string.isRequired
     }).isRequired,
-    listType: _propTypesDefault.default.string,
+    listType: _propTypesDefault.default.string.isRequired,
     removeFromFavorites: _propTypesDefault.default.func
 };
 

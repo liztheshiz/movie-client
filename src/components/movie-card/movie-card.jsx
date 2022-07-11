@@ -52,6 +52,6 @@ MovieCard.propTypes = {
         }),
         ImagePath: PropTypes.string.isRequired
     }).isRequired,
-    listType: PropTypes.string,
+    listType: PropTypes.string.isRequired,
     removeFromFavorites: PropTypes.func
 }
