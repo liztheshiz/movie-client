@@ -13,13 +13,22 @@ h2 {
   font-family: "Oswald", sans-serif;
 }
 
+.movie-view {
+  padding-top: 1px;
+  padding-bottom: 30px;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.9) 2px 3px 0px 5px;
+}
+
 .movie-poster {
+  width: 200px;
   border: 2px solid black;
   border-radius: 3px;
 }
 .movie-card {
   background: #e8e5d2 !important;
-  border: 3px solid black !important;
+  border: none !important;
+  box-shadow: rgba(0, 0, 0, 0.9) 1px 2px 0px 4px;
 }
 
 .title {
