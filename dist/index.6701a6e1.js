@@ -25739,7 +25739,8 @@ class MovieView extends _reactDefault.default.Component {
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                         className: "mb-4",
-                        xs: 2,
+                        xs: 1,
+                        sm: 2,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 64
@@ -25796,7 +25797,8 @@ class MovieView extends _reactDefault.default.Component {
                                             children: [
                                                 /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                                     className: "movie-title",
-                                                    xs: 10,
+                                                    xs: 8,
+                                                    sm: 10,
                                                     __source: {
                                                         fileName: "src/components/movie-view/movie-view.jsx",
                                                         lineNumber: 71

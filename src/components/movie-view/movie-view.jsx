@@ -61,14 +61,14 @@ export class MovieView extends React.Component {
         return (
             <Container className="movie-view mt-5">
                 <Row className="mt-5">
-                    <Col className="mb-4" xs={2}>
+                    <Col className="mb-4" xs={1} sm={2}>
                         <Button variant="outline-dark" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>
                     </Col>
                     <Col className="movie-info" sm={10} lg={8} xl={7}>
                         <Row>
                             <Col sm={9} lg={8} xl={10}>
                                 <Row className="justify-content-center mb-4">
-                                    <Col className="movie-title" xs={10}>
+                                    <Col className="movie-title" xs={8} sm={10}>
                                         <h2 className="value">{movie.Title.toUpperCase()}</h2>
                                     </Col>
                                     {!favorite && <Col xs={1}>

@@ -24,11 +24,15 @@ h2 {
 }
 
 @media all and (max-width: 575px) {
+    .movie-info {
+        max-height: 700px;
+    }
+
     .movie-poster-container {
         text-align: center;
     }
 
     .movie-poster {
-        width: 300px;
+        width: 250px;
     }
 }
