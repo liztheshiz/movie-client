@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
-import { Link } from 'react-router-dom';
-
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
+import { Link } from 'react-router-dom';
 
 import './movie-card.scss';
 

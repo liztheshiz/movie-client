@@ -13,6 +13,8 @@ import { Link } from 'react-router-dom';
 import './registration-view.scss';
 
 export function RegistrationView(props) {
+    // LOCAL STATE
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [email, setEmail] = useState('');
@@ -22,11 +24,12 @@ export function RegistrationView(props) {
     const [emailErr, setEmailErr] = useState('');
     const [birthdayErr, setBirthdayErr] = useState('');
 
+
     // CUSTOM METHODS
 
     // Used to validate if string is alphanumeric
     const isAlphaNumeric = str => /^[a-z0-9]+$/gi.test(str);
-
+    // Used to validate if string is in MM/DD/YY format
     const regex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/\d{2}$/;
 
     // Validates user inputs
@@ -85,8 +88,6 @@ export function RegistrationView(props) {
                 Email: email,
                 Birthday: birthday
             };
-            // NEXT LINE FOR DEBUGGING!!
-            console.log(`{Username: ${request.Username}; Password: ${request.Password}; Email: ${request.Email}; Birthday: ${request.Birthday}}`);
             axios.post('https://cinemadatabase.herokuapp.com/users', request).then(res => {
                 alert('User successfully registered! Redirecting to login...');
                 window.open('/', '_self');

@@ -12,6 +12,7 @@ import { Link } from 'react-router-dom';
 import './movie-view.scss';
 
 export class MovieView extends React.Component {
+    // CUSTOM METHODS
 
     // Adds given movie to given user's favorites list
     addToFavorites(movie) {
@@ -34,6 +35,7 @@ export class MovieView extends React.Component {
     }
 
     // Checks if movieid is already present in user's favorites list
+    // Used so page does not need to refresh for button to react to favoriting; refresh is bugged :(
     isFavorite(list, movie) {
         return list.includes(movie._id);
     }

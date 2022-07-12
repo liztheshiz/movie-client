@@ -3,24 +3,24 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
-import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
-import { MovieCard } from '../movie-card/movie-card';
-
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
+import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
+import { MovieCard } from '../movie-card/movie-card';
 
 function MoviesList(props) {
     const { movies, user, visibilityFilter, listType, removeFromFavorites, name } = props;
 
     let filteredMovies = movies;
 
+    // Filter movies list depending on what view user is currently in
     filteredMovies = movies.filter(m => {
         if (listType === "main") return m.Title.toLowerCase().includes(visibilityFilter.toLowerCase());
         if (listType === "profile") return user.FavoriteMovies.includes(m._id);
         if (listType === "genre") return m.Genre.Name === name;
         if (listType === "director") return m.Director.Name === name;
     })
-
 
     return (
         <Row className="justify-content-center">
@@ -36,11 +36,13 @@ function MoviesList(props) {
     )
 }
 
+// Connects component to store
 const mapStateToProps = state => {
     const { visibilityFilter } = state;
     return { visibilityFilter };
 };
 
+// Export component with store props connected
 export default connect(mapStateToProps)(MoviesList);
 
 MoviesList.propTypes = {

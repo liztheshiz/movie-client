@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
+import { setFilter } from '../../actions/actions';
 
 import Form from 'react-bootstrap/Form';
-
-import { setFilter } from '../../actions/actions';
 
 import './visibility-filter-input.scss';
 
@@ -18,6 +17,7 @@ function VisibilityFilterInput(props) {
     />;
 }
 
+// Export component with store props connected
 export default connect(
     null,
     { setFilter }

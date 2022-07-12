@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
@@ -7,13 +7,15 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-// import Modal from 'react-bootstrap/Modal';
+// import Modal from 'react-bootstrap/Modal'; // This is not importing correctly...
 
 import MoviesList from '../movies-list/movies-list';
 
 import './profile-view.scss';
 
 export function ProfileView(props) {
+    // LOCAL STATE
+
     const [edit, setEdit] = useState(false);
     const [show, setShow] = useState(false);
     const [username, setUsername] = useState('');
@@ -25,8 +27,10 @@ export function ProfileView(props) {
     const [emailErr, setEmailErr] = useState('');
     const [birthdayErr, setBirthdayErr] = useState('');
 
+
     // CUSTOM METHODS
 
+    // Converts complex date string (from user object) into simple date string with MM/DD/YY format
     const getDate = (string) => {
         let date = new Date(string);
         return date.toLocaleDateString('en-us', { timeZone: 'UTC', month: '2-digit', day: '2-digit', year: '2-digit' });
@@ -52,7 +56,7 @@ export function ProfileView(props) {
     // (for now modal doesn't work; displays under button)
     const showModal = (bool) => { setShow(bool); }
 
-    // Deletes current user
+    // Deletes current user and reloads to login page
     const deleteUser = () => {
         axios.delete(`https://cinemadatabase.herokuapp.com/users/${props.user.Username}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
@@ -65,7 +69,7 @@ export function ProfileView(props) {
 
     // Used to validate if string is alphanumeric
     const isAlphaNumeric = str => /^[a-z0-9]+$/gi.test(str);
-
+    // Used to validate if string is in MM/DD/YY format
     const regex = /^(0[1-9]|1[0-2])\/(0[1-9]|1\d|2\d|3[01])\/\d{2}$/;
 
     // Validates user inputs
@@ -109,13 +113,12 @@ export function ProfileView(props) {
         return isReq;
     }
 
-    // Updates current user's info with what is given in the profile form
+    // If fields pass validation checks, updates current user's info with what is given in the profile form
     const handleSubmit = (e) => {
         e.preventDefault();
 
         // Only sends axios request if all fields pass client-side validation check
         const isReq = validate();
-        //const isReq = true;
         if (isReq) {
             // Updates user with given info
             let request = {
@@ -137,7 +140,7 @@ export function ProfileView(props) {
         }
     }
 
-    // Removes given movie from user's list of favorites
+    // Removes given movie from user's list of favorites and reloads page to show change
     const removeFromFavorites = (movieid) => {
         axios.delete(`https://cinemadatabase.herokuapp.com/users/${props.user.Username}/FavoriteMovies/${movieid}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
@@ -199,14 +202,6 @@ export function ProfileView(props) {
                     </Form>
                 </Col>
             </Row>
-            <Row className="my-5"></Row>
-            {(props.user.FavoriteMovies.length > 0) && <Row className="justify-content-center mt-5 mb-3">
-                <Col lg={9}><h3>Favorites list:</h3></Col>
-            </Row>}
-            {(props.user.FavoriteMovies.length === 0) && <Row className="justify-content-center mt-5">
-                <Col md={9} lg={7}><h3>Favorites list is empty! Return to home to view available movies.</h3></Col>
-            </Row>}
-            <MoviesList movies={props.movies} user={props.user} listType={"profile"} removeFromFavorites={removeFromFavorites} />
             {!show && <Row className="justify-content-sm-center my-4">
                 <Col className="text-center">
                     <Button variant="link" onClick={() => showModal(true)}>Click here to delete user</Button>
@@ -217,6 +212,13 @@ export function ProfileView(props) {
                 <Col xs={3} sm={2} lg={1} className="my-3"><Button variant="outline-secondary" size="sm" onClick={() => showModal(false)}>Cancel</Button></Col>
                 <Col xs={3} sm={2} lg={1} className="my-3"><Button variant="danger" size="sm" onClick={() => deleteUser()}>Delete</Button></Col>
             </Row>}
+            {(props.user.FavoriteMovies.length > 0) && <Row className="justify-content-center mt-5 mb-3">
+                <Col lg={9}><h3>Favorites list:</h3></Col>
+            </Row>}
+            {(props.user.FavoriteMovies.length === 0) && <Row className="justify-content-center mt-5">
+                <Col md={9} lg={7}><h3>Favorites list is empty! Return to home to view available movies.</h3></Col>
+            </Row>}
+            <MoviesList movies={props.movies} user={props.user} listType={"profile"} removeFromFavorites={removeFromFavorites} />
         </Container >
     );
 }

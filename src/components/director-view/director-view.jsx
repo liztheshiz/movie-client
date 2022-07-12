@@ -11,6 +11,7 @@ import MoviesList from '../movies-list/movies-list';
 import './director-view.scss';
 
 export class DirectorView extends React.Component {
+    // Take take string (from director object) and converts to string containing only the year
     getYear(string) {
         let date = new Date(string);
         return date.getFullYear();
@@ -50,7 +51,7 @@ export class DirectorView extends React.Component {
                         </Row>
                     </Col>
                 </Row>
-                <Row className="mt-5">
+                <Row className="mt-5 mb-3">
                     <Col><h3>Movies with this director:</h3></Col>
                 </Row>
                 <MoviesList movies={movies} favMovies={[]} listType={"director"} name={movie.Director.Name} />
