@@ -2,7 +2,7 @@
 
 ## Description 
 
-This application loads data from the CinemaDatabase API and displays it for users to see. Users can create and edit accounts, including a modifiable list of favorite movies, and view more details on any movie in the database, including information on genres and directors.
+This application loads data from the [CinemaDatabase API](https://cinemadatabase.herokuapp.com/) and displays it for users to see. Users can create and edit accounts, including a modifiable list of favorite movies, and view more details on any movie in the database, including information on genres and directors.
 
 ## How to Use This App
 
