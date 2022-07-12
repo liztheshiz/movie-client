@@ -51,7 +51,7 @@ export class DirectorView extends React.Component {
                         </Row>
                     </Col>
                 </Row>
-                <Row className="mt-5">
+                <Row className="mt-5 mb-3">
                     <Col><h3>Movies with this director:</h3></Col>
                 </Row>
                 <MoviesList movies={movies} favMovies={[]} listType={"director"} name={movie.Director.Name} />

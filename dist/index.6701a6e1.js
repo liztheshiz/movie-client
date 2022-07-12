@@ -36917,7 +36917,7 @@ class DirectorView extends _reactDefault.default.Component {
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                    className: "mt-5",
+                    className: "mt-5 mb-3",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 54
@@ -37131,7 +37131,7 @@ class GenreView extends _reactDefault.default.Component {
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                    className: "mt-5",
+                    className: "mt-5 mb-3",
                     __source: {
                         fileName: "src/components/genre-view/genre-view.jsx",
                         lineNumber: 36

@@ -33,7 +33,7 @@ export class GenreView extends React.Component {
                         </Row>
                     </Col>
                 </Row>
-                <Row className="mt-5">
+                <Row className="mt-5 mb-3">
                     <Col><h3>Movies with this genre:</h3></Col>
                 </Row>
                 <MoviesList movies={movies} favMovies={[]} listType={"genre"} name={movie.Genre.Name} />
