@@ -1,10 +1,4 @@
 /*@import "../node_modules/bootstrap/scss/bootstrap";*/
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .body {
   background-color: #e8e5d2;
   font-family: "Hepta Slab", serif;
