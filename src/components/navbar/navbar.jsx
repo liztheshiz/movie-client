@@ -7,7 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 
 import './navbar.scss';
 
-export class Navbar extends React.Component {
+export class MyNavbar extends React.Component {
     // CUSTOM METHODS
 
     // Logs user out of site

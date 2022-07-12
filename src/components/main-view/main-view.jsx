@@ -20,7 +20,7 @@ import { GenreView } from '../genre-view/genre-view';
 import { RegistrationView } from '../registration-view/registration-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { AboutView } from '../about-view/about-view';
-import { Navbar } from '../navbar/navbar';
+import { MyNavbar } from '../navbar/navbar';
 
 import './main-view.scss';
 
@@ -61,7 +61,7 @@ class MainView extends React.Component {
 
         return (
             <Router>
-                <Navbar />
+                <MyNavbar />
                 <Container>
                     <Row className="justify-content-md-center main-view">
                         <Switch>
