@@ -21,7 +21,7 @@ export class MovieCard extends React.Component {
                     <Card.Img className="card_poster" variant="top" crossOrigin="anonymous" src={movie.ImagePath} />
                     <Card.Body>
                         <Card.Title className="title fs-4">{movie.Title.toUpperCase()}</Card.Title>
-                        <Card.Text>{movie.Description}</Card.Text>
+                        <Card.Text className="description">{movie.Description}</Card.Text>
                         <Link to={`/movies/titles/${movie._id}`}>
                             <Button className="button" variant="outline-dark">View details</Button>
                         </Link>

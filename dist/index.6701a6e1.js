@@ -34526,7 +34526,7 @@ function ProfileView(props) {
                 })
             }),
             show && /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
-                className: "justify-content-xs-center my-4",
+                className: "justify-content-center my-4",
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
                     lineNumber: 214
@@ -34831,6 +34831,7 @@ class MovieCard extends _reactDefault.default.Component {
                                     children: movie.Title.toUpperCase()
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Text, {
+                                    className: "description",
                                     __source: {
                                         fileName: "src/components/movie-card/movie-card.jsx",
                                         lineNumber: 24

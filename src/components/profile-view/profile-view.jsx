@@ -211,7 +211,7 @@ export function ProfileView(props) {
                     <Button variant="link" onClick={() => showModal(true)}>Click here to delete user</Button>
                 </Col>
             </Row>}
-            {show && <Row className="justify-content-xs-center my-4">
+            {show && <Row className="justify-content-center my-4">
                 <Col xs={12} sm={8} lg={8} xl={6} className="my-3">Are you certain you want to delete this user? This action is irreversible!</Col>
                 <Col xs={3} sm={2} lg={1} className="my-3"><Button variant="outline-secondary" size="sm" onClick={() => showModal(false)}>Cancel</Button></Col>
                 <Col xs={3} sm={2} lg={1} className="my-3"><Button variant="danger" size="sm" onClick={() => deleteUser()}>Delete</Button></Col>

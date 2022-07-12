@@ -61,6 +61,12 @@ h2 {
 .button {
   background: #E6834B !important;
 }
+
+@media all and (max-width: 767px) {
+  .description {
+    font-size: 14px;
+  }
+}
 .filter {
   border: 2px solid #E6834B !important;
 }
