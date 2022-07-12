@@ -11,6 +11,7 @@ import MoviesList from '../movies-list/movies-list';
 import './director-view.scss';
 
 export class DirectorView extends React.Component {
+    // Take take string (from director object) and converts to string containing only the year
     getYear(string) {
         let date = new Date(string);
         return date.getFullYear();

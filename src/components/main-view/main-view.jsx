@@ -26,7 +26,7 @@ import './main-view.scss';
 class MainView extends React.Component {
     // CUSTOM METHODS
 
-    // Gets movie list from database and adds list to local 'movies' var
+    // Gets movie list from database and adds list to 'movies' var in store
     getMovies(token) {
         axios.get('https://cinemadatabase.herokuapp.com/movies', {
             headers: { Authorization: `Bearer ${token}` }
@@ -35,6 +35,7 @@ class MainView extends React.Component {
         }).catch(err => console.log(err));
     }
 
+    // Gets user from database using username from local storage (put there after login) and adds user to 'user' var in store
     getUser(token) {
         axios.get(`https://cinemadatabase.herokuapp.com/users/${localStorage.getItem('user')}`, {
             headers: { Authorization: `Bearer ${token}` }
@@ -43,11 +44,8 @@ class MainView extends React.Component {
         }).catch(err => console.log(err));
     }
 
-    // When user successfully logs in, saves user in the state, and user + JWT in local storage
+    // When user successfully logs in, saves user and movies in the store, and user + JWT in local storage
     onLoggedIn(authData) {
-        console.log(authData);
-        //this.props.setUser(res.data);
-
         localStorage.setItem('token', authData.token);
         localStorage.setItem('user', authData.user.Username);
         this.getMovies(authData.token);
@@ -56,10 +54,6 @@ class MainView extends React.Component {
 
 
     // LIFECYCLE METHODS
-
-    /*constructor() {
-        super();
-    }*/
 
     render() {
         const { movies, user } = this.props;
@@ -145,10 +139,12 @@ class MainView extends React.Component {
     }
 }
 
+// Connects component to store
 let mapStateToProps = state => {
     return { movies: state.movies, user: state.user }
 }
 
+// Export component with store props connected
 export default connect(mapStateToProps, { setMovies, setUser })(MainView);
 
 MainView.propTypes = {

@@ -17,6 +17,7 @@ function VisibilityFilterInput(props) {
     />;
 }
 
+// Export component with store props connected
 export default connect(
     null,
     { setFilter }

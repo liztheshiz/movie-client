@@ -51,7 +51,6 @@ export function LoginView(props) {
         // Only sends axios request if all fields pass client-side validation check
         const isReq = validate();
         if (isReq) {
-            /* Send a request to the server for authentication */
             axios.post('https://cinemadatabase.herokuapp.com/login', {
                 Username: username,
                 Password: password
