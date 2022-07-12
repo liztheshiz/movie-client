@@ -1,10 +1,4 @@
 /*@import "../node_modules/bootstrap/scss/bootstrap";*/
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 .body {
   background-color: #e8e5d2;
   font-family: "Hepta Slab", serif;
@@ -13,23 +7,37 @@ h2 {
   font-family: "Oswald", sans-serif;
 }
 
-.movie-view {
-  padding-top: 1px;
+.movie-info {
+  padding-top: 20px;
   padding-bottom: 30px;
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.9) 2px 3px 0px 5px;
+  margin-bottom: 20px;
 }
 
 .movie-poster {
   width: 200px;
-  border: 2px solid black;
+  box-shadow: rgba(0, 0, 0, 0.9) 1px 2px 0px 4px;
   border-radius: 3px;
+  margin-left: 20px;
 }
 
 .fav-button {
   border: none !important;
   background: none !important;
   font-size: 20px !important;
+}
+
+@media all and (max-width: 575px) {
+  .movie-info {
+    max-height: 700px;
+  }
+  .movie-poster-container {
+    text-align: center;
+  }
+  .movie-poster {
+    width: 250px;
+  }
 }
 .text-red {
   color: red !important;
@@ -50,11 +58,36 @@ h2 {
 .button {
   background: #E6834B !important;
 }
+
+@media all and (max-width: 767px) {
+  .description {
+    font-size: 14px;
+  }
+}
+@media all and (max-width: 575px) {
+  .movie-card {
+    max-width: 340px;
+  }
+}
 .filter {
   border: 2px solid #E6834B !important;
 }
 .text-red {
   color: red !important;
+}
+.director-info {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.9) 2px 3px 0px 5px;
+  margin-bottom: 20px;
+}
+.genre-info {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.9) 2px 3px 0px 5px;
+  margin-bottom: 20px;
 }
 .navbar {
   background: #E6834B !important;

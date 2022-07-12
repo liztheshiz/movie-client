@@ -11,3 +11,15 @@
 .button {
     background: #E6834B !important;
 }
+
+@media all and (max-width: 767px) {
+    .description {
+        font-size: 14px;
+    }
+}
+
+@media all and (max-width: 575px) {
+    .movie-card {
+        max-width: 340px;
+    }
+}

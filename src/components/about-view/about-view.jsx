@@ -18,9 +18,11 @@ export function AboutView() {
                     </Row>
                     <Row className="justify-content-md-center mb-5">
                         <Col className="about_text" lg={10}>
-                            The purpose of this project was to practice developing both the backend and frontend for a website from scratch. All of the data you'll find on this website - information on films as well as all of your user data - is accessed through the <a href="https://cinemadatabase.herokuapp.com/" target="_blank">CinemaDatabase API</a>. This part of the project works behind-the-scenes to interact with a datanbase (also built from scratch in MongoDB).
+                            The purpose of this project was to practice developing both the backend and frontend for a website from scratch. All of the data you'll find on this website - information on films as well as all of your user data - is accessed through the <a href="https://cinemadatabase.herokuapp.com/" target="_blank">CinemaDatabase API</a>. The database for which the API was made was also built from scratch using MongoDB, adapted from yet another homemade SQL database.
                             <br />
-                            <br /> hello
+                            <br />This simple web app allows a user to register an account, view information on a number of films included in the database, and manage a list of their favorite films. Account information can be edited, or erased entirely, from the user's personal profile page.
+                            <br />
+                            <br />An updated version of this website will include more filter options for viewing movies on the homepage, as well as some advanced UI/UX improvements.
                         </Col>
                     </Row>
                     <Row className="justify-content-md-center mb-4">

@@ -23,12 +23,12 @@ function MoviesList(props) {
 
 
     return (
-        <Row>
+        <Row className="justify-content-center">
             {listType === 'main' && <Col xs={12}>
                 <VisibilityFilterInput visibilityFilter={visibilityFilter} />
             </Col>}
             {filteredMovies.map(m =>
-                <Col sm={6} lg={4} xl={3} key={m._id}>
+                <Col xs={11} sm={6} lg={4} xl={3} key={m._id}>
                     <MovieCard movie={m} listType={listType} removeFromFavorites={removeFromFavorites} />
                 </Col>
             )}

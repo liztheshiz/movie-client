@@ -151,7 +151,7 @@ export function ProfileView(props) {
     // RENDER
 
     return (
-        <Container className="profile-view border-dark border-3 mt-5">
+        <Container className="profile-view mt-5">
             <Row className="mb-4">
                 <Col xs={0} sm={2} md={2} lg={3}></Col>
                 <Col className="profile-title" xs={8} sm={6} lg={4} xl={5}>
@@ -199,11 +199,12 @@ export function ProfileView(props) {
                     </Form>
                 </Col>
             </Row>
-            {(props.user.FavoriteMovies.length > 0) && <Row>
-                <Col><h3>Favorites list:</h3></Col>
+            <Row className="my-5"></Row>
+            {(props.user.FavoriteMovies.length > 0) && <Row className="justify-content-center mt-5 mb-3">
+                <Col lg={9}><h3>Favorites list:</h3></Col>
             </Row>}
-            {(props.user.FavoriteMovies.length === 0) && <Row>
-                <Col><h3>Favorites list is empty! Return to home to view available movies.</h3></Col>
+            {(props.user.FavoriteMovies.length === 0) && <Row className="justify-content-center mt-5">
+                <Col md={9} lg={7}><h3>Favorites list is empty! Return to home to view available movies.</h3></Col>
             </Row>}
             <MoviesList movies={props.movies} user={props.user} listType={"profile"} removeFromFavorites={removeFromFavorites} />
             {!show && <Row className="justify-content-sm-center my-4">
@@ -211,7 +212,7 @@ export function ProfileView(props) {
                     <Button variant="link" onClick={() => showModal(true)}>Click here to delete user</Button>
                 </Col>
             </Row>}
-            {show && <Row className="justify-content-xs-center my-4">
+            {show && <Row className="justify-content-center my-4">
                 <Col xs={12} sm={8} lg={8} xl={6} className="my-3">Are you certain you want to delete this user? This action is irreversible!</Col>
                 <Col xs={3} sm={2} lg={1} className="my-3"><Button variant="outline-secondary" size="sm" onClick={() => showModal(false)}>Cancel</Button></Col>
                 <Col xs={3} sm={2} lg={1} className="my-3"><Button variant="danger" size="sm" onClick={() => deleteUser()}>Delete</Button></Col>
