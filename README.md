@@ -32,7 +32,7 @@ Navigate to project directory and type:
 
 Then go to http://localhost:1234 to test website. Browser will automatically refresh when code is altered. Neat!
 
-##### A Note on Parcel
+#### A Note on Parcel
 
 Parcel proved particularly finicky during development and often required deleting and reloading to work correctly. The best workarounds I've found have been to:
 
