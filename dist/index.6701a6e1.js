@@ -41106,7 +41106,7 @@ function AboutView() {
                                     __self: this,
                                     children: "CinemaDatabase API"
                                 }),
-                                ". This part of the project works behind-the-scenes to interact with a datanbase (also built from scratch in MongoDB).",
+                                ". The database for which the API was made was also built from scratch using MongoDB, adapted from yet another homemade SQL database.",
                                 /*#__PURE__*/ _jsxRuntime.jsx("br", {
                                     __source: {
                                         fileName: "src/components/about-view/about-view.jsx",
@@ -41121,7 +41121,22 @@ function AboutView() {
                                     },
                                     __self: this
                                 }),
-                                " hello"
+                                "This simple web app allows a user to register an account, view information on a number of films included in the database, and manage a list of their favorite films. Account information can be edited, or erased entirely, from the user's personal profile page.",
+                                /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                    __source: {
+                                        fileName: "src/components/about-view/about-view.jsx",
+                                        lineNumber: 24
+                                    },
+                                    __self: this
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx("br", {
+                                    __source: {
+                                        fileName: "src/components/about-view/about-view.jsx",
+                                        lineNumber: 25
+                                    },
+                                    __self: this
+                                }),
+                                "An updated version of this website will include more filter options for viewing movies on the homepage, as well as some advanced UI/UX improvements."
                             ]
                         })
                     }),
@@ -41129,7 +41144,7 @@ function AboutView() {
                         className: "justify-content-md-center mb-4",
                         __source: {
                             fileName: "src/components/about-view/about-view.jsx",
-                            lineNumber: 26
+                            lineNumber: 28
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
@@ -41137,14 +41152,14 @@ function AboutView() {
                             lg: 10,
                             __source: {
                                 fileName: "src/components/about-view/about-view.jsx",
-                                lineNumber: 27
+                                lineNumber: 29
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
                                 className: "about_title",
                                 __source: {
                                     fileName: "src/components/about-view/about-view.jsx",
-                                    lineNumber: 28
+                                    lineNumber: 30
                                 },
                                 __self: this,
                                 children: "ABOUT THE DEVELOPER"
@@ -41155,7 +41170,7 @@ function AboutView() {
                         className: "justify-content-md-center mb-4",
                         __source: {
                             fileName: "src/components/about-view/about-view.jsx",
-                            lineNumber: 31
+                            lineNumber: 33
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
@@ -41163,7 +41178,7 @@ function AboutView() {
                             lg: 10,
                             __source: {
                                 fileName: "src/components/about-view/about-view.jsx",
-                                lineNumber: 32
+                                lineNumber: 34
                             },
                             __self: this,
                             children: [
@@ -41173,7 +41188,7 @@ function AboutView() {
                                     target: "_blank",
                                     __source: {
                                         fileName: "src/components/about-view/about-view.jsx",
-                                        lineNumber: 33
+                                        lineNumber: 35
                                     },
                                     __self: this,
                                     children: "visit her portfolio website here"
