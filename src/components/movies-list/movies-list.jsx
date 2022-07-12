@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import { connect } from 'react-redux';
 
-import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
-import { MovieCard } from '../movie-card/movie-card';
-
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+
+import VisibilityFilterInput from '../visibility-filter-input/visibility-filter-input';
+import { MovieCard } from '../movie-card/movie-card';
 
 function MoviesList(props) {
     const { movies, user, visibilityFilter, listType, removeFromFavorites, name } = props;

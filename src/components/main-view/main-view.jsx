@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import { connect } from 'react-redux';
+import { setMovies, setUser } from '../../actions/actions';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
-
-import { setMovies, setUser } from '../../actions/actions';
 
 import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
