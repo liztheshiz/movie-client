@@ -151,7 +151,7 @@ export function ProfileView(props) {
     // RENDER
 
     return (
-        <Container className="profile-view border-dark border-3 mt-5">
+        <Container className="profile-view mt-5">
             <Row className="mb-4">
                 <Col xs={0} sm={2} md={2} lg={3}></Col>
                 <Col className="profile-title" xs={8} sm={6} lg={4} xl={5}>

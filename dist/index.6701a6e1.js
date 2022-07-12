@@ -34091,7 +34091,7 @@ function ProfileView(props) {
     };
     // RENDER
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
-        className: "profile-view border-dark border-3 mt-5",
+        className: "profile-view mt-5",
         __source: {
             fileName: "src/components/profile-view/profile-view.jsx",
             lineNumber: 154
