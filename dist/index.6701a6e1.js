@@ -36720,7 +36720,7 @@ class DirectorView extends _reactDefault.default.Component {
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
-                    className: "mt-5",
+                    className: "my-5",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 24
@@ -36762,7 +36762,7 @@ class DirectorView extends _reactDefault.default.Component {
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                                    className: "justify-content-sm-center mt-3 mb-4",
+                                    className: "justify-content-center mt-3 mb-4",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
                                         lineNumber: 29
@@ -36770,7 +36770,7 @@ class DirectorView extends _reactDefault.default.Component {
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         className: "director-name",
-                                        xs: 10,
+                                        xs: 11,
                                         __source: {
                                             fileName: "src/components/director-view/director-view.jsx",
                                             lineNumber: 30
@@ -36788,7 +36788,7 @@ class DirectorView extends _reactDefault.default.Component {
                                     })
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                                    className: "justify-content-sm-center mb-4",
+                                    className: "justify-content-center mb-4",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
                                         lineNumber: 34
@@ -36796,7 +36796,8 @@ class DirectorView extends _reactDefault.default.Component {
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                                         className: "director-birth",
-                                        xs: 10,
+                                        xs: 11,
+                                        sm: 10,
                                         __source: {
                                             fileName: "src/components/director-view/director-view.jsx",
                                             lineNumber: 35
@@ -36825,7 +36826,7 @@ class DirectorView extends _reactDefault.default.Component {
                                     })
                                 }),
                                 movie.Director.Death && /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                                    className: "justify-content-sm-center mb-4",
+                                    className: "justify-content-center mb-4",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
                                         lineNumber: 40
@@ -36833,7 +36834,8 @@ class DirectorView extends _reactDefault.default.Component {
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                                         className: "director-death",
-                                        xs: 10,
+                                        xs: 11,
+                                        sm: 10,
                                         __source: {
                                             fileName: "src/components/director-view/director-view.jsx",
                                             lineNumber: 41
@@ -36862,7 +36864,7 @@ class DirectorView extends _reactDefault.default.Component {
                                     })
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                                    className: "justify-content-sm-center mb-4",
+                                    className: "justify-content-center mb-4",
                                     __source: {
                                         fileName: "src/components/director-view/director-view.jsx",
                                         lineNumber: 46
@@ -36870,7 +36872,8 @@ class DirectorView extends _reactDefault.default.Component {
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                         className: "director-bio",
-                                        xs: 10,
+                                        xs: 11,
+                                        sm: 10,
                                         __source: {
                                             fileName: "src/components/director-view/director-view.jsx",
                                             lineNumber: 47
@@ -36892,6 +36895,7 @@ class DirectorView extends _reactDefault.default.Component {
                     ]
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                    className: "mt-5",
                     __source: {
                         fileName: "src/components/director-view/director-view.jsx",
                         lineNumber: 53
