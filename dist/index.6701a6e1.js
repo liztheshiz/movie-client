@@ -25355,7 +25355,6 @@ var _rowDefault = parcelHelpers.interopDefault(_row);
 var _col = require("react-bootstrap/Col");
 var _colDefault = parcelHelpers.interopDefault(_col);
 var _reactRouterDom = require("react-router-dom");
-var _navbar = require("../navbar/navbar");
 var _loginView = require("../login-view/login-view");
 var _moviesList = require("../movies-list/movies-list");
 var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
@@ -25365,6 +25364,7 @@ var _genreView = require("../genre-view/genre-view");
 var _registrationView = require("../registration-view/registration-view");
 var _profileView = require("../profile-view/profile-view");
 var _aboutView = require("../about-view/about-view");
+var _navbar = require("../navbar/navbar");
 var _mainViewScss = require("./main-view.scss");
 class MainView extends _reactDefault.default.Component {
     // CUSTOM METHODS
@@ -25407,7 +25407,7 @@ class MainView extends _reactDefault.default.Component {
             },
             __self: this,
             children: [
-                /*#__PURE__*/ _jsxRuntime.jsx(_navbar.Navbar, {
+                /*#__PURE__*/ _jsxRuntime.jsx(_navbar.MyNavbar, {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
                         lineNumber: 64
@@ -37208,7 +37208,7 @@ $parcel$ReactRefreshHelpers$1bb2.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Navbar", ()=>Navbar
+parcelHelpers.export(exports, "MyNavbar", ()=>MyNavbar
 );
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
@@ -37222,7 +37222,7 @@ var _navbarDefault = parcelHelpers.interopDefault(_navbar);
 var _nav = require("react-bootstrap/Nav");
 var _navDefault = parcelHelpers.interopDefault(_nav);
 var _navbarScss = require("./navbar.scss");
-class Navbar extends _reactDefault.default.Component {
+class MyNavbar extends _reactDefault.default.Component {
     // CUSTOM METHODS
     // Logs user out of site
     onLoggedOut() {
