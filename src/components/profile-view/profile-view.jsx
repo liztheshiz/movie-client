@@ -199,11 +199,12 @@ export function ProfileView(props) {
                     </Form>
                 </Col>
             </Row>
-            {(props.user.FavoriteMovies.length > 0) && <Row className="mt-5">
-                <Col><h3>Favorites list:</h3></Col>
+            <Row className="my-5"></Row>
+            {(props.user.FavoriteMovies.length > 0) && <Row className="justify-content-center mt-5 mb-3">
+                <Col lg={9}><h3>Favorites list:</h3></Col>
             </Row>}
-            {(props.user.FavoriteMovies.length === 0) && <Row className="mt-5">
-                <Col><h3>Favorites list is empty! Return to home to view available movies.</h3></Col>
+            {(props.user.FavoriteMovies.length === 0) && <Row className="justify-content-center mt-5">
+                <Col md={9} lg={7}><h3>Favorites list is empty! Return to home to view available movies.</h3></Col>
             </Row>}
             <MoviesList movies={props.movies} user={props.user} listType={"profile"} removeFromFavorites={removeFromFavorites} />
             {!show && <Row className="justify-content-sm-center my-4">
