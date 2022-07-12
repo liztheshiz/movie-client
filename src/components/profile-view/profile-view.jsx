@@ -202,14 +202,6 @@ export function ProfileView(props) {
                     </Form>
                 </Col>
             </Row>
-            <Row className="my-5"></Row>
-            {(props.user.FavoriteMovies.length > 0) && <Row className="justify-content-center mt-5 mb-3">
-                <Col lg={9}><h3>Favorites list:</h3></Col>
-            </Row>}
-            {(props.user.FavoriteMovies.length === 0) && <Row className="justify-content-center mt-5">
-                <Col md={9} lg={7}><h3>Favorites list is empty! Return to home to view available movies.</h3></Col>
-            </Row>}
-            <MoviesList movies={props.movies} user={props.user} listType={"profile"} removeFromFavorites={removeFromFavorites} />
             {!show && <Row className="justify-content-sm-center my-4">
                 <Col className="text-center">
                     <Button variant="link" onClick={() => showModal(true)}>Click here to delete user</Button>
@@ -220,6 +212,13 @@ export function ProfileView(props) {
                 <Col xs={3} sm={2} lg={1} className="my-3"><Button variant="outline-secondary" size="sm" onClick={() => showModal(false)}>Cancel</Button></Col>
                 <Col xs={3} sm={2} lg={1} className="my-3"><Button variant="danger" size="sm" onClick={() => deleteUser()}>Delete</Button></Col>
             </Row>}
+            {(props.user.FavoriteMovies.length > 0) && <Row className="justify-content-center mt-5 mb-3">
+                <Col lg={9}><h3>Favorites list:</h3></Col>
+            </Row>}
+            {(props.user.FavoriteMovies.length === 0) && <Row className="justify-content-center mt-5">
+                <Col md={9} lg={7}><h3>Favorites list is empty! Return to home to view available movies.</h3></Col>
+            </Row>}
+            <MoviesList movies={props.movies} user={props.user} listType={"profile"} removeFromFavorites={removeFromFavorites} />
         </Container >
     );
 }
