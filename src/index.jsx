@@ -9,7 +9,6 @@ import moviesApp from './reducers/reducers';
 import { devToolsEnhancer } from 'redux-devtools-extension';
 
 import MainView from './components/main-view/main-view';
-import { Navbar } from './components/navbar/navbar';
 
 import './index.scss';
 
@@ -21,9 +20,9 @@ class MyFlixApplication extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <Container>
-                    <MainView />
-                </Container>
+
+                <MainView />
+
             </Provider>
         );
     }
