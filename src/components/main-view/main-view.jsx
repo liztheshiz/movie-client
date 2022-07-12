@@ -12,8 +12,8 @@ import Col from 'react-bootstrap/Col';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Switch } from 'react-router-dom';
 
-import { Navbar } from '../navbar/navbar';
 import { LoginView } from '../login-view/login-view';
+import { Navbar } from '../navbar/navbar';
 import MoviesList from '../movies-list/movies-list';
 import { MovieView } from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
