@@ -13,11 +13,12 @@ h2 {
   font-family: "Oswald", sans-serif;
 }
 
-.movie-view {
-  padding-top: 1px;
+.movie-info {
+  padding-top: 20px;
   padding-bottom: 30px;
   border-radius: 3px;
   box-shadow: rgba(0, 0, 0, 0.9) 2px 3px 0px 5px;
+  margin-bottom: 20px;
 }
 
 .movie-poster {
@@ -30,6 +31,15 @@ h2 {
   border: none !important;
   background: none !important;
   font-size: 20px !important;
+}
+
+@media all and (max-width: 575px) {
+  .movie-poster-container {
+    text-align: center;
+  }
+  .movie-poster {
+    width: 300px;
+  }
 }
 .text-red {
   color: red !important;

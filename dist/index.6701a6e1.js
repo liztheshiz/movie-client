@@ -25737,224 +25737,243 @@ class MovieView extends _reactDefault.default.Component {
                 },
                 __self: this,
                 children: [
-                    /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                        sm: 9,
-                        lg: 7,
+                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        className: "mb-4",
+                        xs: 2,
+                        s: 1,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 64
                         },
                         __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
-                                className: "mb-4",
-                                __source: {
-                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 65
-                                },
-                                __self: this,
-                                children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                        xs: 2,
-                                        s: 1,
-                                        __source: {
-                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 66
-                                        },
-                                        __self: this,
-                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                            variant: "outline-dark",
-                                            size: "sm",
-                                            onClick: ()=>{
-                                                onBackClick(null);
-                                            },
-                                            __source: {
-                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 67
-                                            },
-                                            __self: this,
-                                            children: "<"
-                                        })
-                                    }),
-                                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                        className: "movie-title",
-                                        xs: 8,
-                                        s: 10,
-                                        __source: {
-                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 69
-                                        },
-                                        __self: this,
-                                        children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
-                                            className: "value",
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                            variant: "outline-dark",
+                            size: "sm",
+                            onClick: ()=>{
+                                onBackClick(null);
+                            },
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 65
+                            },
+                            __self: this,
+                            children: "<"
+                        })
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                        className: "movie-info",
+                        sm: 10,
+                        lg: 10,
+                        __source: {
+                            fileName: "src/components/movie-view/movie-view.jsx",
+                            lineNumber: 67
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 68
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                    sm: 9,
+                                    lg: 7,
+                                    __source: {
+                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                        lineNumber: 69
+                                    },
+                                    __self: this,
+                                    children: [
+                                        /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+                                            className: "justify-content-md-center mb-4",
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
                                                 lineNumber: 70
                                             },
                                             __self: this,
-                                            children: movie.Title.toUpperCase()
-                                        })
-                                    }),
-                                    !favorite && /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                        xs: 1,
-                                        __source: {
-                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 72
-                                        },
-                                        __self: this,
-                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                            className: "fav-button",
-                                            variant: "outline-dark",
-                                            type: "submit",
-                                            size: "sm",
-                                            onClick: ()=>{
-                                                this.addToFavorites(movie);
-                                            },
-                                            __source: {
-                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 73
-                                            },
-                                            __self: this,
-                                            children: "♥"
-                                        })
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                                className: "justify-content-md-center mb-3",
-                                __source: {
-                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 76
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                                    className: "movie-director",
-                                    lg: 10,
-                                    __source: {
-                                        fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 77
-                                    },
-                                    __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                            className: "label",
+                                            children: [
+                                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                                    className: "movie-title",
+                                                    xs: 10,
+                                                    __source: {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 71
+                                                    },
+                                                    __self: this,
+                                                    children: /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                                                        className: "value",
+                                                        __source: {
+                                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                                            lineNumber: 72
+                                                        },
+                                                        __self: this,
+                                                        children: movie.Title.toUpperCase()
+                                                    })
+                                                }),
+                                                !favorite && /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                                    xs: 1,
+                                                    __source: {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 74
+                                                    },
+                                                    __self: this,
+                                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                                        className: "fav-button",
+                                                        variant: "outline-dark",
+                                                        type: "submit",
+                                                        size: "sm",
+                                                        onClick: ()=>{
+                                                            this.addToFavorites(movie);
+                                                        },
+                                                        __source: {
+                                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                                            lineNumber: 75
+                                                        },
+                                                        __self: this,
+                                                        children: "♥"
+                                                    })
+                                                })
+                                            ]
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                                            className: "justify-content-md-center mb-3",
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
                                                 lineNumber: 78
                                             },
                                             __self: this,
-                                            children: "Director: "
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                            to: `/directors/${movie.Director.Name}`,
-                                            __source: {
-                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 79
-                                            },
-                                            __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                                variant: "link",
+                                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                                className: "movie-director",
+                                                lg: 10,
                                                 __source: {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 80
+                                                    lineNumber: 79
                                                 },
                                                 __self: this,
-                                                children: movie.Director.Name
+                                                children: [
+                                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                                        className: "label",
+                                                        __source: {
+                                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                                            lineNumber: 80
+                                                        },
+                                                        __self: this,
+                                                        children: "Director: "
+                                                    }),
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                                        to: `/directors/${movie.Director.Name}`,
+                                                        __source: {
+                                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                                            lineNumber: 81
+                                                        },
+                                                        __self: this,
+                                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                                            variant: "link",
+                                                            __source: {
+                                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                                lineNumber: 82
+                                                            },
+                                                            __self: this,
+                                                            children: movie.Director.Name
+                                                        })
+                                                    })
+                                                ]
                                             })
-                                        })
-                                    ]
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                                className: "justify-content-md-center mb-4",
-                                __source: {
-                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 84
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                                    className: "movie-genre",
-                                    lg: 10,
-                                    __source: {
-                                        fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 85
-                                    },
-                                    __self: this,
-                                    children: [
-                                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                            className: "label",
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                                            className: "justify-content-md-center mb-4",
                                             __source: {
                                                 fileName: "src/components/movie-view/movie-view.jsx",
                                                 lineNumber: 86
                                             },
                                             __self: this,
-                                            children: "Genre: "
-                                        }),
-                                        /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                            to: `/genres/${movie.Genre.Name}`,
-                                            __source: {
-                                                fileName: "src/components/movie-view/movie-view.jsx",
-                                                lineNumber: 87
-                                            },
-                                            __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                                variant: "link",
+                                            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                                                className: "movie-genre",
+                                                lg: 10,
                                                 __source: {
                                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 88
+                                                    lineNumber: 87
                                                 },
                                                 __self: this,
-                                                children: movie.Genre.Name
+                                                children: [
+                                                    /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                                        className: "label",
+                                                        __source: {
+                                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                                            lineNumber: 88
+                                                        },
+                                                        __self: this,
+                                                        children: "Genre: "
+                                                    }),
+                                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                                        to: `/genres/${movie.Genre.Name}`,
+                                                        __source: {
+                                                            fileName: "src/components/movie-view/movie-view.jsx",
+                                                            lineNumber: 89
+                                                        },
+                                                        __self: this,
+                                                        children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                                            variant: "link",
+                                                            __source: {
+                                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                                lineNumber: 90
+                                                            },
+                                                            __self: this,
+                                                            children: movie.Genre.Name
+                                                        })
+                                                    })
+                                                ]
+                                            })
+                                        }),
+                                        /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                                            className: "justify-content-md-center mb-4",
+                                            __source: {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 94
+                                            },
+                                            __self: this,
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                                className: "movie-description",
+                                                lg: 10,
+                                                __source: {
+                                                    fileName: "src/components/movie-view/movie-view.jsx",
+                                                    lineNumber: 95
+                                                },
+                                                __self: this,
+                                                children: /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                                                    className: "value",
+                                                    __source: {
+                                                        fileName: "src/components/movie-view/movie-view.jsx",
+                                                        lineNumber: 96
+                                                    },
+                                                    __self: this,
+                                                    children: movie.Description
+                                                })
                                             })
                                         })
                                     ]
-                                })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                                className: "justify-content-md-center mb-4",
-                                __source: {
-                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 92
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                                    className: "movie-description",
-                                    lg: 10,
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                                    className: "movie-poster-container my-4",
+                                    sm: 3,
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 93
+                                        lineNumber: 100
                                     },
                                     __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx("span", {
-                                        className: "value",
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
+                                        className: "movie-poster",
+                                        crossOrigin: "anonymous",
+                                        src: movie.ImagePath,
                                         __source: {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 94
+                                            lineNumber: 101
                                         },
-                                        __self: this,
-                                        children: movie.Description
+                                        __self: this
                                     })
                                 })
-                            })
-                        ]
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                        className: "mb-4",
-                        sm: 3,
-                        __source: {
-                            fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 98
-                        },
-                        __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx("img", {
-                            className: "movie-poster",
-                            crossOrigin: "anonymous",
-                            src: movie.ImagePath,
-                            __source: {
-                                fileName: "src/components/movie-view/movie-view.jsx",
-                                lineNumber: 99
-                            },
-                            __self: this
+                            ]
                         })
                     })
                 ]
