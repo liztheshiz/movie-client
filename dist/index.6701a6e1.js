@@ -34679,6 +34679,7 @@ function MoviesList(props) {
         if (listType === "director") return m.Director.Name === name;
     });
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
+        className: "justify-content-center",
         __source: {
             fileName: "src/components/movies-list/movies-list.jsx",
             lineNumber: 26
@@ -34702,6 +34703,7 @@ function MoviesList(props) {
                 })
             }),
             filteredMovies.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    xs: 11,
                     sm: 6,
                     lg: 4,
                     xl: 3,
