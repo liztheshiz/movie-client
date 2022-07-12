@@ -2,7 +2,7 @@
     "name": "movie-client",
     "version": "1.0.0",
     "description": "This application loads data from the CinemaDatabase API and displays it for users to see. Users can create and edit accounts, including a modifiable list of favorite movies, and view more details on any movie in the database.",
-    "main": "src/index.html",
+    "main": "src/index.jsx",
     "source": "src/index.html",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
