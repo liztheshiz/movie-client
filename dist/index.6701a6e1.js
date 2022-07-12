@@ -25730,7 +25730,7 @@ class MovieView extends _reactDefault.default.Component {
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_rowDefault.default, {
-                className: "justify-content-md-center mt-5",
+                className: "mt-5",
                 __source: {
                     fileName: "src/components/movie-view/movie-view.jsx",
                     lineNumber: 63
@@ -25763,7 +25763,8 @@ class MovieView extends _reactDefault.default.Component {
                     /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                         className: "movie-info",
                         sm: 10,
-                        lg: 10,
+                        lg: 8,
+                        xl: 7,
                         __source: {
                             fileName: "src/components/movie-view/movie-view.jsx",
                             lineNumber: 67
@@ -25778,7 +25779,8 @@ class MovieView extends _reactDefault.default.Component {
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
                                     sm: 9,
-                                    lg: 7,
+                                    lg: 8,
+                                    xl: 10,
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
                                         lineNumber: 69
@@ -25957,6 +25959,7 @@ class MovieView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                                     className: "movie-poster-container my-4",
                                     sm: 3,
+                                    xl: 1,
                                     __source: {
                                         fileName: "src/components/movie-view/movie-view.jsx",
                                         lineNumber: 100
