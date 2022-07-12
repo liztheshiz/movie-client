@@ -8,6 +8,8 @@ import Button from 'react-bootstrap/Button';
 
 import MoviesList from '../movies-list/movies-list';
 
+import './director-view.scss';
+
 export class DirectorView extends React.Component {
     getYear(string) {
         let date = new Date(string);
@@ -20,29 +22,29 @@ export class DirectorView extends React.Component {
         return (
             <Container className="director-view mt-5">
                 <Row className="mt-5">
-                    <Col sm={10}>
-                        <Row className="mb-4">
-                            <Col xs={2} s={1}>
-                                <Button variant="outline-dark" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>
-                            </Col>
-                            <Col className="director-name" xs={9} s={10}>
+                    <Col className="mb-4" xs={2} s={1}>
+                        <Button variant="outline-dark" size="sm" onClick={() => { onBackClick(null); }}>&lt;</Button>
+                    </Col>
+                    <Col className="director-info" sm={10} md={9} xl={8}>
+                        <Row className="justify-content-sm-center mt-3 mb-4">
+                            <Col className="director-name" xs={10}>
                                 <h2 className="value">{movie.Director.Name.toUpperCase()}</h2>
                             </Col>
                         </Row>
-                        <Row className="justify-content-md-center mb-4">
-                            <Col className="director-birth" lg={10}>
+                        <Row className="justify-content-sm-center mb-4">
+                            <Col className="director-birth" xs={10}>
                                 <span className="label">Born: </span>
                                 <span className="value">{this.getYear(movie.Director.Birth)}</span>
                             </Col>
                         </Row>
-                        {movie.Director.Death && <Row className="justify-content-md-center mb-4">
-                            <Col className="director-death" lg={10}>
+                        {movie.Director.Death && <Row className="justify-content-sm-center mb-4">
+                            <Col className="director-death" xs={10}>
                                 <span className="label">Died: </span>
                                 <span className="value">{this.getYear(movie.Director.Death)}</span>
                             </Col>
                         </Row>}
-                        <Row className="justify-content-md-center mb-4">
-                            <Col className="director-bio" lg={10}>
+                        <Row className="justify-content-sm-center mb-4">
+                            <Col className="director-bio" xs={10}>
                                 <span className="value">{movie.Director.Bio}</span>
                             </Col>
                         </Row>

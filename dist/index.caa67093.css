@@ -66,6 +66,13 @@ h2 {
 .text-red {
   color: red !important;
 }
+.director-info {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.9) 2px 3px 0px 5px;
+  margin-bottom: 20px;
+}
 .navbar {
   background: #E6834B !important;
 }
