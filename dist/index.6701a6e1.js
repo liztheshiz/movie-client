@@ -34442,6 +34442,7 @@ function ProfileView(props) {
                 })
             }),
             props.user.FavoriteMovies.length > 0 && /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                className: "mt-5",
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
                     lineNumber: 202
@@ -34464,6 +34465,7 @@ function ProfileView(props) {
                 })
             }),
             props.user.FavoriteMovies.length === 0 && /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                className: "mt-5",
                 __source: {
                     fileName: "src/components/profile-view/profile-view.jsx",
                     lineNumber: 205
