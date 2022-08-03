@@ -30,7 +30,7 @@ export class MovieView extends React.Component {
                     favorite: !this.state.favorite
                 });
                 // window.open(`/movies/titles/${movie._id}`, '_self');
-                // window.location.reload();
+                // location.reload();
             }).catch(err => console.log(err));
     }
 

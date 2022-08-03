@@ -23,7 +23,7 @@ export class MyNavbar extends React.Component {
         return (
             <Navbar className="navbar" variant="dark" expand="md" >
                 <Container>
-                    <Navbar.Brand className="brand" href="/">CINEMA.DATABASE</Navbar.Brand>
+                    <Navbar.Brand className="brand" href="#">CINEMA.DATABASE</Navbar.Brand>
                     {localStorage.getItem('token') && <Navbar.Toggle aria-controls="basic-navbar-nav" />}
                     {localStorage.getItem('token') && <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                         <Nav className="me-auto">

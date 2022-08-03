@@ -146,7 +146,8 @@ export function ProfileView(props) {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(res => {
             alert('Movie removed from favorites list!');
-            window.open(`/users/${props.user.Username}`, '_self');
+            //window.open(`/users/${props.user.Username}`, '_self');
+            location.reload();
         }).catch(err => console.log(err));
     }
 
