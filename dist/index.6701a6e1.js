@@ -25400,7 +25400,7 @@ class MainView extends _reactDefault.default.Component {
     // LIFECYCLE METHODS
     render() {
         const { movies , user  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.BrowserRouter, {
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.HashRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
                 lineNumber: 63
@@ -37282,7 +37282,7 @@ class MyNavbar extends _reactDefault.default.Component {
                             __self: this,
                             children: [
                                 /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
-                                    href: "/about",
+                                    href: "#about",
                                     __source: {
                                         fileName: "src/components/navbar/navbar.jsx",
                                         lineNumber: 30
@@ -37291,7 +37291,7 @@ class MyNavbar extends _reactDefault.default.Component {
                                     children: "About"
                                 }),
                                 /*#__PURE__*/ _jsxRuntime.jsx(_navDefault.default.Link, {
-                                    href: `/users/${localStorage.getItem('user')}`,
+                                    href: `#users/${localStorage.getItem('user')}`,
                                     __source: {
                                         fileName: "src/components/navbar/navbar.jsx",
                                         lineNumber: 31

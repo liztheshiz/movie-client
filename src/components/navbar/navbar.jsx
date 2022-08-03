@@ -27,8 +27,8 @@ export class MyNavbar extends React.Component {
                     {localStorage.getItem('token') && <Navbar.Toggle aria-controls="basic-navbar-nav" />}
                     {localStorage.getItem('token') && <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                         <Nav className="me-auto">
-                            <Nav.Link href="/about">About</Nav.Link>
-                            <Nav.Link href={`/users/${localStorage.getItem('user')}`}>Profile</Nav.Link>
+                            <Nav.Link href="#about">About</Nav.Link>
+                            <Nav.Link href={`#users/${localStorage.getItem('user')}`}>Profile</Nav.Link>
                             <Nav.Link onClick={() => this.onLoggedOut()}>Logout</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>}
