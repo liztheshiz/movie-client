@@ -14,7 +14,7 @@ import { Switch } from 'react-router-dom';
 
 import { LoginView } from '../login-view/login-view';
 import MoviesList from '../movies-list/movies-list';
-import { MovieView } from '../movie-view/movie-view';
+import MovieView from '../movie-view/movie-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { RegistrationView } from '../registration-view/registration-view';
@@ -94,7 +94,7 @@ class MainView extends React.Component {
 
                                 return (
                                     <Col sm={10}>
-                                        <MovieView movie={movies.find(m => m._id === match.params.movieid)} userMovies={user.FavoriteMovies} onBackClick={() => history.goBack()} />
+                                        <MovieView movie={movies.find(m => m._id === match.params.movieid)} userMovies={user.FavoriteMovies} getUser={this.getUser} onBackClick={() => history.goBack()} />
                                     </Col>
                                 )
                             }} />

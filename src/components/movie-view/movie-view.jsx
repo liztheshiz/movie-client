@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
+import { connect } from 'react-redux';
+import { setUser } from '../../actions/actions';
+
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -11,8 +14,17 @@ import { Link } from 'react-router-dom';
 
 import './movie-view.scss';
 
-export class MovieView extends React.Component {
+class MovieView extends React.Component {
     // CUSTOM METHODS
+
+    // Gets user from database using username from local storage (put there after login) and adds user to 'user' var in store
+    getUser(token) {
+        axios.get(`https://cinemadatabase.herokuapp.com/users/${localStorage.getItem('user')}`, {
+            headers: { Authorization: `Bearer ${token}` }
+        }).then(res => {
+            this.props.setUser(res.data)
+        }).catch(err => console.log(err));
+    }
 
     // Adds given movie to given user's favorites list
     addToFavorites(movie) {
@@ -29,6 +41,7 @@ export class MovieView extends React.Component {
                 this.setState({
                     favorite: !this.state.favorite
                 });
+                this.getUser(localStorage.getItem('token'));
                 // window.open(`/movies/titles/${movie._id}`, '_self');
                 // location.reload();
             }).catch(err => console.log(err));
@@ -57,7 +70,7 @@ export class MovieView extends React.Component {
     }*/
 
     render() {
-        const { movie, userMovies, onBackClick } = this.props;
+        const { movie, onBackClick } = this.props;
         const { favorite } = this.state;
 
         return (
@@ -109,6 +122,9 @@ export class MovieView extends React.Component {
         );
     }
 }
+
+// Export component with store props connected
+export default connect(null, { setUser })(MovieView);
 
 MovieView.propTypes = {
     movie: PropTypes.shape({
