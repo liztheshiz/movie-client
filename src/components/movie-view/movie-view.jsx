@@ -42,8 +42,6 @@ class MovieView extends React.Component {
                     favorite: !this.state.favorite
                 });
                 this.getUser(localStorage.getItem('token'));
-                // window.open(`/movies/titles/${movie._id}`, '_self');
-                // location.reload();
             }).catch(err => console.log(err));
     }
 
