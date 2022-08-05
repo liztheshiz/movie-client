@@ -133,7 +133,8 @@ export function ProfileView(props) {
                 const data = res.data;
                 console.log(data);
                 localStorage.setItem('user', res.data.Username);
-                window.open(`/users/${res.data.Username}`, '_self');
+                window.open(`#users/${res.data.Username}`, '_self'); // find a way to reload page when changing username, rather than going to homepage!
+                location.reload();
             }).catch(err => {
                 console.log(err)
             });
