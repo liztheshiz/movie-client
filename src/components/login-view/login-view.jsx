@@ -51,7 +51,7 @@ export function LoginView(props) {
         // Only sends axios request if all fields pass client-side validation check
         const isReq = validate();
         if (isReq) {
-            axios.post('https://cinemadatabase.herokuapp.com/login', {
+            axios.post('http://ec2-35-172-250-209.compute-1.amazonaws.com/login', {
                 Username: username,
                 Password: password
             }).then(res => {

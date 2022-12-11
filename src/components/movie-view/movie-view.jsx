@@ -19,7 +19,7 @@ class MovieView extends React.Component {
 
     // Gets user from database using username from local storage (put there after login) and adds user to 'user' var in store
     getUser(token) {
-        axios.get(`https://cinemadatabase.herokuapp.com/users/${localStorage.getItem('user')}`, {
+        axios.get(`http://ec2-35-172-250-209.compute-1.amazonaws.com/users/${localStorage.getItem('user')}`, {
             headers: { Authorization: `Bearer ${token}` }
         }).then(res => {
             this.props.setUser(res.data)
@@ -31,7 +31,7 @@ class MovieView extends React.Component {
         let token = localStorage.getItem('token');
         let user = localStorage.getItem('user');
 
-        axios.post(`https://cinemadatabase.herokuapp.com/users/${user}/FavoriteMovies/${movie._id}`, {},
+        axios.post(`http://ec2-35-172-250-209.compute-1.amazonaws.com/users/${user}/FavoriteMovies/${movie._id}`, {},
             {
                 headers: {
                     Authorization: `Bearer ${token}`

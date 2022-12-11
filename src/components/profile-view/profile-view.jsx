@@ -58,7 +58,7 @@ export function ProfileView(props) {
 
     // Deletes current user and reloads to login page
     const deleteUser = () => {
-        axios.delete(`https://cinemadatabase.herokuapp.com/users/${props.user.Username}`, {
+        axios.delete(`http://ec2-35-172-250-209.compute-1.amazonaws.com/users/${props.user.Username}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(res => {
             alert('User deleted!');
@@ -127,7 +127,7 @@ export function ProfileView(props) {
                 Email: email,
                 Birthday: birthday
             };
-            axios.put(`https://cinemadatabase.herokuapp.com/users/${props.user.Username}`, request, {
+            axios.put(`http://ec2-35-172-250-209.compute-1.amazonaws.com/users/${props.user.Username}`, request, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             }).then(res => {
                 const data = res.data;
@@ -143,7 +143,7 @@ export function ProfileView(props) {
 
     // Removes given movie from user's list of favorites and reloads page to show change
     const removeFromFavorites = (movieid) => {
-        axios.delete(`https://cinemadatabase.herokuapp.com/users/${props.user.Username}/FavoriteMovies/${movieid}`, {
+        axios.delete(`http://ec2-35-172-250-209.compute-1.amazonaws.com/users/${props.user.Username}/FavoriteMovies/${movieid}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(res => {
             alert('Movie removed from favorites list!');
