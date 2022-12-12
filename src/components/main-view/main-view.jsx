@@ -29,7 +29,7 @@ class MainView extends React.Component {
 
     // Gets movie list from database and adds list to 'movies' var in store
     getMovies(token) {
-        axios.get('http://ec2-35-172-250-209.compute-1.amazonaws.com/movies', {
+        axios.get('http://ec2-35-172-250-209.compute-1.amazonaws.com:8081/movies', {
             headers: { Authorization: `Bearer ${token}` }
         }).then(res => {
             this.props.setMovies(res.data);
@@ -38,7 +38,7 @@ class MainView extends React.Component {
 
     // Gets user from database using username from local storage (put there after login) and adds user to 'user' var in store
     getUser(token) {
-        axios.get(`http://ec2-35-172-250-209.compute-1.amazonaws.com/users/${localStorage.getItem('user')}`, {
+        axios.get(`http://ec2-35-172-250-209.compute-1.amazonaws.com:8081/users/${localStorage.getItem('user')}`, {
             headers: { Authorization: `Bearer ${token}` }
         }).then(res => {
             this.props.setUser(res.data)
