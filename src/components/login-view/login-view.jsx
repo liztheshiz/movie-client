@@ -51,7 +51,7 @@ export function LoginView(props) {
         // Only sends axios request if all fields pass client-side validation check
         const isReq = validate();
         if (isReq) {
-            axios.post('http://ec2-44-204-142-22.compute-1.amazonaws.com:8081/login', {
+            axios.post('http://ec2-44-200-110-9.compute-1.amazonaws.com:8081/login', {
                 Username: username,
                 Password: password
             }).then(res => {
