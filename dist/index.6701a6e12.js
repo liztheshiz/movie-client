@@ -25371,7 +25371,7 @@ class MainView extends _reactDefault.default.Component {
     // CUSTOM METHODS
     // Gets movie list from database and adds list to 'movies' var in store
     getMovies(token) {
-        _axiosDefault.default.get('http://ec2-44-204-142-22.compute-1.amazonaws.com:8081/movies', {
+        _axiosDefault.default.get('http://ec2-44-200-110-9.compute-1.amazonaws.com:8081/movies', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -25382,7 +25382,7 @@ class MainView extends _reactDefault.default.Component {
     }
     // Gets user from database using username from local storage (put there after login) and adds user to 'user' var in store
     getUser(token) {
-        _axiosDefault.default.get(`http://ec2-44-204-142-22.compute-1.amazonaws.com:8081/users/${localStorage.getItem('user')}`, {
+        _axiosDefault.default.get(`http://ec2-44-200-110-9.compute-1.amazonaws.com:8081/users/${localStorage.getItem('user')}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -25688,7 +25688,7 @@ class MovieView extends _reactDefault.default.Component {
     // CUSTOM METHODS
     // Gets user from database using username from local storage (put there after login) and adds user to 'user' var in store
     getUser(token) {
-        _axiosDefault.default.get(`http://ec2-44-204-142-22.compute-1.amazonaws.com:8081/users/${localStorage.getItem('user')}`, {
+        _axiosDefault.default.get(`http://ec2-44-200-110-9.compute-1.amazonaws.com:8081/users/${localStorage.getItem('user')}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -25701,7 +25701,7 @@ class MovieView extends _reactDefault.default.Component {
     addToFavorites(movie) {
         let token = localStorage.getItem('token');
         let user = localStorage.getItem('user');
-        _axiosDefault.default.post(`http://ec2-44-204-142-22.compute-1.amazonaws.com:8081/users/${user}/FavoriteMovies/${movie._id}`, {
+        _axiosDefault.default.post(`http://ec2-44-200-110-9.compute-1.amazonaws.com:8081/users/${user}/FavoriteMovies/${movie._id}`, {
         }, {
             headers: {
                 Authorization: `Bearer ${token}`
@@ -34313,7 +34313,7 @@ function LoginView(props) {
         e.preventDefault(); // prevents page from refreshing when clicking submit button
         // Only sends axios request if all fields pass client-side validation check
         const isReq = validate();
-        if (isReq) _axiosDefault.default.post('http://ec2-44-204-142-22.compute-1.amazonaws.com:8081/login', {
+        if (isReq) _axiosDefault.default.post('http://ec2-44-200-110-9.compute-1.amazonaws.com:8081/login', {
             Username: username,
             Password: password
         }).then((res)=>{
@@ -35209,7 +35209,7 @@ function RegistrationView(props) {
                 Email: email,
                 Birthday: birthday
             };
-            _axiosDefault.default.post('http://ec2-44-204-142-22.compute-1.amazonaws.com:8081/users', request).then((res)=>{
+            _axiosDefault.default.post('http://ec2-44-200-110-9.compute-1.amazonaws.com:8081/users', request).then((res)=>{
                 alert('User successfully registered! Redirecting to login...');
                 window.open('/', '_self');
             /* const data = { user: { Username: res.data.Username, Password: res.data.Password } };
@@ -35596,7 +35596,7 @@ function ProfileView(props) {
     };
     // Deletes current user and reloads to login page
     const deleteUser = ()=>{
-        _axiosDefault.default.delete(`http://ec2-44-204-142-22.compute-1.amazonaws.com:8081/users/${props.user.Username}`, {
+        _axiosDefault.default.delete(`http://ec2-44-200-110-9.compute-1.amazonaws.com:8081/users/${props.user.Username}`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -35660,7 +35660,7 @@ function ProfileView(props) {
                 Email: email,
                 Birthday: birthday
             };
-            _axiosDefault.default.put(`http://ec2-44-204-142-22.compute-1.amazonaws.com:8081/users/${props.user.Username}`, request, {
+            _axiosDefault.default.put(`http://ec2-44-200-110-9.compute-1.amazonaws.com:8081/users/${props.user.Username}`, request, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('token')}`
                 }
@@ -35677,7 +35677,7 @@ function ProfileView(props) {
     };
     // Removes given movie from user's list of favorites and reloads page to show change
     const removeFromFavorites = (movieid)=>{
-        _axiosDefault.default.delete(`http://ec2-44-204-142-22.compute-1.amazonaws.com:8081/users/${props.user.Username}/FavoriteMovies/${movieid}`, {
+        _axiosDefault.default.delete(`http://ec2-44-200-110-9.compute-1.amazonaws.com:8081/users/${props.user.Username}/FavoriteMovies/${movieid}`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
