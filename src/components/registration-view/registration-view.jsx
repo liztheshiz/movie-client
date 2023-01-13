@@ -88,7 +88,7 @@ export function RegistrationView(props) {
                 Email: email,
                 Birthday: birthday
             };
-            axios.post('http://ec2-44-200-110-9.compute-1.amazonaws.com:8081/users', request).then(res => {
+            axios.post('http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com/users', request).then(res => {
                 alert('User successfully registered! Redirecting to login...');
                 window.open('/', '_self');
 
