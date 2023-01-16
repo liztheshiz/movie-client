@@ -58,7 +58,7 @@ export function ProfileView(props) {
 
     // Deletes current user and reloads to login page
     const deleteUser = () => {
-        axios.delete(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com/users/${props.user.Username}`, {
+        axios.delete(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/users/${props.user.Username}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(res => {
             alert('User deleted!');
@@ -127,7 +127,7 @@ export function ProfileView(props) {
                 Email: email,
                 Birthday: birthday
             };
-            axios.put(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com/users/${props.user.Username}`, request, {
+            axios.put(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/users/${props.user.Username}`, request, {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             }).then(res => {
                 const data = res.data;
@@ -143,7 +143,7 @@ export function ProfileView(props) {
 
     // Removes given movie from user's list of favorites and reloads page to show change
     const removeFromFavorites = (movieid) => {
-        axios.delete(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com/users/${props.user.Username}/FavoriteMovies/${movieid}`, {
+        axios.delete(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/users/${props.user.Username}/FavoriteMovies/${movieid}`, {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
         }).then(res => {
             alert('Movie removed from favorites list!');

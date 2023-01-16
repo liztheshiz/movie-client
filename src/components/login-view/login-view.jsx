@@ -51,7 +51,7 @@ export function LoginView(props) {
         // Only sends axios request if all fields pass client-side validation check
         const isReq = validate();
         if (isReq) {
-            axios.post('http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com/login', {
+            axios.post('http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/login', {
                 Username: username,
                 Password: password
             }).then(res => {
