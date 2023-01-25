@@ -25,6 +25,13 @@ export function AwsView() {
         });
     }
 
+    const handleListSubmit = (e) => {
+        e.preventDefault();
+
+        console.log('handling submit');
+        // list all objects below button by name; button next to each name to view file
+    }
+
     return (
         <Container className="aws-view mt-5">
             <Row className="justify-content-sm-center mt-3">
@@ -36,6 +43,11 @@ export function AwsView() {
                         </Form.Group>
                         <Button className="mt-4" variant="dark" type="submit" onClick={handleS3Submit}>Upload</Button>
                     </Form>
+                </Col>
+            </Row>
+            <Row className="justify-content-sm-center mt-3">
+                <Col sm={8} md={6} lg={4}>
+                    <Button className="mt-4" type="submit" onClick={handleListSubmit}>View Bucket Contents</Button>
                 </Col>
             </Row>
         </Container>

@@ -41342,80 +41342,116 @@ function AwsView() {
             }
         });
     };
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+    const handleListSubmit = (e)=>{
+        e.preventDefault();
+        console.log('handling submit');
+    // list all objects below button by name; button next to each name to view file
+    };
+    return(/*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
         className: "aws-view mt-5",
         __source: {
             fileName: "src/components/aws-view/aws-view.jsx",
-            lineNumber: 29
+            lineNumber: 36
         },
         __self: this,
-        children: /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-            className: "justify-content-sm-center mt-3",
-            __source: {
-                fileName: "src/components/aws-view/aws-view.jsx",
-                lineNumber: 30
-            },
-            __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                sm: 8,
-                md: 6,
-                lg: 4,
+        children: [
+            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                className: "justify-content-sm-center mt-3",
                 __source: {
                     fileName: "src/components/aws-view/aws-view.jsx",
-                    lineNumber: 31
+                    lineNumber: 37
                 },
                 __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx("h2", {
-                        __source: {
-                            fileName: "src/components/aws-view/aws-view.jsx",
-                            lineNumber: 32
-                        },
-                        __self: this,
-                        children: "AWS File Upload"
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
-                        __source: {
-                            fileName: "src/components/aws-view/aws-view.jsx",
-                            lineNumber: 33
-                        },
-                        __self: this,
-                        children: [
-                            /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Group, {
-                                controlId: "formImage",
-                                __source: {
-                                    fileName: "src/components/aws-view/aws-view.jsx",
-                                    lineNumber: 34
-                                },
-                                __self: this,
-                                children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                    id: "input-file",
-                                    type: "file",
-                                    name: "image",
+                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                    sm: 8,
+                    md: 6,
+                    lg: 4,
+                    __source: {
+                        fileName: "src/components/aws-view/aws-view.jsx",
+                        lineNumber: 38
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                            __source: {
+                                fileName: "src/components/aws-view/aws-view.jsx",
+                                lineNumber: 39
+                            },
+                            __self: this,
+                            children: "AWS File Upload"
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+                            __source: {
+                                fileName: "src/components/aws-view/aws-view.jsx",
+                                lineNumber: 40
+                            },
+                            __self: this,
+                            children: [
+                                /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Group, {
+                                    controlId: "formImage",
                                     __source: {
                                         fileName: "src/components/aws-view/aws-view.jsx",
-                                        lineNumber: 35
+                                        lineNumber: 41
                                     },
-                                    __self: this
+                                    __self: this,
+                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                        id: "input-file",
+                                        type: "file",
+                                        name: "image",
+                                        __source: {
+                                            fileName: "src/components/aws-view/aws-view.jsx",
+                                            lineNumber: 42
+                                        },
+                                        __self: this
+                                    })
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                    className: "mt-4",
+                                    variant: "dark",
+                                    type: "submit",
+                                    onClick: handleS3Submit,
+                                    __source: {
+                                        fileName: "src/components/aws-view/aws-view.jsx",
+                                        lineNumber: 44
+                                    },
+                                    __self: this,
+                                    children: "Upload"
                                 })
-                            }),
-                            /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                className: "mt-4",
-                                variant: "dark",
-                                type: "submit",
-                                onClick: handleS3Submit,
-                                __source: {
-                                    fileName: "src/components/aws-view/aws-view.jsx",
-                                    lineNumber: 37
-                                },
-                                __self: this,
-                                children: "Upload"
-                            })
-                        ]
+                            ]
+                        })
+                    ]
+                })
+            }),
+            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                className: "justify-content-sm-center mt-3",
+                __source: {
+                    fileName: "src/components/aws-view/aws-view.jsx",
+                    lineNumber: 48
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                    sm: 8,
+                    md: 6,
+                    lg: 4,
+                    __source: {
+                        fileName: "src/components/aws-view/aws-view.jsx",
+                        lineNumber: 49
+                    },
+                    __self: this,
+                    children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                        className: "mt-4",
+                        type: "submit",
+                        onClick: handleListSubmit,
+                        __source: {
+                            fileName: "src/components/aws-view/aws-view.jsx",
+                            lineNumber: 50
+                        },
+                        __self: this,
+                        children: "View Bucket Contents"
                     })
-                ]
+                })
             })
-        })
+        ]
     }));
 }
 _c = AwsView;
