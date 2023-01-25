@@ -25366,6 +25366,7 @@ var _registrationView = require("../registration-view/registration-view");
 var _profileView = require("../profile-view/profile-view");
 var _aboutView = require("../about-view/about-view");
 var _navbar = require("../navbar/navbar");
+var _awsView = require("../aws-view/aws-view");
 var _mainViewScss = require("./main-view.scss");
 class MainView extends _reactDefault.default.Component {
     // CUSTOM METHODS
@@ -25404,34 +25405,34 @@ class MainView extends _reactDefault.default.Component {
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.HashRouter, {
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 63
+                lineNumber: 64
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsx(_navbar.MyNavbar, {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 64
+                        lineNumber: 65
                     },
                     __self: this
                 }),
                 /*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 65
+                        lineNumber: 66
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
                         className: "justify-content-md-center main-view",
                         __source: {
                             fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 66
+                            lineNumber: 67
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactRouterDom.Switch, {
                             __source: {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 67
+                                lineNumber: 68
                             },
                             __self: this,
                             children: [
@@ -25468,7 +25469,20 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 68
+                                        lineNumber: 69
+                                    },
+                                    __self: this
+                                }),
+                                /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Route, {
+                                    exact: true,
+                                    path: "/aws",
+                                    render: ()=>{
+                                        return(/*#__PURE__*/ _jsxRuntime.jsx(_awsView.AwsView, {
+                                        }));
+                                    },
+                                    __source: {
+                                        fileName: "src/components/main-view/main-view.jsx",
+                                        lineNumber: 83
                                     },
                                     __self: this
                                 }),
@@ -25481,7 +25495,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 82
+                                        lineNumber: 88
                                     },
                                     __self: this
                                 }),
@@ -25498,7 +25512,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 87
+                                        lineNumber: 93
                                     },
                                     __self: this
                                 }),
@@ -25525,7 +25539,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 91
+                                        lineNumber: 97
                                     },
                                     __self: this
                                 }),
@@ -25551,7 +25565,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 101
+                                        lineNumber: 107
                                     },
                                     __self: this
                                 }),
@@ -25577,7 +25591,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 111
+                                        lineNumber: 117
                                     },
                                     __self: this
                                 }),
@@ -25597,7 +25611,7 @@ class MainView extends _reactDefault.default.Component {
                                     },
                                     __source: {
                                         fileName: "src/components/main-view/main-view.jsx",
-                                        lineNumber: 121
+                                        lineNumber: 127
                                     },
                                     __self: this
                                 })
@@ -25656,7 +25670,7 @@ MainView.propTypes = {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","axios":"iYoWk","../login-view/login-view":"054li","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../profile-view/profile-view":"2E7Aw","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","react-redux":"2L0if","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","../navbar/navbar":"63yS7","prop-types":"1tgq3","./main-view.scss":"jyMAr","../about-view/about-view":"dCmWf","react-bootstrap/Container":"2PRIq"}],"ikZdr":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","../movie-view/movie-view":"ikZdr","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","axios":"iYoWk","../login-view/login-view":"054li","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-router-dom":"cpyQW","../registration-view/registration-view":"aP2YV","../profile-view/profile-view":"2E7Aw","../director-view/director-view":"ck15y","../genre-view/genre-view":"8WCoL","react-redux":"2L0if","../../actions/actions":"1Ttfj","../movies-list/movies-list":"1kGQ5","../navbar/navbar":"63yS7","prop-types":"1tgq3","./main-view.scss":"jyMAr","../about-view/about-view":"dCmWf","react-bootstrap/Container":"2PRIq","../aws-view/aws-view":"4EOmN"}],"ikZdr":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3741 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34328,22 +34342,11 @@ function LoginView(props) {
                     </Alert>
                 );*/ });
     };
-    const handleS3Submit = (e)=>{
-        e.preventDefault();
-        let formData = new FormData();
-        selectedFile = document.getElementById('input-file').files[0];
-        formData.append('image', selectedFile);
-        _axiosDefault.default.post('http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images', formData, {
-            headers: {
-                'Content-Type': 'multipart/form-data'
-            }
-        });
-    };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
         className: "login-view mt-5",
         __source: {
             fileName: "src/components/login-view/login-view.jsx",
-            lineNumber: 87
+            lineNumber: 73
         },
         __self: this,
         children: [
@@ -34351,20 +34354,20 @@ function LoginView(props) {
                 className: "mb-5",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 88
+                    lineNumber: 74
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                     className: "text-center",
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 89
+                        lineNumber: 75
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 90
+                            lineNumber: 76
                         },
                         __self: this,
                         children: "Welcome to CinemaDatabase!"
@@ -34375,7 +34378,7 @@ function LoginView(props) {
                 className: "justify-content-sm-center",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 93
+                    lineNumber: 79
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
@@ -34384,13 +34387,13 @@ function LoginView(props) {
                     lg: 4,
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 94
+                        lineNumber: 80
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
                         __source: {
                             fileName: "src/components/login-view/login-view.jsx",
-                            lineNumber: 95
+                            lineNumber: 81
                         },
                         __self: this,
                         children: [
@@ -34398,14 +34401,14 @@ function LoginView(props) {
                                 controlId: "formUsername",
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 96
+                                    lineNumber: 82
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 97
+                                            lineNumber: 83
                                         },
                                         __self: this,
                                         children: "Username:"
@@ -34416,7 +34419,7 @@ function LoginView(props) {
                                         ,
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 98
+                                            lineNumber: 84
                                         },
                                         __self: this
                                     }),
@@ -34424,7 +34427,7 @@ function LoginView(props) {
                                         className: "text-red",
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 99
+                                            lineNumber: 85
                                         },
                                         __self: this,
                                         children: usernameErr
@@ -34436,14 +34439,14 @@ function LoginView(props) {
                                 controlId: "formPassword",
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 101
+                                    lineNumber: 87
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Label, {
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 102
+                                            lineNumber: 88
                                         },
                                         __self: this,
                                         children: "Password:"
@@ -34454,7 +34457,7 @@ function LoginView(props) {
                                         ,
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 103
+                                            lineNumber: 89
                                         },
                                         __self: this
                                     }),
@@ -34462,7 +34465,7 @@ function LoginView(props) {
                                         className: "text-red",
                                         __source: {
                                             fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 104
+                                            lineNumber: 90
                                         },
                                         __self: this,
                                         children: passwordErr
@@ -34476,7 +34479,7 @@ function LoginView(props) {
                                 onClick: handleSubmit,
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 106
+                                    lineNumber: 92
                                 },
                                 __self: this,
                                 children: "Login"
@@ -34489,7 +34492,7 @@ function LoginView(props) {
                 className: "justify-content-sm-center",
                 __source: {
                     fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 110
+                    lineNumber: 96
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
@@ -34497,14 +34500,14 @@ function LoginView(props) {
                     md: 4,
                     __source: {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 111
+                        lineNumber: 97
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx("span", {
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 112
+                                lineNumber: 98
                             },
                             __self: this,
                             children: "New user?"
@@ -34513,85 +34516,18 @@ function LoginView(props) {
                             to: "/register",
                             __source: {
                                 fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 112
+                                lineNumber: 98
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                 variant: "link",
                                 __source: {
                                     fileName: "src/components/login-view/login-view.jsx",
-                                    lineNumber: 112
+                                    lineNumber: 98
                                 },
                                 __self: this,
                                 children: "Register here"
                             })
-                        })
-                    ]
-                })
-            }),
-            /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                className: "justify-content-sm-center mt-3",
-                __source: {
-                    fileName: "src/components/login-view/login-view.jsx",
-                    lineNumber: 115
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
-                    sm: 8,
-                    md: 6,
-                    lg: 4,
-                    __source: {
-                        fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 116
-                    },
-                    __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx("h2", {
-                            __source: {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 117
-                            },
-                            __self: this,
-                            children: "AWS File Upload"
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
-                            __source: {
-                                fileName: "src/components/login-view/login-view.jsx",
-                                lineNumber: 118
-                            },
-                            __self: this,
-                            children: [
-                                /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Group, {
-                                    controlId: "formImage",
-                                    __source: {
-                                        fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 119
-                                    },
-                                    __self: this,
-                                    children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
-                                        id: "input-file",
-                                        type: "file",
-                                        name: "image",
-                                        __source: {
-                                            fileName: "src/components/login-view/login-view.jsx",
-                                            lineNumber: 120
-                                        },
-                                        __self: this
-                                    })
-                                }),
-                                /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                                    className: "mt-4",
-                                    variant: "dark",
-                                    type: "submit",
-                                    onClick: handleS3Submit,
-                                    __source: {
-                                        fileName: "src/components/login-view/login-view.jsx",
-                                        lineNumber: 122
-                                    },
-                                    __self: this,
-                                    children: "Upload"
-                                })
-                            ]
                         })
                     ]
                 })
@@ -37315,6 +37251,8 @@ var _navbar = require("react-bootstrap/Navbar");
 var _navbarDefault = parcelHelpers.interopDefault(_navbar);
 var _nav = require("react-bootstrap/Nav");
 var _navDefault = parcelHelpers.interopDefault(_nav);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _navbarScss = require("./navbar.scss");
 class MyNavbar extends _reactDefault.default.Component {
     // CUSTOM METHODS
@@ -37331,13 +37269,13 @@ class MyNavbar extends _reactDefault.default.Component {
             expand: "md",
             __source: {
                 fileName: "src/components/navbar/navbar.jsx",
-                lineNumber: 24
+                lineNumber: 25
             },
             __self: this,
             children: /*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
                 __source: {
                     fileName: "src/components/navbar/navbar.jsx",
-                    lineNumber: 25
+                    lineNumber: 26
                 },
                 __self: this,
                 children: [
@@ -37346,16 +37284,26 @@ class MyNavbar extends _reactDefault.default.Component {
                         href: "#",
                         __source: {
                             fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 26
+                            lineNumber: 27
                         },
                         __self: this,
                         children: "CINEMA.DATABASE"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                        href: "#aws",
+                        className: "aws-link",
+                        __source: {
+                            fileName: "src/components/navbar/navbar.jsx",
+                            lineNumber: 28
+                        },
+                        __self: this,
+                        children: "AWS"
                     }),
                     localStorage.getItem('token') && /*#__PURE__*/ _jsxRuntime.jsx(_navbarDefault.default.Toggle, {
                         "aria-controls": "basic-navbar-nav",
                         __source: {
                             fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 27
+                            lineNumber: 29
                         },
                         __self: this
                     }),
@@ -37364,14 +37312,14 @@ class MyNavbar extends _reactDefault.default.Component {
                         className: "justify-content-end",
                         __source: {
                             fileName: "src/components/navbar/navbar.jsx",
-                            lineNumber: 28
+                            lineNumber: 30
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsxs(_navDefault.default, {
                             className: "me-auto",
                             __source: {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 29
+                                lineNumber: 31
                             },
                             __self: this,
                             children: [
@@ -37379,7 +37327,7 @@ class MyNavbar extends _reactDefault.default.Component {
                                     href: "#about",
                                     __source: {
                                         fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 30
+                                        lineNumber: 32
                                     },
                                     __self: this,
                                     children: "About"
@@ -37388,7 +37336,7 @@ class MyNavbar extends _reactDefault.default.Component {
                                     href: `#users/${localStorage.getItem('user')}`,
                                     __source: {
                                         fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 31
+                                        lineNumber: 33
                                     },
                                     __self: this,
                                     children: "Profile"
@@ -37398,7 +37346,7 @@ class MyNavbar extends _reactDefault.default.Component {
                                     ,
                                     __source: {
                                         fileName: "src/components/navbar/navbar.jsx",
-                                        lineNumber: 32
+                                        lineNumber: 34
                                     },
                                     __self: this,
                                     children: "Logout"
@@ -37417,7 +37365,7 @@ class MyNavbar extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Nav":"io07g","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","prop-types":"1tgq3","./navbar.scss":"eqSoH"}],"eYZQl":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Navbar":"eYZQl","react-bootstrap/Nav":"io07g","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","prop-types":"1tgq3","./navbar.scss":"eqSoH","react-bootstrap/Button":"9CzHT"}],"eYZQl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _classnames = require("classnames");
@@ -41355,7 +41303,131 @@ $RefreshReg$(_c, "AboutView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-bootstrap/Container":"2PRIq","./about-view.scss":"hcxUX"}],"hcxUX":[function() {},{}],"4d0QS":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","react-bootstrap/Container":"2PRIq","./about-view.scss":"hcxUX"}],"hcxUX":[function() {},{}],"4EOmN":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0fd2 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0fd2.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "AwsView", ()=>AwsView
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _container = require("react-bootstrap/Container");
+var _containerDefault = parcelHelpers.interopDefault(_container);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _form = require("react-bootstrap/Form");
+var _formDefault = parcelHelpers.interopDefault(_form);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _awsViewScss = require("./aws-view.scss");
+function AwsView() {
+    const handleS3Submit = (e)=>{
+        e.preventDefault();
+        let formData = new FormData();
+        selectedFile = document.getElementById('input-file').files[0];
+        formData.append('image', selectedFile);
+        _axiosDefault.default.post('http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+    };
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_containerDefault.default, {
+        className: "aws-view mt-5",
+        __source: {
+            fileName: "src/components/aws-view/aws-view.jsx",
+            lineNumber: 29
+        },
+        __self: this,
+        children: /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+            className: "justify-content-sm-center mt-3",
+            __source: {
+                fileName: "src/components/aws-view/aws-view.jsx",
+                lineNumber: 30
+            },
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
+                sm: 8,
+                md: 6,
+                lg: 4,
+                __source: {
+                    fileName: "src/components/aws-view/aws-view.jsx",
+                    lineNumber: 31
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx("h2", {
+                        __source: {
+                            fileName: "src/components/aws-view/aws-view.jsx",
+                            lineNumber: 32
+                        },
+                        __self: this,
+                        children: "AWS File Upload"
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+                        __source: {
+                            fileName: "src/components/aws-view/aws-view.jsx",
+                            lineNumber: 33
+                        },
+                        __self: this,
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Group, {
+                                controlId: "formImage",
+                                __source: {
+                                    fileName: "src/components/aws-view/aws-view.jsx",
+                                    lineNumber: 34
+                                },
+                                __self: this,
+                                children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
+                                    id: "input-file",
+                                    type: "file",
+                                    name: "image",
+                                    __source: {
+                                        fileName: "src/components/aws-view/aws-view.jsx",
+                                        lineNumber: 35
+                                    },
+                                    __self: this
+                                })
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                                className: "mt-4",
+                                variant: "dark",
+                                type: "submit",
+                                onClick: handleS3Submit,
+                                __source: {
+                                    fileName: "src/components/aws-view/aws-view.jsx",
+                                    lineNumber: 37
+                                },
+                                __self: this,
+                                children: "Upload"
+                            })
+                        ]
+                    })
+                ]
+            })
+        })
+    }));
+}
+_c = AwsView;
+var _c;
+$RefreshReg$(_c, "AwsView");
+
+  $parcel$ReactRefreshHelpers$0fd2.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","./aws-view.scss":"29CmC","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","axios":"iYoWk"}],"29CmC":[function() {},{}],"4d0QS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "__DO_NOT_USE__ActionTypes", ()=>ActionTypes

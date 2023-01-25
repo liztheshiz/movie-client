@@ -21,6 +21,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { ProfileView } from '../profile-view/profile-view';
 import { AboutView } from '../about-view/about-view';
 import { MyNavbar } from '../navbar/navbar';
+import { AwsView } from '../aws-view/aws-view';
 
 import './main-view.scss';
 
@@ -77,6 +78,11 @@ class MainView extends React.Component {
                                         </Row>
                                         <MoviesList movies={movies} listType="main" />
                                     </div>
+                                )
+                            }} />
+                            <Route exact path="/aws" render={() => {
+                                return (
+                                    <AwsView />
                                 )
                             }} />
                             <Route exact path="/about" render={() => {

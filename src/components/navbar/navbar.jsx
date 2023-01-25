@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
+import Button from 'react-bootstrap/Button';
 
 import './navbar.scss';
 
@@ -24,6 +25,7 @@ export class MyNavbar extends React.Component {
             <Navbar className="navbar" variant="dark" expand="md" >
                 <Container>
                     <Navbar.Brand className="brand" href="#">CINEMA.DATABASE</Navbar.Brand>
+                    <Button href="#aws" className="aws-link">AWS</Button>
                     {localStorage.getItem('token') && <Navbar.Toggle aria-controls="basic-navbar-nav" />}
                     {localStorage.getItem('token') && <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                         <Nav className="me-auto">

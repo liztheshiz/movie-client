@@ -96,10 +96,17 @@ h2 {
 .brand {
   font-family: "Oswald", sans-serif;
 }
+
+.aws-link {
+  font-size: 20px !important;
+  color: white !important;
+  background-color: antiquewhite;
+}
 h1 {
   font-family: "Oswald", sans-serif;
 }
 .about_title {
   border-bottom: 3px solid black !important;
 }
+
 /*# sourceMappingURL=index.caa67093.css.map */
