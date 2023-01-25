@@ -69,6 +69,20 @@ export function LoginView(props) {
         }
     };
 
+    const handleS3Submit = (e) => {
+        e.preventDefault();
+
+        let formData = new FormData();
+        selectedFile = document.getElementById('input-file').files[0];
+        formData.append('image', selectedFile);
+
+        axios.post('http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images', formData, {
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            }
+        });
+    }
+
     return (
         <Container className="login-view mt-5">
             <Row className="mb-5">
@@ -93,9 +107,20 @@ export function LoginView(props) {
                     </Form>
                 </Col>
             </Row>
-            <Row className="justify-content-sm-center mt-3">
+            <Row className="justify-content-sm-center">
                 <Col className="text-center" md={4}>
                     <span>New user?</span><Link to="/register"><Button variant="link">Register here</Button></Link>
+                </Col>
+            </Row>
+            <Row className="justify-content-sm-center mt-3">
+                <Col sm={8} md={6} lg={4}>
+                    <h2>AWS File Upload</h2>
+                    <Form>
+                        <Form.Group controlId="formImage">
+                            <Form.Control id="input-file" type="file" name="image" />
+                        </Form.Group>
+                        <Button className="mt-4" variant="dark" type="submit" onClick={handleS3Submit}>Upload</Button>
+                    </Form>
                 </Col>
             </Row>
         </Container>
