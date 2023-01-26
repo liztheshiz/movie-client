@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -6,12 +6,18 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
+import { ObjectsList } from '../../objects-list/objects-list';
+
 import axios from 'axios';
 
 import './aws-view.scss';
 
 export function AwsView() {
+    const [displayList, setDisplayList] = useState(false);
+    const [objects, setObjects] = useState([]);
+
     const handleS3Submit = (e) => {
+        // keeps page from reloading
         e.preventDefault();
 
         let formData = new FormData();
@@ -26,10 +32,13 @@ export function AwsView() {
     }
 
     const handleListSubmit = (e) => {
+        // keeps page from reloading
         e.preventDefault();
 
         console.log('handling submit');
-        // list all objects below button by name; button next to each name to view file
+        axios.get('http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images')
+            .then((res) => setObjects(res.data.Contents))
+            .then(() => setDisplayList(true));
     }
 
     return (
@@ -50,6 +59,12 @@ export function AwsView() {
                     <Button className="mt-4" type="submit" onClick={handleListSubmit}>View Bucket Contents</Button>
                 </Col>
             </Row>
+            {displayList && <div>
+                <Row className="mt-5 mb-4">
+                    <h1>Objects:</h1>
+                </Row>
+                <ObjectsList objects={objects} />
+            </div>}
         </Container>
     );
 }
