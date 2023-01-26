@@ -41390,6 +41390,7 @@ function AwsView() {
                             children: "AWS File Upload"
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
+                            className: "mt-4",
                             __source: {
                                 fileName: "src/components/aws-view/aws-view.jsx",
                                 lineNumber: 49
@@ -41417,6 +41418,7 @@ function AwsView() {
                                 /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                                     className: "mt-4",
                                     variant: "dark",
+                                    size: "sm",
                                     type: "submit",
                                     onClick: handleS3Submit,
                                     __source: {
@@ -41432,16 +41434,14 @@ function AwsView() {
                 })
             }),
             /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                className: "justify-content-sm-center mt-3",
+                className: "justify-content-sm-center mt-5",
                 __source: {
                     fileName: "src/components/aws-view/aws-view.jsx",
                     lineNumber: 57
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
-                    sm: 8,
-                    md: 6,
-                    lg: 4,
+                    className: "text-center",
                     __source: {
                         fileName: "src/components/aws-view/aws-view.jsx",
                         lineNumber: 58
@@ -41449,6 +41449,8 @@ function AwsView() {
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                         className: "mt-4",
+                        variant: "outline-dark",
+                        size: "lg",
                         type: "submit",
                         onClick: handleListSubmit,
                         __source: {
@@ -41468,26 +41470,36 @@ function AwsView() {
                 __self: this,
                 children: [
                     /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
-                        className: "mt-5 mb-4",
+                        className: "justify-content-sm-center mt-4",
                         __source: {
                             fileName: "src/components/aws-view/aws-view.jsx",
                             lineNumber: 63
                         },
                         __self: this,
-                        children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                        children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                            sm: 8,
+                            md: 6,
+                            lg: 4,
                             __source: {
                                 fileName: "src/components/aws-view/aws-view.jsx",
                                 lineNumber: 64
                             },
                             __self: this,
-                            children: "Objects:"
+                            children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                                __source: {
+                                    fileName: "src/components/aws-view/aws-view.jsx",
+                                    lineNumber: 65
+                                },
+                                __self: this,
+                                children: "Objects:"
+                            })
                         })
                     }),
                     /*#__PURE__*/ _jsxRuntime.jsx(_objectsList.ObjectsList, {
                         objects: objects,
                         __source: {
                             fileName: "src/components/aws-view/aws-view.jsx",
-                            lineNumber: 66
+                            lineNumber: 68
                         },
                         __self: this
                     })
@@ -41590,51 +41602,73 @@ var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
 var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
-var _row = require("react-bootstrap/Row");
-var _rowDefault = parcelHelpers.interopDefault(_row);
-var _col = require("react-bootstrap/Col");
-var _colDefault = parcelHelpers.interopDefault(_col);
-var _reactRouterDom = require("react-router-dom");
 class ObjectCard extends _reactDefault.default.Component {
+    // CUSTOM METHODS
+    getObject() {
+        this.setState({
+            showImage: true
+        });
+        console.log('button clicked!');
+    }
+    // LIFECYCLE METHODS
+    constructor(props){
+        super(props);
+        this.state = {
+            showImage: false
+        };
+    }
     render() {
         const { object  } = this.props;
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default, {
+        const { showImage  } = this.state;
+        return(/*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
             className: "object-card my-3",
             __source: {
                 fileName: "src/object-card/object-card.jsx",
-                lineNumber: 19
+                lineNumber: 35
             },
             __self: this,
-            children: /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
-                __source: {
-                    fileName: "src/object-card/object-card.jsx",
-                    lineNumber: 20
-                },
-                __self: this,
-                children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
-                        className: "title fs-4",
-                        __source: {
-                            fileName: "src/object-card/object-card.jsx",
-                            lineNumber: 21
-                        },
-                        __self: this,
-                        children: object.Key
-                    }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                        className: "button",
-                        variant: "outline-dark",
-                        onClick: ()=>console.log('great job! you clicked the button!')
-                        ,
-                        __source: {
-                            fileName: "src/object-card/object-card.jsx",
-                            lineNumber: 22
-                        },
-                        __self: this,
-                        children: "Click me"
-                    })
-                ]
-            })
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
+                    __source: {
+                        fileName: "src/object-card/object-card.jsx",
+                        lineNumber: 36
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
+                            className: "title fs-4",
+                            __source: {
+                                fileName: "src/object-card/object-card.jsx",
+                                lineNumber: 37
+                            },
+                            __self: this,
+                            children: object.Key
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                            className: "button",
+                            variant: "outline-dark",
+                            onClick: ()=>this.getObject()
+                            ,
+                            __source: {
+                                fileName: "src/object-card/object-card.jsx",
+                                lineNumber: 38
+                            },
+                            __self: this,
+                            children: "View file"
+                        })
+                    ]
+                }),
+                showImage && /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Img, {
+                    variant: "top",
+                    crossOrigin: "anonymous",
+                    src: '../img/favicon.ico',
+                    __source: {
+                        fileName: "src/object-card/object-card.jsx",
+                        lineNumber: 40
+                    },
+                    __self: this
+                })
+            ]
         }));
     }
 }
@@ -41644,7 +41678,7 @@ class ObjectCard extends _reactDefault.default.Component {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","axios":"iYoWk","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"4d0QS":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","axios":"iYoWk","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"4d0QS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "__DO_NOT_USE__ActionTypes", ()=>ActionTypes
