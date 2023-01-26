@@ -46,22 +46,24 @@ export function AwsView() {
             <Row className="justify-content-sm-center mt-3">
                 <Col sm={8} md={6} lg={4}>
                     <h2>AWS File Upload</h2>
-                    <Form>
+                    <Form className="mt-4">
                         <Form.Group controlId="formImage">
                             <Form.Control id="input-file" type="file" name="image" />
                         </Form.Group>
-                        <Button className="mt-4" variant="dark" type="submit" onClick={handleS3Submit}>Upload</Button>
+                        <Button className="mt-4" variant="dark" size="sm" type="submit" onClick={handleS3Submit}>Upload</Button>
                     </Form>
                 </Col>
             </Row>
-            <Row className="justify-content-sm-center mt-3">
-                <Col sm={8} md={6} lg={4}>
-                    <Button className="mt-4" type="submit" onClick={handleListSubmit}>View Bucket Contents</Button>
+            <Row className="justify-content-sm-center mt-5">
+                <Col className="text-center">
+                    <Button className="mt-4" variant="outline-dark" size="lg" type="submit" onClick={handleListSubmit}>View Bucket Contents</Button>
                 </Col>
             </Row>
             {displayList && <div>
-                <Row className="mt-5 mb-4">
-                    <h1>Objects:</h1>
+                <Row className="justify-content-sm-center mt-4">
+                    <Col sm={8} md={6} lg={4}>
+                        <h1>Objects:</h1>
+                    </Col>
                 </Row>
                 <ObjectsList objects={objects} />
             </div>}
