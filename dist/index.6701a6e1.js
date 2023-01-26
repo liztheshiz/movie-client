@@ -41327,11 +41327,17 @@ var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _objectsList = require("../../objects-list/objects-list");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _awsViewScss = require("./aws-view.scss");
+var _s = $RefreshSig$();
 function AwsView() {
+    _s();
+    const [displayList, setDisplayList] = _react.useState(false);
+    const [objects, setObjects] = _react.useState([]);
     const handleS3Submit = (e)=>{
+        // keeps page from reloading
         e.preventDefault();
         let formData = new FormData();
         selectedFile = document.getElementById('input-file').files[0];
@@ -41343,15 +41349,18 @@ function AwsView() {
         });
     };
     const handleListSubmit = (e)=>{
+        // keeps page from reloading
         e.preventDefault();
         console.log('handling submit');
-    // list all objects below button by name; button next to each name to view file
+        _axiosDefault.default.get('http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images').then((res)=>setObjects(res.data.Contents)
+        ).then(()=>setDisplayList(true)
+        );
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_containerDefault.default, {
         className: "aws-view mt-5",
         __source: {
             fileName: "src/components/aws-view/aws-view.jsx",
-            lineNumber: 36
+            lineNumber: 45
         },
         __self: this,
         children: [
@@ -41359,7 +41368,7 @@ function AwsView() {
                 className: "justify-content-sm-center mt-3",
                 __source: {
                     fileName: "src/components/aws-view/aws-view.jsx",
-                    lineNumber: 37
+                    lineNumber: 46
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
@@ -41368,14 +41377,14 @@ function AwsView() {
                     lg: 4,
                     __source: {
                         fileName: "src/components/aws-view/aws-view.jsx",
-                        lineNumber: 38
+                        lineNumber: 47
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx("h2", {
                             __source: {
                                 fileName: "src/components/aws-view/aws-view.jsx",
-                                lineNumber: 39
+                                lineNumber: 48
                             },
                             __self: this,
                             children: "AWS File Upload"
@@ -41383,7 +41392,7 @@ function AwsView() {
                         /*#__PURE__*/ _jsxRuntime.jsxs(_formDefault.default, {
                             __source: {
                                 fileName: "src/components/aws-view/aws-view.jsx",
-                                lineNumber: 40
+                                lineNumber: 49
                             },
                             __self: this,
                             children: [
@@ -41391,7 +41400,7 @@ function AwsView() {
                                     controlId: "formImage",
                                     __source: {
                                         fileName: "src/components/aws-view/aws-view.jsx",
-                                        lineNumber: 41
+                                        lineNumber: 50
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
@@ -41400,7 +41409,7 @@ function AwsView() {
                                         name: "image",
                                         __source: {
                                             fileName: "src/components/aws-view/aws-view.jsx",
-                                            lineNumber: 42
+                                            lineNumber: 51
                                         },
                                         __self: this
                                     })
@@ -41412,7 +41421,7 @@ function AwsView() {
                                     onClick: handleS3Submit,
                                     __source: {
                                         fileName: "src/components/aws-view/aws-view.jsx",
-                                        lineNumber: 44
+                                        lineNumber: 53
                                     },
                                     __self: this,
                                     children: "Upload"
@@ -41426,7 +41435,7 @@ function AwsView() {
                 className: "justify-content-sm-center mt-3",
                 __source: {
                     fileName: "src/components/aws-view/aws-view.jsx",
-                    lineNumber: 48
+                    lineNumber: 57
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
@@ -41435,7 +41444,7 @@ function AwsView() {
                     lg: 4,
                     __source: {
                         fileName: "src/components/aws-view/aws-view.jsx",
-                        lineNumber: 49
+                        lineNumber: 58
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -41444,16 +41453,50 @@ function AwsView() {
                         onClick: handleListSubmit,
                         __source: {
                             fileName: "src/components/aws-view/aws-view.jsx",
-                            lineNumber: 50
+                            lineNumber: 59
                         },
                         __self: this,
                         children: "View Bucket Contents"
                     })
                 })
+            }),
+            displayList && /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                __source: {
+                    fileName: "src/components/aws-view/aws-view.jsx",
+                    lineNumber: 62
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+                        className: "mt-5 mb-4",
+                        __source: {
+                            fileName: "src/components/aws-view/aws-view.jsx",
+                            lineNumber: 63
+                        },
+                        __self: this,
+                        children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
+                            __source: {
+                                fileName: "src/components/aws-view/aws-view.jsx",
+                                lineNumber: 64
+                            },
+                            __self: this,
+                            children: "Objects:"
+                        })
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_objectsList.ObjectsList, {
+                        objects: objects,
+                        __source: {
+                            fileName: "src/components/aws-view/aws-view.jsx",
+                            lineNumber: 66
+                        },
+                        __self: this
+                    })
+                ]
             })
         ]
     }));
 }
+_s(AwsView, "ytxm3l8+ryZV0KH6OrduURV580E=");
 _c = AwsView;
 var _c;
 $RefreshReg$(_c, "AwsView");
@@ -41463,7 +41506,145 @@ $RefreshReg$(_c, "AwsView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","./aws-view.scss":"29CmC","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","axios":"iYoWk"}],"29CmC":[function() {},{}],"4d0QS":[function(require,module,exports) {
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","./aws-view.scss":"29CmC","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","axios":"iYoWk","../../objects-list/objects-list":"lPhS2"}],"29CmC":[function() {},{}],"lPhS2":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a755 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a755.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ObjectsList", ()=>ObjectsList
+);
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _objectCard = require("../object-card/object-card");
+function ObjectsList(props) {
+    const { objects  } = props;
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
+        className: "justify-content-center",
+        __source: {
+            fileName: "src/objects-list/objects-list.jsx",
+            lineNumber: 13
+        },
+        __self: this,
+        children: objects.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
+                xs: 11,
+                sm: 6,
+                lg: 4,
+                xl: 3,
+                __source: {
+                    fileName: "src/objects-list/objects-list.jsx",
+                    lineNumber: 15
+                },
+                __self: this,
+                children: /*#__PURE__*/ _jsxRuntime.jsx(_objectCard.ObjectCard, {
+                    object: m,
+                    __source: {
+                        fileName: "src/objects-list/objects-list.jsx",
+                        lineNumber: 16
+                    },
+                    __self: this
+                })
+            })
+        )
+    }));
+}
+_c = ObjectsList;
+var _c;
+$RefreshReg$(_c, "ObjectsList");
+
+  $parcel$ReactRefreshHelpers$a755.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","../object-card/object-card":"270dA","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"270dA":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$cb61 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$cb61.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+//import './object-card.scss';
+parcelHelpers.export(exports, "ObjectCard", ()=>ObjectCard
+) /* <Card.Img className="card_poster" variant="top" crossOrigin="anonymous" src={movie.ImagePath} /> */ ;
+var _jsxRuntime = require("react/jsx-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+var _axios = require("axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _button = require("react-bootstrap/Button");
+var _buttonDefault = parcelHelpers.interopDefault(_button);
+var _card = require("react-bootstrap/Card");
+var _cardDefault = parcelHelpers.interopDefault(_card);
+var _row = require("react-bootstrap/Row");
+var _rowDefault = parcelHelpers.interopDefault(_row);
+var _col = require("react-bootstrap/Col");
+var _colDefault = parcelHelpers.interopDefault(_col);
+var _reactRouterDom = require("react-router-dom");
+class ObjectCard extends _reactDefault.default.Component {
+    render() {
+        const { object  } = this.props;
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default, {
+            className: "object-card my-3",
+            __source: {
+                fileName: "src/object-card/object-card.jsx",
+                lineNumber: 19
+            },
+            __self: this,
+            children: /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
+                __source: {
+                    fileName: "src/object-card/object-card.jsx",
+                    lineNumber: 20
+                },
+                __self: this,
+                children: [
+                    /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
+                        className: "title fs-4",
+                        __source: {
+                            fileName: "src/object-card/object-card.jsx",
+                            lineNumber: 21
+                        },
+                        __self: this,
+                        children: object.Key
+                    }),
+                    /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
+                        className: "button",
+                        variant: "outline-dark",
+                        onClick: ()=>console.log('great job! you clicked the button!')
+                        ,
+                        __source: {
+                            fileName: "src/object-card/object-card.jsx",
+                            lineNumber: 22
+                        },
+                        __self: this,
+                        children: "Click me"
+                    })
+                ]
+            })
+        }));
+    }
+}
+
+  $parcel$ReactRefreshHelpers$cb61.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","axios":"iYoWk","react-bootstrap/Button":"9CzHT","react-bootstrap/Card":"MoOk8","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-router-dom":"cpyQW","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"4d0QS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "__DO_NOT_USE__ActionTypes", ()=>ActionTypes
