@@ -41327,7 +41327,7 @@ var _form = require("react-bootstrap/Form");
 var _formDefault = parcelHelpers.interopDefault(_form);
 var _button = require("react-bootstrap/Button");
 var _buttonDefault = parcelHelpers.interopDefault(_button);
-var _objectsList = require("../../objects-list/objects-list");
+var _objectsList = require("../objects-list/objects-list");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 var _awsViewScss = require("./aws-view.scss");
@@ -41518,11 +41518,11 @@ $RefreshReg$(_c, "AwsView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","./aws-view.scss":"29CmC","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","axios":"iYoWk","../../objects-list/objects-list":"lPhS2"}],"29CmC":[function() {},{}],"lPhS2":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$a755 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","react-bootstrap/Container":"2PRIq","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","react-bootstrap/Form":"5ykgY","react-bootstrap/Button":"9CzHT","./aws-view.scss":"29CmC","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J","axios":"iYoWk","../objects-list/objects-list":"dnGYl"}],"29CmC":[function() {},{}],"dnGYl":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$db31 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$a755.prelude(module);
+$parcel$ReactRefreshHelpers$db31.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -41544,7 +41544,7 @@ function ObjectsList(props) {
     return(/*#__PURE__*/ _jsxRuntime.jsx(_rowDefault.default, {
         className: "justify-content-center",
         __source: {
-            fileName: "src/objects-list/objects-list.jsx",
+            fileName: "src/components/objects-list/objects-list.jsx",
             lineNumber: 13
         },
         __self: this,
@@ -41554,14 +41554,14 @@ function ObjectsList(props) {
                 lg: 4,
                 xl: 3,
                 __source: {
-                    fileName: "src/objects-list/objects-list.jsx",
+                    fileName: "src/components/objects-list/objects-list.jsx",
                     lineNumber: 15
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_objectCard.ObjectCard, {
                     object: m,
                     __source: {
-                        fileName: "src/objects-list/objects-list.jsx",
+                        fileName: "src/components/objects-list/objects-list.jsx",
                         lineNumber: 16
                     },
                     __self: this
@@ -41574,16 +41574,16 @@ _c = ObjectsList;
 var _c;
 $RefreshReg$(_c, "ObjectsList");
 
-  $parcel$ReactRefreshHelpers$a755.postlude(module);
+  $parcel$ReactRefreshHelpers$db31.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","../object-card/object-card":"270dA","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"270dA":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$cb61 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"react/jsx-runtime":"8xIwr","react":"6TuXu","prop-types":"1tgq3","react-bootstrap/Row":"c0x1x","react-bootstrap/Col":"fbam0","../object-card/object-card":"c0BUG","@parcel/transformer-js/src/esmodule-helpers.js":"JacNc","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"5V79J"}],"c0BUG":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$879e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$cb61.prelude(module);
+$parcel$ReactRefreshHelpers$879e.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -41604,7 +41604,18 @@ var _card = require("react-bootstrap/Card");
 var _cardDefault = parcelHelpers.interopDefault(_card);
 class ObjectCard extends _reactDefault.default.Component {
     // CUSTOM METHODS
-    getObject() {
+    getObject(object) {
+        _axiosDefault.default.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${object.Key}`)/*.then(async (res) => {
+                return await new Blob([res], { type: 'image/jpeg' });
+            })*/ .then((blob)=>{
+            var binaryData = [];
+            binaryData.push(blob);
+            this.setState({
+                imageUrl: window.URL.createObjectURL(new Blob(binaryData, {
+                    type: 'image/jpeg'
+                }))
+            });
+        });
         this.setState({
             showImage: true
         });
@@ -41614,32 +41625,34 @@ class ObjectCard extends _reactDefault.default.Component {
     constructor(props){
         super(props);
         this.state = {
-            showImage: false
+            showImage: false,
+            imageUrl: {
+            }
         };
     }
     render() {
         const { object  } = this.props;
-        const { showImage  } = this.state;
+        const { showImage , imageUrl  } = this.state;
         return(/*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default, {
             className: "object-card my-3",
             __source: {
-                fileName: "src/object-card/object-card.jsx",
-                lineNumber: 35
+                fileName: "src/components/object-card/object-card.jsx",
+                lineNumber: 47
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
                     __source: {
-                        fileName: "src/object-card/object-card.jsx",
-                        lineNumber: 36
+                        fileName: "src/components/object-card/object-card.jsx",
+                        lineNumber: 48
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Title, {
                             className: "title fs-4",
                             __source: {
-                                fileName: "src/object-card/object-card.jsx",
-                                lineNumber: 37
+                                fileName: "src/components/object-card/object-card.jsx",
+                                lineNumber: 49
                             },
                             __self: this,
                             children: object.Key
@@ -41647,11 +41660,11 @@ class ObjectCard extends _reactDefault.default.Component {
                         /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
                             className: "button",
                             variant: "outline-dark",
-                            onClick: ()=>this.getObject()
+                            onClick: ()=>this.getObject(object)
                             ,
                             __source: {
-                                fileName: "src/object-card/object-card.jsx",
-                                lineNumber: 38
+                                fileName: "src/components/object-card/object-card.jsx",
+                                lineNumber: 50
                             },
                             __self: this,
                             children: "View file"
@@ -41661,10 +41674,10 @@ class ObjectCard extends _reactDefault.default.Component {
                 showImage && /*#__PURE__*/ _jsxRuntime.jsx(_cardDefault.default.Img, {
                     variant: "top",
                     crossOrigin: "anonymous",
-                    src: '../img/favicon.ico',
+                    src: imageUrl ? imageUrl : null,
                     __source: {
-                        fileName: "src/object-card/object-card.jsx",
-                        lineNumber: 40
+                        fileName: "src/components/object-card/object-card.jsx",
+                        lineNumber: 52
                     },
                     __self: this
                 })
@@ -41673,7 +41686,7 @@ class ObjectCard extends _reactDefault.default.Component {
     }
 }
 
-  $parcel$ReactRefreshHelpers$cb61.postlude(module);
+  $parcel$ReactRefreshHelpers$879e.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
