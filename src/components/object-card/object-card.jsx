@@ -9,17 +9,21 @@ import Card from 'react-bootstrap/Card';
 
 export class ObjectCard extends React.Component {
     // CUSTOM METHODS
+    blobToDataURL(blob, callback) {
+        var a = new FileReader();
+        a.onload = (e) => {
+            callback(e.target.result);
+        };
+        a.readAsDataURL(blob);
+    }
 
     getObject(object) {
-        axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${object.Key}`)
-            /*.then(async (res) => {
-                return await new Blob([res], { type: 'image/jpeg' });
-            })*/
-            .then(blob => {
-                var binaryData = [];
-                binaryData.push(blob);
-                this.setState({
-                    imageUrl: window.URL.createObjectURL(new Blob(binaryData, { type: 'image/jpeg' }))
+        axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${object.Key}`, { responseType: "blob" })
+            .then((response) => {
+                this.blobToDataURL(response.data, (dataurl) => {
+                    this.setState({
+                        imageUrl: dataurl
+                    });
                 });
             });
 
