@@ -41618,9 +41618,10 @@ class ObjectCard extends _reactDefault.default.Component {
         a.readAsDataURL(blob);
     }
     getThumbnail() {
-        const string = this.props.object.Key;
-        const newString = string.replace('/', '%2F');
-        _axiosDefault.default.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${newString}`, {
+        const string = `thumbnails%2Fthumb-${this.props.object.Key}`;
+        console.log(string);
+        //const newString = string.replace('/', '%2F');
+        _axiosDefault.default.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${string}`, {
             responseType: "blob"
         }).then((response)=>{
             this.blobToDataURL(response.data, (dataurl)=>{
@@ -41655,14 +41656,14 @@ class ObjectCard extends _reactDefault.default.Component {
             className: "object-card my-3",
             __source: {
                 fileName: "src/components/object-card/object-card.jsx",
-                lineNumber: 58
+                lineNumber: 59
             },
             __self: this,
             children: [
                 /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
                     __source: {
                         fileName: "src/components/object-card/object-card.jsx",
-                        lineNumber: 59
+                        lineNumber: 60
                     },
                     __self: this,
                     children: [
@@ -41670,7 +41671,7 @@ class ObjectCard extends _reactDefault.default.Component {
                             className: "title fs-4",
                             __source: {
                                 fileName: "src/components/object-card/object-card.jsx",
-                                lineNumber: 60
+                                lineNumber: 61
                             },
                             __self: this,
                             children: object.Key
@@ -41682,7 +41683,7 @@ class ObjectCard extends _reactDefault.default.Component {
                             ,
                             __source: {
                                 fileName: "src/components/object-card/object-card.jsx",
-                                lineNumber: 61
+                                lineNumber: 62
                             },
                             __self: this,
                             children: "View file"
@@ -41691,7 +41692,7 @@ class ObjectCard extends _reactDefault.default.Component {
                             className: "mt-3",
                             __source: {
                                 fileName: "src/components/object-card/object-card.jsx",
-                                lineNumber: 62
+                                lineNumber: 63
                             },
                             __self: this,
                             children: "Loading..."
@@ -41704,7 +41705,7 @@ class ObjectCard extends _reactDefault.default.Component {
                     src: imageUrl ? imageUrl : null,
                     __source: {
                         fileName: "src/components/object-card/object-card.jsx",
-                        lineNumber: 64
+                        lineNumber: 65
                     },
                     __self: this
                 })
