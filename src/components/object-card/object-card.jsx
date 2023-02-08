@@ -17,19 +17,22 @@ export class ObjectCard extends React.Component {
         a.readAsDataURL(blob);
     }
 
-    getObject(object) {
-        axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${object.Key}`, { responseType: "blob" })
+    getThumbnail() {
+        const string = this.props.object.Key;
+        const newString = string.replace('/', '%2F');
+
+        axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${newString}`, { responseType: "blob" })
             .then((response) => {
                 this.blobToDataURL(response.data, (dataurl) => {
                     this.setState({
                         imageUrl: dataurl
                     });
                 });
-            });
+            }).then(this.setState({ isFetching: false }));
+    }
 
-        this.setState({
-            showImage: true
-        });
+    getObject(showImage) {
+        showImage();
         console.log('button clicked!');
     }
 
@@ -38,22 +41,27 @@ export class ObjectCard extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            showImage: false,
-            imageUrl: {}
+            imageUrl: {},
+            isFetching: true
         };
     }
 
+    componentDidMount() {
+        this.getThumbnail();
+    }
+
     render() {
-        const { object } = this.props;
-        const { showImage, imageUrl } = this.state;
+        const { object, showImage } = this.props;
+        const { imageUrl, isFetching } = this.state;
 
         return (
             <Card className="object-card my-3">
                 <Card.Body>
                     <Card.Title className="title fs-4">{object.Key}</Card.Title>
-                    <Button className="button" variant="outline-dark" onClick={() => this.getObject(object)}>View file</Button>
+                    <Button className="button" variant="outline-dark" onClick={() => this.getObject(showImage)}>View file</Button>
+                    {isFetching && <p className="mt-3" >Loading...</p>}
                 </Card.Body>
-                {showImage && <Card.Img variant="top" crossOrigin="anonymous" src={imageUrl ? imageUrl : null} />}
+                {!isFetching && <Card.Img variant="top" crossOrigin="anonymous" src={imageUrl ? imageUrl : null} />}
             </Card >
         );
     }
