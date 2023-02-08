@@ -5,13 +5,13 @@ import axios from 'axios';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 
 import { ObjectCard } from '../object-card/object-card';
 
 export function ObjectsList(props) {
     const [show, setShow] = useState(false);
     const [imageUrl, setImageUrl] = useState({});
+    const [isFetching, setIsFetching] = useState(true);
 
     const { objects } = props;
 
@@ -21,7 +21,7 @@ export function ObjectsList(props) {
                 blobToDataURL(response.data, (dataurl) => {
                     setImageUrl(dataurl);
                 });
-            });
+            }).then(() => setIsFetching(false));
         setShow(true)
     }
 
@@ -33,28 +33,20 @@ export function ObjectsList(props) {
         a.readAsDataURL(blob);
     }
 
-    const handleClose = () => setShow(false);
-
-    const handleShow = () => {
-        axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/lego.jpg`, { responseType: "blob" })
-            .then((response) => {
-                blobToDataURL(response.data, (dataurl) => {
-                    setImageUrl(dataurl);
-                });
-            });
-        setShow(true)
-    };
+    const handleClose = () => {
+        setShow(false);
+        setIsFetching(true);
+        setImageUrl({});
+    }
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
-                Launch demo modal
-            </Button>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
                     <Modal.Title>Modal heading</Modal.Title>
                 </Modal.Header>
-                <img crossOrigin="anonymous" src={imageUrl ? imageUrl : null} />
+                {isFetching && <Modal.Body>Loading...</Modal.Body>}
+                {!isFetching && <img crossOrigin="anonymous" src={imageUrl ? imageUrl : null} />}
             </Modal>
             <Row className="justify-content-center">
                 {objects.map(m =>
