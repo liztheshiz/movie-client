@@ -48,9 +48,9 @@ export function ObjectsList(props) {
                 {isFetching && <Modal.Body>Loading...</Modal.Body>}
                 {!isFetching && <img crossOrigin="anonymous" src={imageUrl ? imageUrl : null} />}
             </Modal>
-            <Row className="justify-content-center">
+            <Row className="justify-content-center text-center">
                 {objects.map(m =>
-                    <Col xs={11} sm={6} lg={4} xl={3}>
+                    <Col className="text-center" xs={11} sm={6} lg={4} xl={3}>
                         <ObjectCard object={m} showImage={showImage} />
                     </Col>
                 )}
