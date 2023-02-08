@@ -57,7 +57,7 @@ export function AwsView() {
             </Row>
             <Row className="justify-content-sm-center mt-5">
                 <Col className="text-center">
-                    <Button className="mt-4" variant="outline-dark" size="lg" type="submit" onClick={handleListSubmit}>View Bucket Contents</Button>
+                    <Button className="mt-4" variant="outline-dark" size="lg" type="submit" onClick={handleListSubmit}>Load Bucket Contents</Button>
                 </Col>
             </Row>
             {displayList && <div>
