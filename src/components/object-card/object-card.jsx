@@ -5,7 +5,7 @@ import axios from 'axios';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-//import './object-card.scss';
+import './object-card.scss';
 
 export class ObjectCard extends React.Component {
     // CUSTOM METHODS
@@ -23,10 +23,11 @@ export class ObjectCard extends React.Component {
             .then((response) => {
                 this.blobToDataURL(response.data, (dataurl) => {
                     this.setState({
-                        imageUrl: dataurl
+                        imageUrl: dataurl,
+                        isFetching: false
                     });
                 });
-            }).then(this.setState({ isFetching: false }));
+            });
     }
 
     getObject(key) {
@@ -34,7 +35,6 @@ export class ObjectCard extends React.Component {
     }
 
     // LIFECYCLE METHODS
-
     constructor(props) {
         super(props);
         this.state = {
@@ -53,12 +53,12 @@ export class ObjectCard extends React.Component {
 
         return (
             <Card className="object-card my-3">
-                <Card.Body>
-                    <Card.Title className="title fs-4">{object.Key}</Card.Title>
-                    <Button className="button" variant="outline-dark" onClick={() => this.getObject(object.Key)}>View file</Button>
-                    {isFetching && <p className="mt-3" >Loading...</p>}
-                </Card.Body>
                 {!isFetching && <Card.Img variant="top" crossOrigin="anonymous" src={imageUrl ? imageUrl : null} />}
+                {isFetching && <p className="mt-3" >Loading...</p>}
+                <Card.Body>
+                    <Card.Title className="fs-4">{object.Key}</Card.Title>
+                    <Button className="object-button mt-2" variant="outline-dark" size="sm" onClick={() => this.getObject(object.Key)}>View file</Button>
+                </Card.Body>
             </Card >
         );
     }
