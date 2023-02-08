@@ -63,5 +63,3 @@ export class ObjectCard extends React.Component {
         );
     }
 }
-
-/* <Card.Img className="card_poster" variant="top" crossOrigin="anonymous" src={movie.ImagePath} /> */
