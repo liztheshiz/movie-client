@@ -29,8 +29,8 @@ export class ObjectCard extends React.Component {
             }).then(this.setState({ isFetching: false }));
     }
 
-    getObject(showImage) {
-        showImage();
+    getObject(key) {
+        this.props.showImage(key);
     }
 
     // LIFECYCLE METHODS
@@ -55,7 +55,7 @@ export class ObjectCard extends React.Component {
             <Card className="object-card my-3">
                 <Card.Body>
                     <Card.Title className="title fs-4">{object.Key}</Card.Title>
-                    <Button className="button" variant="outline-dark" onClick={() => this.getObject(showImage)}>View file</Button>
+                    <Button className="button" variant="outline-dark" onClick={() => this.getObject(object.Key)}>View file</Button>
                     {isFetching && <p className="mt-3" >Loading...</p>}
                 </Card.Body>
                 {!isFetching && <Card.Img variant="top" crossOrigin="anonymous" src={imageUrl ? imageUrl : null} />}
