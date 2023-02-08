@@ -37,7 +37,8 @@ export function AwsView() {
 
         console.log('handling submit');
         axios.get('http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images')
-            .then((res) => setObjects(res.data.Contents))
+            .then((res) => res.data.Contents.filter((m) => !m.Key.startsWith('thumbnails/')))
+            .then((array) => setObjects(array))
             .then(() => setDisplayList(true));
     }
 
