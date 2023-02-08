@@ -18,10 +18,11 @@ export class ObjectCard extends React.Component {
     }
 
     getThumbnail() {
-        const string = this.props.object.Key;
-        const newString = string.replace('/', '%2F');
+        const string = `thumbnails%2Fthumb-${this.props.object.Key}`;
+        console.log(string);
+        //const newString = string.replace('/', '%2F');
 
-        axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${newString}`, { responseType: "blob" })
+        axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${string}`, { responseType: "blob" })
             .then((response) => {
                 this.blobToDataURL(response.data, (dataurl) => {
                     this.setState({
