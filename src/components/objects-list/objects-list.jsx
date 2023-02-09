@@ -16,6 +16,7 @@ export function ObjectsList(props) {
 
     const { objects } = props;
 
+    // Shows original of selected object in a modal
     const showImage = (key) => {
         setModalTitle(key);
         axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${key}`, { responseType: "blob" })
@@ -27,6 +28,7 @@ export function ObjectsList(props) {
         setShow(true)
     }
 
+    // Helper function to convert response data from GET request into a url
     const blobToDataURL = (blob, callback) => {
         var a = new FileReader();
         a.onload = (e) => {
@@ -35,6 +37,7 @@ export function ObjectsList(props) {
         a.readAsDataURL(blob);
     }
 
+    // Closes modal and resets image/title state data
     const handleClose = () => {
         setShow(false);
         setIsFetching(true);
