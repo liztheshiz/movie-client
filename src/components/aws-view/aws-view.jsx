@@ -52,7 +52,7 @@ export function AwsView() {
                 <Col sm={8} md={6} lg={4}>
                     <h2>AWS File Upload</h2>
                     <Form className="mt-4">
-                        <Form.Group controlId="formImage">
+                        <Form.Group>
                             <Form.Control id="input-file" type="file" name="image" />
                         </Form.Group>
                         <Button className="mt-4" variant="dark" size="sm" type="submit" onClick={handleS3Submit}>Upload</Button>
