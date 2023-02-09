@@ -48,7 +48,7 @@ export class ObjectCard extends React.Component {
     }
 
     render() {
-        const { object, showImage } = this.props;
+        const { object } = this.props;
         const { imageUrl, isFetching } = this.state;
 
         return (
