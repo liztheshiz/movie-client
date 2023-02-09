@@ -41336,6 +41336,8 @@ function AwsView() {
     _s();
     const [displayList, setDisplayList] = _react.useState(false);
     const [objects, setObjects] = _react.useState([]);
+    // Uploads given file to AWS bucket on submit
+    // This triggers Lambda function to create a thumbnail
     const handleS3Submit = (e)=>{
         // keeps page from reloading
         e.preventDefault();
@@ -41348,6 +41350,7 @@ function AwsView() {
             }
         });
     };
+    // Gets list of objects in bucket on submit
     const handleListSubmit = (e)=>{
         // keeps page from reloading
         e.preventDefault();
@@ -41362,7 +41365,7 @@ function AwsView() {
         className: "aws-view mt-5",
         __source: {
             fileName: "src/components/aws-view/aws-view.jsx",
-            lineNumber: 46
+            lineNumber: 49
         },
         __self: this,
         children: [
@@ -41370,7 +41373,7 @@ function AwsView() {
                 className: "justify-content-sm-center mt-3",
                 __source: {
                     fileName: "src/components/aws-view/aws-view.jsx",
-                    lineNumber: 47
+                    lineNumber: 50
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_colDefault.default, {
@@ -41379,14 +41382,14 @@ function AwsView() {
                     lg: 4,
                     __source: {
                         fileName: "src/components/aws-view/aws-view.jsx",
-                        lineNumber: 48
+                        lineNumber: 51
                     },
                     __self: this,
                     children: [
                         /*#__PURE__*/ _jsxRuntime.jsx("h2", {
                             __source: {
                                 fileName: "src/components/aws-view/aws-view.jsx",
-                                lineNumber: 49
+                                lineNumber: 52
                             },
                             __self: this,
                             children: "AWS File Upload"
@@ -41395,7 +41398,7 @@ function AwsView() {
                             className: "mt-4",
                             __source: {
                                 fileName: "src/components/aws-view/aws-view.jsx",
-                                lineNumber: 50
+                                lineNumber: 53
                             },
                             __self: this,
                             children: [
@@ -41403,7 +41406,7 @@ function AwsView() {
                                     controlId: "formImage",
                                     __source: {
                                         fileName: "src/components/aws-view/aws-view.jsx",
-                                        lineNumber: 51
+                                        lineNumber: 54
                                     },
                                     __self: this,
                                     children: /*#__PURE__*/ _jsxRuntime.jsx(_formDefault.default.Control, {
@@ -41412,7 +41415,7 @@ function AwsView() {
                                         name: "image",
                                         __source: {
                                             fileName: "src/components/aws-view/aws-view.jsx",
-                                            lineNumber: 52
+                                            lineNumber: 55
                                         },
                                         __self: this
                                     })
@@ -41425,7 +41428,7 @@ function AwsView() {
                                     onClick: handleS3Submit,
                                     __source: {
                                         fileName: "src/components/aws-view/aws-view.jsx",
-                                        lineNumber: 54
+                                        lineNumber: 57
                                     },
                                     __self: this,
                                     children: "Upload"
@@ -41439,14 +41442,14 @@ function AwsView() {
                 className: "justify-content-sm-center mt-5",
                 __source: {
                     fileName: "src/components/aws-view/aws-view.jsx",
-                    lineNumber: 58
+                    lineNumber: 61
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
                     className: "text-center",
                     __source: {
                         fileName: "src/components/aws-view/aws-view.jsx",
-                        lineNumber: 59
+                        lineNumber: 62
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
@@ -41457,7 +41460,7 @@ function AwsView() {
                         onClick: handleListSubmit,
                         __source: {
                             fileName: "src/components/aws-view/aws-view.jsx",
-                            lineNumber: 60
+                            lineNumber: 63
                         },
                         __self: this,
                         children: "Load Bucket Contents"
@@ -41467,7 +41470,7 @@ function AwsView() {
             displayList && /*#__PURE__*/ _jsxRuntime.jsxs("div", {
                 __source: {
                     fileName: "src/components/aws-view/aws-view.jsx",
-                    lineNumber: 63
+                    lineNumber: 66
                 },
                 __self: this,
                 children: [
@@ -41475,7 +41478,7 @@ function AwsView() {
                         className: "justify-content-sm-center mt-4",
                         __source: {
                             fileName: "src/components/aws-view/aws-view.jsx",
-                            lineNumber: 64
+                            lineNumber: 67
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
@@ -41484,13 +41487,13 @@ function AwsView() {
                             lg: 4,
                             __source: {
                                 fileName: "src/components/aws-view/aws-view.jsx",
-                                lineNumber: 65
+                                lineNumber: 68
                             },
                             __self: this,
                             children: /*#__PURE__*/ _jsxRuntime.jsx("h1", {
                                 __source: {
                                     fileName: "src/components/aws-view/aws-view.jsx",
-                                    lineNumber: 66
+                                    lineNumber: 69
                                 },
                                 __self: this,
                                 children: "Objects:"
@@ -41501,7 +41504,7 @@ function AwsView() {
                         objects: objects,
                         __source: {
                             fileName: "src/components/aws-view/aws-view.jsx",
-                            lineNumber: 69
+                            lineNumber: 72
                         },
                         __self: this
                     })
@@ -41552,8 +41555,11 @@ function ObjectsList(props) {
     const [imageUrl, setImageUrl] = _react.useState({
     });
     const [isFetching, setIsFetching] = _react.useState(true);
+    const [modalTitle, setModalTitle] = _react.useState('');
     const { objects  } = props;
+    // Shows original of selected object in a modal
     const showImage = (key)=>{
+        setModalTitle(key);
         _axiosDefault.default.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${key}`, {
             responseType: "blob"
         }).then((response)=>{
@@ -41564,6 +41570,7 @@ function ObjectsList(props) {
         );
         setShow(true);
     };
+    // Helper function to convert response data from GET request into a url
     const blobToDataURL = (blob, callback)=>{
         var a = new FileReader();
         a.onload = (e)=>{
@@ -41571,11 +41578,13 @@ function ObjectsList(props) {
         };
         a.readAsDataURL(blob);
     };
+    // Closes modal and resets image/title state data
     const handleClose = ()=>{
         setShow(false);
         setIsFetching(true);
         setImageUrl({
         });
+        setModalTitle('');
     };
     return(/*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
         children: [
@@ -41584,7 +41593,7 @@ function ObjectsList(props) {
                 onHide: handleClose,
                 __source: {
                     fileName: "src/components/objects-list/objects-list.jsx",
-                    lineNumber: 44
+                    lineNumber: 50
                 },
                 __self: this,
                 children: [
@@ -41592,22 +41601,22 @@ function ObjectsList(props) {
                         closeButton: true,
                         __source: {
                             fileName: "src/components/objects-list/objects-list.jsx",
-                            lineNumber: 45
+                            lineNumber: 51
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_modalDefault.default.Title, {
                             __source: {
                                 fileName: "src/components/objects-list/objects-list.jsx",
-                                lineNumber: 46
+                                lineNumber: 52
                             },
                             __self: this,
-                            children: "Modal heading"
+                            children: modalTitle
                         })
                     }),
                     isFetching && /*#__PURE__*/ _jsxRuntime.jsx(_modalDefault.default.Body, {
                         __source: {
                             fileName: "src/components/objects-list/objects-list.jsx",
-                            lineNumber: 48
+                            lineNumber: 54
                         },
                         __self: this,
                         children: "Loading..."
@@ -41617,7 +41626,7 @@ function ObjectsList(props) {
                         src: imageUrl ? imageUrl : null,
                         __source: {
                             fileName: "src/components/objects-list/objects-list.jsx",
-                            lineNumber: 49
+                            lineNumber: 55
                         },
                         __self: this
                     })
@@ -41627,7 +41636,7 @@ function ObjectsList(props) {
                 className: "justify-content-center text-center",
                 __source: {
                     fileName: "src/components/objects-list/objects-list.jsx",
-                    lineNumber: 51
+                    lineNumber: 57
                 },
                 __self: this,
                 children: objects.map((m)=>/*#__PURE__*/ _jsxRuntime.jsx(_colDefault.default, {
@@ -41638,7 +41647,7 @@ function ObjectsList(props) {
                         xl: 3,
                         __source: {
                             fileName: "src/components/objects-list/objects-list.jsx",
-                            lineNumber: 53
+                            lineNumber: 59
                         },
                         __self: this,
                         children: /*#__PURE__*/ _jsxRuntime.jsx(_objectCard.ObjectCard, {
@@ -41646,7 +41655,7 @@ function ObjectsList(props) {
                             showImage: showImage,
                             __source: {
                                 fileName: "src/components/objects-list/objects-list.jsx",
-                                lineNumber: 54
+                                lineNumber: 60
                             },
                             __self: this
                         })
@@ -41656,8 +41665,17 @@ function ObjectsList(props) {
         ]
     }));
 }
-_s(ObjectsList, "MTJB7JFqe9Wx+3xuGu4m8ptHmVc=");
+_s(ObjectsList, "m2EMi6LKiT/Bw8KNi7m7VTsVKSg=");
 _c = ObjectsList;
+ObjectsList.propTypes = {
+    objects: _propTypesDefault.default.arrayOf(_propTypesDefault.default.shape({
+        ETag: _propTypesDefault.default.string.isRequired,
+        Key: _propTypesDefault.default.string.isRequired,
+        LastModified: _propTypesDefault.default.string.isRequired,
+        Size: _propTypesDefault.default.number.isRequired,
+        StorageClass: _propTypesDefault.default.string.isRequired
+    })).isRequired
+};
 var _c;
 $RefreshReg$(_c, "ObjectsList");
 
@@ -41691,6 +41709,7 @@ var _cardDefault = parcelHelpers.interopDefault(_card);
 var _objectCardScss = require("./object-card.scss");
 class ObjectCard extends _reactDefault.default.Component {
     // CUSTOM METHODS
+    // Helper function to convert response data from GET request into a url
     blobToDataURL(blob, callback) {
         var a = new FileReader();
         a.onload = (e)=>{
@@ -41698,6 +41717,7 @@ class ObjectCard extends _reactDefault.default.Component {
         };
         a.readAsDataURL(blob);
     }
+    // Gets thumbnail version of given object from S3 bucket
     getThumbnail() {
         const string = `thumbnails%2Fthumb-${this.props.object.Key}`;
         _axiosDefault.default.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${string}`, {
@@ -41710,9 +41730,6 @@ class ObjectCard extends _reactDefault.default.Component {
                 });
             });
         });
-    }
-    getObject(key) {
-        this.props.showImage(key);
     }
     // LIFECYCLE METHODS
     constructor(props){
@@ -41733,7 +41750,7 @@ class ObjectCard extends _reactDefault.default.Component {
             className: "object-card my-3",
             __source: {
                 fileName: "src/components/object-card/object-card.jsx",
-                lineNumber: 55
+                lineNumber: 53
             },
             __self: this,
             children: [
@@ -41743,7 +41760,7 @@ class ObjectCard extends _reactDefault.default.Component {
                     src: imageUrl ? imageUrl : null,
                     __source: {
                         fileName: "src/components/object-card/object-card.jsx",
-                        lineNumber: 56
+                        lineNumber: 54
                     },
                     __self: this
                 }),
@@ -41751,7 +41768,7 @@ class ObjectCard extends _reactDefault.default.Component {
                     className: "mt-3",
                     __source: {
                         fileName: "src/components/object-card/object-card.jsx",
-                        lineNumber: 57
+                        lineNumber: 55
                     },
                     __self: this,
                     children: "Loading..."
@@ -41759,7 +41776,7 @@ class ObjectCard extends _reactDefault.default.Component {
                 /*#__PURE__*/ _jsxRuntime.jsxs(_cardDefault.default.Body, {
                     __source: {
                         fileName: "src/components/object-card/object-card.jsx",
-                        lineNumber: 58
+                        lineNumber: 56
                     },
                     __self: this,
                     children: [
@@ -41767,7 +41784,7 @@ class ObjectCard extends _reactDefault.default.Component {
                             className: "fs-4",
                             __source: {
                                 fileName: "src/components/object-card/object-card.jsx",
-                                lineNumber: 59
+                                lineNumber: 57
                             },
                             __self: this,
                             children: object.Key
@@ -41776,11 +41793,11 @@ class ObjectCard extends _reactDefault.default.Component {
                             className: "object-button mt-2",
                             variant: "outline-dark",
                             size: "sm",
-                            onClick: ()=>this.getObject(object.Key)
+                            onClick: ()=>showImage(object.Key)
                             ,
                             __source: {
                                 fileName: "src/components/object-card/object-card.jsx",
-                                lineNumber: 60
+                                lineNumber: 58
                             },
                             __self: this,
                             children: "View file"
@@ -41791,6 +41808,16 @@ class ObjectCard extends _reactDefault.default.Component {
         }));
     }
 }
+ObjectCard.propTypes = {
+    object: _propTypesDefault.default.shape({
+        ETag: _propTypesDefault.default.string.isRequired,
+        Key: _propTypesDefault.default.string.isRequired,
+        LastModified: _propTypesDefault.default.string.isRequired,
+        Size: _propTypesDefault.default.number.isRequired,
+        StorageClass: _propTypesDefault.default.string.isRequired
+    }).isRequired,
+    showImage: _propTypesDefault.default.func.isRequired
+};
 
   $parcel$ReactRefreshHelpers$879e.postlude(module);
 } finally {
