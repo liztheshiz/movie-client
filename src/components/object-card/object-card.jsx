@@ -54,7 +54,7 @@ export class ObjectCard extends React.Component {
                 {!isFetching && <Card.Img variant="top" crossOrigin="anonymous" src={imageUrl ? imageUrl : null} />}
                 {isFetching && <p className="mt-3" >Loading...</p>}
                 <Card.Body>
-                    <Card.Title className="fs-4">{object.Key}</Card.Title>
+                    <Card.Title className="fs-4">{object.Key.substring(5)}</Card.Title>
                     <Button className="object-button mt-2" variant="outline-dark" size="sm" onClick={() => showImage(object.Key)}>View file</Button>
                 </Card.Body>
             </Card >
