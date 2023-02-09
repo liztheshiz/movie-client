@@ -30,7 +30,7 @@ export function AwsView() {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
-        });
+        }).then(() => { alert('Image successfully posted! Page will now reload.'); window.location.reload() });
     }
 
     // Gets list of objects in bucket on submit
