@@ -16,6 +16,8 @@ export function AwsView() {
     const [displayList, setDisplayList] = useState(false);
     const [objects, setObjects] = useState([]);
 
+    // Uploads given file to AWS bucket on submit
+    // This triggers Lambda function to create a thumbnail
     const handleS3Submit = (e) => {
         // keeps page from reloading
         e.preventDefault();
@@ -31,6 +33,7 @@ export function AwsView() {
         });
     }
 
+    // Gets list of objects in bucket on submit
     const handleListSubmit = (e) => {
         // keeps page from reloading
         e.preventDefault();
