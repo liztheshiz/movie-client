@@ -63,3 +63,14 @@ export class ObjectCard extends React.Component {
         );
     }
 }
+
+ObjectCard.propTypes = {
+    object: PropTypes.shape({
+        ETag: PropTypes.string.isRequired,
+        Key: PropTypes.string.isRequired,
+        LastModified: PropTypes.string.isRequired,
+        Size: PropTypes.number.isRequired,
+        StorageClass: PropTypes.string.isRequired
+    }).isRequired,
+    showImage: PropTypes.func.isRequired
+}
