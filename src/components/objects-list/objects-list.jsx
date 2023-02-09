@@ -19,7 +19,8 @@ export function ObjectsList(props) {
     // Shows original of selected object in a modal
     const showImage = (key) => {
         setModalTitle(key);
-        axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${key}`, { responseType: "blob" })
+        const string = `orig%2F${key.substring(5)}`;
+        axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${string}`, { responseType: "blob" })
             .then((response) => {
                 blobToDataURL(response.data, (dataurl) => {
                     setImageUrl(dataurl);
@@ -49,7 +50,7 @@ export function ObjectsList(props) {
         <>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>{modalTitle}</Modal.Title>
+                    <Modal.Title>{modalTitle.substring(5)}</Modal.Title>
                 </Modal.Header>
                 {isFetching && <Modal.Body>Loading...</Modal.Body>}
                 {!isFetching && <img crossOrigin="anonymous" src={imageUrl ? imageUrl : null} />}
