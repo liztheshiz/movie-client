@@ -9,6 +9,7 @@ import './object-card.scss';
 
 export class ObjectCard extends React.Component {
     // CUSTOM METHODS
+    // Helper function to convert response data from GET request into a url
     blobToDataURL(blob, callback) {
         var a = new FileReader();
         a.onload = (e) => {
@@ -17,6 +18,7 @@ export class ObjectCard extends React.Component {
         a.readAsDataURL(blob);
     }
 
+    // Gets thumbnail version of given object from S3 bucket
     getThumbnail() {
         const string = `thumbnails%2Fthumb-${this.props.object.Key}`;
         axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${string}`, { responseType: "blob" })
