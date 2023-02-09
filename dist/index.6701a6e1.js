@@ -41337,9 +41337,9 @@ function AwsView() {
     const [displayList, setDisplayList] = _react.useState(false);
     const [objects, setObjects] = _react.useState([]);
     // Uploads given file to AWS bucket on submit
-    // This triggers Lambda function to create a thumbnail
+    // >>> This triggers Lambda function to create a thumbnail
     const handleS3Submit = (e)=>{
-        // keeps page from reloading
+        // Keeps page from reloading
         e.preventDefault();
         let formData = new FormData();
         selectedFile = document.getElementById('input-file').files[0];
@@ -41348,6 +41348,9 @@ function AwsView() {
             headers: {
                 'Content-Type': 'multipart/form-data'
             }
+        }).then(()=>{
+            alert('Image successfully posted! Page will now reload.');
+            window.location.reload();
         });
     };
     // Gets list of objects in bucket on submit
@@ -41453,7 +41456,7 @@ function AwsView() {
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsx(_buttonDefault.default, {
-                        className: "mt-4",
+                        className: "mt-2",
                         variant: "outline-dark",
                         size: "lg",
                         type: "submit",
