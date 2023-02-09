@@ -41,7 +41,7 @@ export function AwsView() {
         console.log('handling submit');
         // Get objects, then pass array of only original images with orig/ prefix to ObjectsList
         axios.get('http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images')
-            .then((res) => res.data.Contents.filter((m) => !m.Key.startsWith('thumbnails/')))
+            .then((res) => res.data.Contents.filter((m) => m.Key.startsWith('orig/')))
             .then((array) => setObjects(array))
             .then(() => setDisplayList(true));
     }
