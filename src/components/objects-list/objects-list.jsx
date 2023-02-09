@@ -12,10 +12,12 @@ export function ObjectsList(props) {
     const [show, setShow] = useState(false);
     const [imageUrl, setImageUrl] = useState({});
     const [isFetching, setIsFetching] = useState(true);
+    const [modalTitle, setModalTitle] = useState('');
 
     const { objects } = props;
 
     const showImage = (key) => {
+        setModalTitle(key);
         axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${key}`, { responseType: "blob" })
             .then((response) => {
                 blobToDataURL(response.data, (dataurl) => {
@@ -37,13 +39,14 @@ export function ObjectsList(props) {
         setShow(false);
         setIsFetching(true);
         setImageUrl({});
+        setModalTitle('');
     }
 
     return (
         <>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Modal heading</Modal.Title>
+                    <Modal.Title>{modalTitle}</Modal.Title>
                 </Modal.Header>
                 {isFetching && <Modal.Body>Loading...</Modal.Body>}
                 {!isFetching && <img crossOrigin="anonymous" src={imageUrl ? imageUrl : null} />}
