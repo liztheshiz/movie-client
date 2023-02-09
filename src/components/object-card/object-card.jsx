@@ -20,7 +20,7 @@ export class ObjectCard extends React.Component {
 
     // Gets thumbnail version of given object from S3 bucket
     getThumbnail() {
-        const string = `thumbnails%2Fthumb-${this.props.object.Key}`;
+        const string = `thumbnails%2F${this.props.object.Key.substring(5)}`;
         axios.get(`http://cinemadbloadbalancer-1051342674.us-east-1.elb.amazonaws.com:8081/images/${string}`, { responseType: "blob" })
             .then((response) => {
                 this.blobToDataURL(response.data, (dataurl) => {
