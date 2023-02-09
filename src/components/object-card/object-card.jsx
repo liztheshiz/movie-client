@@ -30,10 +30,6 @@ export class ObjectCard extends React.Component {
             });
     }
 
-    getObject(key) {
-        this.props.showImage(key);
-    }
-
     // LIFECYCLE METHODS
     constructor(props) {
         super(props);
@@ -48,7 +44,7 @@ export class ObjectCard extends React.Component {
     }
 
     render() {
-        const { object } = this.props;
+        const { object, showImage } = this.props;
         const { imageUrl, isFetching } = this.state;
 
         return (
@@ -57,7 +53,7 @@ export class ObjectCard extends React.Component {
                 {isFetching && <p className="mt-3" >Loading...</p>}
                 <Card.Body>
                     <Card.Title className="fs-4">{object.Key}</Card.Title>
-                    <Button className="object-button mt-2" variant="outline-dark" size="sm" onClick={() => this.getObject(object.Key)}>View file</Button>
+                    <Button className="object-button mt-2" variant="outline-dark" size="sm" onClick={() => showImage(object.Key)}>View file</Button>
                 </Card.Body>
             </Card >
         );
