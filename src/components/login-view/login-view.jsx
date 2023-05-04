@@ -73,7 +73,7 @@ export function LoginView(props) {
         <Container className="login-view mt-5">
             <Row className="mb-5">
                 <Col className="text-center">
-                    <h1>Welcome to CinemaDatabase!</h1>
+                    <h1>Welcome to Cinema.Database!</h1>
                 </Col>
             </Row>
             <Row className="justify-content-sm-center">
